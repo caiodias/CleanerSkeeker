@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Facade.shared.registerUser()
+        let user = Selector()
         
-        Facade.shared.listUser()
+        Facade.shared.registerUser(user: user, onSuccess: onRegisterSuccess, onFail: onRegisterFail)
         
         self.title = Utilities.getProgamName()
         self.title = Utilities.programName        
@@ -26,6 +26,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func onRegisterSuccess(obj: AnyObject) {
+        // TODO:
+        // show alert that the user was successful registered.
+        let loggedUser = obj as! Selector
+        
+        guard let actualUser = obj as? Selector else {
+            // TODO: handle this error scenario
+            print("ERROR! PAY ATTENTION")
+            return
+        }
+        
+        print(actualUser.firstName)
+    }
+    
+    func onRegisterFail(error: Error) {
+        // TODO:
+        // show alert that the user was successful registered.
+    }
 }
 

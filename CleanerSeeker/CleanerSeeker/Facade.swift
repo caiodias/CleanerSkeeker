@@ -21,8 +21,8 @@ class Facade {
         // nothingto see here, keep moving :D
     }
     
-    public func registerUser() -> String {
-        return self._apiController.registerUser()
+    public func registerUser(user: User, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario){
+        self._apiController.registerUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
     
     public func listUser() -> [String] {
