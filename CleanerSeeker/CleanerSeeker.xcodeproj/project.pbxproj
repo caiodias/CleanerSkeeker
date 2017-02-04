@@ -13,6 +13,9 @@
 		954DC0751E2D6743000F1C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0741E2D6743000F1C4B /* Assets.xcassets */; };
 		954DC0781E2D6743000F1C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0761E2D6743000F1C4B /* LaunchScreen.storyboard */; };
 		954DC0831E2D6744000F1C4B /* CleanerSeekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC0821E2D6744000F1C4B /* CleanerSeekerTests.swift */; };
+		95B134671E467B5500838B3C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134661E467B5500838B3C /* Facade.swift */; };
+		95B134691E467B5F00838B3C /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134681E467B5F00838B3C /* ApiController.swift */; };
+		95B1346C1E467EC400838B3C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1346B1E467EC400838B3C /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		954DC07E1E2D6744000F1C4B /* CleanerSeekerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanerSeekerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		954DC0821E2D6744000F1C4B /* CleanerSeekerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerSeekerTests.swift; sourceTree = "<group>"; };
 		954DC0841E2D6744000F1C4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95B134661E467B5500838B3C /* Facade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
+		95B134681E467B5F00838B3C /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
+		95B1346B1E467EC400838B3C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +83,15 @@
 		954DC06C1E2D6743000F1C4B /* CleanerSeeker */ = {
 			isa = PBXGroup;
 			children = (
+				954DC0791E2D6743000F1C4B /* Info.plist */,
+				95B134681E467B5F00838B3C /* ApiController.swift */,
 				954DC06D1E2D6743000F1C4B /* AppDelegate.swift */,
-				954DC06F1E2D6743000F1C4B /* ViewController.swift */,
-				954DC0711E2D6743000F1C4B /* Main.storyboard */,
+				95B134661E467B5500838B3C /* Facade.swift */,
+				95B1346A1E467B7200838B3C /* Screens */,
 				954DC0741E2D6743000F1C4B /* Assets.xcassets */,
 				954DC0761E2D6743000F1C4B /* LaunchScreen.storyboard */,
-				954DC0791E2D6743000F1C4B /* Info.plist */,
+				954DC0711E2D6743000F1C4B /* Main.storyboard */,
+				95B1346B1E467EC400838B3C /* Utilities.swift */,
 			);
 			path = CleanerSeeker;
 			sourceTree = "<group>";
@@ -94,6 +103,14 @@
 				954DC0841E2D6744000F1C4B /* Info.plist */,
 			);
 			path = CleanerSeekerTests;
+			sourceTree = "<group>";
+		};
+		95B1346A1E467B7200838B3C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				954DC06F1E2D6743000F1C4B /* ViewController.swift */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B134691E467B5F00838B3C /* ApiController.swift in Sources */,
+				95B134671E467B5500838B3C /* Facade.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* ViewController.swift in Sources */,
+				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +432,7 @@
 				954DC0891E2D6744000F1C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		954DC08A1E2D6744000F1C4B /* Build configuration list for PBXNativeTarget "CleanerSeekerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +441,7 @@
 				954DC08C1E2D6744000F1C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
