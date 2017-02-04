@@ -12,7 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        Facade.shared.registerUser()
+        
+        Facade.shared.listUser()
+        
+        self.title = Utilities.getProgamName()
+        self.title = Utilities.programName        
     }
 
     override func didReceiveMemoryWarning() {
