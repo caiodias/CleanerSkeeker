@@ -6,7 +6,7 @@
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
-class Job {
+class JobOpportunity {
     enum JobType {
         case clean
         case AnythingElse
