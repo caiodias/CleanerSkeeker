@@ -14,11 +14,11 @@ typealias ApiFailScenario = (Error) -> Void
 class ApiController {
 //    let callBack =
 //    self.loginCallback = onCompletion
-    
+
     func registerUser() -> String {
         return "Caio"
     }
-    
+
     func registerUser(user: User, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         // TODO:
         // Call the api, register the user object on it.

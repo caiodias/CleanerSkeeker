@@ -9,7 +9,7 @@
 class MemoryDatabase {
     private let _users: [User]
     private let _jobs: [Job]
-    
+
     init() {
         self._users = []
         self._jobs = []

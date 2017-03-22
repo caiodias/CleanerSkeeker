@@ -11,14 +11,14 @@ class Job {
         case clean
         case AnythingElse
     }
-    
+
     let type: JobType
     var name: String
-    
+
     convenience init(name: String) {
         self.init(type: JobType.clean, name: name)
     }
-    
+
     init(type: JobType, name: String) {
         self.type = type
         self.name = name

@@ -10,7 +10,7 @@ class JobPoster: User {
     var id: Int
     var firstName: String
     var lastName: String
-    
+
     init() {
         self.firstName = ""
         self.lastName = ""

@@ -12,7 +12,7 @@ class Deal {
     let selector: Selector
     let jobPoster: JobPoster
     let date: Date
-    
+
     init(selector: Selector, jobPoster: JobPoster) {
         self.selector = selector
         self.jobPoster = jobPoster
