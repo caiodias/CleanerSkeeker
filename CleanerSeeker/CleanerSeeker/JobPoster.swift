@@ -7,14 +7,14 @@
 //
 
 class JobPoster: User {
-    var id: Int
+    var jobId: Int
     var firstName: String
     var lastName: String
     var email: String
     var password: String
 
     init() {
-        self.id = -1
+        self.jobId = -1
         self.firstName = ""
         self.lastName = ""
         self.email = ""

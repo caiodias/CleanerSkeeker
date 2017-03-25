@@ -9,9 +9,5 @@
 import Foundation
 
 class Utilities {
-    static let programName = "Job Seeker"
-
-    static func getProgamName() -> String {
-        return "Job Seeker"
-    }
+    static let programName = "Cleaner Seeker"
 }
