@@ -9,7 +9,7 @@
 class JobOpportunity {
     enum JobType {
         case clean
-        case AnythingElse
+        case anythingElse
     }
 
     let type: JobType
