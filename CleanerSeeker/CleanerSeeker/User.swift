@@ -10,4 +10,6 @@ protocol User {
     var id: Int { get set }
     var firstName: String { get set }
     var lastName: String { get set }
+    var email: String { get set }
+    var password: String { get set }
 }
