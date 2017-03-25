@@ -7,17 +7,23 @@
 //
 
 class JobPoster: User {
-    var id: Int
+    var id: String
     var firstName: String
     var lastName: String
     var email: String
-    var password: String
+    var address: String
+    var latitude: Double
+    var longitude: Double
+    var avatar: String
 
     init() {
-        self.id = -1
+        self.id = ""
         self.firstName = ""
         self.lastName = ""
         self.email = ""
-        self.password = ""
+        self.address = ""
+        self.latitude = 0.0
+        self.longitude = 0.0
+        self.avatar = ""
     }
 }
