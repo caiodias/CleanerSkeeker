@@ -1,14 +1,14 @@
 //
-//  SignUPViewController.swift
+//  ProfileViewController.swift
 //  CleanerSeeker
 //
-//  Created by Arpita Patel on 2017-03-24.
+//  Created by Arpita Patel on 2017-03-25.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
 import UIKit
 
-class SignUPViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +21,10 @@ class SignUPViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "backToLogin" {
-                let vc = segue.destination as! LoginViewController
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "profile"{
+            let vc = segue.destination as! ProfileViewController
         }
+    }
 
 }

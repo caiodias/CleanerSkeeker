@@ -24,6 +24,7 @@
 		95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134791E4688EC00838B3C /* MemoryDatabase.swift */; };
 		95B1347C1E468B8E00838B3C /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1347B1E468B8E00838B3C /* Connection.swift */; };
 		E11D6C621E858F3E002A232F /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C611E858F3E002A232F /* SignUPViewController.swift */; };
+		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
 		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		95B134791E4688EC00838B3C /* MemoryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
 		95B1347B1E468B8E00838B3C /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		E11D6C611E858F3E002A232F /* SignUPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
+		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				954DC06F1E2D6743000F1C4B /* ViewController.swift */,
 				E1B6F3671E838196008D608B /* LoginViewController.swift */,
 				E11D6C611E858F3E002A232F /* SignUPViewController.swift */,
+				E11D6C631E86BBD3002A232F /* ProfileViewController.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				95B1347C1E468B8E00838B3C /* Connection.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
+				E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
 				95B134711E46826000838B3C /* Selector.swift in Sources */,
 			);
