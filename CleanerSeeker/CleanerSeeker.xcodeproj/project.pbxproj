@@ -23,7 +23,8 @@
 		95B134771E4683DF00838B3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134761E4683DF00838B3C /* Deal.swift */; };
 		95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134791E4688EC00838B3C /* MemoryDatabase.swift */; };
 		95B1347C1E468B8E00838B3C /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1347B1E468B8E00838B3C /* Connection.swift */; };
-		E17353E61E81DA920076586F /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17353E51E81DA920076586F /* SignUp.swift */; };
+		E11D6C621E858F3E002A232F /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C611E858F3E002A232F /* SignUPViewController.swift */; };
+		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,8 @@
 		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		95B134791E4688EC00838B3C /* MemoryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
 		95B1347B1E468B8E00838B3C /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		E17353E51E81DA920076586F /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		E11D6C611E858F3E002A232F /* SignUPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
+		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +128,8 @@
 			children = (
 				95B134661E467B5500838B3C /* Facade.swift */,
 				954DC06F1E2D6743000F1C4B /* ViewController.swift */,
-				E17353E51E81DA920076586F /* SignUp.swift */,
+				E1B6F3671E838196008D608B /* LoginViewController.swift */,
+				E11D6C611E858F3E002A232F /* SignUPViewController.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -279,14 +282,15 @@
 				95B134671E467B5500838B3C /* Facade.swift in Sources */,
 				95B134731E4682D500838B3C /* JobPoster.swift in Sources */,
 				95B1346E1E46823600838B3C /* User.swift in Sources */,
+				E11D6C621E858F3E002A232F /* SignUPViewController.swift in Sources */,
 				95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */,
+				E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */,
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* ViewController.swift in Sources */,
 				95B1347C1E468B8E00838B3C /* Connection.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
-				E17353E61E81DA920076586F /* SignUp.swift in Sources */,
 				95B134711E46826000838B3C /* Selector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
