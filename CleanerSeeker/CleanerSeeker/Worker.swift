@@ -6,14 +6,18 @@
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
-class Selector: User {
+class Worker: User {
     var id: Int
     var firstName: String
     var lastName: String
+    var email: String
+    var password: String
 
     init() {
+        self.id = -1
         self.firstName = ""
         self.lastName = ""
-        self.id = -1
+        self.email = ""
+        self.password = ""
     }
 }
