@@ -24,18 +24,4 @@ class Facade {
     public func registerUser(user: User, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self._apiController.registerUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
-
-    public func listUser() -> [String] {
-        return fillUserArray()
-    }
-
-    private func fillUserArray() -> [String] {
-        var userArray = [String]()
-        userArray.append("A")
-        userArray.append("B")
-        userArray.append("C")
-        userArray.append("D")
-
-        return userArray
-    }
 }
