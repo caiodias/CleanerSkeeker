@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		952F87CE1E86CD0900117E13 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; };
+		952F87D01E86CD2C00117E13 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
 		954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06D1E2D6743000F1C4B /* AppDelegate.swift */; };
 		954DC0701E2D6743000F1C4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06F1E2D6743000F1C4B /* ViewController.swift */; };
 		954DC0731E2D6743000F1C4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0711E2D6743000F1C4B /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		952F87CD1E86CD0900117E13 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		952F87CF1E86CD2C00117E13 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		954DC06A1E2D6743000F1C4B /* CleanerSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanerSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954DC06D1E2D6743000F1C4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954DC06F1E2D6743000F1C4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952F87CE1E86CD0900117E13 /* Parse.framework in Frameworks */,
+				952F87D01E86CD2C00117E13 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		952F87CC1E86CD0900117E13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				952F87CF1E86CD2C00117E13 /* Bolts.framework */,
+				952F87CD1E86CD0900117E13 /* Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		954DC0611E2D6743000F1C4B = {
 			isa = PBXGroup;
 			children = (
 				954DC06C1E2D6743000F1C4B /* CleanerSeeker */,
 				954DC0811E2D6744000F1C4B /* CleanerSeekerTests */,
 				954DC06B1E2D6743000F1C4B /* Products */,
+				952F87CC1E86CD0900117E13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -429,6 +445,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C8F6JTSD25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CleanerSeeker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -443,6 +463,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C8F6JTSD25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CleanerSeeker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
