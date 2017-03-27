@@ -24,6 +24,10 @@
 		95B134771E4683DF00838B3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134761E4683DF00838B3C /* Deal.swift */; };
 		95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134791E4688EC00838B3C /* MemoryDatabase.swift */; };
 		95B1347C1E468B8E00838B3C /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1347B1E468B8E00838B3C /* Connection.swift */; };
+		95F964281E89AFC2001969BB /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; };
+		95F964291E89AFC2001969BB /* Koloda.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95F9642A1E89AFC2001969BB /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; };
+		95F9642B1E89AFC2001969BB /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
 		C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -48,6 +52,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				95F9642B1E89AFC2001969BB /* pop.framework in Embed Frameworks */,
+				95F964291E89AFC2001969BB /* Koloda.framework in Embed Frameworks */,
 				C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */,
 				C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */,
 			);
@@ -79,6 +85,9 @@
 		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		95B134791E4688EC00838B3C /* MemoryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
 		95B1347B1E468B8E00838B3C /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		95F964231E89AF14001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
+		95F964261E89AFC2001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
+		95F964271E89AFC2001969BB /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		E11D6C611E858F3E002A232F /* SignUPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F9642A1E89AFC2001969BB /* pop.framework in Frameworks */,
+				95F964281E89AFC2001969BB /* Koloda.framework in Frameworks */,
 				C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */,
 				952F87CE1E86CD0900117E13 /* Parse.framework in Frameworks */,
 			);
@@ -115,6 +126,9 @@
 		954DC0611E2D6743000F1C4B = {
 			isa = PBXGroup;
 			children = (
+				95F964261E89AFC2001969BB /* Koloda.framework */,
+				95F964271E89AFC2001969BB /* pop.framework */,
+				95F964231E89AF14001969BB /* Koloda.framework */,
 				954DC06C1E2D6743000F1C4B /* CleanerSeeker */,
 				954DC0811E2D6744000F1C4B /* CleanerSeekerTests */,
 				954DC06B1E2D6743000F1C4B /* Products */,
