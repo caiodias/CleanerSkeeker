@@ -7,7 +7,12 @@
 //
 
 protocol User {
-    var id: Int { get set }
+    var id: String { get set }
     var firstName: String { get set }
     var lastName: String { get set }
+    var address: String { get set }
+    var latitude: Double { get set }
+    var longitude: Double { get set }
+    var email: String { get set }
+    var avatar: String { get set }
 }

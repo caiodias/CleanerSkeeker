@@ -28,14 +28,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-Zz-5s8">
                                 <rect key="frame" x="139" y="177" width="200" height="30"/>
+=======
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-Zz-5s8">
+                                <rect key="frame" x="139" y="133" width="200" height="30"/>
+>>>>>>> 551637fabc781c61eea11d767ef718d37d2ae68b
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdj-2T-VQu">
                                 <rect key="frame" x="35" y="236" width="97" height="35"/>
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdj-2T-VQu">
+                                <rect key="frame" x="35" y="192" width="97" height="35"/>
+>>>>>>> 551637fabc781c61eea11d767ef718d37d2ae68b
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="NOb-bR-N4k"/>
                                 </constraints>
@@ -69,8 +79,13 @@
                                     <segue destination="wT3-be-ldR" kind="show" identifier="signup" id="m7A-jj-od2"/>
                                 </connections>
                             </button>
+<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCr-8M-lk3">
                                 <rect key="frame" x="34" y="174" width="97" height="35"/>
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCr-8M-lk3">
+                                <rect key="frame" x="34" y="130" width="97" height="35"/>
+>>>>>>> 551637fabc781c61eea11d767ef718d37d2ae68b
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="ebn-Yp-8WM"/>
                                 </constraints>
@@ -205,8 +220,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJ4-Wh-V8p">
                                 <rect key="frame" x="16" y="180" width="110" height="35"/>
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJ4-Wh-V8p">
+                                <rect key="frame" x="16" y="136" width="110" height="35"/>
+>>>>>>> 551637fabc781c61eea11d767ef718d37d2ae68b
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="vQC-Xi-P3Z"/>
                                     <constraint firstAttribute="width" constant="110" id="vUF-hb-0a8"/>
@@ -237,15 +257,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+<<<<<<< HEAD
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0oT-EX-Z9W">
                                 <rect key="frame" x="136" y="182" width="206" height="30"/>
+=======
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0oT-EX-Z9W">
+                                <rect key="frame" x="136" y="138" width="206" height="30"/>
+>>>>>>> 551637fabc781c61eea11d767ef718d37d2ae68b
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMm-WG-yRI">
                                 <rect key="frame" x="140" y="395" width="103" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
+=======
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMm-WG-yRI">
+                                <rect key="frame" x="150.5" y="338" width="74" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+>>>>>>> 551637fabc781c61eea11d767ef718d37d2ae68b
                                 <state key="normal" title="Register"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-Password: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhH-bY-aTu">
