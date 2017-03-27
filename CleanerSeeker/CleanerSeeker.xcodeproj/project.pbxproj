@@ -161,8 +161,7 @@
 			children = (
 				95B134661E467B5500838B3C /* Facade.swift */,
 				954DC06F1E2D6743000F1C4B /* ViewController.swift */,
-				E1B6F3671E838196008D608B /* LoginViewController.swift */,
-				E11D6C611E858F3E002A232F /* SignUPViewController.swift */,
+				95F964221E89AACC001969BB /* Login Flow */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -187,6 +186,15 @@
 				95B134791E4688EC00838B3C /* MemoryDatabase.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		95F964221E89AACC001969BB /* Login Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E1B6F3671E838196008D608B /* LoginViewController.swift */,
+				E11D6C611E858F3E002A232F /* SignUPViewController.swift */,
+			);
+			name = "Login Flow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
