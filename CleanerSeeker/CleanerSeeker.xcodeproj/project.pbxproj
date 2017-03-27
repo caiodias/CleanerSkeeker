@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		952F87CE1E86CD0900117E13 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; };
-		952F87D01E86CD2C00117E13 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
 		954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06D1E2D6743000F1C4B /* AppDelegate.swift */; };
 		954DC0701E2D6743000F1C4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06F1E2D6743000F1C4B /* ViewController.swift */; };
 		954DC0731E2D6743000F1C4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0711E2D6743000F1C4B /* Main.storyboard */; };
@@ -25,6 +24,9 @@
 		95B134771E4683DF00838B3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134761E4683DF00838B3C /* Deal.swift */; };
 		95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134791E4688EC00838B3C /* MemoryDatabase.swift */; };
 		95B1347C1E468B8E00838B3C /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1347B1E468B8E00838B3C /* Connection.swift */; };
+		C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
+		C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E11D6C621E858F3E002A232F /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C611E858F3E002A232F /* SignUPViewController.swift */; };
 		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +40,21 @@
 			remoteInfo = CleanerSeeker;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C14620C91E89A65D00DA26A3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */,
+				C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		952F87CD1E86CD0900117E13 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
@@ -71,8 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */,
 				952F87CE1E86CD0900117E13 /* Parse.framework in Frameworks */,
-				952F87D01E86CD2C00117E13 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +199,8 @@
 				954DC0661E2D6743000F1C4B /* Sources */,
 				954DC0671E2D6743000F1C4B /* Frameworks */,
 				954DC0681E2D6743000F1C4B /* Resources */,
-				95F10D8F1E831A41007C7A62 /* ShellScript */,
+				95F10D8F1E831A41007C7A62 /* Run Script */,
+				C14620C91E89A65D00DA26A3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,13 +292,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		95F10D8F1E831A41007C7A62 /* ShellScript */ = {
+		95F10D8F1E831A41007C7A62 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
