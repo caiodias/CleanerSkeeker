@@ -14,6 +14,9 @@ class JobHistoryCell: UITableViewCell {
     private let dateFormatter = DateFormatter()
 
     func fillElements(job: JobOpportunity) {
+        self.dateFormatter.dateStyle = .short
+        self.dateFormatter.timeStyle = .none
+
         self.dateLabel.text = dateFormatter.string(from: job.jobWorkDate)
         self.titleLabel.text = job.address
     }
