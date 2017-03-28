@@ -30,6 +30,9 @@
 		95F9642B1E89AFC2001969BB /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9642C1E89B052001969BB /* FindJobOffersVC.swift */; };
 		95F964301E89B164001969BB /* FindJobOffersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9642F1E89B164001969BB /* FindJobOffersDataSource.swift */; };
+		95F964431E8AF724001969BB /* AplliedJobsHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964421E8AF724001969BB /* AplliedJobsHistoryTVC.swift */; };
+		95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F964461E8AF973001969BB /* JobHistoryCell.xib */; };
+		95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964481E8AFA33001969BB /* JobHistoryCell.swift */; };
 		C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
 		C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -87,11 +90,13 @@
 		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		95B134791E4688EC00838B3C /* MemoryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
 		95B1347B1E468B8E00838B3C /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		95F964231E89AF14001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
 		95F964261E89AFC2001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
 		95F964271E89AFC2001969BB /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		95F9642C1E89B052001969BB /* FindJobOffersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindJobOffersVC.swift; sourceTree = "<group>"; };
 		95F9642F1E89B164001969BB /* FindJobOffersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindJobOffersDataSource.swift; sourceTree = "<group>"; };
+		95F964421E8AF724001969BB /* AplliedJobsHistoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AplliedJobsHistoryTVC.swift; sourceTree = "<group>"; };
+		95F964461E8AF973001969BB /* JobHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobHistoryCell.xib; sourceTree = "<group>"; };
+		95F964481E8AFA33001969BB /* JobHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHistoryCell.swift; sourceTree = "<group>"; };
 		E11D6C611E858F3E002A232F /* SignUPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +126,8 @@
 		952F87CC1E86CD0900117E13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95F964261E89AFC2001969BB /* Koloda.framework */,
+				95F964271E89AFC2001969BB /* pop.framework */,
 				952F87CF1E86CD2C00117E13 /* Bolts.framework */,
 				952F87CD1E86CD0900117E13 /* Parse.framework */,
 			);
@@ -130,9 +137,6 @@
 		954DC0611E2D6743000F1C4B = {
 			isa = PBXGroup;
 			children = (
-				95F964261E89AFC2001969BB /* Koloda.framework */,
-				95F964271E89AFC2001969BB /* pop.framework */,
-				95F964231E89AF14001969BB /* Koloda.framework */,
 				954DC06C1E2D6743000F1C4B /* CleanerSeeker */,
 				954DC0811E2D6744000F1C4B /* CleanerSeekerTests */,
 				954DC06B1E2D6743000F1C4B /* Products */,
@@ -219,10 +223,29 @@
 		95F9642E1E89B126001969BB /* Apply Flow */ = {
 			isa = PBXGroup;
 			children = (
+				95F964441E8AF94C001969BB /* Find Job Offer */,
+				95F964451E8AF955001969BB /* Applied Job History */,
+			);
+			name = "Apply Flow";
+			sourceTree = "<group>";
+		};
+		95F964441E8AF94C001969BB /* Find Job Offer */ = {
+			isa = PBXGroup;
+			children = (
 				95F9642C1E89B052001969BB /* FindJobOffersVC.swift */,
 				95F9642F1E89B164001969BB /* FindJobOffersDataSource.swift */,
 			);
-			name = "Apply Flow";
+			name = "Find Job Offer";
+			sourceTree = "<group>";
+		};
+		95F964451E8AF955001969BB /* Applied Job History */ = {
+			isa = PBXGroup;
+			children = (
+				95F964421E8AF724001969BB /* AplliedJobsHistoryTVC.swift */,
+				95F964461E8AF973001969BB /* JobHistoryCell.xib */,
+				95F964481E8AFA33001969BB /* JobHistoryCell.swift */,
+			);
+			name = "Applied Job History";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */,
 				954DC0781E2D6743000F1C4B /* LaunchScreen.storyboard in Resources */,
 				954DC0751E2D6743000F1C4B /* Assets.xcassets in Resources */,
 				954DC0731E2D6743000F1C4B /* Main.storyboard in Resources */,
@@ -353,7 +377,9 @@
 				95B134671E467B5500838B3C /* Facade.swift in Sources */,
 				95B134731E4682D500838B3C /* JobPoster.swift in Sources */,
 				95B1346E1E46823600838B3C /* User.swift in Sources */,
+				95F964431E8AF724001969BB /* AplliedJobsHistoryTVC.swift in Sources */,
 				95F964301E89B164001969BB /* FindJobOffersDataSource.swift in Sources */,
+				95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */,
 				95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */,
 				E11D6C621E858F3E002A232F /* SignUPViewController.swift in Sources */,
 				95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */,
