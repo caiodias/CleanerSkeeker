@@ -59,8 +59,8 @@ type_name:
     error: 50
   excluded: iPhone # excluded via string
 function_parameter_count:
-  warning: 3
-  error: 6
+  warning: 5
+  error: 7
 cyclomatic_complexity:
   warning: 10
   error: 20
