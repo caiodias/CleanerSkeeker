@@ -9,7 +9,7 @@
 import Foundation
 
 class Facade {
-    private let _apiController = ApiController()
+    private let apiController = ApiController(database: .Memory)
 
     // MARK: Singleton
     static let shared: Facade = {
@@ -18,10 +18,14 @@ class Facade {
     }()
 
     private init() {
-        // nothingto see here, keep moving :D
+        // nothing to see here, keep moving 😁
     }
 
     public func registerUser(user: User, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self._apiController.registerUser(user: user, onSuccess: onSuccess, onFail: onFail)
+        self.apiController.registerUser(user: user, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    public func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.loginUser(login: login, password: password, onSuccess: onSuccess, onFail: onFail)
     }
 }
