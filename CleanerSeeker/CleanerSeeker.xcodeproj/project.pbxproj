@@ -154,13 +154,13 @@
 		954DC06C1E2D6743000F1C4B /* CleanerSeeker */ = {
 			isa = PBXGroup;
 			children = (
-				954DC0791E2D6743000F1C4B /* Info.plist */,
 				954DC06D1E2D6743000F1C4B /* AppDelegate.swift */,
-				95B1346B1E467EC400838B3C /* Utilities.swift */,
 				954DC0741E2D6743000F1C4B /* Assets.xcassets */,
-				95B134781E46847A00838B3C /* Controllers */,
+				954DC0791E2D6743000F1C4B /* Info.plist */,
 				954DC0761E2D6743000F1C4B /* LaunchScreen.storyboard */,
 				954DC0711E2D6743000F1C4B /* Main.storyboard */,
+				95B1346B1E467EC400838B3C /* Utilities.swift */,
+				95B134781E46847A00838B3C /* Controllers */,
 				95B1346F1E46823A00838B3C /* Models */,
 				95B1346A1E467B7200838B3C /* Screens */,
 			);
