@@ -7,6 +7,10 @@
 //
 
 class MemoryDatabase {
+    enum MemoryDbErrors: Error {
+        case UserAlreadyExists
+    }
+
     var users: [User]
     var jobs: [JobOpportunity]
 
@@ -15,12 +19,17 @@ class MemoryDatabase {
         self.jobs = []
     }
 
-    func addUser(user: User) {
-        self.users.append(user)
+    func addUser(user: User) throws {
+        if self.users.contains(where: { userOnArray in userOnArray.email == user.email }) {
+            throw MemoryDbErrors.UserAlreadyExists
+        } else {
+            self.users.append(user)
+        }
     }
 
-    func loginUser(login: String, password: String) -> Bool {
-        return self.users.contains(where: { user in user.email == login })
+    func loginUser(login: String, password: String) -> User? {
+        let user = self.users.first(where: { user in user.email == login })
+        return user
     }
 }
 
