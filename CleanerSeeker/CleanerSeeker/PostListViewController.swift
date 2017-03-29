@@ -38,8 +38,9 @@ class PostListViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addNewPost"{
+        if segue.identifier == "addNewPost" {
             let vc = segue.destination as! AddNewPostViewController
         }
     }
+
 }
