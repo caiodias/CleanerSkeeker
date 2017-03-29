@@ -1,17 +1,14 @@
 //
-//  LoginScreenUI.swift
+//  SignUpFirstStepViewController.swift
 //  CleanerSeeker
 //
-//  Created by Arpita Patel on 2017-03-23.
+//  Created by Orest Hazda on 29/03/17.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
-    @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var password: UITextField!
+class SignUpFirstStepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +21,14 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func login(_ sender: UIButton) {
+    /*
+    // MARK: - Navigation
 
-    }
-    @IBAction func signUp(_ sender: UIButton) {
-
-    }
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "signup"{
-            let vc = segue.destination as! SignUpPageViewController
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }
