@@ -32,7 +32,12 @@ class LoginViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signup"{
-            let vc = segue.destination as! SignUPViewController
+            guard let vc = segue.destination as? SignUPViewController else {
+                print("Not possible convert the segue destination object 😕")
+                return
+            }
+
+            // You can use the vc object here, it is validaded now and will not be nil
         }
     }
 }

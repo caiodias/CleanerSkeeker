@@ -10,8 +10,8 @@ import UIKit
 import Koloda
 
 class FindJobOffersDataSource: NSObject, KolodaViewDataSource {
-    fileprivate var jobsSource: Array<UIImage> = {
-        var array: Array<UIImage> = []
+    fileprivate var jobsSource: [UIImage] = {
+        var array: [UIImage] = []
 
         for index in 0..<5 {
             array.append(UIImage(named: "cards_\(index + 1)")!)

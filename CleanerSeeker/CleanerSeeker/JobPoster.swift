@@ -7,6 +7,7 @@
 //
 
 class JobPoster: User {
+    // swiftlint:disable:next variable_name
     var id: String
     var firstName: String
     var lastName: String

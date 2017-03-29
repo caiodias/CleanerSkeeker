@@ -7,6 +7,7 @@
 //
 
 protocol User {
+    // swiftlint:disable:next variable_name
     var id: String { get set }
     var firstName: String { get set }
     var lastName: String { get set }
