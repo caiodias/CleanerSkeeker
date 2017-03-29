@@ -23,7 +23,7 @@
 		95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134741E46830E00838B3C /* JobOpportunity.swift */; };
 		95B134771E4683DF00838B3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134761E4683DF00838B3C /* Deal.swift */; };
 		95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134791E4688EC00838B3C /* MemoryDatabase.swift */; };
-		95B1347C1E468B8E00838B3C /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1347B1E468B8E00838B3C /* Connection.swift */; };
+		95B1347C1E468B8E00838B3C /* LoginFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1347B1E468B8E00838B3C /* LoginFlowController.swift */; };
 		95F964281E89AFC2001969BB /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; };
 		95F964291E89AFC2001969BB /* Koloda.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95F9642A1E89AFC2001969BB /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; };
@@ -89,7 +89,7 @@
 		95B134741E46830E00838B3C /* JobOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobOpportunity.swift; sourceTree = "<group>"; };
 		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		95B134791E4688EC00838B3C /* MemoryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
-		95B1347B1E468B8E00838B3C /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		95B1347B1E468B8E00838B3C /* LoginFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlowController.swift; sourceTree = "<group>"; };
 		95F964261E89AFC2001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
 		95F964271E89AFC2001969BB /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		95F9642C1E89B052001969BB /* FindJobOffersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindJobOffersVC.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				95B134681E467B5F00838B3C /* ApiController.swift */,
-				95B1347B1E468B8E00838B3C /* Connection.swift */,
+				95B1347B1E468B8E00838B3C /* LoginFlowController.swift */,
 				95B134791E4688EC00838B3C /* MemoryDatabase.swift */,
 			);
 			name = Controllers;
@@ -394,7 +394,7 @@
 				E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */,
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */,
-				95B1347C1E468B8E00838B3C /* Connection.swift in Sources */,
+				95B1347C1E468B8E00838B3C /* LoginFlowController.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
