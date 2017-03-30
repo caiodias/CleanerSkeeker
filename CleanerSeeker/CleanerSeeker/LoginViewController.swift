@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        observeKeyboardNotifications()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +30,21 @@ class LoginViewController: UIViewController {
     @IBAction func signUp(_ sender: UIButton) {
 
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signup"{
             let vc = segue.destination as! SignUpPageViewController
         }
+    }
+    
+    
+    fileprivate func observeKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    }
+
+    func keyboardShow() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.view.frame = CGRect(x: 0, y: -200, width: self.view.frame.width, height: self.view.frame.height)
+        }, completion: nil)
     }
 }
