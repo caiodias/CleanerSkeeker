@@ -1,14 +1,14 @@
 //
-//  SignUPViewController.swift
+//  SignUpSecondStepViewController.swift
 //  CleanerSeeker
 //
-//  Created by Arpita Patel on 2017-03-24.
+//  Created by Orest Hazda on 29/03/17.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
 import UIKit
 
-class SignUPViewController: UIViewController {
+class SignUpSecondStepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
