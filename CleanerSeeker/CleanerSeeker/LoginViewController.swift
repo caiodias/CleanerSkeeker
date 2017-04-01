@@ -25,7 +25,12 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func login(_ sender: UIButton) {
+        print("Try to login")
+        let response = { response in
+            print(response)
+        }
 
+        Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: response, onFail: response)
     }
     @IBAction func signUp(_ sender: UIButton) {
 
