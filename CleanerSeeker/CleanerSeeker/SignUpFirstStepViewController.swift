@@ -39,7 +39,7 @@ class SignUpFirstStepViewController: UIViewController {
     @IBAction func createProfile(_ sender: Any) {
         print("Try to create user")
 
-        let user: User
+        var user: User
         //Create user type based on switch
         if isCleaner.isOn {
             user = Worker()
