@@ -26,14 +26,20 @@ class LoginViewController: UIViewController {
 
     @IBAction func login(_ sender: UIButton) {
         print("Try to login")
-        let response = { response in
-            print(response)
-        }
 
-        Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: response, onFail: response)
+        Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
     }
+
     @IBAction func signUp(_ sender: UIButton) {
 
+    }
+
+    private func onLoginSuccess(object: AnyObject) {
+        print(object)
+    }
+
+    private func onLoginFail(error: Error) {
+        print(error.localizedDescription)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
