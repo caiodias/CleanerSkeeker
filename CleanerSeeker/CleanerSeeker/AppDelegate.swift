@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        Parse.enableLocalDatastore()
+
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "Cleaner"
+            $0.clientKey = "cleaner"
+            $0.server = "https://cleaner-seaker.herokuapp.com"
+        }
+
+        Parse.initialize(with: configuration)
+
         return true
     }
 
