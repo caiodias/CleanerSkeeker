@@ -35,20 +35,21 @@ extension ApiController {
     }
 
     func registerUser(user: User, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-//        user.email = user.email.lowercased()
+        var newUser = user.copy()
+        newUser.email = user.email.lowercased()
 
         switch whereSave {
             case .Memory:
                 do {
-                    try self.memoryDb.addUser(user: user)
-                    onSuccess(user as AnyObject)
+                    try self.memoryDb.addUser(user: newUser)
+                    onSuccess(newUser as AnyObject)
                 } catch {
                     onFail(LoginFlowError.UserAlreadyExists)
                 }
 
                 break
             case .Parse:
-                self.parseDb.addUser(user: user, password: "", onSuccess: onSuccess, onFail: onFail)
+                self.parseDb.addUser(user: newUser, password: "", onSuccess: onSuccess, onFail: onFail)
                 break
         }
     }

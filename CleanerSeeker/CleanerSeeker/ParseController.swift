@@ -23,7 +23,7 @@ class ParseController {
     }
 
     func addUser(user: User, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        var parseUser = PFUser()
+        let parseUser = PFUser()
         print("Addind a new User")
 
         parseUser.email = user.email
@@ -44,10 +44,17 @@ class ParseController {
             if let error = error {
                 onFail(error)
             } else {
-                //TODO: check if the id will be filled properly
-                print("User ID: \(parseUser.objectId)")
-//                user.id = parseUser.objectId
-                onSuccess(user as AnyObject)
+                if parseUser.objectId != nil {
+                    print("user with ID")
+                    var newUser = user.copy()
+                    newUser.id = parseUser.objectId!
+
+                    onSuccess(newUser as AnyObject)
+                } else {
+                    print("user without ID")
+
+                    onSuccess(user as AnyObject)
+                }
             }
         }
     }
