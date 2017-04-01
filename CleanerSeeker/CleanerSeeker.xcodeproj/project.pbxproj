@@ -39,6 +39,8 @@
 		C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */; };
 		C18C2B6C1E8C57E30085D838 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */; };
 		C18C2B6E1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */; };
+		C1D598FC1E8FF49800794714 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D598FB1E8FF49800794714 /* StepViewController.swift */; };
+		C1D598FE1E8FF54600794714 /* StepViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D598FD1E8FF54600794714 /* StepViewControllerDelegate.swift */; };
 		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,8 @@
 		C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSecondStepViewController.swift; sourceTree = "<group>"; };
 		C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewConrollerExtension.swift; sourceTree = "<group>"; };
+		C1D598FB1E8FF49800794714 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
+		C1D598FD1E8FF54600794714 /* StepViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,10 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B6F3671E838196008D608B /* LoginViewController.swift */,
-				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
-				C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */,
-				C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */,
-				C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */,
+				C1D598FA1E8FF44F00794714 /* Sign Up */,
 			);
 			name = "Login Flow";
 			sourceTree = "<group>";
@@ -260,6 +261,19 @@
 				95F964481E8AFA33001969BB /* JobHistoryCell.swift */,
 			);
 			name = "Job History Cell";
+			sourceTree = "<group>";
+		};
+		C1D598FA1E8FF44F00794714 /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
+				C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */,
+				C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */,
+				C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */,
+				C1D598FB1E8FF49800794714 /* StepViewController.swift */,
+				C1D598FD1E8FF54600794714 /* StepViewControllerDelegate.swift */,
+			);
+			name = "Sign Up";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,11 +413,13 @@
 				95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */,
 				95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */,
 				95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */,
+				C1D598FE1E8FF54600794714 /* StepViewControllerDelegate.swift in Sources */,
 				E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */,
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
 				C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
+				C1D598FC1E8FF49800794714 /* StepViewController.swift in Sources */,
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
 				95B134711E46826000838B3C /* Worker.swift in Sources */,
