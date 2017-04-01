@@ -16,7 +16,7 @@ typealias ApiFailScenario = (Error) -> Void
 
 class ApiController {
     let whereSave: WhereSave
-    var memoryDb: MemoryDatabase? = nil
+    var memoryDb: MemoryDatabase?
 
     init(database: WhereSave) {
         self.whereSave = database

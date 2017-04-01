@@ -2,7 +2,7 @@
 //  LoginScreenUI.swift
 //  CleanerSeeker
 //
-//  Created by Arpita Patel on 2017-03-23.
+//  Created by Orest Hazda on 29/03/17.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
@@ -36,8 +36,7 @@ class LoginViewController: UIViewController {
             let vc = segue.destination as! SignUpPageViewController
         }
     }
-    
-    
+
     fileprivate func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension SignUpPageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-
+    // MARK: DataSource
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = registrationSteps.index(of: viewController) else {
             return nil
