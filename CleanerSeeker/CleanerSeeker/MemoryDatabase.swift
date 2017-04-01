@@ -24,11 +24,19 @@ class MemoryDatabase {
             throw MemoryDbErrors.UserAlreadyExists
         } else {
             self.users.append(user)
+            print("Uew user \(user.email) added")
         }
     }
 
     func loginUser(login: String, password: String) -> User? {
         let user = self.users.first(where: { user in user.email == login })
+        
+        if user != nil {
+            print("User \(login) logged")
+        } else {
+            print("User \(login) NOT logged")
+        }
+        
         return user
     }
 }
