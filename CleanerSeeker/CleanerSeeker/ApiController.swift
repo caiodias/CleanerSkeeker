@@ -16,14 +16,14 @@ typealias ApiFailScenario = (Error) -> Void
 
 class ApiController {
     let whereSave: WhereSave
-    var memoryDb: MemoryDatabase?
+    var memoryDb: MemoryDatabase
+    let parseDb: ParseController
 
     init(database: WhereSave) {
         self.whereSave = database
 
-        if self.whereSave == .Memory {
-            self.memoryDb = MemoryDatabase()
-        }
+        self.memoryDb = MemoryDatabase()
+        self.parseDb = ParseController()
     }
 }
 
@@ -35,10 +35,12 @@ extension ApiController {
     }
 
     func registerUser(user: User, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+//        user.email = user.email.lowercased()
+
         switch whereSave {
             case .Memory:
                 do {
-                    try self.memoryDb!.addUser(user: user)
+                    try self.memoryDb.addUser(user: user)
                     onSuccess(user as AnyObject)
                 } catch {
                     onFail(LoginFlowError.UserAlreadyExists)
@@ -46,7 +48,7 @@ extension ApiController {
 
                 break
             case .Parse:
-                // TODO: Implement the call using Parse framework
+                self.parseDb.addUser(user: user, password: "", onSuccess: onSuccess, onFail: onFail)
                 break
         }
     }
@@ -54,7 +56,7 @@ extension ApiController {
     func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         switch whereSave {
         case .Memory:
-            if let userLogged = self.memoryDb!.loginUser(login: login, password: password) {
+            if let userLogged = self.memoryDb.loginUser(login: login, password: password) {
                 onSuccess(userLogged as AnyObject)
             } else {
                 onFail(LoginFlowError.UserNotFound)
