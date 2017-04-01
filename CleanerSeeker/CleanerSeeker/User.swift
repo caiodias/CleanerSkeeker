@@ -16,4 +16,6 @@ protocol User {
     var longitude: Double { get set }
     var email: String { get set }
     var avatar: String { get set }
+
+    func copy() -> User
 }
