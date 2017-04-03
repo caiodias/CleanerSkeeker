@@ -22,7 +22,6 @@
 		95B134731E4682D500838B3C /* JobPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134721E4682D500838B3C /* JobPoster.swift */; };
 		95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134741E46830E00838B3C /* JobOpportunity.swift */; };
 		95B134771E4683DF00838B3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134761E4683DF00838B3C /* Deal.swift */; };
-		95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134791E4688EC00838B3C /* MemoryDatabase.swift */; };
 		95D823571E9017310029B894 /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D823561E9017310029B894 /* ParseController.swift */; };
 		95F964281E89AFC2001969BB /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; };
 		95F964291E89AFC2001969BB /* Koloda.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -94,7 +93,6 @@
 		95B134721E4682D500838B3C /* JobPoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPoster.swift; sourceTree = "<group>"; };
 		95B134741E46830E00838B3C /* JobOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobOpportunity.swift; sourceTree = "<group>"; };
 		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
-		95B134791E4688EC00838B3C /* MemoryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
 		95D823561E9017310029B894 /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
 		95F964261E89AFC2001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
 		95F964271E89AFC2001969BB /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				95B134681E467B5F00838B3C /* ApiController.swift */,
-				95B134791E4688EC00838B3C /* MemoryDatabase.swift */,
 				95D823561E9017310029B894 /* ParseController.swift */,
 			);
 			name = Controllers;
@@ -410,7 +407,6 @@
 				95F964301E89B164001969BB /* FindJobOffersDataSource.swift in Sources */,
 				95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */,
 				95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */,
-				95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */,
 				E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */,
 				95D823571E9017310029B894 /* ParseController.swift in Sources */,
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
