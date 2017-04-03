@@ -15,7 +15,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var noOfWashroomsPicker: UIPickerView!
 
     @IBOutlet weak var datePicker: UIDatePicker!
-   
+
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var addressTxtView: UITextField!
     @IBOutlet weak var zipcodeTxtView: UITextField!
