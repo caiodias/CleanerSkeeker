@@ -36,14 +36,13 @@
 		C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
 		C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E11D6C621E858F3E002A232F /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C611E858F3E002A232F /* SignUPViewController.swift */; };
-		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
-		E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF461E89A8EE003A7687 /* PostListViewController.swift */; };
-		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
 		C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */; };
 		C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */; };
 		C18C2B6C1E8C57E30085D838 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */; };
 		C18C2B6E1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */; };
+		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
+		E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF461E89A8EE003A7687 /* PostListViewController.swift */; };
+		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
 		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,11 +95,6 @@
 		95B134741E46830E00838B3C /* JobOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobOpportunity.swift; sourceTree = "<group>"; };
 		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		95B134791E4688EC00838B3C /* MemoryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
-		95B1347B1E468B8E00838B3C /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		E11D6C611E858F3E002A232F /* SignUPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
-		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E182CF461E89A8EE003A7687 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
-		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
 		95D823561E9017310029B894 /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
 		95F964261E89AFC2001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
 		95F964271E89AFC2001969BB /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
@@ -113,6 +107,9 @@
 		C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSecondStepViewController.swift; sourceTree = "<group>"; };
 		C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewConrollerExtension.swift; sourceTree = "<group>"; };
+		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E182CF461E89A8EE003A7687 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,9 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				95B134661E467B5500838B3C /* Facade.swift */,
-				954DC06F1E2D6743000F1C4B /* ViewController.swift */,
 				E1B6F3671E838196008D608B /* LoginViewController.swift */,
-				E11D6C611E858F3E002A232F /* SignUPViewController.swift */,
 				E11D6C631E86BBD3002A232F /* ProfileViewController.swift */,
 				E182CF461E89A8EE003A7687 /* PostListViewController.swift */,
 				E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */,
@@ -235,7 +230,6 @@
 		95F964221E89AACC001969BB /* Login Flow */ = {
 			isa = PBXGroup;
 			children = (
-				E1B6F3671E838196008D608B /* LoginViewController.swift */,
 				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
 				C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */,
 				C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */,
@@ -422,10 +416,8 @@
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
 				E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */,
 				E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */,
-				954DC0701E2D6743000F1C4B /* ViewController.swift in Sources */,
-				95B1347C1E468B8E00838B3C /* Connection.swift in Sources */,
-				C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */,
+				C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
 				E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */,
