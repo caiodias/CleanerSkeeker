@@ -18,15 +18,15 @@ class JobPoster: User {
     var avatar: String
 
     convenience init() {
-        self.init(id: "", firstName: "", lastName: "", email: "", address: "", latitude: 0.0, longitude: 0.0, avatar: "")
+        self.init(objectId: "", firstName: "", lastName: "", email: "", address: "", latitude: 0.0, longitude: 0.0, avatar: "")
     }
 
     convenience init(firstName: String, lastName: String, email: String) {
-        self.init(id: "", firstName: firstName, lastName: lastName, email: email, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
+        self.init(objectId: "", firstName: firstName, lastName: lastName, email: email, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
     }
 
-    init(id: String, firstName: String, lastName: String, email: String, address: String, latitude: Double, longitude: Double, avatar: String) {
-        self.id = id
+    init(objectId: String, firstName: String, lastName: String, email: String, address: String, latitude: Double, longitude: Double, avatar: String) {
+        self.id = objectId
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
@@ -37,6 +37,6 @@ class JobPoster: User {
     }
 
     func copy() -> User {
-        return JobPoster(id: self.id, firstName: self.firstName, lastName: self.lastName, email: self.email, address: self.address, latitude: self.latitude, longitude: self.longitude, avatar: self.avatar)
+        return JobPoster(objectId: self.id, firstName: self.firstName, lastName: self.lastName, email: self.email, address: self.address, latitude: self.latitude, longitude: self.longitude, avatar: self.avatar)
     }
 }
