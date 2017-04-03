@@ -2,7 +2,7 @@
 //  LoginScreenUI.swift
 //  CleanerSeeker
 //
-//  Created by Arpita Patel on 2017-03-23.
+//  Created by Orest Hazda on 29/03/17.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        observeKeyboardNotifications()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,14 +25,36 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func login(_ sender: UIButton) {
+        print("Try to login")
 
+        Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
     }
+
     @IBAction func signUp(_ sender: UIButton) {
 
     }
+
+    private func onLoginSuccess(object: AnyObject) {
+        print(object)
+    }
+
+    private func onLoginFail(error: Error) {
+        print(error.localizedDescription)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signup"{
-            let vc = segue.destination as! SignUPViewController
+            let vc = segue.destination as! SignUpPageViewController
         }
+    }
+
+    fileprivate func observeKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    }
+
+    func keyboardShow() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.view.frame = CGRect(x: 0, y: -200, width: self.view.frame.width, height: self.view.frame.height)
+        }, completion: nil)
     }
 }

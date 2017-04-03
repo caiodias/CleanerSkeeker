@@ -1,11 +1,6 @@
 
 # Created by https://www.gitignore.io/api/swift,macos,xcode,carthage
 
-### Carthage ###
-# Carthage - A simple, decentralized dependency manager for Cocoa
-Carthage/Checkouts/
-Carthage/Build/
-
 ### macOS ###
 *.DS_Store
 .AppleDouble
@@ -87,9 +82,9 @@ playground.xcworkspace
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+CleanerSeeker/Carthage/Checkouts
 
-Carthage/Build
+CleanerSeeker/Carthage/Build
 
 # fastlane
 #

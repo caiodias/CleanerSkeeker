@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BasicVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,16 +18,5 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func onRegisterSuccess(obj: AnyObject) {
-        // TODO:
-        // show alert that the user was successful registered.
-    }
-
-    func onRegisterFail(error: Error) {
-        // TODO:
-        // show alert that the user was successful registered.
     }
 }

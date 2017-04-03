@@ -7,6 +7,7 @@
 //
 
 class Worker: User {
+    // swiftlint:disable:next variable_name
     var id: String
     var firstName: String
     var lastName: String
@@ -16,14 +17,26 @@ class Worker: User {
     var longitude: Double
     var avatar: String
 
-    init() {
-        self.id = ""
-        self.firstName = ""
-        self.lastName = ""
-        self.email = ""
-        self.address = ""
-        self.latitude = 0.0
-        self.longitude = 0.0
-        self.avatar = ""
+    convenience init() {
+        self.init(id: "", firstName: "", lastName: "", email: "", address: "", latitude: 0.0, longitude: 0.0, avatar: "")
+    }
+
+    convenience init(firstName: String, lastName: String, email: String) {
+        self.init(id: "", firstName: firstName, lastName: lastName, email: email, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
+    }
+
+    init(id: String, firstName: String, lastName: String, email: String, address: String, latitude: Double, longitude: Double, avatar: String) {
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.address = address
+        self.latitude = latitude
+        self.longitude = longitude
+        self.avatar = avatar
+    }
+
+    func copy() -> User {
+        return Worker(id: self.id, firstName: self.firstName, lastName: self.lastName, email: self.email, address: self.address, latitude: self.latitude, longitude: self.longitude, avatar: self.avatar)
     }
 }
