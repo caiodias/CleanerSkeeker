@@ -28,4 +28,8 @@ class Facade {
     public func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.loginUser(login: login, password: password, onSuccess: onSuccess, onFail: onFail)
     }
+
+    public func resetPassword(email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.resetPassword(email: email, onSuccess: onSuccess, onFail: onFail)
+    }
 }

@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
 
     }
 
-    private func onLoginSuccess(object: AnyObject) {
+    private func onLoginSuccess(object: Any) {
         print(object)
     }
 

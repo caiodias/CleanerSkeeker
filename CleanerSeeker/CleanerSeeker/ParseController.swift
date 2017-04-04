@@ -57,4 +57,15 @@ class ParseController {
             }
         }
     }
+
+    func requestPasswordReset(forEmail email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        print("Request reset password by email")
+        PFUser.requestPasswordResetForEmail(inBackground: email) { (success: Bool, error: Error?) in
+            if let error = error {
+                onFail(error)
+            } else {
+                onSuccess(success)
+            }
+        }
+    }
 }

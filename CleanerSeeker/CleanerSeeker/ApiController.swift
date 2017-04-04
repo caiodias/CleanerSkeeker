@@ -6,7 +6,7 @@
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
-typealias ApiSuccessScenario = (AnyObject) -> Void
+typealias ApiSuccessScenario = (Any) -> Void
 typealias ApiFailScenario = (Error) -> Void
 
 class ApiController {
@@ -33,5 +33,11 @@ extension ApiController {
 
     func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         // TODO: Implement the call using Parse framework
+    }
+
+    //Reset user  password using user email
+    func resetPassword(email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.parseDb.requestPasswordReset(forEmail: email, onSuccess: onSuccess, onFail: onFail)
+
     }
 }

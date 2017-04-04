@@ -35,6 +35,7 @@
 		C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
 		C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */; };
 		C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */; };
 		C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */; };
 		C18C2B6C1E8C57E30085D838 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */; };
@@ -101,6 +102,7 @@
 		95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AplliedJobsHistoryVC.swift; sourceTree = "<group>"; };
 		95F964461E8AF973001969BB /* JobHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobHistoryCell.xib; sourceTree = "<group>"; };
 		95F964481E8AFA33001969BB /* JobHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHistoryCell.swift; sourceTree = "<group>"; };
+		C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
 		C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSecondStepViewController.swift; sourceTree = "<group>"; };
 		C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */,
 				C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */,
 				C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */,
+				C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */,
 			);
 			name = "Login Flow";
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				95B134691E467B5F00838B3C /* ApiController.swift in Sources */,
 				C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */,
 				95B134671E467B5500838B3C /* Facade.swift in Sources */,
+				C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */,
 				95B134731E4682D500838B3C /* JobPoster.swift in Sources */,
 				95B1346E1E46823600838B3C /* User.swift in Sources */,
 				C18C2B6E1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift in Sources */,
