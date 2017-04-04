@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -63,12 +63,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-4A-cdq">
-                                <rect key="frame" x="16" y="608" width="167" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="16" y="612" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Create New Account"/>
                                 <connections>
                                     <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FCK-gZ-C9s"/>
-                                    <segue destination="wT3-be-ldR" kind="show" identifier="signup" id="m7A-jj-od2"/>
+                                    <segue destination="cQN-sR-uKJ" kind="show" id="Php-PU-DBN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-j1-afb">
+                                <rect key="frame" x="269" y="612" width="90" height="30"/>
+                                <state key="normal" title="Need a help?"/>
+                                <connections>
+                                    <segue destination="RAn-aq-YDB" kind="show" id="My5-Dl-fsz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,10 +86,12 @@
                             <constraint firstItem="50p-6Q-8Ts" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="3bf-qz-eYY"/>
                             <constraint firstItem="xQQ-Z1-e9d" firstAttribute="centerX" secondItem="50p-6Q-8Ts" secondAttribute="centerX" id="5Lg-pg-ia1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cvg-N9-Ksy" secondAttribute="trailing" id="6cI-Ye-JFP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sWE-j1-afb" secondAttribute="bottom" constant="25" id="6eP-dI-4MK"/>
                             <constraint firstItem="50p-6Q-8Ts" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8wh-K6-Rpd"/>
                             <constraint firstItem="MTO-4A-cdq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SbZ-Hd-tjg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MTO-4A-cdq" secondAttribute="bottom" constant="25" id="ZVd-5i-ZCG"/>
                             <constraint firstItem="cvg-N9-Ksy" firstAttribute="top" secondItem="50p-6Q-8Ts" secondAttribute="bottom" constant="20" id="dBs-2c-5cO"/>
+                            <constraint firstItem="sWE-j1-afb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qbW-VH-DyG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UIm-P1-eqO"/>
@@ -93,7 +102,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215.2" y="181.25937031484258"/>
+            <point key="canvasLocation" x="1213.5999999999999" y="179.46026986506749"/>
+        </scene>
+        <!--Reset Password View Controller-->
+        <scene sceneID="v12-Tt-w97">
+            <objects>
+                <viewController id="RAn-aq-YDB" customClass="ResetPasswordViewController" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pj3-6k-ksb"/>
+                        <viewControllerLayoutGuide type="bottom" id="PIs-ZE-Q7w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qrj-EX-8ai">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvc-DU-2tL">
+                                <rect key="frame" x="16" y="121" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBg-V5-G2W">
+                                <rect key="frame" x="16" y="35" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuS-1a-3VZ">
+                                <rect key="frame" x="147.5" y="201" width="80" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ct9-to-Qi5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetPassword:" destination="RAn-aq-YDB" eventType="touchUpInside" id="HdD-lb-sff"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QuS-1a-3VZ" firstAttribute="top" secondItem="pvc-DU-2tL" secondAttribute="bottom" constant="50" id="9FB-v8-1Eh"/>
+                            <constraint firstItem="XBg-V5-G2W" firstAttribute="trailing" secondItem="qrj-EX-8ai" secondAttribute="trailingMargin" id="QaX-ib-Ltw"/>
+                            <constraint firstItem="XBg-V5-G2W" firstAttribute="top" secondItem="Pj3-6k-ksb" secondAttribute="bottom" constant="15" id="Wk3-os-5FC"/>
+                            <constraint firstItem="pvc-DU-2tL" firstAttribute="leading" secondItem="qrj-EX-8ai" secondAttribute="leadingMargin" id="ZRv-4M-vLE"/>
+                            <constraint firstItem="pvc-DU-2tL" firstAttribute="top" secondItem="XBg-V5-G2W" secondAttribute="bottom" constant="50" id="bDj-8N-gd5"/>
+                            <constraint firstItem="XBg-V5-G2W" firstAttribute="leading" secondItem="qrj-EX-8ai" secondAttribute="leadingMargin" id="sIl-G6-hyG"/>
+                            <constraint firstItem="pvc-DU-2tL" firstAttribute="trailing" secondItem="qrj-EX-8ai" secondAttribute="trailingMargin" id="toJ-iN-dhu"/>
+                            <constraint firstItem="QuS-1a-3VZ" firstAttribute="centerX" secondItem="qrj-EX-8ai" secondAttribute="centerX" id="vJO-bn-xkU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="pvc-DU-2tL" id="9Zr-uI-tLw"/>
+                        <outlet property="resetBtn" destination="QuS-1a-3VZ" id="zeH-RX-9kO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ryx-G9-HFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2152.8000000000002" y="178.56071964017991"/>
         </scene>
         <!--Cleaner Seeker-->
         <scene sceneID="OkQ-ab-IOc">
@@ -380,7 +446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMf-kZ-guf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2844" y="180"/>
+            <point key="canvasLocation" x="4422" y="179"/>
         </scene>
         <!--Find Job OffersVC-->
         <scene sceneID="y0q-yF-35w">
@@ -618,7 +684,7 @@
                                 </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="6wF-SV-d2F"/>
+                                    <action selector="goBackToLogin:" destination="cQN-sR-uKJ" eventType="touchUpInside" id="xh4-e4-5gX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-RZ-i3m">
@@ -661,7 +727,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXm-Ig-94H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="-651"/>
+            <point key="canvasLocation" x="2006" y="-683"/>
         </scene>
         <!--Sign Up Second Step View Controller-->
         <scene sceneID="ALI-gD-qRF">
@@ -700,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p24-G0-5sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="181"/>
+            <point key="canvasLocation" x="3586" y="179"/>
         </scene>
     </scenes>
     <resources>

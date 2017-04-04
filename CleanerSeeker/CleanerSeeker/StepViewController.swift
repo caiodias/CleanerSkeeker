@@ -9,7 +9,7 @@
 import UIKit
 
 class StepViewController: UIViewController {
-    
+
     var delegate: StepViewControllerDelegate?
 
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class StepViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func maybeSubmitStep() {
         let data = Dictionary<String, Any>()
         delegate?.submitStep(data)

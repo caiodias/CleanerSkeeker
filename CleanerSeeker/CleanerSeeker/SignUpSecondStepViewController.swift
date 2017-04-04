@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpSecondStepViewController: StepViewController {
+class SignUpSecondStepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
