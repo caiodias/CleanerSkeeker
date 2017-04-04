@@ -17,8 +17,7 @@
 		95B134671E467B5500838B3C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134661E467B5500838B3C /* Facade.swift */; };
 		95B134691E467B5F00838B3C /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134681E467B5F00838B3C /* ApiController.swift */; };
 		95B1346C1E467EC400838B3C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1346B1E467EC400838B3C /* Utilities.swift */; };
-		95B134711E46826000838B3C /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134701E46826000838B3C /* Worker.swift */; };
-		95B134731E4682D500838B3C /* JobPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134721E4682D500838B3C /* JobPoster.swift */; };
+		95B134711E46826000838B3C /* CSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134701E46826000838B3C /* CSUser.swift */; };
 		95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134741E46830E00838B3C /* JobOpportunity.swift */; };
 		95B134771E4683DF00838B3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134761E4683DF00838B3C /* Deal.swift */; };
 		95D823571E9017310029B894 /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D823561E9017310029B894 /* ParseController.swift */; };
@@ -88,8 +87,7 @@
 		95B134661E467B5500838B3C /* Facade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
 		95B134681E467B5F00838B3C /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		95B1346B1E467EC400838B3C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		95B134701E46826000838B3C /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
-		95B134721E4682D500838B3C /* JobPoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPoster.swift; sourceTree = "<group>"; };
+		95B134701E46826000838B3C /* CSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSUser.swift; sourceTree = "<group>"; };
 		95B134741E46830E00838B3C /* JobOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobOpportunity.swift; sourceTree = "<group>"; };
 		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		95D823561E9017310029B894 /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
@@ -203,8 +201,7 @@
 		95B1346F1E46823A00838B3C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95B134701E46826000838B3C /* Worker.swift */,
-				95B134721E4682D500838B3C /* JobPoster.swift */,
+				95B134701E46826000838B3C /* CSUser.swift */,
 				95B134741E46830E00838B3C /* JobOpportunity.swift */,
 				95B134761E4683DF00838B3C /* Deal.swift */,
 			);
@@ -408,7 +405,6 @@
 				C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */,
 				95B134671E467B5500838B3C /* Facade.swift in Sources */,
 				C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */,
-				95B134731E4682D500838B3C /* JobPoster.swift in Sources */,
 				C18C2B6E1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift in Sources */,
 				95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */,
 				C18C2B6C1E8C57E30085D838 /* SignUpPageViewController.swift in Sources */,
@@ -426,7 +422,7 @@
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
 				E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
-				95B134711E46826000838B3C /* Worker.swift in Sources */,
+				95B134711E46826000838B3C /* CSUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

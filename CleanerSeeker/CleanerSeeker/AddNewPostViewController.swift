@@ -16,6 +16,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var addressTxtView: UITextField!
     @IBOutlet weak var zipcodeTxtView: UITextField!
+    @IBOutlet weak var hoursToClean: UITextField!
 
     let noOfTypes: [String] = ["House", "Condo"]
     let defaultBedAndWashrooms: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -69,8 +70,14 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         return nil
     }
 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("Type of Spcae \(noOfTypes[row])")
+    }
+
     @IBAction func createNewPost(_ sender: UIButton) {
-        let type = noOfTypes[typeOfSpace.selectedRow(inComponent: 0)]
+        //let type = noOfTypes[typeOfSpace.selectedRow(inComponent: 0)]
+
+        //print("Type of Spcae \(self.typeOfSpace)")
 
     }
 
