@@ -39,8 +39,7 @@ class ParseController {
         parseUser["longitude"] = user.longitude
         parseUser["avatar"] = user.avatar
 
-        parseUser.signUpInBackground {
-            (_, error: Error?) -> Void in
+        parseUser.signUpInBackground { (_, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
             } else {
