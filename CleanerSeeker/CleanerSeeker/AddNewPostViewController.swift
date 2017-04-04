@@ -9,6 +9,7 @@
 import UIKit
 
 class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
     @IBOutlet weak var typeOfSpace: UIPickerView!
     @IBOutlet weak var noOfBedroomPicker: UIPickerView!
     @IBOutlet weak var noOfWashroomsPicker: UIPickerView!
@@ -23,6 +24,15 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     let bedroomPrice = 10
     let washroomPrice = 10
+
+    let space: String = "nil"
+    let bed: Int = 0
+    let washroom: Int = 0
+    let date: String = "nil"
+    let hours: Int = 0
+    let price: Int = 0
+    let address: String = "nil"
+    let zip: String = "nil"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +81,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("Type of Spcae \(noOfTypes[row])")
+
     }
 
     @IBAction func createNewPost(_ sender: UIButton) {
