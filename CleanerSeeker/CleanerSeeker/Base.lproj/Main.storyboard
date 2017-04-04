@@ -362,6 +362,7 @@
                     <connections>
                         <outlet property="addressTxtView" destination="fNF-3t-sao" id="2li-Pp-FRq"/>
                         <outlet property="datePicker" destination="zwA-9Y-LYf" id="H2s-Kc-laT"/>
+                        <outlet property="hoursToClean" destination="xYZ-Pq-LvQ" id="wPz-f2-A2C"/>
                         <outlet property="noOfBedroomPicker" destination="LQB-OD-vXc" id="a0u-4i-BhE"/>
                         <outlet property="noOfWashroomsPicker" destination="JFt-rE-P0l" id="X85-4c-Xh1"/>
                         <outlet property="totalPriceLabel" destination="NMq-i3-6Oo" id="ae5-Sw-Tve"/>

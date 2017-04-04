@@ -19,6 +19,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var addressTxtView: UITextField!
     @IBOutlet weak var zipcodeTxtView: UITextField!
+    @IBOutlet weak var hoursToClean: UITextField!
 
     var noOfTypes: [String] = [String]()
     var noOfBedrooms: [String] = [String]()

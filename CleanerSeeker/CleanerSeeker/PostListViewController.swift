@@ -11,18 +11,14 @@ import UIKit
 class PostListViewController: UITableViewController {
 
     var jobList = ["Clean 1BHK basement", "Clean 2 washroom", "Clean whole house"]
-    
+
     @IBOutlet weak var AddBarButton: UIBarButtonItem!
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "post_list")
         self.navigationController?.isToolbarHidden = false
-        
-        
 
         // Do any additional setup after loading the view.
     }
