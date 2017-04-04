@@ -191,14 +191,13 @@
 		95B1346A1E467B7200838B3C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				954DC06F1E2D6743000F1C4B /* BasicVC.swift */,
 				95B134661E467B5500838B3C /* Facade.swift */,
 				E1B6F3671E838196008D608B /* LoginViewController.swift */,
 				E11D6C631E86BBD3002A232F /* ProfileViewController.swift */,
-				E182CF461E89A8EE003A7687 /* PostListViewController.swift */,
-				E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */,
-				954DC06F1E2D6743000F1C4B /* BasicVC.swift */,
-				95F964221E89AACC001969BB /* Login Flow */,
 				95F9642E1E89B126001969BB /* Apply Flow */,
+				95F964221E89AACC001969BB /* Login Flow */,
+				E1108A961E93387000FD47C7 /* Post Flow */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -269,6 +268,15 @@
 				95F964481E8AFA33001969BB /* JobHistoryCell.swift */,
 			);
 			name = "Job History Cell";
+			sourceTree = "<group>";
+		};
+		E1108A961E93387000FD47C7 /* Post Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E182CF461E89A8EE003A7687 /* PostListViewController.swift */,
+				E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */,
+			);
+			name = "Post Flow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

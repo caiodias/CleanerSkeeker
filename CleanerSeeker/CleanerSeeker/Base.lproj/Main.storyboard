@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gvz-XU-ohJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -104,11 +104,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="post_list" textLabel="Jfl-ec-SlP" detailTextLabel="yPV-cd-d2Q" style="IBUITableViewCellStyleSubtitle" id="ouz-b3-NLh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="post_list" editingAccessoryType="detailDisclosureButton" textLabel="Jfl-ec-SlP" detailTextLabel="yPV-cd-d2Q" style="IBUITableViewCellStyleSubtitle" id="ouz-b3-NLh">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ouz-b3-NLh" id="qWl-GH-1EC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jfl-ec-SlP">
@@ -279,36 +279,26 @@
                                     <constraint firstAttribute="height" constant="50" id="q0D-gt-kzv"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuk-4I-gnT">
-                                <rect key="frame" x="151" y="530" width="72" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="V9t-Sg-rVK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="createNewPost:" destination="QaU-jc-DN1" eventType="touchUpInside" id="z0V-xK-WKM"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ix3-zD-UR6" userLabel="Price Stack">
-                                <rect key="frame" x="0.0" y="329" width="147" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ix3-zD-UR6" userLabel="Price Stack">
+                                <rect key="frame" x="0.0" y="329" width="197.5" height="21.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price : " textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JL-jV-EmK">
-                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Price : " textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JL-jV-EmK">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="21.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="GXl-Hi-g8A"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMq-i3-6Oo">
-                                        <rect key="frame" x="99.5" y="0.0" width="47.5" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$0.00" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMq-i3-6Oo">
+                                        <rect key="frame" x="150" y="0.0" width="47.5" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8iP-La-XzY"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HIq-b2-S1q" userLabel="Address Stack">
                                 <rect key="frame" x="0.0" y="402" width="349" height="50"/>
@@ -332,17 +322,24 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuk-4I-gnT">
+                                <rect key="frame" x="162.5" y="576" width="49" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="createNewPost:" destination="QaU-jc-DN1" eventType="touchUpInside" id="z0V-xK-WKM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g7f-SA-nQH" firstAttribute="top" secondItem="ogn-NP-x19" secondAttribute="bottom" constant="5" id="1y3-kb-i0I"/>
-                            <constraint firstItem="Ix3-zD-UR6" firstAttribute="leading" secondItem="4Tj-3b-mva" secondAttribute="leading" id="4IB-GS-VTF"/>
                             <constraint firstItem="CjV-NB-5If" firstAttribute="top" secondItem="FUN-ur-MyP" secondAttribute="bottom" constant="5" id="5yc-tY-E8F"/>
-                            <constraint firstItem="Ix3-zD-UR6" firstAttribute="top" secondItem="CjV-NB-5If" secondAttribute="bottom" constant="10" id="721-6g-7Ld"/>
                             <constraint firstItem="Vpf-ce-pEK" firstAttribute="top" secondItem="4Tj-3b-mva" secondAttribute="top" constant="124" id="BAa-h6-3Da"/>
                             <constraint firstItem="IK8-aP-T4R" firstAttribute="leading" secondItem="4Tj-3b-mva" secondAttribute="leading" id="CE9-ED-xTH"/>
                             <constraint firstItem="Vpf-ce-pEK" firstAttribute="top" secondItem="g7f-SA-nQH" secondAttribute="bottom" constant="5" id="FRN-kR-r6z"/>
                             <constraint firstItem="FUN-ur-MyP" firstAttribute="top" secondItem="4Tj-3b-mva" secondAttribute="top" constant="234" id="GUA-4V-UuB"/>
+                            <constraint firstItem="5yE-HD-72S" firstAttribute="top" secondItem="yuk-4I-gnT" secondAttribute="bottom" constant="8" id="IwV-Rs-K88"/>
                             <constraint firstAttribute="trailing" secondItem="CjV-NB-5If" secondAttribute="trailing" id="Kys-fg-MXI"/>
                             <constraint firstItem="g7f-SA-nQH" firstAttribute="leading" secondItem="Vpf-ce-pEK" secondAttribute="leading" id="MWu-U2-5lR"/>
                             <constraint firstItem="g7f-SA-nQH" firstAttribute="leading" secondItem="4Tj-3b-mva" secondAttribute="leading" id="MXH-0N-y7L"/>
@@ -352,8 +349,7 @@
                             <constraint firstItem="g7f-SA-nQH" firstAttribute="trailing" secondItem="Vpf-ce-pEK" secondAttribute="trailing" id="ehh-sy-TDT"/>
                             <constraint firstItem="SGU-Y8-t1D" firstAttribute="trailing" secondItem="FUN-ur-MyP" secondAttribute="trailing" id="hg6-RG-mEs"/>
                             <constraint firstItem="SGU-Y8-t1D" firstAttribute="top" secondItem="Vpf-ce-pEK" secondAttribute="bottom" constant="5" id="jFH-a7-IeJ"/>
-                            <constraint firstItem="5yE-HD-72S" firstAttribute="top" secondItem="yuk-4I-gnT" secondAttribute="bottom" constant="54" id="kFN-vm-qAo"/>
-                            <constraint firstAttribute="trailing" secondItem="Ix3-zD-UR6" secondAttribute="trailing" constant="228" id="n22-De-FTH"/>
+                            <constraint firstItem="yuk-4I-gnT" firstAttribute="centerX" secondItem="4Tj-3b-mva" secondAttribute="centerX" id="jNx-6J-ywu"/>
                             <constraint firstItem="FUN-ur-MyP" firstAttribute="top" secondItem="SGU-Y8-t1D" secondAttribute="bottom" constant="5" id="u3j-B9-2pD"/>
                             <constraint firstItem="Vpf-ce-pEK" firstAttribute="trailing" secondItem="SGU-Y8-t1D" secondAttribute="trailing" id="yWv-Cl-udl"/>
                             <constraint firstItem="SGU-Y8-t1D" firstAttribute="top" secondItem="4Tj-3b-mva" secondAttribute="top" constant="179" id="zfk-GC-mos"/>
