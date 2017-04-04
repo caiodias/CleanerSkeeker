@@ -195,8 +195,6 @@
 			children = (
 				954DC06F1E2D6743000F1C4B /* BasicVC.swift */,
 				95B134661E467B5500838B3C /* Facade.swift */,
-				E1B6F3671E838196008D608B /* LoginViewController.swift */,
-				E11D6C631E86BBD3002A232F /* ProfileViewController.swift */,
 				95F9642E1E89B126001969BB /* Apply Flow */,
 				95F964221E89AACC001969BB /* Login Flow */,
 				E1108A961E93387000FD47C7 /* Post Flow */,
@@ -228,6 +226,8 @@
 		95F964221E89AACC001969BB /* Login Flow */ = {
 			isa = PBXGroup;
 			children = (
+				E11D6C631E86BBD3002A232F /* ProfileViewController.swift */,
+				E1B6F3671E838196008D608B /* LoginViewController.swift */,
 				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
 				C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */,
 				C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */,
