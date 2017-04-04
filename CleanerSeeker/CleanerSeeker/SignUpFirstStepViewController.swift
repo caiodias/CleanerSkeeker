@@ -39,27 +39,44 @@ class SignUpFirstStepViewController: UIViewController {
     @IBAction func goBackToLogin(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+
     @IBAction func createProfile(_ sender: Any) {
         print("Try to create user")
 
-        var user: User
         //Create user type based on switch
         if isCleaner.isOn {
-            user = Worker()
+            createWorker()
         } else {
-            user = JobPoster()
+            createJobPoster()
         }
+    }
 
-        user.firstName = fName.text!
-        user.lastName = lName.text!
-        user.email = email.text!
+    private func createWorker() {
+        let user = Worker()
+        user.firstName = self.fName.text!
+        user.lastName = self.lName.text!
         user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
+        let password = self.password.text!
 
         let success = { success in
             print(success)
         }
 
-        Facade.shared.registerUser(user: user, onSuccess: success, onFail: success)
+        Facade.shared.registerUser(user: user, password: password, onSuccess: success, onFail: success)
+    }
+
+    private func createJobPoster() {
+        let user = JobPoster()
+        user.firstName = self.fName.text!
+        user.lastName = self.lName.text!
+        user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
+        let password = self.password.text!
+
+        let success = { success in
+            print(success)
+        }
+
+        Facade.shared.registerUser(user: user, password: password, onSuccess: success, onFail: success)
     }
 
     fileprivate func observeKeyboardNotifications() {

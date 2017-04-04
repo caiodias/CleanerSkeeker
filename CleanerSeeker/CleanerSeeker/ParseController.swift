@@ -9,9 +9,10 @@
 import Parse
 
 class ParseController {
-//    enum MemoryDbErrors: Error {
-//        case UserAlreadyExists
-//    }
+    enum ParseDbErrors: Error {
+        case UserWithoutType
+        case UserNotFound
+    }
 
     var users: [PFUser]
     var jobs: [AnyObject]
@@ -22,38 +23,26 @@ class ParseController {
 
     }
 
-    func addUser(user: User, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        let parseUser = PFUser()
-        print("Addind a new User")
+    func addUser(user: Worker, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        print("Adding a new Worker User")
 
-        parseUser.email = user.email
-        parseUser.password = password
-        parseUser.username = user.email
-        parseUser["firstName"] = user.firstName
-        parseUser["lastName"] = user.lastName
-        parseUser["address"] = user.address
-        parseUser["zipcode"] = ""
-        parseUser["province"] = ""
-        parseUser["country"] = ""
-        parseUser["latitude"] = user.latitude
-        parseUser["longitude"] = user.longitude
-        parseUser["avatar"] = user.avatar
-
-        parseUser.signUpInBackground { (_, error: Error?) -> Void in
+        user.signUpInBackground { (_, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
             } else {
-                if parseUser.objectId != nil {
-                    print("user with ID")
-                    var newUser = user.copy()
-                    newUser.id = parseUser.objectId!
+                onSuccess(user as AnyObject)
+            }
+        }
+    }
 
-                    onSuccess(newUser as AnyObject)
-                } else {
-                    print("user without ID")
+    func addUser(user: JobPoster, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        print("Adding a new Job Poster user")
 
-                    onSuccess(user as AnyObject)
-                }
+        user.signUpInBackground { (_, error: Error?) -> Void in
+            if let error = error {
+                onFail(error)
+            } else {
+                onSuccess(user as AnyObject)
             }
         }
     }
@@ -68,4 +57,33 @@ class ParseController {
             }
         }
     }
+
+    func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        let parseUser = PFUser()
+        parseUser.username = login
+        parseUser.password = password
+
+        PFUser.logInWithUsername(inBackground: login, password: password, block: { (user: PFUser?, error: Error?) -> Void in
+            if let error = error {
+                onFail(error)
+            } else {
+//                guard let parseUser = PFUser.current() else {
+//                    onFail(ParseDbErrors.UserNotFound)
+//                    return
+//                }
+//                
+//                guard let userType = parseUser["userType"] as? Int else {
+//                    onFail(ParseDbErrors.UserWithoutType)
+//                    return
+//                }
+
+                onSuccess(user as AnyObject)
+            }
+        })
+    }
+
+    // MARK: Private Methods
+//    private func fillPFUserObject(user: User) -> PFUser {
+//        var returnObject = PFUser()
+//    }
 }

@@ -6,37 +6,49 @@
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
-class JobPoster: User {
-    // swiftlint:disable:next variable_name
-    var id: String
-    var firstName: String
-    var lastName: String
-    var email: String
-    var address: String
-    var latitude: Double
-    var longitude: Double
-    var avatar: String
+import Parse
 
-    convenience init() {
-        self.init(objectId: "", firstName: "", lastName: "", email: "", address: "", latitude: 0.0, longitude: 0.0, avatar: "")
+class JobPoster: PFUser {
+    @NSManaged var firstName: String
+    @NSManaged var lastName: String
+    @NSManaged var address: String
+    @NSManaged var latitude: Double
+    @NSManaged var longitude: Double
+    @NSManaged var avatar: String
+//    @NSManaged var jobOpportunities: [JobOpportunity]
+
+    convenience override init() {
+        self.init(objectId: nil, firstName: "", lastName: "", email: nil, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
     }
 
     convenience init(firstName: String, lastName: String, email: String) {
-        self.init(objectId: "", firstName: firstName, lastName: lastName, email: email, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
+        self.init(objectId: nil, firstName: firstName, lastName: lastName, email: email, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
     }
 
-    init(objectId: String, firstName: String, lastName: String, email: String, address: String, latitude: Double, longitude: Double, avatar: String) {
-        self.id = objectId
+    init(objectId: String?, firstName: String, lastName: String, email: String?, address: String, latitude: Double, longitude: Double, avatar: String) {
+        super.init()
+
         self.firstName = firstName
         self.lastName = lastName
-        self.email = email
         self.address = address
         self.latitude = latitude
         self.longitude = longitude
         self.avatar = avatar
+
+        if let email = email {
+            self.email = email.lowercased()
+            self.username = self.email
+        }
     }
 
-    func copy() -> User {
-        return JobPoster(objectId: self.id, firstName: self.firstName, lastName: self.lastName, email: self.email, address: self.address, latitude: self.latitude, longitude: self.longitude, avatar: self.avatar)
+    // MARK: User Protocol methods
+    func clone() -> JobPoster {
+        return JobPoster(objectId: self.objectId, firstName: self.firstName, lastName: self.lastName, email: self.email, address: self.address, latitude: self.latitude, longitude: self.longitude, avatar: self.avatar)
+    }
+
+    // MARK: PFSubclassing Protocol methods
+
+    override class func parseClassName() -> String {
+        return Utilities.classNameAsString(obj: self)
     }
 }
