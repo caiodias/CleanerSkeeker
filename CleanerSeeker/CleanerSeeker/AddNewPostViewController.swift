@@ -70,10 +70,14 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         return nil
     }
 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("Type of Spcae \(noOfTypes[row])")
+    }
+
     @IBAction func createNewPost(_ sender: UIButton) {
         //let type = noOfTypes[typeOfSpace.selectedRow(inComponent: 0)]
 
-        print("Type of Spcae \(self.typeOfSpace)")
+        //print("Type of Spcae \(self.typeOfSpace)")
 
     }
 
