@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signUp(_ sender: UIButton) {
-
+        self.performSegue(withIdentifier: "signup", sender: self)
     }
 
     private func onLoginSuccess(object: Any) {
@@ -40,12 +40,6 @@ class LoginViewController: UIViewController {
 
     private func onLoginFail(error: Error) {
         print(error.localizedDescription)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "signup"{
-            let vc = segue.destination as! SignUpPageViewController
-        }
     }
 
     fileprivate func observeKeyboardNotifications() {
