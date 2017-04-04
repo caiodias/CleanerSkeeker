@@ -9,23 +9,19 @@
 import UIKit
 
 class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
     @IBOutlet weak var typeOfSpace: UIPickerView!
     @IBOutlet weak var noOfBedroomPicker: UIPickerView!
     @IBOutlet weak var noOfWashroomsPicker: UIPickerView!
-
     @IBOutlet weak var datePicker: UIDatePicker!
-
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var addressTxtView: UITextField!
     @IBOutlet weak var zipcodeTxtView: UITextField!
 
-    var noOfTypes: [String] = [String]()
-    var noOfBedrooms: [String] = [String]()
-    var noOfWashrooms: [String] = [String]()
+    let noOfTypes: [String] = ["House", "Condo"]
+    let defaultBedAndWashrooms: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
-    var bedroomPrice = 10
-    var washroomPrice = 10
+    let bedroomPrice = 10
+    let washroomPrice = 10
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +34,6 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         self.noOfWashroomsPicker.delegate = self
         self.noOfWashroomsPicker.dataSource = self
-
-        noOfTypes = ["House", "condo"]
-
-        noOfBedrooms = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-                        "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
-
-        noOfWashrooms = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-                         "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,15 +44,17 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 
         if pickerView == typeOfSpace {
             return noOfTypes.count
         } else if pickerView == noOfBedroomPicker {
-            return noOfBedrooms.count
+            return defaultBedAndWashrooms.count
         } else if pickerView == noOfWashroomsPicker {
-            return noOfWashrooms.count
+            return defaultBedAndWashrooms.count
         }
+
         return 0
     }
 
@@ -72,9 +62,9 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if pickerView == typeOfSpace {
             return noOfTypes[row]
         } else if pickerView == noOfBedroomPicker {
-            return noOfBedrooms[row]
+            return String(defaultBedAndWashrooms[row])
         } else if pickerView == noOfWashroomsPicker {
-            return noOfWashrooms[row]
+            return String(defaultBedAndWashrooms[row])
         }
         return nil
     }
