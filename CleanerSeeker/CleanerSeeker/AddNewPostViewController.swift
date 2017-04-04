@@ -22,15 +22,15 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     let noOfTypes: [String] = ["House", "Condo"]
     let defaultBedAndWashrooms: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
-    let bedroomPrice = 10
-    let washroomPrice = 10
+    var bedroomPrice = 7
+    var washroomPrice = 5
 
-    let space: String = "nil"
-    let bed: Int = 0
-    let washroom: Int = 0
+    var space: String = "nil"
+    var bed: Int = 0
+    var washroom: Int = 0
     let date: String = "nil"
     let hours: Int = 0
-    let price: Int = 0
+    var price: Int = 0
     let address: String = "nil"
     let zip: String = "nil"
 
@@ -81,13 +81,35 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == typeOfSpace {
+            space = noOfTypes[row]
+        } else if pickerView == noOfBedroomPicker {
+            bed = defaultBedAndWashrooms[row]
+        } else if pickerView == noOfWashroomsPicker {
+            washroom = defaultBedAndWashrooms[row]
+        }
 
     }
 
     @IBAction func createNewPost(_ sender: UIButton) {
-        //let type = noOfTypes[typeOfSpace.selectedRow(inComponent: 0)]
+        if bed == 0 {
+            bedroomPrice = 7
+        } else {
+            bedroomPrice *= bed
+        }
 
-        //print("Type of Spcae \(self.typeOfSpace)")
+        if washroom == 0 {
+            washroomPrice = 5
+        } else {
+            washroomPrice *= washroom
+        }
+
+        price = bedroomPrice + washroomPrice
+
+        print("Tyoe of Space is : \(space)")
+        print("no of bed is : \(bed)")
+        print("no of washroom is \(washroom)")
+        print("Total price is : \(price)")
 
     }
 
