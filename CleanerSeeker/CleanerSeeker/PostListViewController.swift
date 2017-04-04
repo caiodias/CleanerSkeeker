@@ -33,7 +33,7 @@ class PostListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "post_list")! as UITableViewCell
+        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "post_list")! as UITableViewCell
 
         cell.textLabel?.text = self.jobList[indexPath.row]
         return cell
