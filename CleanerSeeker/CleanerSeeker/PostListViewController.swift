@@ -12,7 +12,7 @@ class PostListViewController: UITableViewController {
 
     var jobList = ["Clean 1BHK basement", "Clean 2 washroom", "Clean whole house"]
 
-    @IBOutlet weak var AddBarButton: UIBarButtonItem!
+   // @IBOutlet weak var AddBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()

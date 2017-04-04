@@ -81,7 +81,9 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     @IBAction func createNewPost(_ sender: UIButton) {
-        let type = noOfTypes[typeOfSpace.selectedRow(inComponent: 0)]
+        //let type = noOfTypes[typeOfSpace.selectedRow(inComponent: 0)]
+
+        print("Type of Spcae \(self.typeOfSpace)")
 
     }
 

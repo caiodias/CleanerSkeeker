@@ -143,9 +143,6 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Cleaner Seeker" id="Bug-Ba-Zly"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="AddBarButton" destination="22u-0X-OwR" id="pwY-6H-nsY"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yi2-g8-0RO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
