@@ -12,7 +12,11 @@ class PostListViewController: UITableViewController {
 
     var jobList = ["Clean 1BHK basement", "Clean 2 washroom", "Clean whole house"]
 
+<<<<<<< HEAD
    // @IBOutlet weak var AddBarButton: UIBarButtonItem!
+=======
+    @IBOutlet weak var addBarButton: UIBarButtonItem!
+>>>>>>> a1788722332fd2fdd77ee205031a7f458d7b3d3a
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,7 @@ class PostListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "post_list")! as UITableViewCell
+        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "post_list")! as UITableViewCell
 
         cell.textLabel?.text = self.jobList[indexPath.row]
         return cell
@@ -41,7 +45,10 @@ class PostListViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNewPost" {
-            let vc = segue.destination as! AddNewPostViewController
+            guard let vc = segue.destination as? AddNewPostViewController else {
+                print("Not possible get the segue")
+                return
+            }
         }
     }
 

@@ -10,4 +10,8 @@ import Foundation
 
 class Utilities {
     static let programName = "Cleaner Seeker"
+
+    class func classNameAsString(obj: Any) -> String {
+        return String(describing: type(of: obj))
+    }
 }
