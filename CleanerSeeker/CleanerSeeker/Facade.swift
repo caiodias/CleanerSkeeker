@@ -9,7 +9,7 @@
 import Foundation
 
 class Facade {
-    private let apiController = ApiController(database: .Memory)
+    private let apiController = ApiController()
 
     // MARK: Singleton
     static let shared: Facade = {

@@ -22,7 +22,7 @@
 		95B134731E4682D500838B3C /* JobPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134721E4682D500838B3C /* JobPoster.swift */; };
 		95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134741E46830E00838B3C /* JobOpportunity.swift */; };
 		95B134771E4683DF00838B3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134761E4683DF00838B3C /* Deal.swift */; };
-		95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134791E4688EC00838B3C /* MemoryDatabase.swift */; };
+		95D823571E9017310029B894 /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D823561E9017310029B894 /* ParseController.swift */; };
 		95F964281E89AFC2001969BB /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; };
 		95F964291E89AFC2001969BB /* Koloda.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95F9642A1E89AFC2001969BB /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; };
@@ -39,8 +39,9 @@
 		C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */; };
 		C18C2B6C1E8C57E30085D838 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */; };
 		C18C2B6E1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */; };
-		C1D598FC1E8FF49800794714 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D598FB1E8FF49800794714 /* StepViewController.swift */; };
-		C1D598FE1E8FF54600794714 /* StepViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D598FD1E8FF54600794714 /* StepViewControllerDelegate.swift */; };
+		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
+		E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF461E89A8EE003A7687 /* PostListViewController.swift */; };
+		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
 		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +93,7 @@
 		95B134721E4682D500838B3C /* JobPoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPoster.swift; sourceTree = "<group>"; };
 		95B134741E46830E00838B3C /* JobOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobOpportunity.swift; sourceTree = "<group>"; };
 		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
-		95B134791E4688EC00838B3C /* MemoryDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryDatabase.swift; sourceTree = "<group>"; };
+		95D823561E9017310029B894 /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
 		95F964261E89AFC2001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
 		95F964271E89AFC2001969BB /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		95F9642C1E89B052001969BB /* FindJobOffersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindJobOffersVC.swift; sourceTree = "<group>"; };
@@ -104,8 +105,9 @@
 		C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSecondStepViewController.swift; sourceTree = "<group>"; };
 		C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewConrollerExtension.swift; sourceTree = "<group>"; };
-		C1D598FB1E8FF49800794714 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
-		C1D598FD1E8FF54600794714 /* StepViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewControllerDelegate.swift; sourceTree = "<group>"; };
+		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E182CF461E89A8EE003A7687 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				95B134661E467B5500838B3C /* Facade.swift */,
+				E1B6F3671E838196008D608B /* LoginViewController.swift */,
+				E11D6C631E86BBD3002A232F /* ProfileViewController.swift */,
+				E182CF461E89A8EE003A7687 /* PostListViewController.swift */,
+				E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */,
 				954DC06F1E2D6743000F1C4B /* BasicVC.swift */,
 				95F964221E89AACC001969BB /* Login Flow */,
 				95F9642E1E89B126001969BB /* Apply Flow */,
@@ -213,7 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				95B134681E467B5F00838B3C /* ApiController.swift */,
-				95B134791E4688EC00838B3C /* MemoryDatabase.swift */,
+				95D823561E9017310029B894 /* ParseController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -221,8 +227,10 @@
 		95F964221E89AACC001969BB /* Login Flow */ = {
 			isa = PBXGroup;
 			children = (
-				E1B6F3671E838196008D608B /* LoginViewController.swift */,
-				C1D598FA1E8FF44F00794714 /* Sign Up */,
+				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
+				C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */,
+				C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */,
+				C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */,
 			);
 			name = "Login Flow";
 			sourceTree = "<group>";
@@ -261,19 +269,6 @@
 				95F964481E8AFA33001969BB /* JobHistoryCell.swift */,
 			);
 			name = "Job History Cell";
-			sourceTree = "<group>";
-		};
-		C1D598FA1E8FF44F00794714 /* Sign Up */ = {
-			isa = PBXGroup;
-			children = (
-				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
-				C18C2B691E8C573F0085D838 /* SignUpSecondStepViewController.swift */,
-				C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */,
-				C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */,
-				C1D598FB1E8FF49800794714 /* StepViewController.swift */,
-				C1D598FD1E8FF54600794714 /* StepViewControllerDelegate.swift */,
-			);
-			name = "Sign Up";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,15 +407,16 @@
 				95F964301E89B164001969BB /* FindJobOffersDataSource.swift in Sources */,
 				95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */,
 				95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */,
-				95B1347A1E4688EC00838B3C /* MemoryDatabase.swift in Sources */,
-				C1D598FE1E8FF54600794714 /* StepViewControllerDelegate.swift in Sources */,
 				E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */,
+				95D823571E9017310029B894 /* ParseController.swift in Sources */,
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
-				C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */,
+				E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */,
+				E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */,
+				C18C2B6A1E8C573F0085D838 /* SignUpSecondStepViewController.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
-				C1D598FC1E8FF49800794714 /* StepViewController.swift in Sources */,
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
+				E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
 				95B134711E46826000838B3C /* Worker.swift in Sources */,
 			);

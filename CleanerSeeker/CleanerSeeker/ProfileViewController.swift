@@ -1,14 +1,14 @@
 //
-//  SignUpSecondStepViewController.swift
+//  ProfileViewController.swift
 //  CleanerSeeker
 //
-//  Created by Orest Hazda on 29/03/17.
+//  Created by Arpita Patel on 2017-03-25.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
 import UIKit
 
-class SignUpSecondStepViewController: StepViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +21,10 @@ class SignUpSecondStepViewController: StepViewController {
         // Dispose of any resources that can be recreated.
     }
 
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "backToLogin" {
-                let vc = segue.destination as! LoginViewController
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "profile"{
+            let vc = segue.destination as! ProfileViewController
         }
+    }
 
 }
