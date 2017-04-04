@@ -41,7 +41,10 @@ class PostListViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNewPost" {
-            let vc = segue.destination as! AddNewPostViewController
+            guard let vc = segue.destination as? AddNewPostViewController else {
+                print("Not possible get the segue")
+                return
+            }
         }
     }
 
