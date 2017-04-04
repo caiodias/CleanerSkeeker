@@ -23,20 +23,8 @@ class ParseController {
 
     }
 
-    func addUser(user: Worker, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func addUser(user: CSUser, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Worker User")
-
-        user.signUpInBackground { (_, error: Error?) -> Void in
-            if let error = error {
-                onFail(error)
-            } else {
-                onSuccess(user as AnyObject)
-            }
-        }
-    }
-
-    func addUser(user: JobPoster, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        print("Adding a new Job Poster user")
 
         user.signUpInBackground { (_, error: Error?) -> Void in
             if let error = error {

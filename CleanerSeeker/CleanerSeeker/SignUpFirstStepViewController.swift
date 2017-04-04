@@ -43,40 +43,40 @@ class SignUpFirstStepViewController: UIViewController {
     @IBAction func createProfile(_ sender: Any) {
         print("Try to create user")
 
+        let password = self.password.text!
+
         //Create user type based on switch
+        var user: CSUser? = nil
+
         if isCleaner.isOn {
-            createWorker()
+            user = createWorker()
         } else {
-            createJobPoster()
+            user = createJobPoster()
         }
-    }
-
-    private func createWorker() {
-        let user = Worker()
-        user.firstName = self.fName.text!
-        user.lastName = self.lName.text!
-        user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
-        let password = self.password.text!
 
         let success = { success in
             print(success)
         }
 
-        Facade.shared.registerUser(user: user, password: password, onSuccess: success, onFail: success)
+        Facade.shared.registerUser(user: user!, password: password, onSuccess: success, onFail: success)
     }
 
-    private func createJobPoster() {
-        let user = JobPoster()
+    private func createWorker() -> CSUser {
+        let user = CSUser(userType: CSUserType.Worker)
         user.firstName = self.fName.text!
         user.lastName = self.lName.text!
         user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
-        let password = self.password.text!
 
-        let success = { success in
-            print(success)
-        }
+        return user
+    }
 
-        Facade.shared.registerUser(user: user, password: password, onSuccess: success, onFail: success)
+    private func createJobPoster() -> CSUser {
+        let user = CSUser(userType: CSUserType.JobPoster)
+        user.firstName = self.fName.text!
+        user.lastName = self.lName.text!
+        user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
+
+        return user
     }
 
     fileprivate func observeKeyboardNotifications() {

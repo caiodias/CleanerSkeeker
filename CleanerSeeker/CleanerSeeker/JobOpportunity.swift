@@ -6,9 +6,9 @@
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
-import Foundation
+import Parse
 
-class JobOpportunity {
+class JobOpportunity: PFObject {
     enum JobSpaceType: Int {
         case none
         case house
@@ -22,7 +22,7 @@ class JobOpportunity {
         case hold
     }
 
-    let spaceType: JobSpaceType
+    var spaceType: JobSpaceType
     var address: String
     var zipcode: String
     var latitude: Double
@@ -54,5 +54,7 @@ class JobOpportunity {
         self.appliedId = appliedId
         self.price = price
         self.jobWorkDate = jobWorkDate
+
+        super.init()
     }
 }
