@@ -25,14 +25,14 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var bedroomPrice = 7
     var washroomPrice = 5
 
-    var space: String = "nil"
+    var space = ""
     var bed: Int = 0
     var washroom: Int = 0
-    let date: String = "nil"
-    let hours: Int = 0
+    var date = ""
+    var hours: Int = 0
     var price: Int = 0
-    let address: String = "nil"
-    let zip: String = "nil"
+    var address = ""
+    var zip = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         self.noOfWashroomsPicker.delegate = self
         self.noOfWashroomsPicker.dataSource = self
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,6 +75,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             return noOfTypes[row]
         } else if pickerView == noOfBedroomPicker {
             return String(defaultBedAndWashrooms[row])
+
         } else if pickerView == noOfWashroomsPicker {
             return String(defaultBedAndWashrooms[row])
         }
@@ -104,12 +106,25 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             washroomPrice *= washroom
         }
 
+
+        let d = Date()
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "MM-dd-yyyy"
+        date = dateformatter.string(from: d as Date)
+
+        address = addressTxtView.text!
+        zip = zipcodeTxtView.text!
+        hours = Int(hoursToClean.text!)!
         price = bedroomPrice + washroomPrice
 
         print("Tyoe of Space is : \(space)")
         print("no of bed is : \(bed)")
         print("no of washroom is \(washroom)")
         print("Total price is : \(price)")
+        print("Date is : \(date)")
+        print("Hours to Clean: \(hours)")
+        print("Address is : \(address)")
+        print("Address is : \(zip)")
 
     }
 
