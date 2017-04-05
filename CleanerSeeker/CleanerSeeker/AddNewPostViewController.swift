@@ -93,25 +93,19 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     }
 
-    func priceForBedroomAndWashroom() -> Int {
+    @IBAction func createNewPost(_ sender: UIButton) {
         if bed == 0 {
-            bedroomPrice = 0
+            bedroomPrice = 7
         } else {
             bedroomPrice *= bed
         }
 
         if washroom == 0 {
-            washroomPrice = 0
+            washroomPrice = 5
         } else {
             washroomPrice *= washroom
         }
-        price = bedroomPrice + washroomPrice
 
-        totalPriceLabel.text = String(price)
-        return price
-    }
-
-    @IBAction func createNewPost(_ sender: UIButton) {
 
         let d = Date()
         let dateformatter = DateFormatter()
@@ -121,8 +115,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         address = addressTxtView.text!
         zip = zipcodeTxtView.text!
         hours = Int(hoursToClean.text!)!
-
-        priceForBedroomAndWashroom()
+        price = bedroomPrice + washroomPrice
 
         print("Tyoe of Space is : \(space)")
         print("no of bed is : \(bed)")
@@ -132,6 +125,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         print("Hours to Clean: \(hours)")
         print("Address is : \(address)")
         print("Address is : \(zip)")
+
     }
 
 }
