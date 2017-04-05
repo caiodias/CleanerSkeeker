@@ -9,6 +9,10 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    private enum ShowTabController: String {
+        case Worker = "workerTabController"
+        case JobPoster = "jobPosterTabController"
+    }
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -30,18 +34,34 @@ class LoginViewController: UIViewController {
         Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
     }
 
-    @IBAction func signUp(_ sender: UIButton) {
-        // nothing to see here.
+    private func displayTabController(tabController: ShowTabController) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            print("Not possible to get the appDelegate")
+            return
+        }
+
+        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: tabController.rawValue)
+
+        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.makeKeyAndVisible()
     }
 
+    // MARK: login callbacks
     private func onLoginSuccess(object: Any) {
         print(object)
+
+        if object is Worker {
+            displayTabController(tabController: ShowTabController.Worker)
+        } else {
+            displayTabController(tabController: ShowTabController.JobPoster)
+        }
     }
 
     private func onLoginFail(error: Error) {
         print(error.localizedDescription)
     }
 
+    // MARK: keyboard methods
     fileprivate func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
