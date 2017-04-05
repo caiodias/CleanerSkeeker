@@ -49,10 +49,20 @@ class ResetPasswordViewController: UIViewController {
 
     private func showSuccessAlert(success:Any) {
         print("Success \(success)")
+        let alert = UIAlertController(title: "Password reset", message: "Check your email to proceed the progress.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Return to login", style: .default) { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 
     private func showFailAlert(error: Error) {
         print("Error \(error)")
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
