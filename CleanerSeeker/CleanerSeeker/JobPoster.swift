@@ -9,14 +9,8 @@
 import Parse
 
 class JobPoster: PFObject, PFSubclassing {
-    @NSManaged var firstName: String
-    @NSManaged var lastName: String
     @NSManaged var address: String
-    @NSManaged var latitude: Double
-    @NSManaged var longitude: Double
-    @NSManaged var avatar: String
-
-//    @NSManaged var jobOpportunities: [JobOpportunity]
+    @NSManaged var jobOpportunities: [JobOpportunity]
 
     /*
      GIVES AN ERROR  Use only PFObject constructor

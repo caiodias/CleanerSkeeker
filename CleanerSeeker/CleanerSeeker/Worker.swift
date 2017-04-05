@@ -9,12 +9,8 @@
 import Parse
 
 class Worker: PFObject, PFSubclassing {
-    @NSManaged var firstName: String
-    @NSManaged var lastName: String
     @NSManaged var address: String
-    @NSManaged var latitude: Double
-    @NSManaged var longitude: Double
-    @NSManaged var avatar: String
+    
 
     /*convenience override init() {
         self.init(firstName: "", lastName: "", address: "", latitude: 0.0, longitude: 0.0, avatar: "")
