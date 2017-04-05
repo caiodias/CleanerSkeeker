@@ -37,8 +37,6 @@
 		C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */; };
 		C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */; };
-		C18C2B6C1E8C57E30085D838 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */; };
-		C18C2B6E1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */; };
 		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
 		E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF461E89A8EE003A7687 /* PostListViewController.swift */; };
 		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
@@ -103,8 +101,6 @@
 		95F964481E8AFA33001969BB /* JobHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHistoryCell.swift; sourceTree = "<group>"; };
 		C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
-		C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
-		C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewConrollerExtension.swift; sourceTree = "<group>"; };
 		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E182CF461E89A8EE003A7687 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
@@ -227,8 +223,6 @@
 				E11D6C631E86BBD3002A232F /* ProfileViewController.swift */,
 				E1B6F3671E838196008D608B /* LoginViewController.swift */,
 				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
-				C18C2B6B1E8C57E30085D838 /* SignUpPageViewController.swift */,
-				C18C2B6D1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift */,
 				C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */,
 			);
 			name = "Login Flow";
@@ -409,9 +403,7 @@
 				95B134671E467B5500838B3C /* Facade.swift in Sources */,
 				C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */,
 				95B134731E4682D500838B3C /* JobPoster.swift in Sources */,
-				C18C2B6E1E8C584F0085D838 /* SignUpPageViewConrollerExtension.swift in Sources */,
 				95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */,
-				C18C2B6C1E8C57E30085D838 /* SignUpPageViewController.swift in Sources */,
 				95F964301E89B164001969BB /* FindJobOffersDataSource.swift in Sources */,
 				95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */,
 				95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */,

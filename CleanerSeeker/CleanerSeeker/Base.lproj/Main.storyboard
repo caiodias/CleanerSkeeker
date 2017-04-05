@@ -72,7 +72,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Create New Account"/>
                                 <connections>
-                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FCK-gZ-C9s"/>
                                     <segue destination="cQN-sR-uKJ" kind="show" id="4CB-LJ-CmE"/>
                                 </connections>
                             </button>
@@ -433,12 +432,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMf-kZ-guf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="2307"/>
+            <point key="canvasLocation" x="863" y="2381"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rMj-2Q-0Vs">
             <objects>
-                <tabBarController id="zeM-ly-wZ3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="workerTabController" id="zeM-ly-wZ3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Kaw-y5-KqY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -526,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGP-Aq-FZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="837"/>
+            <point key="canvasLocation" x="863" y="893"/>
         </scene>
         <!--Apllied Jobs HistoryVC-->
         <scene sceneID="T6k-xc-f0G">
@@ -725,7 +724,7 @@
         <image name="btn_undo" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KOr-dW-A4d"/>
         <segue reference="gjw-vA-QEG"/>
+        <segue reference="RII-dt-dA0"/>
     </inferredMetricsTieBreakers>
 </document>
