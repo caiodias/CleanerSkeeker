@@ -43,40 +43,42 @@ class SignUpFirstStepViewController: UIViewController {
     @IBAction func createProfile(_ sender: Any) {
         print("Try to create user")
 
-        let password = self.password.text!
-
         //Create user type based on switch
-        var user: CSUser? = nil
-
         if isCleaner.isOn {
-            user = createWorker()
+            createWorker()
         } else {
-            user = createJobPoster()
+            createJobPoster()
         }
+    }
+
+    private func createWorker() {
+        let user = Worker()
+        user.firstName = self.fName.text!
+        user.lastName = self.lName.text!
+        user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
+        let password = self.password.text!
+        let email = self.email.text!
 
         let success = { success in
             print(success)
         }
 
-        Facade.shared.registerUser(user: user!, password: password, onSuccess: success, onFail: success)
+        Facade.shared.registerUser(user: user, password: password, email: email, onSuccess: success, onFail: success)
     }
 
-    private func createWorker() -> CSUser {
-        let user = CSUser(userType: CSUserType.Worker)
+    private func createJobPoster() {
+        let user = JobPoster()
         user.firstName = self.fName.text!
         user.lastName = self.lName.text!
         user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
+        let password = self.password.text!
+        let email = self.email.text!
 
-        return user
-    }
+        let success = { success in
+            print(success)
+        }
 
-    private func createJobPoster() -> CSUser {
-        let user = CSUser(userType: CSUserType.JobPoster)
-        user.firstName = self.fName.text!
-        user.lastName = self.lName.text!
-        user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
-
-        return user
+        Facade.shared.registerUser(user: user, password: password, email: email, onSuccess: success, onFail: success)
     }
 
     fileprivate func observeKeyboardNotifications() {
