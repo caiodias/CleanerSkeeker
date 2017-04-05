@@ -10,10 +10,10 @@ import Foundation
 
 class Deal {
     let selector: Selector
-    let jobPoster: CSUser
+    let jobPoster: JobPoster
     let date: Date
 
-    init(selector: Selector, jobPoster: CSUser) {
+    init(selector: Selector, jobPoster: JobPoster) {
         self.selector = selector
         self.jobPoster = jobPoster
         self.date = Date()
