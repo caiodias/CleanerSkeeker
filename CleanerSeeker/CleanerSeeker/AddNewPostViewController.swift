@@ -25,14 +25,14 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var bedroomPrice = 7
     var washroomPrice = 5
 
-    var space: String = ""
+    var space = ""
     var bed: Int = 0
     var washroom: Int = 0
-    var date: String = "nil"
-    let hours: Int = 0
+    var date = ""
+    var hours: Int = 0
     var price: Int = 0
-    let address: String = "nil"
-    let zip: String = "nil"
+    var address = ""
+    var zip = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,10 +113,14 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     @IBAction func createNewPost(_ sender: UIButton) {
 
-        let d = NSDate()
+        let d = Date()
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "MM-dd-yyyy"
         date = dateformatter.string(from: d as Date)
+
+        address = addressTxtView.text!
+        zip = zipcodeTxtView.text!
+        hours = Int(hoursToClean.text!)!
 
         priceForBedroomAndWashroom()
 
@@ -125,7 +129,9 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         print("no of washroom is \(washroom)")
         print("Total price is : \(price)")
         print("Date is : \(date)")
-
+        print("Hours to Clean: \(hours)")
+        print("Address is : \(address)")
+        print("Address is : \(zip)")
     }
 
 }
