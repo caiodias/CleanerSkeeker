@@ -8,24 +8,27 @@
 
 import Parse
 
-class JobPoster: PFUser {
+class JobPoster: PFObject, PFSubclassing {
     @NSManaged var firstName: String
     @NSManaged var lastName: String
     @NSManaged var address: String
     @NSManaged var latitude: Double
     @NSManaged var longitude: Double
     @NSManaged var avatar: String
+
 //    @NSManaged var jobOpportunities: [JobOpportunity]
 
-    convenience override init() {
-        self.init(objectId: nil, firstName: "", lastName: "", email: nil, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
+    /*
+     GIVES AN ERROR  Use only PFObject constructor
+     convenience override init() {
+        self.init(firstName: "", lastName: "", address: "", latitude: 0.0, longitude: 0.0, avatar: "")
     }
 
-    convenience init(firstName: String, lastName: String, email: String) {
-        self.init(objectId: nil, firstName: firstName, lastName: lastName, email: email, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
+    convenience init(firstName: String, lastName: String) {
+        self.init(firstName: firstName, lastName: lastName, address: "", latitude: 0.0, longitude: 0.0, avatar: "")
     }
 
-    init(objectId: String?, firstName: String, lastName: String, email: String?, address: String, latitude: Double, longitude: Double, avatar: String) {
+    init(firstName: String, lastName: String, address: String, latitude: Double, longitude: Double, avatar: String) {
         super.init()
 
         self.firstName = firstName
@@ -35,20 +38,16 @@ class JobPoster: PFUser {
         self.longitude = longitude
         self.avatar = avatar
 
-        if let email = email {
-            self.email = email.lowercased()
-            self.username = self.email
-        }
     }
 
     // MARK: User Protocol methods
     func clone() -> JobPoster {
-        return JobPoster(objectId: self.objectId, firstName: self.firstName, lastName: self.lastName, email: self.email, address: self.address, latitude: self.latitude, longitude: self.longitude, avatar: self.avatar)
-    }
+        return JobPoster(firstName: self.firstName, lastName: self.lastName, address: self.address, latitude: self.latitude, longitude: self.longitude, avatar: self.avatar)
+    }*/
 
     // MARK: PFSubclassing Protocol methods
 
-    override class func parseClassName() -> String {
-        return Utilities.classNameAsString(obj: self)
+    class func parseClassName() -> String {
+        return "JobPoster"
     }
 }

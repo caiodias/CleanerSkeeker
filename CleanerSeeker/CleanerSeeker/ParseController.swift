@@ -23,21 +23,39 @@ class ParseController {
 
     }
 
-    func addUser(user: Worker, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        print("Adding a new Worker User")
+    func addUser(user: PFObject, password: String, email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        print("Adding a new User")
+        let pfuser = PFUser()
+        pfuser.username = email
+        pfuser.password = password
+        pfuser.email = email
 
-        user.signUpInBackground { (_, error: Error?) -> Void in
+        //Finally signup the user
+        pfuser.signUpInBackground { (_, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
             } else {
-                onSuccess(user as AnyObject)
+
+                // Set Relation to Pseudo user object
+                let relation = user.relation(forKey: "user")
+                relation.add(pfuser)
+
+                //Save pseudo user object
+                user.saveEventually { (_, error) in
+                    if let error = error {
+                        onFail(error)
+                    } else {
+                        onSuccess(user as AnyObject)
+                    }
+                }
             }
         }
+
     }
 
-    func addUser(user: JobPoster, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    /*func addUser(user: JobPoster, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Poster user")
-
+        
         user.signUpInBackground { (_, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
@@ -45,7 +63,7 @@ class ParseController {
                 onSuccess(user as AnyObject)
             }
         }
-    }
+    }*/
 
     func requestPasswordReset(forEmail email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Request reset password by email")

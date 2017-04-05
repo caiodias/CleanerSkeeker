@@ -57,12 +57,13 @@ class SignUpFirstStepViewController: UIViewController {
         user.lastName = self.lName.text!
         user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
         let password = self.password.text!
+        let email = self.email.text!
 
         let success = { success in
             print(success)
         }
 
-        Facade.shared.registerUser(user: user, password: password, onSuccess: success, onFail: success)
+        Facade.shared.registerUser(user: user, password: password, email: email, onSuccess: success, onFail: success)
     }
 
     private func createJobPoster() {
@@ -71,12 +72,13 @@ class SignUpFirstStepViewController: UIViewController {
         user.lastName = self.lName.text!
         user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
         let password = self.password.text!
+        let email = self.email.text!
 
         let success = { success in
             print(success)
         }
 
-        Facade.shared.registerUser(user: user, password: password, onSuccess: success, onFail: success)
+        Facade.shared.registerUser(user: user, password: password, email: email, onSuccess: success, onFail: success)
     }
 
     fileprivate func observeKeyboardNotifications() {
