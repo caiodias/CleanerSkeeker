@@ -25,10 +25,10 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var bedroomPrice = 7
     var washroomPrice = 5
 
-    var space: String = ""
+    var space: String = "nil"
     var bed: Int = 0
     var washroom: Int = 0
-    var date: String = "nil"
+    let date: String = "nil"
     let hours: Int = 0
     var price: Int = 0
     let address: String = "nil"
@@ -45,7 +45,6 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         self.noOfWashroomsPicker.delegate = self
         self.noOfWashroomsPicker.dataSource = self
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,7 +74,6 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             return noOfTypes[row]
         } else if pickerView == noOfBedroomPicker {
             return String(defaultBedAndWashrooms[row])
-
         } else if pickerView == noOfWashroomsPicker {
             return String(defaultBedAndWashrooms[row])
         }
@@ -93,38 +91,25 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     }
 
-    func priceForBedroomAndWashroom() -> Int {
+    @IBAction func createNewPost(_ sender: UIButton) {
         if bed == 0 {
-            bedroomPrice = 0
+            bedroomPrice = 7
         } else {
             bedroomPrice *= bed
         }
 
         if washroom == 0 {
-            washroomPrice = 0
+            washroomPrice = 5
         } else {
             washroomPrice *= washroom
         }
+
         price = bedroomPrice + washroomPrice
-
-        totalPriceLabel.text = String(price)
-        return price
-    }
-
-    @IBAction func createNewPost(_ sender: UIButton) {
-
-        let d = NSDate()
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "MM-dd-yyyy"
-        date = dateformatter.string(from: d as Date)
-
-        priceForBedroomAndWashroom()
 
         print("Tyoe of Space is : \(space)")
         print("no of bed is : \(bed)")
         print("no of washroom is \(washroom)")
         print("Total price is : \(price)")
-        print("Date is : \(date)")
 
     }
 
