@@ -160,11 +160,11 @@
             </objects>
             <point key="canvasLocation" x="2153" y="179"/>
         </scene>
-        <!--Cleaner Seeker-->
+        <!--Post List View Controller-->
         <scene sceneID="OkQ-ab-IOc">
             <objects>
                 <tableViewController id="FZp-JO-fyR" customClass="PostListViewController" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8V5-go-kkg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8V5-go-kkg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,19 +199,13 @@
                             <outlet property="delegate" destination="FZp-JO-fyR" id="RiN-2y-SQH"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem systemItem="add" id="22u-0X-OwR">
-                            <connections>
-                                <segue destination="QaU-jc-DN1" kind="show" identifier="addNewPost" id="255-Qj-Wfz"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Cleaner Seeker" id="Bug-Ba-Zly"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="w2n-L2-xqa"/>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yi2-g8-0RO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3585" y="868"/>
+            <point key="canvasLocation" x="1826" y="1592"/>
         </scene>
         <!--Add New Post View Controller-->
         <scene sceneID="5Ze-xo-r9H">
@@ -355,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExS-Ha-FeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4421" y="868"/>
+            <point key="canvasLocation" x="3887" y="1592"/>
         </scene>
         <!--Profile-->
         <scene sceneID="UNw-x5-cQk">
@@ -568,6 +562,25 @@
             </objects>
             <point key="canvasLocation" x="863" y="1592"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uTI-Ly-Wsc">
+            <objects>
+                <tabBarController id="lr0-Fe-VaI" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yrC-ck-R5i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FZp-JO-fyR" kind="relationship" relationship="viewControllers" id="gjw-vA-QEG"/>
+                        <segue destination="zZW-Pu-TDm" kind="relationship" relationship="viewControllers" id="KOr-dW-A4d"/>
+                        <segue destination="FZp-JO-fyR" kind="relationship" relationship="viewControllers" id="UK3-4b-pgc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciQ-8O-cDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2908" y="1592"/>
+        </scene>
         <!--Sign Up-->
         <scene sceneID="XVS-8s-14n">
             <objects>
@@ -707,44 +720,12 @@
             </objects>
             <point key="canvasLocation" x="2153" y="-592"/>
         </scene>
-        <!--Sign Up Second Step View Controller-->
-        <scene sceneID="ALI-gD-qRF">
-            <objects>
-                <viewController storyboardIdentifier="registerStep2" id="wT3-be-ldR" customClass="SignUpSecondStepViewController" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="asL-Z3-bHD"/>
-                        <viewControllerLayoutGuide type="bottom" id="ydT-Xw-9IZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cWe-sK-7KS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credentials" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TF-l0-Rpo">
-                                <rect key="frame" x="116.5" y="273.5" width="87" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljc-zj-kDd">
-                                <rect key="frame" x="135" y="486" width="105" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Edit Profile"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="2TF-l0-Rpo" firstAttribute="centerY" secondItem="cWe-sK-7KS" secondAttribute="centerY" id="BBN-Fv-UHX"/>
-                            <constraint firstItem="2TF-l0-Rpo" firstAttribute="centerX" secondItem="cWe-sK-7KS" secondAttribute="centerX" id="aEs-Vc-KyN"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p24-G0-5sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3586" y="179"/>
-        </scene>
     </scenes>
     <resources>
         <image name="btn_undo" width="21" height="21"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KOr-dW-A4d"/>
+        <segue reference="gjw-vA-QEG"/>
+    </inferredMetricsTieBreakers>
 </document>
