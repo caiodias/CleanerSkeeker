@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L03-S0-wdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251" y="181"/>
+            <point key="canvasLocation" x="-158" y="129"/>
         </scene>
         <!--Cleaner Seeker-->
         <scene sceneID="tne-QT-ifu">
@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213.5999999999999" y="179.46026986506749"/>
+            <point key="canvasLocation" x="863" y="129"/>
         </scene>
         <!--Reset Password-->
         <scene sceneID="v12-Tt-w97">
@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ryx-G9-HFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2153" y="179"/>
+            <point key="canvasLocation" x="2153" y="129"/>
         </scene>
         <!--Post List View Controller-->
         <scene sceneID="OkQ-ab-IOc">
