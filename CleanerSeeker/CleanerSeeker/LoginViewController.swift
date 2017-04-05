@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signUp(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "signup", sender: self)
+        // nothing to see here.
     }
 
     private func onLoginSuccess(object: Any) {
