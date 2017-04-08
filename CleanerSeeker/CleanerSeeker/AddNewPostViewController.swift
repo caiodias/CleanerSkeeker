@@ -106,7 +106,6 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             washroomPrice *= washroom
         }
 
-
         let d = Date()
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "MM-dd-yyyy"
