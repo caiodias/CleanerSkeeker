@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class SignUpFirstStepViewController: UIViewController {
     @IBOutlet weak var fName: UITextField!
@@ -54,7 +53,7 @@ class SignUpFirstStepViewController: UIViewController {
 
     private func createUser(type: PFUserType) {
 
-        let user = PFUser()
+        let user = CSUser()
         user.email = self.email.text!
         user.username = self.email.text!
         user.password =  self.password.text!
@@ -79,8 +78,8 @@ class SignUpFirstStepViewController: UIViewController {
 
     // MARK: - Registeration callbacks
     func onSuccess(_ response:Any) {
-        
-        guard let user = response as? PFUser else {
+
+        guard let user = response as? CSUser else {
             print("Wrong response object has to be PFUser")
             return
         }

@@ -23,7 +23,7 @@ class ParseController {
 
     }
 
-    func addUser(user: PFUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func addUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new User")
 
         //Finally signup the user
@@ -67,11 +67,11 @@ class ParseController {
     }
 
     func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        let parseUser = PFUser()
+        let parseUser = CSUser()
         parseUser.username = login
         parseUser.password = password
 
-        PFUser.logInWithUsername(inBackground: login, password: password, block: { (user: PFUser?, error: Error?) -> Void in
+        CSUser.logInWithUsername(inBackground: login, password: password, block: { (user: PFUser?, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
             } else {
@@ -82,11 +82,11 @@ class ParseController {
     }
 
     func logoutUser(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        PFUser.logOutInBackground { (error: Error?) in
+        CSUser.logOutInBackground { (error: Error?) in
             if let error = error {
                 onFail(error)
             } else {
-                onSuccess(PFUser.current() as Any)
+                onSuccess(CSUser.current() as Any)
             }
         }
     }

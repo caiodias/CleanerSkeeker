@@ -26,13 +26,10 @@ extension ApiController {
         case UserAlreadyExists
     }
 
-    func registerWorker(user: PFUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func registerCSUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.parseDb.addUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
 
-    /*func registerJobPoster(user: JobPoster, password: String, email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.parseDb.addUser(user: user, password: password, email: email, onSuccess: onSuccess, onFail: onFail)
-    }*/
 
     func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         // TODO: Implement the call using Parse framework

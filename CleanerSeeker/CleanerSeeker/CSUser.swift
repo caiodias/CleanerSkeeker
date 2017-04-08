@@ -13,7 +13,7 @@ enum PFUserType: Int {
     case JobPoster = 1
 }
 
-extension PFUser {
+class CSUser: PFUser {
     @NSManaged var userType: Int
     @NSManaged var firstName: String
     @NSManaged var lastName: String
