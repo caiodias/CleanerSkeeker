@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
         Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
     }
 
+    // MARK: Redirect user to right tab controller
     private func displayTabController(tabController: ShowTabController) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             print("Not possible to get the appDelegate")
@@ -42,6 +43,7 @@ class LoginViewController: UIViewController {
 
         let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: tabController.rawValue)
 
+        // Replace root controller
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
     }
