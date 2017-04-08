@@ -44,5 +44,9 @@ extension ApiController {
         self.parseDb.requestPasswordReset(forEmail: email, onSuccess: onSuccess, onFail: onFail)
     }
 
+    func logout(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.parseDb.logoutUser(onSuccess: onSuccess, onFail: onFail)
+    }
+
     // MARK: Private Methods
 }

@@ -36,4 +36,9 @@ class Facade {
     public func resetPassword(email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.resetPassword(email: email, onSuccess: onSuccess, onFail: onFail)
     }
+
+    public func logout(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.logout(onSuccess: onSuccess, onFail: onFail)
+
+    }
 }
