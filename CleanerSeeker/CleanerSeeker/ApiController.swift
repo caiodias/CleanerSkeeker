@@ -30,7 +30,6 @@ extension ApiController {
         self.parseDb.addUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
 
-
     func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         // TODO: Implement the call using Parse framework
         self.parseDb.loginUser(login: login, password: password, onSuccess: onSuccess, onFail: onFail)
