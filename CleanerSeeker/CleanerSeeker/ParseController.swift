@@ -104,4 +104,14 @@ class ParseController {
 //    private func fillPFUserObject(user: User) -> PFUser {
 //        var returnObject = PFUser()
 //    }
+
+    func logoutUser(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        PFUser.logOutInBackground { (error: Error?) in
+            if let error = error {
+                onFail(error)
+            } else {
+                onSuccess(PFUser.current() as Any)
+            }
+        }
+    }
 }
