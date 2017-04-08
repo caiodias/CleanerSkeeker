@@ -20,8 +20,12 @@ class ParseController {
     init() {
         self.users = []
         self.jobs = []
-
     }
+}
+
+// MARK: Login Flow Methods
+
+extension ParseController {
 
     func addUser(user: PFObject, password: String, email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new User")
@@ -53,18 +57,6 @@ class ParseController {
 
     }
 
-    /*func addUser(user: JobPoster, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        print("Adding a new Job Poster user")
-        
-        user.signUpInBackground { (_, error: Error?) -> Void in
-            if let error = error {
-                onFail(error)
-            } else {
-                onSuccess(user as AnyObject)
-            }
-        }
-    }*/
-
     func requestPasswordReset(forEmail email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Request reset password by email")
         PFUser.requestPasswordResetForEmail(inBackground: email) { (success: Bool, error: Error?) in
@@ -85,16 +77,6 @@ class ParseController {
             if let error = error {
                 onFail(error)
             } else {
-//                guard let parseUser = PFUser.current() else {
-//                    onFail(ParseDbErrors.UserNotFound)
-//                    return
-//                }
-//                
-//                guard let userType = parseUser["userType"] as? Int else {
-//                    onFail(ParseDbErrors.UserWithoutType)
-//                    return
-//                }
-
                 onSuccess(user as AnyObject)
             }
         })
@@ -104,4 +86,10 @@ class ParseController {
 //    private func fillPFUserObject(user: User) -> PFUser {
 //        var returnObject = PFUser()
 //    }
+}
+
+// MARK: Post Flow Methods
+
+extension ParseController {
+    
 }
