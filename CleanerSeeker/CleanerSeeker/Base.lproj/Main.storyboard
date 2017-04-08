@@ -46,13 +46,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-6d-XDf">
                                         <rect key="frame" x="0.0" y="40" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -416,12 +416,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-Im-NaN">
-                                <rect key="frame" x="115" y="460" width="90" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-YS-UWc">
+                                <rect key="frame" x="16" y="469" width="70" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="XZh-9x-lWp"/>
+                                    <constraint firstAttribute="width" constant="70" id="e4W-KY-Rbb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapOnLogOut:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="Lkn-uf-wN9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-Im-NaN">
+                                <rect key="frame" x="214" y="469" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="i7R-8M-qKT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Save"/>
                             </button>
                         </subviews>
@@ -429,10 +441,12 @@
                         <constraints>
                             <constraint firstItem="Mq0-r1-9zg" firstAttribute="top" secondItem="Ar4-1H-MYM" secondAttribute="bottom" constant="20" id="HQC-mZ-xwV"/>
                             <constraint firstItem="Mq0-r1-9zg" firstAttribute="leading" secondItem="0IC-rP-egG" secondAttribute="leadingMargin" id="LBQ-sz-cWL"/>
-                            <constraint firstItem="Az8-7r-maZ" firstAttribute="top" secondItem="tzE-Im-NaN" secondAttribute="bottom" constant="20" id="NpU-Y2-LzP"/>
-                            <constraint firstItem="tzE-Im-NaN" firstAttribute="centerX" secondItem="0IC-rP-egG" secondAttribute="centerX" id="Ojn-nf-yyA"/>
+                            <constraint firstItem="tzE-Im-NaN" firstAttribute="trailing" secondItem="0IC-rP-egG" secondAttribute="trailingMargin" id="ZMz-Ho-vox"/>
                             <constraint firstItem="Ar4-1H-MYM" firstAttribute="centerX" secondItem="0IC-rP-egG" secondAttribute="centerX" id="eZR-SN-36P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mq0-r1-9zg" secondAttribute="trailing" id="ed3-gL-oMD"/>
+                            <constraint firstItem="Az8-7r-maZ" firstAttribute="top" secondItem="tzE-Im-NaN" secondAttribute="bottom" constant="20" id="flC-zC-q3Q"/>
+                            <constraint firstItem="Az8-7r-maZ" firstAttribute="top" secondItem="cSa-YS-UWc" secondAttribute="bottom" constant="20" id="g82-We-hAN"/>
+                            <constraint firstItem="cSa-YS-UWc" firstAttribute="leading" secondItem="0IC-rP-egG" secondAttribute="leadingMargin" id="hUh-La-4OT"/>
                             <constraint firstItem="Ar4-1H-MYM" firstAttribute="top" secondItem="1Oa-7o-ebd" secondAttribute="bottom" constant="8" id="pbS-6a-Bvk"/>
                         </constraints>
                     </view>
@@ -440,12 +454,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMf-kZ-guf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="2381"/>
+            <point key="canvasLocation" x="862.5" y="2380.9859154929577"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Cleaner Home-->
         <scene sceneID="rMj-2Q-0Vs">
             <objects>
-                <tabBarController storyboardIdentifier="workerTabController" id="zeM-ly-wZ3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="workerTabController" title="Cleaner Home" id="zeM-ly-wZ3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Kaw-y5-KqY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -569,10 +583,10 @@
             </objects>
             <point key="canvasLocation" x="863" y="1592"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Job Poster Home-->
         <scene sceneID="uTI-Ly-Wsc">
             <objects>
-                <tabBarController id="lr0-Fe-VaI" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="jobPosterTabController" title="Job Poster Home" id="lr0-Fe-VaI" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yrC-ck-R5i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -732,7 +746,7 @@
         <image name="btn_undo" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gjw-vA-QEG"/>
         <segue reference="RII-dt-dA0"/>
+        <segue reference="gjw-vA-QEG"/>
     </inferredMetricsTieBreakers>
 </document>

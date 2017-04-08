@@ -27,4 +27,17 @@ class ProfileViewController: UIViewController {
         }
     }
 
+    @IBAction func tapOnLogOut(_ sender: Any) {
+        Facade.shared.logout(onSuccess: self.onSuccessLogout, onFail: self.onFailLogout)
+    }
+
+    func onSuccessLogout(_ user:Any) {
+        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login")
+        self.present(loginVC, animated: true, completion: nil)
+    }
+
+    func onFailLogout(error: Error?) {
+        //@TODO Add alert here?
+        print(error ?? "Unknown error occure.")
+    }
 }
