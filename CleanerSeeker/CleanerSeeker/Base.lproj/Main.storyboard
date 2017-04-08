@@ -442,10 +442,10 @@
             </objects>
             <point key="canvasLocation" x="863" y="2381"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Cleaner Home-->
         <scene sceneID="rMj-2Q-0Vs">
             <objects>
-                <tabBarController storyboardIdentifier="workerTabController" id="zeM-ly-wZ3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="workerTabController" title="Cleaner Home" id="zeM-ly-wZ3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Kaw-y5-KqY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -569,10 +569,10 @@
             </objects>
             <point key="canvasLocation" x="863" y="1592"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Job Poster Home-->
         <scene sceneID="uTI-Ly-Wsc">
             <objects>
-                <tabBarController id="lr0-Fe-VaI" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="jobPosterTabController" title="Job Poster Home" id="lr0-Fe-VaI" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yrC-ck-R5i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -732,7 +732,7 @@
         <image name="btn_undo" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gjw-vA-QEG"/>
         <segue reference="RII-dt-dA0"/>
+        <segue reference="gjw-vA-QEG"/>
     </inferredMetricsTieBreakers>
 </document>
