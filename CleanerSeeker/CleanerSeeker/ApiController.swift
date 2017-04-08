@@ -6,8 +6,6 @@
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
-import Parse
-
 typealias ApiSuccessScenario = (Any) -> Void
 typealias ApiFailScenario = (Error) -> Void
 
@@ -44,4 +42,15 @@ extension ApiController {
     }
 
     // MARK: Private Methods
+}
+
+// MARK: Post Flow Methods
+extension ApiController {
+    enum PostFlowError: Error {
+        case PostNotFound
+    }
+    
+    func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
+    }
 }
