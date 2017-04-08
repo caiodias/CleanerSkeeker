@@ -55,7 +55,8 @@ extension ApiController {
         case PostNotFound
     }
 
-    func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
+    func registerJobOpportunity(user: JobPoster, job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        user.jobOpportunities.append(job)
+        self.parseDb.registerJobOpportunity(user: user, onSuccess: onSuccess, onFail: onFail)
     }
 }

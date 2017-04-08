@@ -91,7 +91,7 @@ extension ParseController {
             if let error = error {
                 onFail(error)
             } else {
-                onSuccess(PFUser.current() as Any)
+                onSuccess(PFUser.current() as AnyObject)
             }
         }
     }
@@ -100,32 +100,15 @@ extension ParseController {
 // MARK: Post Flow Methods
 
 extension ParseController {
-    func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func registerJobOpportunity(user: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
-//        let pfUser = PFUser()
-//        pfUser.userType = user is Worker ? PFUserType.Worker.rawValue : PFUserType.JobPoster.rawValue
-//        pfUser.username = email
-//        pfUser.password = password
-//        pfUser.email = email
-//        
-//        //Finally signup the user
-//        pfUser.signUpInBackground { (_, error: Error?) -> Void in
-//            if let error = error {
-//                onFail(error)
-//            } else {
-//                // Set Relation to Pseudo user object
-//                let relation = user.relation(forKey: "userRelationId")
-//                relation.add(pfUser)
-//                
-//                //Save pseudo user object
-//                user.saveEventually { (_, error) in
-//                    if let error = error {
-//                        onFail(error)
-//                    } else {
-//                        onSuccess(user as AnyObject)
-//                    }
-//                }
-//            }
-//        }
+
+        user.saveInBackground { (_, error: Error?) -> Void in
+            if let error = error {
+                onFail(error)
+            } else {
+                onSuccess(PFUser.current() as AnyObject)
+            }
+        }
     }
 }
