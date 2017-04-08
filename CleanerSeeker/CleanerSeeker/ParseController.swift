@@ -12,6 +12,8 @@ class ParseController {
     enum ParseDbErrors: Error {
         case UserWithoutType
         case UserNotFound
+        case DifferentObjectType
+        case NilReturnObjects
     }
 
     var users: [PFUser]
@@ -108,6 +110,33 @@ extension ParseController {
                 onFail(error)
             } else {
                 onSuccess(PFUser.current() as AnyObject)
+            }
+        }
+    }
+
+    func getAllJobOpportunitiesInRange(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        let query = PFQuery(className:"JobOpportunity")
+        query.whereKey("status", equalTo:"0")
+
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
+            if let error = error {
+                print("Error on fetch active Job Opportunities")
+                onFail(error)
+            } else {
+                // Do something with the found objects
+                if let objects = objects {
+                    print("Successfully retrieved \(objects.count) job opportunities.")
+
+                    if objects is [JobOpportunity] {
+                        onSuccess(objects as AnyObject)
+                    } else {
+                        print("objects are not the [JobOpportunity] type 😕")
+                        onFail(ParseDbErrors.DifferentObjectType)
+                    }
+                } else {
+                    print("Successfully but without objects")
+                    onFail(ParseDbErrors.NilReturnObjects)
+                }
             }
         }
     }

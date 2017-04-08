@@ -59,4 +59,8 @@ extension ApiController {
         user.jobOpportunities.append(job)
         self.parseDb.registerJobOpportunity(user: user, onSuccess: onSuccess, onFail: onFail)
     }
+
+    func getAllJobOpportunitiesInRange(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.parseDb.getAllJobOpportunitiesInRange(user: user, onSuccess: onSuccess, onFail: onFail)
+    }
 }
