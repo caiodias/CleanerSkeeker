@@ -54,7 +54,7 @@ extension ApiController {
     enum PostFlowError: Error {
         case PostNotFound
     }
-    
+
     func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
