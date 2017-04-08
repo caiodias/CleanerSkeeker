@@ -13,12 +13,11 @@ class JobPoster: PFObject, PFSubclassing {
         case JobNotFound
     }
 
-    @NSManaged var firstName: String
-    @NSManaged var lastName: String
-    @NSManaged var latitude: Double
-    @NSManaged var longitude: Double
-    @NSManaged var address: String
+    @NSManaged var userRelationId: PFUser
+    // @TODO Make sure we need it here?
     @NSManaged var jobOpportunities: [JobOpportunity]
+
+    // MARK: PFSubclassing Protocol methods
 
     class func parseClassName() -> String {
         return "JobPoster"
