@@ -62,7 +62,7 @@ extension ParseController {
 
     func requestPasswordReset(forEmail email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Request reset password by email")
-        PFUser.requestPasswordResetForEmail(inBackground: email) { (success: Bool, error: Error?) in
+        CSUser.requestPasswordResetForEmail(inBackground: email) { (success: Bool, error: Error?) in
             if let error = error {
                 onFail(error)
             } else {
@@ -80,7 +80,13 @@ extension ParseController {
             if let error = error {
                 onFail(error)
             } else {
-                onSuccess(user as AnyObject)
+                
+                guard let castedUser = user as? CSUser else {
+                    onSuccess(user as Any)
+                    return
+                }
+                
+                onSuccess(castedUser)
             }
         })
     }
