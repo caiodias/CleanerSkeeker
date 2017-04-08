@@ -275,14 +275,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HGR-ta-ZRv" userLabel="Clean Date Stack">
                                         <rect key="frame" x="0.0" y="234" width="288" height="45"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Date to Clean " textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-yJ-x40">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="45"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Date" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-yJ-x40">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zwA-9Y-LYf">
-                                                <rect key="frame" x="122.5" y="0.0" width="165.5" height="45"/>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zwA-9Y-LYf">
+                                                <rect key="frame" x="46" y="0.0" width="242" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="wxo-tn-YAi"/>
                                                 </constraints>
@@ -301,14 +301,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-TD-xmo">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-TD-xmo">
                                                 <rect key="frame" x="133" y="0.0" width="155" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="KxK-TD-Sg9"/>
                                                 </constraints>
-                                                <date key="date" timeIntervalSinceReferenceDate="512423268.63143498">
-                                                    <!--2017-03-28 19:47:48 +0000-->
+                                                <date key="date" timeIntervalSinceReferenceDate="512366400.63143498">
+                                                    <!--2017-03-28 04:00:00 +0000-->
                                                 </date>
+                                                <locale key="locale" localeIdentifier="nl"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
