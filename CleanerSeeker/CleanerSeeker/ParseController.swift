@@ -83,11 +83,6 @@ extension ParseController {
         })
     }
 
-    // MARK: Private Methods
-//    private func fillPFUserObject(user: User) -> PFUser {
-//        var returnObject = PFUser()
-//    }
-
     func logoutUser(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         PFUser.logOutInBackground { (error: Error?) in
             if let error = error {
@@ -97,11 +92,17 @@ extension ParseController {
             }
         }
     }
+    
+    // MARK: Private Methods
+    //    private func fillPFUserObject(user: User) -> PFUser {
+    //        var returnObject = PFUser()
+    //    }
 }
 
 // MARK: Post Flow Methods
 
 extension ParseController {
+    
     func registerJobOpportunity(user: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
 
@@ -139,5 +140,13 @@ extension ParseController {
                 }
             }
         }
+    }
+}
+
+// MARK: Apply Flow Methods
+
+extension ParseController {
+    func apply(toJob: JobOpportunity, worker: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        toJob.save
     }
 }
