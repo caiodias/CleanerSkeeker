@@ -80,12 +80,12 @@ extension ParseController {
             if let error = error {
                 onFail(error)
             } else {
-                
+
                 guard let castedUser = user as? CSUser else {
                     onSuccess(user as Any)
                     return
                 }
-                
+
                 onSuccess(castedUser)
             }
         })
@@ -100,7 +100,7 @@ extension ParseController {
             }
         }
     }
-    
+
     // MARK: Private Methods
     //    private func fillPFUserObject(user: User) -> PFUser {
     //        var returnObject = PFUser()
@@ -110,7 +110,7 @@ extension ParseController {
 // MARK: Post Flow Methods
 
 extension ParseController {
-    
+
     func registerJobOpportunity(user: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
 
@@ -155,6 +155,6 @@ extension ParseController {
 
 extension ParseController {
     func apply(toJob: JobOpportunity, worker: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        toJob.save
+//        toJob.save
     }
 }
