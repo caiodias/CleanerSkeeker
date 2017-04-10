@@ -21,12 +21,8 @@ class Facade {
         // nothing to see here, keep moving 😁
     }
 
-    public func registerUser(user: Worker, password: String, email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.apiController.registerWorker(user: user, password: password, email: email, onSuccess: onSuccess, onFail: onFail)
-    }
-
-    public func registerUser(user: JobPoster, password: String, email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.apiController.registerJobPoster(user: user, password: password, email: email, onSuccess: onSuccess, onFail: onFail)
+    public func registerUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.registerCSUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
 
     public func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {

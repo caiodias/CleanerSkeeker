@@ -29,25 +29,27 @@ class ParseController {
 
 extension ParseController {
 
-    func addUser(user: PFObject, password: String, email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func addUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new User")
-        let pfUser = PFUser()
-        pfUser.userType = user is Worker ? PFUserType.Worker.rawValue : PFUserType.JobPoster.rawValue
-        pfUser.username = email
-        pfUser.password = password
-        pfUser.email = email
 
         //Finally signup the user
-        pfUser.signUpInBackground { (_, error: Error?) -> Void in
+        user.signUpInBackground { (_, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
             } else {
                 // Set Relation to Pseudo user object
-                let relation = user.relation(forKey: "userRelationId")
-                relation.add(pfUser)
+                var customUser: PFObject
+                if user.userType == PFUserType.Worker.rawValue {
+                    customUser = Worker()
+                } else {
+                    customUser = JobPoster()
+                }
+
+                let relation = customUser.relation(forKey: "userRelationId")
+                relation.add(user)
 
                 //Save pseudo user object
-                user.saveEventually { (_, error) in
+                customUser.saveEventually { (_, error) in
                     if let error = error {
                         onFail(error)
                     } else {
@@ -60,7 +62,7 @@ extension ParseController {
 
     func requestPasswordReset(forEmail email: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Request reset password by email")
-        PFUser.requestPasswordResetForEmail(inBackground: email) { (success: Bool, error: Error?) in
+        CSUser.requestPasswordResetForEmail(inBackground: email) { (success: Bool, error: Error?) in
             if let error = error {
                 onFail(error)
             } else {
@@ -70,25 +72,31 @@ extension ParseController {
     }
 
     func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        let parseUser = PFUser()
+        let parseUser = CSUser()
         parseUser.username = login
         parseUser.password = password
 
-        PFUser.logInWithUsername(inBackground: login, password: password, block: { (user: PFUser?, error: Error?) -> Void in
+        CSUser.logInWithUsername(inBackground: login, password: password, block: { (user: PFUser?, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
             } else {
-                onSuccess(user as AnyObject)
+                
+                guard let castedUser = user as? CSUser else {
+                    onSuccess(user as Any)
+                    return
+                }
+                
+                onSuccess(castedUser)
             }
         })
     }
 
     func logoutUser(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        PFUser.logOutInBackground { (error: Error?) in
+        CSUser.logOutInBackground { (error: Error?) in
             if let error = error {
                 onFail(error)
             } else {
-                onSuccess(PFUser.current() as AnyObject)
+                onSuccess(CSUser.current() as Any)
             }
         }
     }

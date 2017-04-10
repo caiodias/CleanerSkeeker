@@ -45,48 +45,63 @@ class SignUpFirstStepViewController: UIViewController {
 
         //Create user type based on switch
         if isCleaner.isOn {
-            createWorker()
+            createUser(type: .Worker)
         } else {
-            createJobPoster()
+            createUser(type: .JobPoster)
         }
     }
 
-    private func createWorker() {
-        let user = Worker()
+    private func createUser(type: PFUserType) {
+
+        let user = CSUser()
+        user.email = self.email.text!
+        user.username = self.email.text!
+        user.password =  self.password.text!
+        user.userType = type.rawValue
         user.firstName = self.fName.text!
         user.lastName = self.lName.text!
-        user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
-        let password = self.password.text!
-        let email = self.email.text!
+        user.phoneNumber = self.phone.text!
+        user.street = self.addressStreet.text!
+        user.unit = self.addressUnit.text!
+        user.city = self.city.text!
+        user.postalCode = self.postalCode.text!
 
-        let success = { success in
-            print(success)
-        }
+        Facade.shared.registerUser(user: user, onSuccess: self.onSuccess, onFail: onFail)
 
-        Facade.shared.registerUser(user: user, password: password, email: email, onSuccess: success, onFail: success)
     }
 
-    private func createJobPoster() {
-        let user = JobPoster()
-        user.firstName = self.fName.text!
-        user.lastName = self.lName.text!
-        user.address = String(format: "%@ %@ %@ %@", addressStreet.text!, addressUnit.text!, city.text!, postalCode.text!)
-        let password = self.password.text!
-        let email = self.email.text!
-
-        let success = { success in
-            print(success)
-        }
-
-        Facade.shared.registerUser(user: user, password: password, email: email, onSuccess: success, onFail: success)
-    }
-
-    fileprivate func observeKeyboardNotifications() {
+    private func observeKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
+    // MARK: - Registeration callbacks
+    func onSuccess(_ response:Any) {
+
+        guard let user = response as? CSUser else {
+            print("Wrong response object has to be PFUser")
+            return
+        }
+
+        let email = user.email
+        let alert = UIAlertController(title: "Registration", message: "Check your email '\(email)' to confirm the registration.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Go to Login screen", style: .default) { (_) in
+            alert.dismiss(animated: true, completion: nil)
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func onFail(error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    // MARK: - Keybord observers
     func keyboardShow() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.frame = CGRect(x: 0, y: -200, width: self.view.frame.width, height: self.view.frame.height)
