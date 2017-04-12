@@ -17,7 +17,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var addressTxtView: UITextField!
     @IBOutlet weak var zipcodeTxtView: UITextField!
-    @IBOutlet weak var hoursToClean: UITextField!
+    @IBOutlet weak var hoursToClean: UIDatePicker!
 
     let noOfTypes: [String] = ["House", "Condo"]
     let defaultBedAndWashrooms: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -29,10 +29,14 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var bed: Int = 0
     var washroom: Int = 0
     var date = ""
-    var hours: Int = 0
+    var hours = ""
     var price: Int = 0
     var address = ""
     var zip = ""
+
+    let datee = Date()
+    let calenderr = Calendar.current
+    let timee = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +98,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     @IBAction func createNewPost(_ sender: UIButton) {
+
         if bed == 0 {
             bedroomPrice = 7
         } else {
@@ -111,9 +116,14 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         dateformatter.dateFormat = "MM-dd-yyyy"
         date = dateformatter.string(from: d as Date)
 
+        let d1 = Date()
+        hoursToClean.datePickerMode = UIDatePickerMode.time
+        let hr = DateFormatter()
+        hr.dateFormat = "hh-mm"
+        hours = hr.string(for: d1 as Date)!
+
         address = addressTxtView.text!
         zip = zipcodeTxtView.text!
-        hours = Int(hoursToClean.text!)!
         price = bedroomPrice + washroomPrice
 
         print("Tyoe of Space is : \(space)")
@@ -124,7 +134,10 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         print("Hours to Clean: \(hours)")
         print("Address is : \(address)")
         print("Address is : \(zip)")
+    }
 
+    func resetPrice() {
+        price = 0
     }
 
 }
