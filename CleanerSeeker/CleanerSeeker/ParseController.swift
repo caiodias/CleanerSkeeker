@@ -101,20 +101,16 @@ extension ParseController {
         }
     }
 
-    func updateUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        user.saveInBackground(block: { (success, error) in
-            if let error = error {
-                onFail(error)
-            } else {
-                onSuccess(success)
-            }
-        })
-    }
+    // MARK: Private Methods
+    //    private func fillPFUserObject(user: User) -> PFUser {
+    //        var returnObject = PFUser()
+    //    }
 }
 
 // MARK: Post Flow Methods
 
 extension ParseController {
+
     func registerJobOpportunity(user: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
 
@@ -150,6 +146,21 @@ extension ParseController {
                     print("Successfully but without objects")
                     onFail(ParseDbErrors.NilReturnObjects)
                 }
+            }
+        }
+    }
+}
+
+// MARK: Apply Flow Methods
+
+extension ParseController {
+    func apply(toJob: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        toJob.saveInBackground { (_, error: Error?) -> Void in
+            if let error = error {
+                print("Error on apply to Job Opportunity")
+                onFail(error)
+            } else {
+                onSuccess(PFUser.current() as AnyObject)
             }
         }
     }
