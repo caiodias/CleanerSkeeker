@@ -100,6 +100,16 @@ extension ParseController {
             }
         }
     }
+
+    func updateUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        user.saveInBackground(block: { (success, error) in
+            if let error = error {
+                onFail(error)
+            } else {
+                onSuccess(success)
+            }
+        })
+    }
 }
 
 // MARK: Post Flow Methods

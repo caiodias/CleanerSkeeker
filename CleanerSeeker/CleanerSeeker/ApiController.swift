@@ -42,6 +42,10 @@ extension ApiController {
         self.parseDb.logoutUser(onSuccess: onSuccess, onFail: onFail)
     }
 
+    func updateUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.parseDb.updateUser(user: user, onSuccess: onSuccess, onFail: onFail)
+    }
+
     // MARK: Private Methods
 }
 
