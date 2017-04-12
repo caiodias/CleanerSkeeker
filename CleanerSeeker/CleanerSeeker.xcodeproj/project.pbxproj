@@ -15,6 +15,7 @@
 		954DC0781E2D6743000F1C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0761E2D6743000F1C4B /* LaunchScreen.storyboard */; };
 		954DC0831E2D6744000F1C4B /* CleanerSeekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC0821E2D6744000F1C4B /* CleanerSeekerTests.swift */; };
 		9574455D1E95735D00AD35CC /* CSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574455C1E95735D00AD35CC /* CSUser.swift */; };
+		959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F6A331E9EAE51008E8526 /* PostListVC.swift */; };
 		95B134671E467B5500838B3C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134661E467B5500838B3C /* Facade.swift */; };
 		95B134691E467B5F00838B3C /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134681E467B5F00838B3C /* ApiController.swift */; };
 		95B1346C1E467EC400838B3C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1346B1E467EC400838B3C /* Utilities.swift */; };
@@ -38,7 +39,6 @@
 		C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */; };
 		C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */; };
 		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
-		E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF461E89A8EE003A7687 /* PostListViewController.swift */; };
 		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
 		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +84,7 @@
 		954DC0821E2D6744000F1C4B /* CleanerSeekerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerSeekerTests.swift; sourceTree = "<group>"; };
 		954DC0841E2D6744000F1C4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9574455C1E95735D00AD35CC /* CSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSUser.swift; sourceTree = "<group>"; };
+		959F6A331E9EAE51008E8526 /* PostListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListVC.swift; sourceTree = "<group>"; };
 		95B134661E467B5500838B3C /* Facade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
 		95B134681E467B5F00838B3C /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		95B1346B1E467EC400838B3C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
 		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E182CF461E89A8EE003A7687 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +189,7 @@
 			children = (
 				954DC06F1E2D6743000F1C4B /* BasicVC.swift */,
 				95B134661E467B5500838B3C /* Facade.swift */,
+				95F9644A1E8AFE2C001969BB /* Job History Cell */,
 				95F9642E1E89B126001969BB /* Apply Flow */,
 				95F964221E89AACC001969BB /* Login Flow */,
 				E1108A961E93387000FD47C7 /* Post Flow */,
@@ -250,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */,
-				95F9644A1E8AFE2C001969BB /* Job History Cell */,
 			);
 			name = "Applied Job History";
 			sourceTree = "<group>";
@@ -267,8 +267,8 @@
 		E1108A961E93387000FD47C7 /* Post Flow */ = {
 			isa = PBXGroup;
 			children = (
-				E182CF461E89A8EE003A7687 /* PostListViewController.swift */,
 				E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */,
+				959F6A331E9EAE51008E8526 /* PostListVC.swift */,
 			);
 			name = "Post Flow";
 			sourceTree = "<group>";
@@ -410,8 +410,8 @@
 				E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */,
 				95D823571E9017310029B894 /* ParseController.swift in Sources */,
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
+				959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */,
 				E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */,
-				E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
