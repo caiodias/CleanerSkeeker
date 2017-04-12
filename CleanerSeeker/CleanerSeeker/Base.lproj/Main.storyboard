@@ -159,53 +159,6 @@
             </objects>
             <point key="canvasLocation" x="2153" y="129"/>
         </scene>
-        <!--Post List View Controller-->
-        <scene sceneID="OkQ-ab-IOc">
-            <objects>
-                <tableViewController id="FZp-JO-fyR" customClass="PostListViewController" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8V5-go-kkg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="post_list" textLabel="Jfl-ec-SlP" detailTextLabel="yPV-cd-d2Q" style="IBUITableViewCellStyleSubtitle" id="ouz-b3-NLh">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ouz-b3-NLh" id="qWl-GH-1EC">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jfl-ec-SlP">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yPV-cd-d2Q">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="FZp-JO-fyR" id="dgQ-Jc-Glo"/>
-                            <outlet property="delegate" destination="FZp-JO-fyR" id="RiN-2y-SQH"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="w2n-L2-xqa"/>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yi2-g8-0RO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1826" y="1592"/>
-        </scene>
         <!--Add New Post View Controller-->
         <scene sceneID="5Ze-xo-r9H">
             <objects>
@@ -704,14 +657,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="FZp-JO-fyR" kind="relationship" relationship="viewControllers" id="gjw-vA-QEG"/>
-                        <segue destination="zZW-Pu-TDm" kind="relationship" relationship="viewControllers" id="KOr-dW-A4d"/>
-                        <segue destination="FZp-JO-fyR" kind="relationship" relationship="viewControllers" id="UK3-4b-pgc"/>
+                        <segue destination="8sB-CU-L7d" kind="relationship" relationship="viewControllers" id="f0E-1T-gbF"/>
+                        <segue destination="5lw-tB-L66" kind="relationship" relationship="viewControllers" id="Nda-DG-ylW"/>
+                        <segue destination="8sB-CU-L7d" kind="relationship" relationship="viewControllers" id="dwx-2Q-qyc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciQ-8O-cDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2908" y="1592"/>
+            <point key="canvasLocation" x="1785" y="1592"/>
         </scene>
         <!--Post ListVC-->
         <scene sceneID="No9-yq-YHS">
@@ -726,7 +679,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0jN-ww-gzr">
-                                <rect key="frame" x="16" y="72" width="288" height="496"/>
+                                <rect key="frame" x="16" y="72" width="288" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yty-dj-OhD">
@@ -758,13 +711,14 @@
                             <constraint firstItem="0jN-ww-gzr" firstAttribute="centerX" secondItem="HQP-s6-LGy" secondAttribute="centerX" id="f89-mS-v1w"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="qU3-Vd-JdO"/>
                     <connections>
                         <outlet property="tableView" destination="0jN-ww-gzr" id="fsD-OE-8mQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lu-dK-gz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2904.375" y="2355.6338028169016"/>
+            <point key="canvasLocation" x="2835" y="1592"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="XVS-8s-14n">
@@ -910,8 +864,8 @@
         <image name="btn_undo" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RII-dt-dA0"/>
-        <segue reference="gjw-vA-QEG"/>
-        <segue reference="p6g-L2-8rX"/>
+        <segue reference="f0E-1T-gbF"/>
+        <segue reference="Nda-DG-ylW"/>
+        <segue reference="FSP-v6-mry"/>
     </inferredMetricsTieBreakers>
 </document>

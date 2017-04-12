@@ -39,7 +39,6 @@
 		C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */; };
 		C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */; };
 		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
-		E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF461E89A8EE003A7687 /* PostListViewController.swift */; };
 		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
 		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -104,7 +103,6 @@
 		C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
 		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E182CF461E89A8EE003A7687 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,7 +267,6 @@
 		E1108A961E93387000FD47C7 /* Post Flow */ = {
 			isa = PBXGroup;
 			children = (
-				E182CF461E89A8EE003A7687 /* PostListViewController.swift */,
 				E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */,
 				959F6A331E9EAE51008E8526 /* PostListVC.swift */,
 			);
@@ -415,7 +412,6 @@
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
 				959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */,
 				E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */,
-				E182CF471E89A8EE003A7687 /* PostListViewController.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
 				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
