@@ -38,6 +38,10 @@ class Facade {
 
     }
 
+    public func updateUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.updateUser(user: user, onSuccess: onSuccess, onFail: onFail)
+    }
+
     public func getJobs(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.getAllJobOpportunitiesInRange(user: user, onSuccess: onSuccess, onFail: onFail)
     }
