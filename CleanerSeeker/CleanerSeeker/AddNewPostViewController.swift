@@ -125,7 +125,18 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         address = addressTxtView.text!
         zip = zipcodeTxtView.text!
         price = bedroomPrice + washroomPrice
+        
+        if let currentUser = CSUser.current() {
+        
+            let job = JobOpportunity()
+            job.address = address
+            
+            Facade.shared.registerJobOpportunity(user: currentUser, job: job, onSuccess: <#T##ApiSuccessScenario##ApiSuccessScenario##(Any) -> Void#>, onFail: <#T##ApiFailScenario##ApiFailScenario##(Error) -> Void#>)
 
+        
+        }
+        
+        
         print("Tyoe of Space is : \(space)")
         print("no of bed is : \(bed)")
         print("no of washroom is \(washroom)")
