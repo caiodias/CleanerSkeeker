@@ -80,12 +80,12 @@ extension ParseController {
             if let error = error {
                 onFail(error)
             } else {
-                
+
                 guard let castedUser = user as? CSUser else {
                     onSuccess(user as Any)
                     return
                 }
-                
+
                 onSuccess(castedUser)
             }
         })
