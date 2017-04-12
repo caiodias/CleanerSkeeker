@@ -422,6 +422,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="tapOnSave:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="jqD-Nn-8ba"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-YS-UWc">
                                 <rect key="frame" x="16" y="713" width="70" height="30"/>
@@ -550,6 +553,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="zo4-eZ-VDC"/>
                                                 </constraints>
                                                 <state key="normal" title="Request password reset"/>
+                                                <connections>
+                                                    <action selector="tapOnPasswordReset:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="d16-9O-dib"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -584,6 +590,17 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="ld9-PV-mE8"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="800"/>
+                    <connections>
+                        <outlet property="addressStreet" destination="Acd-cY-DtZ" id="g0W-U7-Lt1"/>
+                        <outlet property="addressUnit" destination="byv-tr-bSa" id="9no-AW-GRY"/>
+                        <outlet property="avatar" destination="Ar4-1H-MYM" id="bWa-D2-0aB"/>
+                        <outlet property="city" destination="ebg-yZ-HAR" id="3Ja-dI-aeA"/>
+                        <outlet property="email" destination="bl4-9J-yBt" id="2xo-cz-NWI"/>
+                        <outlet property="firstName" destination="MUE-V0-KmG" id="7Qb-Ki-3kH"/>
+                        <outlet property="lastName" destination="bBQ-YG-IO8" id="VEs-FZ-fc4"/>
+                        <outlet property="phone" destination="e8B-af-uaN" id="ebv-Fc-Zeb"/>
+                        <outlet property="province" destination="gTf-lG-zGC" id="LPH-i3-sND"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMf-kZ-guf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
