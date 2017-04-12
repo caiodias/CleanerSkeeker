@@ -18,6 +18,7 @@ class ApiController {
 }
 
 // MARK: Login Flow Methods
+
 extension ApiController {
     enum LoginFlowError: Error {
         case UserNotFound
@@ -46,6 +47,7 @@ extension ApiController {
 }
 
 // MARK: Post Flow Methods
+
 extension ApiController {
     enum PostFlowError: Error {
         case PostNotFound
@@ -58,5 +60,18 @@ extension ApiController {
 
     func getAllJobOpportunitiesInRange(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.parseDb.getAllJobOpportunitiesInRange(user: user, onSuccess: onSuccess, onFail: onFail)
+    }
+}
+
+// MARK: Apply Flow Methods
+
+extension ApiController {
+    enum ApplyFlowError: Error {
+        case None
+    }
+    
+    func apply(toJob: JobOpportunity, worker: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        toJob.appliedId = worker.objectId
+        self.parseDb.apply(toJob: toJob, onSuccess: onSuccess, onFail: onFail)
     }
 }

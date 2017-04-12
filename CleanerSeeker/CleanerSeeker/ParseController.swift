@@ -154,7 +154,14 @@ extension ParseController {
 // MARK: Apply Flow Methods
 
 extension ParseController {
-    func apply(toJob: JobOpportunity, worker: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-//        toJob.save
+    func apply(toJob: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        toJob.saveInBackground { (_, error: Error?) -> Void in
+            if let error = error {
+                print("Error on apply to Job Opportunity")
+                onFail(error)
+            } else {
+                onSuccess(PFUser.current() as AnyObject)
+            }
+        }
     }
 }
