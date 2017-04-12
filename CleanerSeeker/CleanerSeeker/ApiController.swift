@@ -46,7 +46,6 @@ extension ApiController {
         self.parseDb.updateUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
 
-    // MARK: Private Methods
 }
 
 // MARK: Post Flow Methods
