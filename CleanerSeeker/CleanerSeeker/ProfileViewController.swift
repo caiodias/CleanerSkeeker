@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Outlets
     @IBOutlet weak var avatar: UIImageView!
@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
 
         //Populates fields with current user data.
         self.loadCurentUser()
+        self.addAvatarTap()
 
     }
 
@@ -109,5 +110,11 @@ class ProfileViewController: UIViewController {
         let action = UIAlertAction(title: actionButtonText, style: .default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
+    }
+
+    fileprivate func addAvatarTap() {
+
+        let tapGestureRecigniser = UITapGestureRecognizer.init(target: self, action: #selector(imageTapped(_:)))
+        avatar.addGestureRecognizer(tapGestureRecigniser)
     }
 }
