@@ -33,6 +33,7 @@
 		95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */; };
 		95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F964461E8AF973001969BB /* JobHistoryCell.xib */; };
 		95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964481E8AFA33001969BB /* JobHistoryCell.swift */; };
+		C1442B9C1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1442B9B1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift */; };
 		C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
 		C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -100,6 +101,7 @@
 		95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AplliedJobsHistoryVC.swift; sourceTree = "<group>"; };
 		95F964461E8AF973001969BB /* JobHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobHistoryCell.xib; sourceTree = "<group>"; };
 		95F964481E8AFA33001969BB /* JobHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHistoryCell.swift; sourceTree = "<group>"; };
+		C1442B9B1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProvileViewController+Delegates.swift"; sourceTree = "<group>"; };
 		C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
 		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				E1B6F3671E838196008D608B /* LoginViewController.swift */,
 				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
 				C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */,
+				C1442B9B1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift */,
 			);
 			name = "Login Flow";
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				95F964301E89B164001969BB /* FindJobOffersDataSource.swift in Sources */,
 				95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */,
 				95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */,
+				C1442B9C1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift in Sources */,
 				E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */,
 				95D823571E9017310029B894 /* ParseController.swift in Sources */,
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
