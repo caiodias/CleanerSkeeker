@@ -56,9 +56,9 @@ extension ApiController {
         case PostNotFound
     }
 
-    func registerJobOpportunity(user: JobPoster, job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        user.jobOpportunities.append(job)
-        self.parseDb.registerJobOpportunity(user: user, onSuccess: onSuccess, onFail: onFail)
+    func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        //user.jobOpportunities.append(job)
+        self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
     func getAllJobOpportunitiesInRange(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
@@ -73,8 +73,8 @@ extension ApiController {
         case None
     }
 
-    func apply(toJob: JobOpportunity, worker: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        toJob.appliedId = worker.objectId
+    func apply(toJob: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        toJob.appliedId = CSUser.current() // attach worker
         self.parseDb.apply(toJob: toJob, onSuccess: onSuccess, onFail: onFail)
     }
 }

@@ -130,12 +130,13 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
             let job = JobOpportunity()
             job.address = address
+            job.ownerId = currentUser
 
-            /*Facade.shared.registerJobOpportunity(user: currentUser, job: job, onSuccess: { (success) in
+            Facade.shared.registerJobOpportunity(job: job, onSuccess: { (success) in
                 print("Success \(success)")
             }, onFail: { (error) in
                 print("Success \(error)")
-            })*/
+            })
 
         }
 

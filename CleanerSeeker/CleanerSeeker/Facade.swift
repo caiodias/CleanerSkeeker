@@ -45,8 +45,8 @@ class Facade {
 
     // MARK: Post Flow
 
-    public func registerJobOpportunity(user: JobPoster, job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.apiController.registerJobOpportunity(user: user, job: job, onSuccess: onSuccess, onFail: onFail)
+    public func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
     public func getJobs(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {

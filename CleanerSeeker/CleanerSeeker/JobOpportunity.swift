@@ -32,8 +32,8 @@ class JobOpportunity: PFObject, PFSubclassing {
     @NSManaged var numberBedrooms: Int
     @NSManaged var numberWashrooms: Int
     @NSManaged var hoursToWork: Int
-    @NSManaged var ownerId: String
-    @NSManaged var appliedId: String?
+    @NSManaged var ownerId: CSUser
+    @NSManaged var appliedId: CSUser?
     @NSManaged var price: Double
     @NSManaged var jobWorkDate: Date
 

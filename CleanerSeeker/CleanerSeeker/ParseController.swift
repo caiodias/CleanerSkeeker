@@ -116,14 +116,14 @@ extension ParseController {
 // MARK: Post Flow Methods
 
 extension ParseController {
-    func registerJobOpportunity(user: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
 
-        user.saveInBackground { (_, error: Error?) -> Void in
+        job.saveInBackground { (_, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
             } else {
-                onSuccess(PFUser.current() as AnyObject)
+                onSuccess(job) // now job has to have id
             }
         }
     }
@@ -164,7 +164,7 @@ extension ParseController {
             print("Error on apply to Job Opportunity")
             onFail(error)
           } else {
-            onSuccess(PFUser.current() as AnyObject)
+            onSuccess(toJob) // has user relation
           }
         }
     }
