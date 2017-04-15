@@ -22,7 +22,7 @@ class Facade {
     }
 
     // MARK: Login Flow
-    
+
     public func registerUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.registerCSUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
@@ -43,14 +43,12 @@ class Facade {
         self.apiController.updateUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
 
-
     // MARK: Post Flow
-    
+
     public func registerJobOpportunity(user: JobPoster, job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.registerJobOpportunity(user: user, job: job, onSuccess: onSuccess, onFail: onFail)
     }
-    
-    
+
     public func getJobs(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.getAllJobOpportunitiesInRange(user: user, onSuccess: onSuccess, onFail: onFail)
     }

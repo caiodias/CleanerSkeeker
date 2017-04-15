@@ -72,7 +72,7 @@ extension ApiController {
     enum ApplyFlowError: Error {
         case None
     }
-    
+
     func apply(toJob: JobOpportunity, worker: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         toJob.appliedId = worker.objectId
         self.parseDb.apply(toJob: toJob, onSuccess: onSuccess, onFail: onFail)
