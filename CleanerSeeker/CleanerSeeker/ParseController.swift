@@ -110,7 +110,7 @@ extension ParseController {
             }
         })
     }
-    
+
 }
 
 // MARK: Post Flow Methods
@@ -152,6 +152,20 @@ extension ParseController {
                     onFail(ParseDbErrors.NilReturnObjects)
                 }
             }
+        }
+    }
+}
+
+// MARK: Apply Flow Methods
+extension ParseController {
+    func apply(toJob: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        toJob.saveInBackground { (_, error: Error?) -> Void in
+           if let error = error {
+            print("Error on apply to Job Opportunity")
+            onFail(error)
+          } else {
+            onSuccess(PFUser.current() as AnyObject)
+          }
         }
     }
 }
