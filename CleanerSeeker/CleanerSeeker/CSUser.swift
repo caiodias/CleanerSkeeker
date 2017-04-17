@@ -14,6 +14,7 @@ enum PFUserType: Int {
 }
 
 class CSUser: PFUser {
+    @NSManaged var avatar: CSFile
     @NSManaged var userType: Int
     @NSManaged var firstName: String
     @NSManaged var lastName: String
