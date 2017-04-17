@@ -125,25 +125,30 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         address = addressTxtView.text!
         zip = zipcodeTxtView.text!
         price = Double(bedroomPrice + washroomPrice)
-        
+
         if let currentUser = CSUser.current() {
-        
+
             let job = JobOpportunity()
             job.address = address
-            job.spaceType = 
+            job.spaceType =
             job.numberBedrooms = bed
             job.numberWashrooms = washroom
             job.price = price
             job.jobWorkDate = d
             job.hoursToWork = hours
             job.zipcode = zip
-            
-            Facade.shared.registerJobOpportunity(user: currentUser, job: job, onSuccess: onAddNewPostSuccess, onFail: onAddNewPostFail)
 
-        
+            Facade.shared.registerJobOpportunity(user: currentUser, job: job, onSuccess: onAddNewPostSuccess, onFail: onAddNewPostFail)
+            job.ownerId = currentUser
+
+            Facade.shared.registerJobOpportunity(job: job, onSuccess: { (success) in
+                print("Success \(success)")
+            }, onFail: { (error) in
+                print("Success \(error)")
+            })
+
         }
-        
-        
+
         print("Tyoe of Space is : \(space)")
         print("no of bed is : \(bed)")
         print("no of washroom is \(washroom)")
@@ -157,15 +162,15 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     func resetPrice() {
         price = 0
     }
-    
+
     private func onAddNewPostSuccess(error: Error) {
         let alert = UIAlertController(title: "Success", message: "New Post Insert successfully", preferredStyle: .alert)
         let action = UIAlertAction(title: "Congrulations", style: .default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
+
+
     private func onAddNewPostFail(error: Error) {
         let alert = UIAlertController(title: "Error", message: "Error in New post", preferredStyle: .alert)
         let action = UIAlertAction(title: "Try again", style: .default, handler: nil)

@@ -110,20 +110,20 @@ extension ParseController {
             }
         })
     }
-    
+
 }
 
 // MARK: Post Flow Methods
 
 extension ParseController {
-    func registerJobOpportunity(user: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
 
-        user.saveInBackground { (_, error: Error?) -> Void in
+        job.saveInBackground { (_, error: Error?) -> Void in
             if let error = error {
                 onFail(error)
             } else {
-                onSuccess(PFUser.current() as AnyObject)
+                onSuccess(job) // now job has to have id
             }
         }
     }
@@ -152,6 +152,20 @@ extension ParseController {
                     onFail(ParseDbErrors.NilReturnObjects)
                 }
             }
+        }
+    }
+}
+
+// MARK: Apply Flow Methods
+extension ParseController {
+    func apply(toJob: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        toJob.saveInBackground { (_, error: Error?) -> Void in
+           if let error = error {
+            print("Error on apply to Job Opportunity")
+            onFail(error)
+          } else {
+            onSuccess(toJob) // has user relation
+          }
         }
     }
 }
