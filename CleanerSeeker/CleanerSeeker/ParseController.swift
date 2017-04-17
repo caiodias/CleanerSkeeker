@@ -161,7 +161,8 @@ extension ParseController {
 
     func getAllJobOpportunitiesInRange(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         let query = PFQuery(className:"JobOpportunity")
-        query.whereKey("status", equalTo:"0")
+        query.whereKey("status", equalTo:"0") // Active
+        // TODO: Use the user location (lat, long) to filter the job opportunities
 
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
             if let error = error {
