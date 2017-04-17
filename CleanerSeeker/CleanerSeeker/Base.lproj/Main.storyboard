@@ -773,6 +773,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="UgT-2f-SRW"/>
+                    <connections>
+                        <outlet property="tableView" destination="E5I-RJ-l77" id="iof-eD-bin"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGd-LW-7yW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
