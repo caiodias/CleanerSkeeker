@@ -22,8 +22,8 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     let noOfTypes: [String] = ["House", "Condo"]
     let defaultBedAndWashrooms: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
-    var bedroomPrice = 7
-    var washroomPrice = 5
+    var bedroomPrice = 7.0
+    var washroomPrice = 5.0
 
     var space = ""
     var bed: Int = 0
@@ -99,16 +99,16 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     @IBAction func createNewPost(_ sender: UIButton) {
 
-        if bed == 0.0 {
+        if bed == 0 {
             bedroomPrice = 7.0
         } else {
-            bedroomPrice *= bed
+            bedroomPrice *= Double(bed)
         }
 
-        if washroom == 0.0 {
+        if washroom == 0 {
             washroomPrice = 5.0
         } else {
-            washroomPrice *= washroom
+            washroomPrice *= Double(washroom)
         }
 
         let d = Date()
@@ -131,11 +131,11 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             let job = JobOpportunity()
             job.address = address
             job.spaceType =
-            job.numberBedrooms = bed
+            job.numberBedrooms = Int(bed)
             job.numberWashrooms = washroom
             job.price = price
             job.jobWorkDate = d
-            job.hoursToWork = hours
+            job.hoursToWork = (hours)
             job.zipcode = zip
 
             Facade.shared.registerJobOpportunity(user: currentUser, job: job, onSuccess: onAddNewPostSuccess, onFail: onAddNewPostFail)
