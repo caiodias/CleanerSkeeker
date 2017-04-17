@@ -22,15 +22,15 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     let noOfTypes: [String] = ["House", "Condo"]
     let defaultBedAndWashrooms: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
-    var bedroomPrice = 7
-    var washroomPrice = 5
+    var bedroomPrice = 7.0
+    var washroomPrice = 5.0
 
     var space = ""
     var bed: Int = 0
     var washroom: Int = 0
     var date = ""
     var hours = ""
-    var price: Int = 0
+    var price: Double = 0.0
     var address = ""
     var zip = ""
 
@@ -100,15 +100,15 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBAction func createNewPost(_ sender: UIButton) {
 
         if bed == 0 {
-            bedroomPrice = 7
+            bedroomPrice = 7.0
         } else {
-            bedroomPrice *= bed
+            bedroomPrice *= Double(bed)
         }
 
         if washroom == 0 {
-            washroomPrice = 5
+            washroomPrice = 5.0
         } else {
-            washroomPrice *= washroom
+            washroomPrice *= Double(washroom)
         }
 
         let d = Date()
@@ -124,12 +124,21 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         address = addressTxtView.text!
         zip = zipcodeTxtView.text!
-        price = bedroomPrice + washroomPrice
+        price = Double(bedroomPrice + washroomPrice)
 
         if let currentUser = CSUser.current() {
 
             let job = JobOpportunity()
             job.address = address
+            job.spaceType =
+            job.numberBedrooms = Int(bed)
+            job.numberWashrooms = washroom
+            job.price = price
+            job.jobWorkDate = d
+            job.hoursToWork = (hours)
+            job.zipcode = zip
+
+            Facade.shared.registerJobOpportunity(user: currentUser, job: job, onSuccess: onAddNewPostSuccess, onFail: onAddNewPostFail)
             job.ownerId = currentUser
 
             Facade.shared.registerJobOpportunity(job: job, onSuccess: { (success) in
@@ -153,5 +162,21 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     func resetPrice() {
         price = 0
     }
+
+    private func onAddNewPostSuccess(error: Error) {
+        let alert = UIAlertController(title: "Success", message: "New Post Insert successfully", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Congrulations", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+
+    private func onAddNewPostFail(error: Error) {
+        let alert = UIAlertController(title: "Error", message: "Error in New post", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+
 
 }
