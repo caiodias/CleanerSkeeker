@@ -135,17 +135,12 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     private func onAddNewPostSuccess(error: Error) {
-        let alert = UIAlertController(title: "Success", message: "New Post Insert successfully", preferredStyle: .alert)
         let action = UIAlertAction(title: "Congrulations", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        Utilities.displayAlert(title: "Success", message: "New Job Post insert successfully", okAction: action)
     }
 
     private func onAddNewPostFail(error: Error) {
-        let alert = UIAlertController(title: "Error", message: "Error in New post", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        Utilities.displayAlert(error)
     }
 
     // MARK: async methods callback

@@ -84,7 +84,6 @@ class SignUpFirstStepViewController: BasicVC {
     }
 
     func onFail(error: Error) {
-        let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
-        Utilities.displayAlert(message: error.localizedDescription, okAction: action)
+        Utilities.displayAlert(error)
     }
 }
