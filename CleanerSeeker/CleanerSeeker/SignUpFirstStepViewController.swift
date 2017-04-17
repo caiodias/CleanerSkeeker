@@ -25,10 +25,6 @@ class SignUpFirstStepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        observeKeyboardNotifications()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,13 +66,8 @@ class SignUpFirstStepViewController: UIViewController {
 
     }
 
-    private func observeKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
-
     // MARK: - Registeration callbacks
+
     func onSuccess(_ response:Any) {
 
         guard let user = response as? CSUser else {
@@ -84,33 +75,16 @@ class SignUpFirstStepViewController: UIViewController {
             return
         }
 
-        let alert = UIAlertController(title: "Registration", message: "Check your email '\(user.email!)' to confirm the registration.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Go to Login screen", style: .default) { (_) in
-            alert.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             _ = self.navigationController?.popToRootViewController(animated: true)
         }
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+
+        Utilities.displayAlert(title: "Registration", message: "Check your email '\(user.email!)' to confirm the registration.", okAction: action)
     }
 
     func onFail(error: Error) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        Utilities.displayAlert(message: error.localizedDescription, okAction: action)
     }
-
-    // MARK: - Keybord observers
-    func keyboardShow() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: -200, width: self.view.frame.width, height: self.view.frame.height)
-        }, completion: nil)
-    }
-
-    func keyboardHide() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        }, completion: nil)
-    }
-
 }
