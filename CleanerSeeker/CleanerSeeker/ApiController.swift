@@ -65,7 +65,8 @@ extension ApiController {
     }
 
     func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        //user.jobOpportunities.append(job)
+        job.price = (job.numberWashrooms * 5) + (job.numberBedrooms * 3) + (job.hoursToWork * 0.2)
+
         self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
