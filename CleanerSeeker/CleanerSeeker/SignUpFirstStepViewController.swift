@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpFirstStepViewController: UIViewController {
+class SignUpFirstStepViewController: BasicVC {
     @IBOutlet weak var fName: UITextField!
 
     @IBOutlet weak var lName: UITextField!
