@@ -22,7 +22,7 @@ class Facade {
     }
 
     // MARK: Login Flow
-    
+
     public func registerUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.registerCSUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
@@ -39,12 +39,24 @@ class Facade {
         self.apiController.logout(onSuccess: onSuccess, onFail: onFail)
     }
 
-    // MARK: Post Flow
-    
-    public func registerJobOpportunity(user: JobPoster, job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.apiController.registerJobOpportunity(user: user, job: job, onSuccess: onSuccess, onFail: onFail)
+    public func updateUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.updateUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
-    
+
+    public func updateUserAvatar(image: Data, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.updateUserAvatar(image: image, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func getUserProfileImage(image: CSFile, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        self.apiController.getUserProfileImage(image:image, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    // MARK: Post Flow
+
+    public func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
+    }
+
     public func getJobs(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.getAllJobOpportunitiesInRange(user: user, onSuccess: onSuccess, onFail: onFail)
     }

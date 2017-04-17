@@ -60,12 +60,17 @@ class LoginViewController: UIViewController {
     }
 
     private func onLoginFail(error: Error) {
-        print(error.localizedDescription)
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 
     // MARK: keyboard methods
     fileprivate func observeKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDismiss), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     func keyboardShow() {

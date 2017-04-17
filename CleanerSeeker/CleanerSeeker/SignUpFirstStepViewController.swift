@@ -84,8 +84,7 @@ class SignUpFirstStepViewController: UIViewController {
             return
         }
 
-        let email = user.email
-        let alert = UIAlertController(title: "Registration", message: "Check your email '\(email)' to confirm the registration.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Registration", message: "Check your email '\(user.email!)' to confirm the registration.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Go to Login screen", style: .default) { (_) in
             alert.dismiss(animated: true, completion: nil)
             _ = self.navigationController?.popToRootViewController(animated: true)

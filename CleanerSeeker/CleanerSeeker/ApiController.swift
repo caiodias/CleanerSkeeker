@@ -5,7 +5,7 @@
 //  Created by Caio Dias on 2017-02-04.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
-
+import Foundation
 typealias ApiSuccessScenario = (Any) -> Void
 typealias ApiFailScenario = (Error) -> Void
 
@@ -18,6 +18,7 @@ class ApiController {
 }
 
 // MARK: Login Flow Methods
+
 extension ApiController {
     enum LoginFlowError: Error {
         case UserNotFound
@@ -42,21 +43,46 @@ extension ApiController {
         self.parseDb.logoutUser(onSuccess: onSuccess, onFail: onFail)
     }
 
-    // MARK: Private Methods
+    func updateUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.parseDb.updateUser(user: user, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func updateUserAvatar(image: Data, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.parseDb.updateProfileImage(image: image, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func getUserProfileImage(image: CSFile, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        self.parseDb.getUserProfileImage(image: image, onSuccess: onSuccess, onFail: onFail)
+    }
+
 }
 
 // MARK: Post Flow Methods
+
 extension ApiController {
     enum PostFlowError: Error {
         case PostNotFound
     }
 
-    func registerJobOpportunity(user: JobPoster, job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        user.jobOpportunities.append(job)
-        self.parseDb.registerJobOpportunity(user: user, onSuccess: onSuccess, onFail: onFail)
+    func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        job.price = JobOpportunity.calculatePrice(numberOfBeds: job.numberBedrooms, numberOfWashs: job.numberWashrooms, totalMinutesOfWork: job.totalMinutesToWork)
+        self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
     func getAllJobOpportunitiesInRange(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.parseDb.getAllJobOpportunitiesInRange(user: user, onSuccess: onSuccess, onFail: onFail)
+    }
+}
+
+// MARK: Apply Flow Methods
+
+extension ApiController {
+    enum ApplyFlowError: Error {
+        case None
+    }
+
+    func apply(toJob: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        toJob.appliedId = CSUser.current() // attach worker
+        self.parseDb.apply(toJob: toJob, onSuccess: onSuccess, onFail: onFail)
     }
 }
