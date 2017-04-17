@@ -10,7 +10,7 @@ import Foundation
 import Parse
 
 enum JobSpaceType: Int {
-    case none = 0
+    case none = -1
     case house
     case building
 }
