@@ -31,7 +31,7 @@ class JobOpportunity: PFObject, PFSubclassing {
     @NSManaged var longitude: Double
     @NSManaged var numberBedrooms: Int
     @NSManaged var numberWashrooms: Int
-    @NSManaged var hoursToWork: Int
+    @NSManaged var totalMinutesToWork: Int
     @NSManaged var ownerId: CSUser
     @NSManaged var appliedId: CSUser?
     @NSManaged var price: Double
@@ -39,5 +39,14 @@ class JobOpportunity: PFObject, PFSubclassing {
 
     class func parseClassName() -> String {
         return "JobOpportunity"
+    }
+
+    static func calculatePrice(numberOfBeds: Int, numberOfWashs: Int, totalMinutesOfWork: Int) -> Double {
+        let priceForWashrooms = Double(numberOfBeds * 5)
+        let priceForBedrooms = Double(numberOfWashs * 3)
+        let priceBasedOnTime = Double(totalMinutesOfWork) * 0.2
+        let totalPrice = priceForBedrooms + priceForWashrooms + priceBasedOnTime
+
+        return totalPrice
     }
 }

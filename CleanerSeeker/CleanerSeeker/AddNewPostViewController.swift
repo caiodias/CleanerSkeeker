@@ -36,12 +36,6 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         self.noOfWashroomsPicker.delegate = self
         self.noOfWashroomsPicker.dataSource = self
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -82,10 +76,11 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         } else if pickerView == noOfWashroomsPicker {
             numberOfWashroomsSelected = defaultBedAndWashrooms[row]
         }
+
+        refreshPrice()
     }
 
     @IBAction func createNewPost(_ sender: UIButton) {
-
         if validateFields() {
             let job = JobOpportunity()
             job.address = addressTxtView.text!
@@ -101,11 +96,10 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
             job.numberBedrooms = numberOfBedsSelected
             job.numberWashrooms = numberOfWashroomsSelected
-
             let hours = NSCalendar.current.component(.hour, from: hoursToClean.date)
             let minutes = NSCalendar.current.component(.minute, from: hoursToClean.date)
             let serviceTotalTime = (hours * 60) + minutes
-            job.hoursToWork = serviceTotalTime
+            job.totalMinutesToWork = serviceTotalTime
 
             job.jobWorkDate = self.datePicker.date
 
@@ -113,6 +107,22 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         } else {
             print("error")
         }
+    }
+
+    func refreshPrice() {
+        let hours = NSCalendar.current.component(.hour, from: hoursToClean.date)
+        let minutes = NSCalendar.current.component(.minute, from: hoursToClean.date)
+        let serviceTotalTime = (hours * 60) + minutes
+        var labelPriceValue = "$0.00"
+
+        if serviceTotalTime > 0 {
+            if numberOfWashroomsSelected >= 0 && numberOfBedsSelected >= 0 {
+                let totalPrice = JobOpportunity.calculatePrice(numberOfBeds: numberOfBedsSelected, numberOfWashs: numberOfWashroomsSelected, totalMinutesOfWork: serviceTotalTime)
+                labelPriceValue = "$\(totalPrice)"
+            }
+        }
+
+        self.totalPriceLabel.text = labelPriceValue
     }
 
     func validateFields() -> Bool {
@@ -135,12 +145,12 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     // MARK: async methods callback
-    
+
     func onRegisterSuccess(obj: Any) {
         // TODO: perform the segue to job history screen
         print("It's alive")
     }
-    
+
     func onRegisterFail(error: Error) {
         print(error.localizedDescription)
     }
