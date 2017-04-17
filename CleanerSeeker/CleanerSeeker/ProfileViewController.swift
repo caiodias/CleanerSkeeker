@@ -79,25 +79,24 @@ class ProfileViewController: UIViewController {
         self.present(loginVC, animated: true, completion: nil)
     }
 
-    func onFailLogout(error: Error?) {
-        //@TODO Add alert here?
-        print(error ?? "Unknown error occure.")
+    func onFailLogout(error: Error) {
+        Utilities.displayAlert(error)
     }
 
-    func onSuccessUpdate(_:Any) {
-        presentAlert(title: "Success", message: "Your profile was successfully updated", actionButtonText: "OK")
+    func onSuccessUpdate(_ : Any) {
+        Utilities.displayAlert(title: "Success", message: "Your profile was successfully updated")
     }
 
     func onFailUpdate(error: Error) {
-        presentAlert(title: "Error", message: error.localizedDescription, actionButtonText: "Try again")
+        Utilities.displayAlert(error)
     }
 
-    func onSuccessReset(_:Any) {
-        presentAlert(title: "Password reset", message: "Check your email to proceed the progress.", actionButtonText: "OK")
+    func onSuccessReset(_ :Any) {
+        Utilities.displayAlert(title: "Password reset", message: "Check your email to proceed the progress.")
     }
 
     func onFailReset(error: Error) {
-        presentAlert(title: "Error", message: error.localizedDescription, actionButtonText: "Try again")
+        Utilities.displayAlert(error)
     }
 
     // MARK: - Private functions
@@ -121,24 +120,14 @@ class ProfileViewController: UIViewController {
                 self.spinner.stopAnimating()
 
             }, onFail: { (error) in
-                self.presentAlert(title: "Error", message: error.localizedDescription, actionButtonText: "ok")
                 self.spinner.stopAnimating()
+                Utilities.displayAlert(error)
             })
         }
     }
 
-    // @TODO Make it gloabally accesible mb other screens also need this helper
-    fileprivate func presentAlert(title: String, message: String, actionButtonText: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: actionButtonText, style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-    }
-
     fileprivate func addAvatarTap() {
-
         let tapGestureRecigniser = UITapGestureRecognizer.init(target: self, action: #selector(imageTapped(_:)))
         avatar.addGestureRecognizer(tapGestureRecigniser)
     }
-
 }

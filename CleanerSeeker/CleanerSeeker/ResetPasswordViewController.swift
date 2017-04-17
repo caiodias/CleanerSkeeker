@@ -48,13 +48,12 @@ class ResetPasswordViewController: UIViewController {
     }
 
     private func showSuccessAlert(success:Any) {
-        let alert = UIAlertController(title: "Password reset", message: "Check your email to proceed the progress.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Return to Login screen", style: .default) { (_) in
-            alert.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             _ = self.navigationController?.popToRootViewController(animated: true)
         }
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+
+        Utilities.displayAlert(title: "Password Reset", message: "Check your email to proceed the progress.", okAction: action)
     }
 
     private func showFailAlert(error: Error) {
