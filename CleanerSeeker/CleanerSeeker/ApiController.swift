@@ -5,7 +5,7 @@
 //  Created by Caio Dias on 2017-02-04.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
-
+import Foundation
 typealias ApiSuccessScenario = (Any) -> Void
 typealias ApiFailScenario = (Error) -> Void
 
@@ -45,6 +45,14 @@ extension ApiController {
 
     func updateUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.parseDb.updateUser(user: user, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func updateUserAvatar(image: Data, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.parseDb.updateProfileImage(image: image, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func getUserProfileImage(image: CSFile, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        self.parseDb.getUserProfileImage(image: image, onSuccess: onSuccess, onFail: onFail)
     }
 
 }

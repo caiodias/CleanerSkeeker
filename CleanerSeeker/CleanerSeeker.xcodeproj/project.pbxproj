@@ -33,6 +33,7 @@
 		95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */; };
 		95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F964461E8AF973001969BB /* JobHistoryCell.xib */; };
 		95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964481E8AFA33001969BB /* JobHistoryCell.swift */; };
+		C130E2851EA53C8700149392 /* CSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2841EA53C8700149392 /* CSFile.swift */; };
 		C1442B9C1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1442B9B1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift */; };
 		C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
 		C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,6 +102,7 @@
 		95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AplliedJobsHistoryVC.swift; sourceTree = "<group>"; };
 		95F964461E8AF973001969BB /* JobHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobHistoryCell.xib; sourceTree = "<group>"; };
 		95F964481E8AFA33001969BB /* JobHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHistoryCell.swift; sourceTree = "<group>"; };
+		C130E2841EA53C8700149392 /* CSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSFile.swift; sourceTree = "<group>"; };
 		C1442B9B1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProvileViewController+Delegates.swift"; sourceTree = "<group>"; };
 		C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				95B134721E4682D500838B3C /* JobPoster.swift */,
 				9574455C1E95735D00AD35CC /* CSUser.swift */,
 				95B134701E46826000838B3C /* Worker.swift */,
+				C130E2841EA53C8700149392 /* CSFile.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C130E2851EA53C8700149392 /* CSFile.swift in Sources */,
 				95B134691E467B5F00838B3C /* ApiController.swift in Sources */,
 				C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */,
 				95B134671E467B5500838B3C /* Facade.swift in Sources */,

@@ -14,6 +14,7 @@ class ParseController {
         case UserNotFound
         case DifferentObjectType
         case NilReturnObjects
+        case CantCreateFileFromData
     }
 
     var users: [PFUser]
@@ -109,6 +110,36 @@ extension ParseController {
                 onSuccess(success)
             }
         })
+    }
+
+    func updateProfileImage(image: Data, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+
+        if let currentUser = CSUser.current() {
+
+            if let imageFile = CSFile(name:"avatar.png", data:image) {
+                currentUser.avatar = imageFile
+                currentUser.saveInBackground(block: { (_, error) in
+                    if let error = error {
+                        onFail(error)
+                    } else {
+                        onSuccess(currentUser)
+                    }
+                })
+            } else {
+                onFail(ParseDbErrors.CantCreateFileFromData)
+            }
+        }
+    }
+
+    func getUserProfileImage(image: CSFile, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        image.getDataInBackground { (data, error) in
+
+            if let data = data {
+                onSuccess(data)
+            } else {
+                onFail(error!)
+            }
+        }
     }
 
 }

@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-extension ProfileViewController {
+import Parse
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func imageTapped(_ img: AnyObject) {
         let alert = UIAlertController(title: "Upload Image", message: "Choose the source", preferredStyle: .actionSheet )
@@ -34,14 +35,12 @@ extension ProfileViewController {
         if let selectedImage = UIImagePNGRepresentation(image) {
 
             self.avatar.image = image
-           // note?.image = selectedImage
 
-            /*do{
-                try context.save()
-            }catch let err {
-                print("Error: unnable to save image!")
-                print(err)
-            }*/
+            Facade.shared.updateUserAvatar(image: selectedImage, onSuccess: { (success) in
+                print(success)
+            }, onFail: { (error) in
+                print(error)
+            })
 
         }
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var avatar: UIImageView!
@@ -21,6 +21,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var province: UITextField!
     @IBOutlet weak var email: UITextField!
 
+    lazy var spinner: UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView()
+        //activity.isHidden = true
+        activity.center = CGPoint(x: self.avatar.bounds.width/2, y: self.avatar.bounds.height/2)
+        activity.startAnimating()
+        return activity
+    }()
+
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +36,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         //Populates fields with current user data.
         self.loadCurentUser()
         self.addAvatarTap()
+
+        avatar.addSubview(spinner)
 
     }
 
@@ -101,6 +111,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             city.text = currentUser.city
             province.text = currentUser.postalCode
             email.text = currentUser.email
+            
+            // Fetch user profile image from cache or download it using network
+            Facade.shared.getUserProfileImage(image: currentUser.avatar, onSuccess: { (data) in
+
+                if let data = data as? Data {
+                    self.avatar.image = UIImage(data: data)
+                }
+                self.spinner.stopAnimating()
+
+            }, onFail: { (error) in
+                self.presentAlert(title: "Error", message: error.localizedDescription, actionButtonText: "ok")
+                self.spinner.stopAnimating()
+            })
         }
     }
 
@@ -117,4 +140,5 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let tapGestureRecigniser = UITapGestureRecognizer.init(target: self, action: #selector(imageTapped(_:)))
         avatar.addGestureRecognizer(tapGestureRecigniser)
     }
+
 }

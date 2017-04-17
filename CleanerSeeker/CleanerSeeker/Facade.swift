@@ -43,6 +43,14 @@ class Facade {
         self.apiController.updateUser(user: user, onSuccess: onSuccess, onFail: onFail)
     }
 
+    public func updateUserAvatar(image: Data, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.updateUserAvatar(image: image, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func getUserProfileImage(image: CSFile, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        self.apiController.getUserProfileImage(image:image, onSuccess: onSuccess, onFail: onFail)
+    }
+
     // MARK: Post Flow
 
     public func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
