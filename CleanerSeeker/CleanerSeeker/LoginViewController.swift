@@ -68,7 +68,9 @@ class LoginViewController: UIViewController {
 
     // MARK: keyboard methods
     fileprivate func observeKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDismiss), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     func keyboardShow() {
