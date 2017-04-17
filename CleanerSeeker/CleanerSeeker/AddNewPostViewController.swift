@@ -21,22 +21,9 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     let noOfTypes: [String] = ["House", "Condo"]
     let defaultBedAndWashrooms: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-
-    var bedroomPrice = 7.0
-    var washroomPrice = 5.0
-
-    var space = ""
-    var bed: Int = 0
-    var washroom: Int = 0
-    var date = ""
-    var hours = ""
-    var price: Double = 0.0
-    var address = ""
-    var zip = ""
-
-    let datee = Date()
-    let calenderr = Calendar.current
-    let timee = Timer()
+    var spaceSelected: Int = JobSpaceType.none.rawValue
+    var numberOfBedsSelected: Int = -1
+    var numberOfWashroomsSelected: Int = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,84 +70,59 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         } else if pickerView == noOfWashroomsPicker {
             return String(defaultBedAndWashrooms[row])
         }
+
         return nil
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == typeOfSpace {
-            space = noOfTypes[row]
+            spaceSelected = row
         } else if pickerView == noOfBedroomPicker {
-            bed = defaultBedAndWashrooms[row]
+            numberOfBedsSelected = defaultBedAndWashrooms[row]
         } else if pickerView == noOfWashroomsPicker {
-            washroom = defaultBedAndWashrooms[row]
+            numberOfWashroomsSelected = defaultBedAndWashrooms[row]
         }
-
     }
 
     @IBAction func createNewPost(_ sender: UIButton) {
 
-        if bed == 0 {
-            bedroomPrice = 7.0
-        } else {
-            bedroomPrice *= Double(bed)
-        }
-
-        if washroom == 0 {
-            washroomPrice = 5.0
-        } else {
-            washroomPrice *= Double(washroom)
-        }
-
-        let d = Date()
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "MM-dd-yyyy"
-        date = dateformatter.string(from: d as Date)
-
-        let d1 = Date()
-        hoursToClean.datePickerMode = UIDatePickerMode.time
-        let hr = DateFormatter()
-        hr.dateFormat = "hh-mm"
-        hours = hr.string(for: d1 as Date)!
-
-        address = addressTxtView.text!
-        zip = zipcodeTxtView.text!
-        price = Double(bedroomPrice + washroomPrice)
-
-        if let currentUser = CSUser.current() {
-
+        if validateFields() {
             let job = JobOpportunity()
-            job.address = address
-            job.spaceType =
-            job.numberBedrooms = Int(bed)
-            job.numberWashrooms = washroom
-            job.price = price
-            job.jobWorkDate = d
-            job.hoursToWork = (hours)
-            job.zipcode = zip
+            job.address = addressTxtView.text!
+            job.zipcode = zipcodeTxtView.text!
 
-            Facade.shared.registerJobOpportunity(user: currentUser, job: job, onSuccess: onAddNewPostSuccess, onFail: onAddNewPostFail)
-            job.ownerId = currentUser
+            let row = self.typeOfSpace.selectedRow(inComponent: 0)
+            switch row {
+            case 0:
+                job.spaceType = JobSpaceType.house.rawValue
+            default:
+                job.spaceType = JobSpaceType.building.rawValue
+            }
+
+            job.numberBedrooms = numberOfBedsSelected
+            job.numberWashrooms = numberOfWashroomsSelected
+
+            let hours = NSCalendar.current.component(.hour, from: hoursToClean.date)
+            let minutes = NSCalendar.current.component(.minute, from: hoursToClean.date)
+            let serviceTotalTime = (hours * 60) + minutes
+            job.hoursToWork = serviceTotalTime
+
+            job.jobWorkDate = self.datePicker.date
 
             Facade.shared.registerJobOpportunity(job: job, onSuccess: { (success) in
                 print("Success \(success)")
             }, onFail: { (error) in
-                print("Success \(error)")
+                print("Error \(error)")
             })
 
+        } else {
+            print("error")
         }
-
-        print("Tyoe of Space is : \(space)")
-        print("no of bed is : \(bed)")
-        print("no of washroom is \(washroom)")
-        print("Total price is : \(price)")
-        print("Date is : \(date)")
-        print("Hours to Clean: \(hours)")
-        print("Address is : \(address)")
-        print("Address is : \(zip)")
     }
 
-    func resetPrice() {
-        price = 0
+    func validateFields() -> Bool {
+        // TODO: validate each input field
+        return true
     }
 
     private func onAddNewPostSuccess(error: Error) {
@@ -170,13 +132,11 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.present(alert, animated: true, completion: nil)
     }
 
-
     private func onAddNewPostFail(error: Error) {
         let alert = UIAlertController(title: "Error", message: "Error in New post", preferredStyle: .alert)
         let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
-
 
 }
