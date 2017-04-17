@@ -310,6 +310,9 @@
                                                     <!--2017-03-28 04:00:00 +0000-->
                                                 </date>
                                                 <locale key="locale" localeIdentifier="nl"/>
+                                                <connections>
+                                                    <action selector="hoursToWorkValueChanged:" destination="QaU-jc-DN1" eventType="valueChanged" id="3xD-u1-XD8"/>
+                                                </connections>
                                             </datePicker>
                                         </subviews>
                                     </stackView>

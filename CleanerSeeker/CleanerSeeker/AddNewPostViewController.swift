@@ -109,6 +109,10 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
     }
 
+    @IBAction func hoursToWorkValueChanged(_ sender: Any) {
+        refreshPrice()
+    }
+
     func refreshPrice() {
         let hours = NSCalendar.current.component(.hour, from: hoursToClean.date)
         let minutes = NSCalendar.current.component(.minute, from: hoursToClean.date)
