@@ -109,12 +109,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
             job.jobWorkDate = self.datePicker.date
 
-            Facade.shared.registerJobOpportunity(job: job, onSuccess: { (success) in
-                print("Success \(success)")
-            }, onFail: { (error) in
-                print("Error \(error)")
-            })
-
+            Facade.shared.registerJobOpportunity(job: job, onSuccess: onRegisterSuccess, onFail: onRegisterFail)
         } else {
             print("error")
         }
@@ -139,4 +134,14 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.present(alert, animated: true, completion: nil)
     }
 
+    // MARK: async methods callback
+    
+    func onRegisterSuccess(obj: Any) {
+        // TODO: perform the segue to job history screen
+        print("It's alive")
+    }
+    
+    func onRegisterFail(error: Error) {
+        print(error.localizedDescription)
+    }
 }
