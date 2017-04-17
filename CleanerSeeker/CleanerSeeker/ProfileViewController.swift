@@ -111,7 +111,7 @@ class ProfileViewController: UIViewController {
             city.text = currentUser.city
             province.text = currentUser.postalCode
             email.text = currentUser.email
-            
+
             // Fetch user profile image from cache or download it using network
             Facade.shared.getUserProfileImage(image: currentUser.avatar, onSuccess: { (data) in
 
