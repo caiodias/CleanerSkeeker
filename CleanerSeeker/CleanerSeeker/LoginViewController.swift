@@ -52,7 +52,12 @@ class LoginViewController: UIViewController {
     private func onLoginSuccess(object: Any) {
         print(object)
 
-        if object is Worker {
+        guard let user = object as? CSUser else {
+            print("Not possible convert login object to user")
+            return
+        }
+
+        if user.userType == CSUserType.Worker.rawValue {
             displayTabController(tabController: ShowTabController.Worker)
         } else {
             displayTabController(tabController: ShowTabController.JobPoster)
