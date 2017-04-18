@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         observeKeyboardNotifications()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +52,7 @@ class LoginViewController: UIViewController {
     // MARK: login callbacks
     private func onLoginSuccess(object: Any) {
         print(object)
-
+        Facade.shared.updateCurrentUserLoccation()
         if object is Worker {
             displayTabController(tabController: ShowTabController.Worker)
         } else {

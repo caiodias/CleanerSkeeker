@@ -55,6 +55,10 @@ extension ApiController {
         self.parseDb.getUserProfileImage(image: image, onSuccess: onSuccess, onFail: onFail)
     }
 
+    func updateCurrentUserLocation() {
+        self.parseDb.updateCurrentUserLocation()
+    }
+
 }
 
 // MARK: Post Flow Methods
@@ -66,6 +70,7 @@ extension ApiController {
 
     func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         job.price = JobOpportunity.calculatePrice(numberOfBeds: job.numberBedrooms, numberOfWashs: job.numberWashrooms, totalMinutesOfWork: job.totalMinutesToWork)
+
         self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
