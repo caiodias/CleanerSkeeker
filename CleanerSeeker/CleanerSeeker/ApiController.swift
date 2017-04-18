@@ -69,8 +69,13 @@ extension ApiController {
         self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
-    func getAllJobOpportunitiesInRange(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.parseDb.getAllJobOpportunitiesInRange(user: user, onSuccess: onSuccess, onFail: onFail)
+    func getAllJobOpportunitiesInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        guard let currentUser = CSUser.current() else {
+            print("Not possible to get current user")
+            return
+        }
+
+        self.parseDb.getAllJobOpportunitiesInRange(user: currentUser, onSuccess: onSuccess, onFail: onFail)
     }
 }
 

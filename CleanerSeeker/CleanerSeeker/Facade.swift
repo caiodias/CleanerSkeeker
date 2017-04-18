@@ -57,7 +57,7 @@ class Facade {
         self.apiController.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
-    public func getJobs(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.apiController.getAllJobOpportunitiesInRange(user: user, onSuccess: onSuccess, onFail: onFail)
+    public func getJobs(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.getAllJobOpportunitiesInRange(onSuccess: onSuccess, onFail: onFail)
     }
 }

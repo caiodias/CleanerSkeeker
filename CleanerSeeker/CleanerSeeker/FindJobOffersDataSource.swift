@@ -10,22 +10,31 @@ import UIKit
 import Koloda
 
 class FindJobOffersDataSource: NSObject, KolodaViewDataSource {
-    fileprivate var jobsSource: [UIImage] = {
-        var array: [UIImage] = []
+    fileprivate var jobsSource = [JobOpportunity]()
+    private let defaultHouse = UIImage(named: "default-home")
+    private let defaultCondo = UIImage(named: "default-condo")
 
-        for index in 0..<5 {
-            array.append(UIImage(named: "cards_\(index + 1)")!)
-        }
-
-        return array
-    }()
+    override init() {
+        super.init()
+        Facade.shared.getJobs(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+    }
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         return jobsSource.count
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UIImageView(image: jobsSource[index])
+        var image = self.defaultHouse
+
+        if !self.jobsSource.isEmpty {
+            if self.jobsSource[index].spaceType == JobSpaceType.house.rawValue {
+                image = self.defaultHouse
+            } else {
+                image = self.defaultCondo
+            }
+        }
+
+        return UIImageView(image: image)
     }
 
     func koloda(koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
@@ -34,5 +43,20 @@ class FindJobOffersDataSource: NSObject, KolodaViewDataSource {
 
     func reset() {
         // TODO: reset the dataSource
+    }
+
+    // MARK: Callbacks
+
+    func onFetchJobSuccess(jobs: Any) {
+        guard let jobs = jobs as? [JobOpportunity] else {
+            print("Not possible to convert the jobs to JobOpportunity array")
+            return
+        }
+
+        self.jobsSource = jobs
+    }
+
+    func onFetchJobFail(error: Error) {
+        print("Error on fetch jobs. " + error.localizedDescription)
     }
 }
