@@ -36,6 +36,7 @@ class JobOpportunity: PFObject, PFSubclassing {
     @NSManaged var appliedId: CSUser?
     @NSManaged var price: Double
     @NSManaged var jobWorkDate: Date
+    @NSManaged var location: PFGeoPoint
 
     class func parseClassName() -> String {
         return "JobOpportunity"
