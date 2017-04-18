@@ -47,7 +47,7 @@ class SignUpFirstStepViewController: BasicVC {
         }
     }
 
-    private func createUser(type: PFUserType) {
+    private func createUser(type: CSUserType) {
 
         let user = CSUser()
         user.email = self.email.text!

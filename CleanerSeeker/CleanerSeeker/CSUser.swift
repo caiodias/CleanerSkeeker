@@ -8,7 +8,7 @@
 
 import Parse
 
-enum PFUserType: Int {
+enum CSUserType: Int {
     case Worker = 0
     case JobPoster = 1
 }

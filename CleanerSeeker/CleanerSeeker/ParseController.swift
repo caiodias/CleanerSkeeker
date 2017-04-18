@@ -40,7 +40,7 @@ extension ParseController {
             } else {
                 // Set Relation to Pseudo user object
                 var customUser: PFObject
-                if user.userType == PFUserType.Worker.rawValue {
+                if user.userType == CSUserType.Worker.rawValue {
                     customUser = Worker()
                 } else {
                     customUser = JobPoster()
