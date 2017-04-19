@@ -10,22 +10,36 @@ import UIKit
 import Koloda
 
 class FindJobOffersDataSource: NSObject, KolodaViewDataSource {
-    fileprivate var jobsSource: [UIImage] = {
-        var array: [UIImage] = []
 
-        for index in 0..<5 {
-            array.append(UIImage(named: "cards_\(index + 1)")!)
-        }
+    let jobsSource: [JobOpportunity]
 
-        return array
-    }()
+    override init() {
+        self.jobsSource = Array<JobOpportunity>()
+    }
+
+    init(jobs: [JobOpportunity]) {
+        self.jobsSource = jobs
+    }
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         return jobsSource.count
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return UIImageView(image: jobsSource[index])
+
+        let card: UIView = {
+            let view = UIView(frame: koloda.frame)
+            view.backgroundColor = UIColor.gray
+
+            return view
+
+        }()
+
+        let label = UILabel(frame: CGRect(x: card.bounds.width/2, y: card.bounds.height/2, width: card.bounds.width, height: 30))
+        label.text = jobsSource[index].address
+
+        card.addSubview(label)
+        return card
     }
 
     func koloda(koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {

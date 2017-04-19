@@ -11,13 +11,23 @@ import Koloda
 
 class FindJobOffersVC: BasicVC {
     @IBOutlet weak var kolodaView: KolodaView!
-    let dataSource = FindJobOffersDataSource()
+    var dataSource = FindJobOffersDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        kolodaView.dataSource = dataSource
         kolodaView.delegate = self
+
+        // Fetch job oportunities and set data source
+        Facade.shared.getJobs(onSuccess: { jobs in
+            if let arrayOfJobs = jobs as? [JobOpportunity] {
+                self.dataSource = FindJobOffersDataSource(jobs: arrayOfJobs)
+                self.kolodaView.dataSource = self.dataSource
+            }
+
+        }, onFail: { (error) in
+            Utilities.displayAlert(error)
+        })
 
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
     }
