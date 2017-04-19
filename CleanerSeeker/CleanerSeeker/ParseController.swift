@@ -202,6 +202,7 @@ extension ParseController {
 extension ParseController {
     func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
+        job.status = 0 // Active by default
 
         //Fetch and save location on success
         LocationController.getCordinatesByAddress(street: job.address, zipCode: job.zipcode, onSuccess: { location in
@@ -224,31 +225,44 @@ extension ParseController {
     }
 
     func getAllJobOpportunitiesInRange(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        let query = PFQuery(className:"JobOpportunity")
-        query.whereKey("status", equalTo:"0") // Active
-        // TODO: Use the user location (lat, long) to filter the job opportunities
 
-        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
-            if let error = error {
-                print("Error on fetch active Job Opportunities")
-                onFail(error)
-            } else {
-                // Do something with the found objects
-                if let objects = objects {
-                    print("Successfully retrieved \(objects.count) job opportunities.")
+        // Fetch Cleaner details (searchRadius, currentLocation)
+        self.getWorkerDetails(user: user, onSuccess: { workerResponse in
 
-                    if objects is [JobOpportunity] {
-                        onSuccess(objects as AnyObject)
+            if let worker = workerResponse as? Worker {
+
+                let query = PFQuery(className: "JobOpportunity")
+
+                query.whereKey("status", equalTo:0) // Active
+                query.whereKey("location", nearGeoPoint: worker.location, withinKilometers: worker.searchRadius) // Filter by destination
+
+                query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
+                    if let error = error {
+                        print("Error on fetch active Job Opportunities")
+                        onFail(error)
                     } else {
-                        print("objects are not the [JobOpportunity] type 😕")
-                        onFail(ParseDbErrors.DifferentObjectType)
+                        // Do something with the found objects
+                        if let objects = objects {
+                            print("Successfully retrieved \(objects.count) job opportunities.")
+
+                            if objects is [JobOpportunity] {
+                                onSuccess(objects as AnyObject)
+                            } else {
+                                print("objects are not the [JobOpportunity] type 😕")
+                                onFail(ParseDbErrors.DifferentObjectType)
+                            }
+                        } else {
+                            print("Successfully but without objects")
+                            onFail(ParseDbErrors.NilReturnObjects)
+                        }
                     }
-                } else {
-                    print("Successfully but without objects")
-                    onFail(ParseDbErrors.NilReturnObjects)
                 }
             }
-        }
+
+        }, onFail: { (error) in
+            print("Fail when fetching Cleaner \(error)")
+        })
+
     }
 }
 
