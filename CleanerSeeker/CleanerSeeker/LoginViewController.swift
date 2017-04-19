@@ -51,9 +51,14 @@ class LoginViewController: UIViewController {
 
     // MARK: login callbacks
     private func onLoginSuccess(object: Any) {
-        print(object)
+        guard let currentUser = object as? CSUser else {
+            Utilities.displayAlert(errorMessage: "Response object is not CSUser.")
+            return
+        }
+
         Facade.shared.updateCurrentUserLoccation()
-        if object is Worker {
+
+        if currentUser.userType == PFUserType.Worker.rawValue {
             displayTabController(tabController: ShowTabController.Worker)
         } else {
             displayTabController(tabController: ShowTabController.JobPoster)
