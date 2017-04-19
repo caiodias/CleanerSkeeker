@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         observeKeyboardNotifications()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,12 +53,14 @@ class LoginViewController: UIViewController {
     private func onLoginSuccess(object: Any) {
         print(object)
 
+
         guard let user = object as? CSUser else {
             print("Not possible convert login object to user")
             return
         }
 
         if user.userType == CSUserType.Worker.rawValue {
+            Facade.shared.updateCurrentUserLoccation()
             displayTabController(tabController: ShowTabController.Worker)
         } else {
             displayTabController(tabController: ShowTabController.JobPoster)

@@ -10,6 +10,7 @@ import Foundation
 
 class Facade {
     private let apiController = ApiController()
+    private let locationController = LocationController()
 
     // MARK: Singleton
     static let shared: Facade = {
@@ -51,6 +52,10 @@ class Facade {
         self.apiController.getUserProfileImage(image:image, onSuccess: onSuccess, onFail: onFail)
     }
 
+    func updateCurrentUserLoccation() {
+        self.apiController.updateCurrentUserLocation()
+    }
+
     // MARK: Post Flow
 
     public func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
@@ -59,5 +64,11 @@ class Facade {
 
     public func getJobs(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.getAllJobOpportunitiesInRange(onSuccess: onSuccess, onFail: onFail)
+    }
+
+    // MARK: Location helper
+
+    public func getCurrentLocation(address: String, zipCode: String, onSuccess: @escaping LocationSuccessResponse, onFail: @escaping LocationFailResponse ) {
+        LocationController.getCordinatesByAddress(street: address, zipCode: zipCode, onSuccess: onSuccess, onFail: onFail)
     }
 }

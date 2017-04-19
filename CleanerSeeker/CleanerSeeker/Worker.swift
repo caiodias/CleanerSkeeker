@@ -11,6 +11,7 @@ import Parse
 class Worker: PFObject, PFSubclassing {
     @NSManaged var searchRadius: Double
     @NSManaged var userRelationId: PFUser
+    @NSManaged var location: PFGeoPoint
     // MARK: PFSubclassing Protocol methods
 
     static func parseClassName() -> String {

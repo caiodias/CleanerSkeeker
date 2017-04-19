@@ -142,6 +142,59 @@ extension ParseController {
         }
     }
 
+    func updateCurrentUserLocation() {
+        if let currentUser = CSUser.current() {
+            PFGeoPoint.geoPointForCurrentLocation(inBackground: { (geoPoint, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    //get worker extra info
+                    if currentUser.userType == CSUserType.Worker.rawValue {
+                        self.getWorkerDetails(user: currentUser, onSuccess: { (worker) in
+
+                            if let worker = worker as? Worker {
+                                worker.location = geoPoint!
+                                worker.saveEventually()
+                            }
+
+                        }, onFail: { (error) in
+                            print(error.localizedDescription)
+                        })
+                    }
+                }
+            })
+
+        }
+    }
+
+    func getWorkerDetails(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        if let currentUser = CSUser.current() {
+            let query = PFQuery(className: Worker.parseClassName())
+            query.whereKey("userRelationId", equalTo: currentUser)
+            query.getFirstObjectInBackground(block: { (worker, error) in
+                if let worker = worker as? Worker {
+                    onSuccess(worker)
+                } else {
+                    onFail(error!)
+                }
+            })
+        }
+    }
+
+    func getJobPosterDetails(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        if let currentUser = CSUser.current() {
+            let query = PFQuery(className: JobPoster.parseClassName())
+            query.whereKey("userRelationId", equalTo: currentUser)
+            query.getFirstObjectInBackground(block: { (worker, error) in
+                if let jobPoster = worker as? JobPoster {
+                    onSuccess(jobPoster)
+                } else {
+                    onFail(error!)
+                }
+            })
+        }
+
+    }
 }
 
 // MARK: Post Flow Methods
@@ -150,13 +203,24 @@ extension ParseController {
     func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
 
-        job.saveInBackground { (_, error: Error?) -> Void in
-            if let error = error {
-                onFail(error)
-            } else {
-                onSuccess(job) // now job has to have id
+        //Fetch and save location on success
+        LocationController.getCordinatesByAddress(street: job.address, zipCode: job.zipcode, onSuccess: { location in
+
+            let parseLocation = PFGeoPoint(latitude: location.latitude, longitude: location.longitude)
+            job.location = parseLocation
+
+            job.saveInBackground { (_, error: Error?) -> Void in
+                if let error = error {
+                    onFail(error)
+                } else {
+                    onSuccess(job) // now job has to have id
+                }
             }
+
+        }) { error in
+            onFail(error)
         }
+
     }
 
     func getAllJobOpportunitiesInRange(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
