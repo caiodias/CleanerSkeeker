@@ -173,7 +173,7 @@ extension ParseController {
             query.whereKey("userRelationId", equalTo: currentUser)
             query.getFirstObjectInBackground(block: { (worker, error) in
                 if let worker = worker as? Worker {
-                    onSuccess(worker)
+                    onSuccess(worker as AnyObject)
                 } else {
                     onFail(error!)
                 }
@@ -187,7 +187,7 @@ extension ParseController {
             query.whereKey("userRelationId", equalTo: currentUser)
             query.getFirstObjectInBackground(block: { (worker, error) in
                 if let jobPoster = worker as? JobPoster {
-                    onSuccess(jobPoster)
+                    onSuccess(jobPoster as AnyObject)
                 } else {
                     onFail(error!)
                 }
@@ -208,6 +208,7 @@ extension ParseController {
 
             let parseLocation = PFGeoPoint(latitude: location.latitude, longitude: location.longitude)
             job.location = parseLocation
+            job.status = 0 // active by default
 
             job.saveInBackground { (_, error: Error?) -> Void in
                 if let error = error {
@@ -223,32 +224,49 @@ extension ParseController {
 
     }
 
-    func getAllJobOpportunitiesInRange(user: Worker, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        let query = PFQuery(className:"JobOpportunity")
-        query.whereKey("status", equalTo:"0") // Active
-        // TODO: Use the user location (lat, long) to filter the job opportunities
+    func getAllJobOpportunitiesInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
 
-        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
-            if let error = error {
-                print("Error on fetch active Job Opportunities")
-                onFail(error)
-            } else {
-                // Do something with the found objects
-                if let objects = objects {
-                    print("Successfully retrieved \(objects.count) job opportunities.")
+        guard let currentUser = CSUser.current() else {
+            return
+        }
 
-                    if objects is [JobOpportunity] {
-                        onSuccess(objects as AnyObject)
+        // Fetch Cleaner details (searchRadius, currentLocation)
+        self.getWorkerDetails(user: currentUser, onSuccess: { workerResponse in
+
+            if let worker = workerResponse as? Worker {
+
+                let query = PFQuery(className: "JobOpportunity")
+
+                query.whereKey("status", equalTo:0) // Active
+                query.whereKey("location", nearGeoPoint: worker.location, withinKilometers: worker.searchRadius) // Filter by destination
+
+                query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
+                    if let error = error {
+                        print("Error on fetch active Job Opportunities")
+                        onFail(error)
                     } else {
-                        print("objects are not the [JobOpportunity] type 😕")
-                        onFail(ParseDbErrors.DifferentObjectType)
+                        // Do something with the found objects
+                        if let objects = objects {
+                            print("Successfully retrieved \(objects.count) job opportunities.")
+
+                            if objects is [JobOpportunity] {
+                                onSuccess(objects as AnyObject)
+                            } else {
+                                print("objects are not the [JobOpportunity] type 😕")
+                                onFail(ParseDbErrors.DifferentObjectType)
+                            }
+                        } else {
+                            print("Successfully but without objects")
+                            onFail(ParseDbErrors.NilReturnObjects)
+                        }
                     }
-                } else {
-                    print("Successfully but without objects")
-                    onFail(ParseDbErrors.NilReturnObjects)
                 }
             }
-        }
+
+        }, onFail: { (error) in
+            print("Fail when fetching Cleaner \(error)")
+        })
+
     }
 }
 

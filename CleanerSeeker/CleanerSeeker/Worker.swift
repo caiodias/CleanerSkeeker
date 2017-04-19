@@ -9,7 +9,7 @@
 import Parse
 
 class Worker: PFObject, PFSubclassing {
-    @NSManaged var searchRadius: Double
+    @NSManaged var searchRadius: Double // im km
     @NSManaged var userRelationId: PFUser
     @NSManaged var location: PFGeoPoint
     // MARK: PFSubclassing Protocol methods
