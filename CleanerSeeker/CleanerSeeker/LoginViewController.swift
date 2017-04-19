@@ -53,7 +53,6 @@ class LoginViewController: UIViewController {
     private func onLoginSuccess(object: Any) {
         print(object)
 
-
         guard let user = object as? CSUser else {
             print("Not possible convert login object to user")
             return
