@@ -82,6 +82,20 @@ extension ApiController {
 
         self.parseDb.getAllJobOpportunitiesInRange(user: currentUser, onSuccess: onSuccess, onFail: onFail)
     }
+
+    func getAllJobsOpportunitiesBy(jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        guard let user = CSUser.current() else {
+            print("Not possible to get the current user")
+            onFail("Not possible to get the current user" as! Error)
+            return
+        }
+
+        if let ownerID = user.objectId {
+            self.parseDb.getAllJobsOpportunitiesBy(ownerID: ownerID, jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
+        } else {
+            onFail("Not possible to get the object ID from user" as! Error)
+        }
+    }
 }
 
 // MARK: Apply Flow Methods

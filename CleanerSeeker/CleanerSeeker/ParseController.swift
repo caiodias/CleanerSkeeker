@@ -228,7 +228,6 @@ extension ParseController {
 
         // Fetch Cleaner details (searchRadius, currentLocation)
         self.getWorkerDetails(user: user, onSuccess: { workerResponse in
-
             if let worker = workerResponse as? Worker {
 
                 let query = PFQuery(className: "JobOpportunity")
@@ -262,7 +261,35 @@ extension ParseController {
         }, onFail: { (error) in
             print("Fail when fetching Cleaner \(error)")
         })
+    }
 
+    func getAllJobsOpportunitiesBy(ownerID: String, jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        let query = PFQuery(className: "JobOpportunity")
+
+        query.whereKey("status", equalTo: jobStatus.rawValue) // Active
+        query.whereKey("ownerId", equalTo: ownerID)
+
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
+            if let error = error {
+                print("Error on fetch \(jobStatus) Job Opportunities")
+                onFail(error)
+            } else {
+                // Do something with the found objects
+                if let objects = objects {
+                    print("Successfully retrieved \(objects.count) job opportunities.")
+
+                    if objects is [JobOpportunity] {
+                        onSuccess(objects as AnyObject)
+                    } else {
+                        print("objects are not the [JobOpportunity] type 😕")
+                        onFail(ParseDbErrors.DifferentObjectType)
+                    }
+                } else {
+                    print("Successfully but without objects")
+                    onFail(ParseDbErrors.NilReturnObjects)
+                }
+            }
+        }
     }
 }
 
