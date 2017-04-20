@@ -202,7 +202,7 @@ extension ParseController {
 extension ParseController {
     func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
-        job.status = 0 // Active by default
+        job.status = JobStatus.active.rawValue // Active by default
 
         //Fetch and save location on success
         LocationController.getCordinatesByAddress(street: job.address, zipCode: job.zipcode, onSuccess: { location in
