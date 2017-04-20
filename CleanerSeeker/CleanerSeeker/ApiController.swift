@@ -66,6 +66,8 @@ extension ApiController {
 extension ApiController {
     enum PostFlowError: Error {
         case PostNotFound
+        case NoPossibleToGetCurrentUser
+        case NoPossibleToGetIdFromCurrentUser
     }
 
     func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
@@ -86,14 +88,14 @@ extension ApiController {
     func getAllJobsOpportunitiesBy(jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         guard let user = CSUser.current() else {
             print("Not possible to get the current user")
-            onFail("Not possible to get the current user" as! Error)
+            onFail(PostFlowError.NoPossibleToGetCurrentUser)
             return
         }
 
         if let ownerID = user.objectId {
             self.parseDb.getAllJobsOpportunitiesBy(ownerID: ownerID, jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
         } else {
-            onFail("Not possible to get the object ID from user" as! Error)
+            onFail(PostFlowError.NoPossibleToGetIdFromCurrentUser)
         }
     }
 }

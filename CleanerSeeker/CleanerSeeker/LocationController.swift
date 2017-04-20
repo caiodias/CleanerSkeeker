@@ -57,10 +57,15 @@ class LocationController {
                 if !results.isEmpty {
                     if let geometry = results[0]["geometry"] as? [String:AnyObject] {
                         if let location = geometry["location"] as? [String: AnyObject] {
+                            guard let latitude = location["lat"] as? Double else {
+                                print("Not possible to convert the latitude value")
+                                return
+                            }
 
-                            // TODO: Refactor it later 
-                            let latitude = location["lat"] as! Double
-                            let longitude = location["lng"] as! Double
+                            guard let longitude = location["lng"] as? Double else {
+                                print("Not possible to convert the longitude value")
+                                return
+                            }
 
                             let coordinats = Location(latitude: latitude, longitude: longitude)
                             onSuccess(coordinats)
