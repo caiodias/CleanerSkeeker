@@ -16,7 +16,7 @@ class FindJobOffersDataSource: NSObject, KolodaViewDataSource {
 
     override init() {
         super.init()
-        Facade.shared.getJobs(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+        Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {

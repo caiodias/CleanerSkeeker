@@ -62,8 +62,12 @@ class Facade {
         self.apiController.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
-    public func getJobs(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    public func getJobsInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.getAllJobOpportunitiesInRange(onSuccess: onSuccess, onFail: onFail)
+    }
+
+    public func getAllJobsOpportunitiesBy(jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.getAllJobsOpportunitiesBy(jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
     }
 
     // MARK: Location helper

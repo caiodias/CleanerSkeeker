@@ -10,11 +10,34 @@ import UIKit
 
 class PostListVC: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
-    let jobsSource = [JobOpportunity]()
+    var jobsSource = [JobOpportunity]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Facade.shared.getAllJobsOpportunitiesBy(jobStatus: JobStatus.active, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        Facade.shared.getAllJobsOpportunitiesBy(jobStatus: JobStatus.active, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+    }
+
+    func onFetchJobSuccess(objs: Any) {
+        guard let jobs = objs as? [JobOpportunity] else {
+            print("Not possible to convert the objs to Job Opoortunity List")
+            return
+        }
+
+        self.jobsSource = jobs
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+
+    func onFetchJobFail(error: Error) {
+        Utilities.displayAlert(error)
     }
 }
 
