@@ -58,7 +58,7 @@ class LocationController {
                     if let geometry = results[0]["geometry"] as? [String:AnyObject] {
                         if let location = geometry["location"] as? [String: AnyObject] {
 
-                            //@TODO Refactor it later 
+                            // TODO: Refactor it later 
                             let latitude = location["lat"] as! Double
                             let longitude = location["lng"] as! Double
 
