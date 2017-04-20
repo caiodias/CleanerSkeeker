@@ -343,7 +343,7 @@
                                     <navigationItem title="Title" id="e0C-UK-3Sk">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aRf-3G-Bh8">
                                             <connections>
-                                                <segue destination="J1a-4a-EOW" kind="show" id="j2P-27-eQ5"/>
+                                                <segue destination="J1a-4a-EOW" kind="show" identifier="backHistory" id="j2P-27-eQ5"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -749,7 +749,7 @@
                                         <barButtonItem key="backBarButtonItem" title="Back" id="rnF-5w-LFH"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rxr-cH-bbK">
                                             <connections>
-                                                <segue destination="QaU-jc-DN1" kind="show" id="OGO-9R-f8L"/>
+                                                <segue destination="QaU-jc-DN1" kind="show" identifier="" id="OGO-9R-f8L"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -926,6 +926,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="r4a-jc-dzk"/>
-        <segue reference="Jqw-Wr-nDq"/>
+        <segue reference="j2P-27-eQ5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -146,11 +146,11 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     // MARK: async methods callback
 
     func onRegisterSuccess(obj: Any) {
-        // TODO: perform the segue to job history screen
-        print("It's alive")
+        self.performSegue(withIdentifier: "backHistory", sender: self)
     }
 
     func onRegisterFail(error: Error) {
         print(error.localizedDescription)
+        Utilities.displayAlert(error)
     }
 }
