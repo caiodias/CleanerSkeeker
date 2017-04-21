@@ -274,7 +274,7 @@ extension ParseController {
         })
     }
 
-    func getAllJobsOpportunitiesBy(ownerID: String, jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func getAllJobsOpportunitiesBy(ownerID: CSUser, jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         let query = PFQuery(className: "JobOpportunity")
 
         query.whereKey("status", equalTo: jobStatus.rawValue) // Active

@@ -92,11 +92,7 @@ extension ApiController {
             return
         }
 
-        if let ownerID = user.objectId {
-            self.parseDb.getAllJobsOpportunitiesBy(ownerID: ownerID, jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
-        } else {
-            onFail(PostFlowError.NoPossibleToGetIdFromCurrentUser)
-        }
+        self.parseDb.getAllJobsOpportunitiesBy(ownerID: user, jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
     }
 }
 
