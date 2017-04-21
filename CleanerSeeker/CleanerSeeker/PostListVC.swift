@@ -14,7 +14,7 @@ class PostListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
         Facade.shared.getAllJobsOpportunitiesBy(jobStatus: JobStatus.active, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 
@@ -54,11 +54,11 @@ extension PostListVC: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let jobOpportuniry = jobsSource[indexPath.row]
-        let rawCell = tableView.dequeueReusableCell(withIdentifier: "jobCell", for: indexPath)
+        let rawCell = Bundle.main.loadNibNamed("JobHistoryCell", owner: JobHistoryCell.self, options: nil)?.first
 
         guard let jobCell = rawCell as? JobHistoryCell else {
             print("Not possible convert the cell to JobHistory Cell")
-            return rawCell
+            return rawCell as! UITableViewCell
         }
 
         jobCell.fillElements(job: jobOpportuniry)
