@@ -29,7 +29,6 @@
 		95F9642A1E89AFC2001969BB /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; };
 		95F9642B1E89AFC2001969BB /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9642C1E89B052001969BB /* FindJobOffersVC.swift */; };
-		95F964301E89B164001969BB /* FindJobOffersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9642F1E89B164001969BB /* FindJobOffersDataSource.swift */; };
 		95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */; };
 		95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F964461E8AF973001969BB /* JobHistoryCell.xib */; };
 		95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964481E8AFA33001969BB /* JobHistoryCell.swift */; };
@@ -99,7 +98,6 @@
 		95F964261E89AFC2001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
 		95F964271E89AFC2001969BB /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		95F9642C1E89B052001969BB /* FindJobOffersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindJobOffersVC.swift; sourceTree = "<group>"; };
-		95F9642F1E89B164001969BB /* FindJobOffersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindJobOffersDataSource.swift; sourceTree = "<group>"; };
 		95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AplliedJobsHistoryVC.swift; sourceTree = "<group>"; };
 		95F964461E8AF973001969BB /* JobHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobHistoryCell.xib; sourceTree = "<group>"; };
 		95F964481E8AFA33001969BB /* JobHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHistoryCell.swift; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				95F9642C1E89B052001969BB /* FindJobOffersVC.swift */,
-				95F9642F1E89B164001969BB /* FindJobOffersDataSource.swift */,
 			);
 			name = "Find Job Offer";
 			sourceTree = "<group>";
@@ -414,7 +411,6 @@
 				C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */,
 				95B134731E4682D500838B3C /* JobPoster.swift in Sources */,
 				95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */,
-				95F964301E89B164001969BB /* FindJobOffersDataSource.swift in Sources */,
 				95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */,
 				95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */,
 				C1442B9C1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift in Sources */,
