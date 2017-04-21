@@ -15,6 +15,7 @@ class ParseController {
         case DifferentObjectType
         case NilReturnObjects
         case CantCreateFileFromData
+        case UserIsNotLoggedIn
     }
 
     var users: [PFUser]
@@ -202,6 +203,16 @@ extension ParseController {
 extension ParseController {
     func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new Job Opportunity")
+
+        guard let currentUser = CSUser.current()  else {
+            onFail(ParseDbErrors.UserIsNotLoggedIn)
+            return
+        }
+
+        // Set the owner of job opportunity
+        let relation = job.relation(forKey: "ownerId")
+        relation.add(currentUser)
+
         job.status = JobStatus.active.rawValue // Active by default
 
         //Fetch and save location on success
@@ -232,7 +243,7 @@ extension ParseController {
 
                 let query = PFQuery(className: "JobOpportunity")
 
-                query.whereKey("status", equalTo:0) // Active
+                query.whereKey("status", equalTo:JobStatus.active.rawValue) // Active
                 query.whereKey("location", nearGeoPoint: worker.location, withinKilometers: worker.searchRadius) // Filter by destination
 
                 query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
