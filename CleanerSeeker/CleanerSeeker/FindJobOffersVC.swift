@@ -98,5 +98,11 @@ extension FindJobOffersVC: KolodaViewDataSource {
 
     func reset() {
         Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+
+        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+            self.view.addSubview(load)
+            load.center = self.view.center
+        }
+
     }
 }

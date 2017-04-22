@@ -49,11 +49,23 @@ class ProfileViewController: UIViewController {
     @IBAction func tapOnPasswordReset(_ sender: Any) {
         if let currentUser = CSUser.current() {
             Facade.shared.resetPassword(email: currentUser.email!, onSuccess: self.onSuccessReset, onFail: self.onFailReset)
+
+            if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+                self.view.addSubview(load)
+                load.center = self.view.center
+            }
+
         }
     }
 
     @IBAction func tapOnLogOut(_ sender: Any) {
         Facade.shared.logout(onSuccess: self.onSuccessLogout, onFail: self.onFailLogout)
+
+        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+            self.view.addSubview(load)
+            load.center = self.view.center
+        }
+
     }
 
     @IBAction func tapOnSave(_ sender: Any) {
@@ -69,6 +81,7 @@ class ProfileViewController: UIViewController {
             currentUser.postalCode = province.text!
 
             Facade.shared.updateUser(user: currentUser, onSuccess: self.onSuccessUpdate, onFail: self.onFailUpdate)
+
         }
 
     }

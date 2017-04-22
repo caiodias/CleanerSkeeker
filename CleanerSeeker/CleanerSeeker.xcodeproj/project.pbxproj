@@ -201,8 +201,7 @@
 				95F9642E1E89B126001969BB /* Apply Flow */,
 				95F964221E89AACC001969BB /* Login Flow */,
 				E1108A961E93387000FD47C7 /* Post Flow */,
-				E1A04C711EABA72F004F8114 /* LoadingScreen.xib */,
-				E1A04C731EABA766004F8114 /* SpinnerView.swift */,
+				E1A04C751EABBB09004F8114 /* Loading Screen */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -283,6 +282,15 @@
 				959F6A331E9EAE51008E8526 /* PostListVC.swift */,
 			);
 			name = "Post Flow";
+			sourceTree = "<group>";
+		};
+		E1A04C751EABBB09004F8114 /* Loading Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E1A04C731EABA766004F8114 /* SpinnerView.swift */,
+				E1A04C711EABA72F004F8114 /* LoadingScreen.xib */,
+			);
+			name = "Loading Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

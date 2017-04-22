@@ -35,6 +35,12 @@ class ResetPasswordViewController: UIViewController {
             }, onFail: { (error) in
                 self.showFailAlert(error: error)
             })
+
+            if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+                self.view.addSubview(load)
+                load.center = self.view.center
+            }
+
         }
     }
 
@@ -54,6 +60,12 @@ class ResetPasswordViewController: UIViewController {
         }
 
         Utilities.displayAlert(title: "Password Reset", message: "Check your email to proceed the progress.", okAction: action)
+
+        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+            self.view.addSubview(load)
+            load.center = self.view.center
+        }
+
     }
 
     private func showFailAlert(error: Error) {

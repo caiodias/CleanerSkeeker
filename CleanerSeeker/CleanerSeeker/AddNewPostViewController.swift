@@ -36,7 +36,8 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         self.noOfWashroomsPicker.delegate = self
         self.noOfWashroomsPicker.dataSource = self
-    }
+
+            }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -104,6 +105,12 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             job.jobWorkDate = self.datePicker.date
 
             Facade.shared.registerJobOpportunity(job: job, onSuccess: onRegisterSuccess, onFail: onRegisterFail)
+
+            if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+                self.view.addSubview(load)
+                load.center = self.view.center
+            }
+
         } else {
             print("error")
         }
