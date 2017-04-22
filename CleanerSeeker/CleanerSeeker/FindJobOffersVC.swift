@@ -11,9 +11,8 @@ import Koloda
 
 class FindJobOffersVC: BasicVC {
     @IBOutlet weak var kolodaView: KolodaView!
-    let defaultHouse = UIImage(named: "default-home")
-    let defaultCondo = UIImage(named: "default-condo")
     var jobsSource = [JobOpportunity]()
+    var jobSelected = JobOpportunity()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +68,19 @@ extension FindJobOffersVC: KolodaViewDelegate {
     }
 
     func koloda(koloda: KolodaView, didSelectCardAt index: Int) {
-        // TODO: Call job detail
+        self.jobSelected = self.jobsSource[index]
+        self.performSegue(withIdentifier: "jobDetails", sender: self)
+    }
+
+    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "jobDetails") {
+            guard let detailsVC = segue.destination as? JobDetailsVC else {
+                print("Not possible to convert the segue")
+                return
+            }
+
+            detailsVC.fillInfo(forJob: self.jobSelected)
+        }
     }
 }
 
@@ -79,13 +90,13 @@ extension FindJobOffersVC: KolodaViewDataSource {
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        var image = self.defaultHouse
+        var image = Utilities.defaultHouse
 
         if !self.jobsSource.isEmpty {
             if self.jobsSource[index].spaceType == JobSpaceType.house.rawValue {
-                image = self.defaultHouse
+                image = Utilities.defaultHouse
             } else {
-                image = self.defaultCondo
+                image = Utilities.defaultCondo
             }
         }
 

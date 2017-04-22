@@ -830,14 +830,14 @@
                                         <rect key="frame" x="0.0" y="391" width="288" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Payment:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLy-MG-Muy">
-                                                <rect key="frame" x="0.0" y="0.0" width="168.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Payment value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMN-jz-x85">
-                                                <rect key="frame" x="176.5" y="0.0" width="111.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="168" y="0.0" width="120" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -860,6 +860,16 @@
                             <constraint firstItem="h4o-nl-o55" firstAttribute="top" secondItem="WPj-Pl-AQs" secondAttribute="bottom" id="Yle-FC-Zp6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="Xrk-QN-r1G" id="dLC-qQ-99t"/>
+                        <outlet property="avatar" destination="UYT-gJ-442" id="VCV-y0-tWa"/>
+                        <outlet property="cleanTimeLabel" destination="YMH-2f-G0c" id="QEz-lY-dqJ"/>
+                        <outlet property="dateTimeLabel" destination="Kmh-18-8ug" id="H6k-RK-kXj"/>
+                        <outlet property="numberOfBedsLabel" destination="DnU-eU-lGc" id="Y18-6j-lNC"/>
+                        <outlet property="numberOfWashsLabel" destination="1PO-X0-VY4" id="ulZ-vZ-XE5"/>
+                        <outlet property="paymentValueLabel" destination="wMN-jz-x85" id="cxT-5r-dt4"/>
+                        <outlet property="zipcodeAddress" destination="534-fw-0Su" id="S15-e1-ehX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFL-dx-iYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

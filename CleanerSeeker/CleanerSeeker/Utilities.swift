@@ -11,6 +11,9 @@ import UIKit
 class Utilities {
     // swiftlint:disable force_cast
     static let programName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
+    static let defaultHouse = UIImage(named: "default-home")
+    static let defaultCondo = UIImage(named: "default-condo")
+
     private static let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
 
     class func classNameAsString(obj: Any) -> String {
