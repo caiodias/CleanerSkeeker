@@ -13,6 +13,13 @@ class BasicVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+//
+//            self.view.addSubview(load)
+//            load.center = self.view.center
+//
+//        }
+
         self.title = Utilities.programName
 
         observeKeyboardNotifications()

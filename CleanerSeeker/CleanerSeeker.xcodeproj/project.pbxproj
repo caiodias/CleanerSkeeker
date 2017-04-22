@@ -43,6 +43,8 @@
 		C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */; };
 		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
 		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
+		E1A04C721EABA72F004F8114 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A04C711EABA72F004F8114 /* LoadingScreen.xib */; };
+		E1A04C741EABA766004F8114 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A04C731EABA766004F8114 /* SpinnerView.swift */; };
 		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,8 @@
 		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
 		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
+		E1A04C711EABA72F004F8114 /* LoadingScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
+		E1A04C731EABA766004F8114 /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +203,7 @@
 				95F9642E1E89B126001969BB /* Apply Flow */,
 				95F964221E89AACC001969BB /* Login Flow */,
 				E1108A961E93387000FD47C7 /* Post Flow */,
+				E1A04C751EABBB09004F8114 /* Loading Screen */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -280,6 +285,15 @@
 				959F6A331E9EAE51008E8526 /* PostListVC.swift */,
 			);
 			name = "Post Flow";
+			sourceTree = "<group>";
+		};
+		E1A04C751EABBB09004F8114 /* Loading Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E1A04C731EABA766004F8114 /* SpinnerView.swift */,
+				E1A04C711EABA72F004F8114 /* LoadingScreen.xib */,
+			);
+			name = "Loading Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +385,7 @@
 			files = (
 				95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */,
 				954DC0781E2D6743000F1C4B /* LaunchScreen.storyboard in Resources */,
+				E1A04C721EABA72F004F8114 /* LoadingScreen.xib in Resources */,
 				954DC0751E2D6743000F1C4B /* Assets.xcassets in Resources */,
 				954DC0731E2D6743000F1C4B /* Main.storyboard in Resources */,
 			);
@@ -430,6 +445,7 @@
 				E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
 				9574455D1E95735D00AD35CC /* CSUser.swift in Sources */,
+				E1A04C741EABA766004F8114 /* SpinnerView.swift in Sources */,
 				95B134711E46826000838B3C /* Worker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

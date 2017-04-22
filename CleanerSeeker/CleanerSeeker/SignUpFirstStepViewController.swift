@@ -64,6 +64,11 @@ class SignUpFirstStepViewController: BasicVC {
 
         Facade.shared.registerUser(user: user, onSuccess: self.onSuccess, onFail: onFail)
 
+        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+            self.view.addSubview(load)
+            load.center = self.view.center
+        }
+
     }
 
     // MARK: - Registeration callbacks
@@ -78,9 +83,16 @@ class SignUpFirstStepViewController: BasicVC {
         let action = UIAlertAction(title: "Go to Login screen", style: .default) { (_) in
             self.dismiss(animated: true, completion: nil)
             _ = self.navigationController?.popToRootViewController(animated: true)
+
         }
 
         Utilities.displayAlert(title: "Registration", message: "Check your email '\(user.email!)' to confirm the registration.", okAction: action)
+
+        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+            self.view.addSubview(load)
+            load.center = self.view.center
+        }
+
     }
 
     func onFail(error: Error) {
