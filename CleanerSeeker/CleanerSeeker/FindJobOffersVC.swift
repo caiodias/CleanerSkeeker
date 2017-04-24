@@ -9,7 +9,7 @@
 import UIKit
 import Koloda
 
-class FindJobOffersVC: BasicVC {
+class FindJobOffersVC: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     var jobsSource = [JobOpportunity]()
     var jobSelected = JobOpportunity()
@@ -60,6 +60,17 @@ class FindJobOffersVC: BasicVC {
     func onFetchJobFail(error: Error) {
         print("Error on fetch jobs. " + error.localizedDescription)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "jobDetails") {
+            guard let detailsVC = segue.destination as? JobDetailsVC else {
+                print("Not possible to convert the segue")
+                return
+            }
+
+            detailsVC.jobToDisplay = self.jobSelected
+        }
+    }
 }
 
 extension FindJobOffersVC: KolodaViewDelegate {
@@ -67,20 +78,10 @@ extension FindJobOffersVC: KolodaViewDelegate {
         reset()
     }
 
-    func koloda(koloda: KolodaView, didSelectCardAt index: Int) {
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         self.jobSelected = self.jobsSource[index]
+
         self.performSegue(withIdentifier: "jobDetails", sender: self)
-    }
-
-    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if (segue.identifier == "jobDetails") {
-            guard let detailsVC = segue.destination as? JobDetailsVC else {
-                print("Not possible to convert the segue")
-                return
-            }
-
-            detailsVC.fillInfo(forJob: self.jobSelected)
-        }
     }
 }
 
