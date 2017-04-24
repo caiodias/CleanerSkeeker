@@ -46,4 +46,31 @@ class Utilities {
             print("Not possible to get the current window")
         }
     }
+
+    static func convertToDisplay(the date: Date) -> String {
+        let calendar = NSCalendar.current
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let year = calendar.component(.year, from: date)
+
+        let hours = calendar.component(.hour, from: date)
+        let mins = calendar.component(.minute, from: date)
+
+        return "\(month)/\(day)/\(year) \(hours):\(mins)"
+    }
+
+    static func convertToHourAndMinutes(the totalMinutes: Int) -> String {
+        var hours = 0
+        var mins = 0
+
+        if totalMinutes > 59 {
+            hours = totalMinutes / 60
+            mins = totalMinutes % 60
+        } else {
+            mins = totalMinutes
+        }
+
+        let minsFormatted = String(format: "%02d", mins)
+        return "\(hours):\(minsFormatted)"
+    }
 }
