@@ -17,6 +17,7 @@ class JobDetailsVC: BasicVC {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var zipcodeAddress: UILabel!
     @IBOutlet weak var paymentValueLabel: UILabel!
+    var jobToDisplay: JobOpportunity!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,27 +25,18 @@ class JobDetailsVC: BasicVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        fillInfo(forJob: self.jobToDisplay)
     }
 
-    func fillInfo(forJob: JobOpportunity) {
+    private func fillInfo(forJob: JobOpportunity) {
         self.avatar.image = forJob.spaceType == JobSpaceType.house.rawValue ? Utilities.defaultHouse : Utilities.defaultCondo
         self.numberOfBedsLabel.text = String(forJob.numberBedrooms)
         self.numberOfWashsLabel.text = String(forJob.numberWashrooms)
-        self.dateTimeLabel.text = forJob.jobWorkDate.description
-        self.cleanTimeLabel.text = convertMinutesToHourAndMinutesToDisplay(totalMinutes: forJob.totalMinutesToWork)
+        self.dateTimeLabel.text = Utilities.convertToDisplay(the: forJob.jobWorkDate)
+        self.cleanTimeLabel.text = Utilities.convertToHourAndMinutes(the: forJob.totalMinutesToWork)
         self.addressLabel.text = forJob.address
         self.zipcodeAddress.text = forJob.zipcode
         self.paymentValueLabel.text = "$\(forJob.price)"
-    }
-
-    func convertMinutesToHourAndMinutesToDisplay(totalMinutes: Int) -> String {
-        if totalMinutes > 60 {
-            let hours = totalMinutes / 60
-            let minutes = totalMinutes % 60
-
-            return "\(hours):\(minutes)"
-        } else {
-            return "00:\(totalMinutes)"
-        }
     }
 }
