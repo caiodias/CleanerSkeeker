@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
 
         Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
 
-        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? UIView {
             self.view.addSubview(load)
             load.center = self.view.center
         }
