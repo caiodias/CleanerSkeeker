@@ -41,13 +41,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-N9-Ksy" userLabel="Inputs Stack">
                                 <rect key="frame" x="16" y="84" width="288" height="70"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-Zz-5s8">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-Zz-5s8" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-6d-XDf">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-6d-XDf" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="40" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -55,18 +55,18 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-Z1-e9d">
-                                <rect key="frame" x="104" y="204" width="112" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-Z1-e9d" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
+                                <rect key="frame" x="104" y="204" width="112" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="112" id="1eQ-Zs-9Qc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Har-JC-xw6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-4A-cdq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-4A-cdq" customClass="CSButton" customModule="CleanerSeeker" customModuleProvider="target">
                                 <rect key="frame" x="16" y="513" width="141" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Create New Account"/>
@@ -74,7 +74,7 @@
                                     <segue destination="cQN-sR-uKJ" kind="show" id="4CB-LJ-CmE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-j1-afb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-j1-afb" customClass="CSButton" customModule="CleanerSeeker" customModuleProvider="target">
                                 <rect key="frame" x="214" y="513" width="90" height="30"/>
                                 <state key="normal" title="Need a help?"/>
                                 <connections>
@@ -119,13 +119,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvc-DU-2tL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvc-DU-2tL" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                 <rect key="frame" x="16" y="144" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuS-1a-3VZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuS-1a-3VZ" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
                                 <rect key="frame" x="35" y="194" width="250" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="ct9-to-Qi5"/>
@@ -562,7 +562,7 @@
                             <constraint firstItem="Nnf-vS-oz5" firstAttribute="top" secondItem="1Oa-7o-ebd" secondAttribute="bottom" id="wyX-ng-99E"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="ld9-PV-mE8"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile-male" selectedImage="profile-male-selected" id="ld9-PV-mE8"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="800"/>
                     <connections>
@@ -584,7 +584,7 @@
         <!--Cleaner Home-->
         <scene sceneID="rMj-2Q-0Vs">
             <objects>
-                <tabBarController storyboardIdentifier="workerTabController" title="Cleaner Home" id="zeM-ly-wZ3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="workerTabController" title="Cleaner Home" id="zeM-ly-wZ3" customClass="CSTapBar" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Kaw-y5-KqY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -880,7 +880,7 @@
             </objects>
             <point key="canvasLocation" x="2940" y="822.88732394366195"/>
         </scene>
-        <!--Apllied Jobs HistoryVC-->
+        <!--History-->
         <scene sceneID="T6k-xc-f0G">
             <objects>
                 <viewController id="5lw-tB-L66" customClass="AplliedJobsHistoryVC" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
@@ -905,7 +905,7 @@
                             <constraint firstItem="qET-DK-0h5" firstAttribute="top" secondItem="5Kw-7f-j13" secondAttribute="bottom" id="xmO-Gf-1n8"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="3PN-Nf-JUS"/>
+                    <tabBarItem key="tabBarItem" title="History" image="hourglass" selectedImage="hourglass-selected" id="3PN-Nf-JUS"/>
                     <connections>
                         <outlet property="tableView" destination="5Kw-7f-j13" id="elP-vb-0mw"/>
                     </connections>
@@ -917,7 +917,7 @@
         <!--Job Poster Home-->
         <scene sceneID="uTI-Ly-Wsc">
             <objects>
-                <tabBarController storyboardIdentifier="jobPosterTabController" title="Job Poster Home" id="lr0-Fe-VaI" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="jobPosterTabController" title="Job Poster Home" id="lr0-Fe-VaI" customClass="CSTapBar" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yrC-ck-R5i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -932,7 +932,7 @@
             </objects>
             <point key="canvasLocation" x="1943" y="1592"/>
         </scene>
-        <!--Post ListVC-->
+        <!--History-->
         <scene sceneID="fLQ-TE-JZg">
             <objects>
                 <viewController id="J1a-4a-EOW" customClass="PostListVC" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
@@ -977,7 +977,7 @@
                             <constraint firstItem="E5I-RJ-l77" firstAttribute="leading" secondItem="9Nu-2A-sf7" secondAttribute="leadingMargin" id="yxu-fA-rSI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="UgT-2f-SRW"/>
+                    <tabBarItem key="tabBarItem" title="History" image="hourglass" selectedImage="hourglass-selected" id="UgT-2f-SRW"/>
                     <connections>
                         <outlet property="tableView" destination="E5I-RJ-l77" id="iof-eD-bin"/>
                     </connections>
@@ -1004,55 +1004,55 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oQg-y2-rGI" userLabel="Input Fields Stack">
                                         <rect key="frame" x="8" y="8" width="304" height="373"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRc-qp-KAN">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRc-qp-KAN" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-Pu-2PY">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-Pu-2PY" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="38" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CzX-eg-gtu">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CzX-eg-gtu" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="76" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ws-5R-EFd">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ws-5R-EFd" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="114" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1jU-g6-nst">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1jU-g6-nst" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="152" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T41-s7-5KL">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T41-s7-5KL" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="190" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSY-45-XKI">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSY-45-XKI" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="228" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0z-Y8-hDi">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0z-Y8-hDi" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="266" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postal code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Il-Bq-25a">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postal code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Il-Bq-25a" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="304" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1082,11 +1082,12 @@
                                     <constraint firstAttribute="trailing" secondItem="oQg-y2-rGI" secondAttribute="trailing" constant="8" id="zQq-0n-9h5"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-RZ-i3m">
-                                <rect key="frame" x="110" y="530" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-RZ-i3m" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
+                                <rect key="frame" x="100" y="527" width="120" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="fpL-e7-hhg"/>
+                                    <constraint firstAttribute="width" constant="120" id="fpL-e7-hhg"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create Profile"/>
                                 <connections>
                                     <action selector="createProfile:" destination="cQN-sR-uKJ" eventType="touchUpInside" id="IJJ-Zv-wea"/>
@@ -1129,7 +1130,6 @@
         <scene sceneID="Wsu-Ts-jW9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tg-g6-BnR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="Kdn-BB-Yo5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hzc-tU-wSh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1145,8 +1145,14 @@
             <point key="canvasLocation" x="665.625" y="822.88732394366195"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hourglass" width="16" height="25"/>
+        <image name="hourglass-selected" width="16" height="25"/>
+        <image name="profile-male" width="28" height="25"/>
+        <image name="profile-male-selected" width="28" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r4a-jc-dzk"/>
         <segue reference="j2P-27-eQ5"/>
+        <segue reference="r4a-jc-dzk"/>
     </inferredMetricsTieBreakers>
 </document>

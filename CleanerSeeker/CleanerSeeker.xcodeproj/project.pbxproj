@@ -49,6 +49,11 @@
 		95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */; };
 		95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F964461E8AF973001969BB /* JobHistoryCell.xib */; };
 		95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964481E8AFA33001969BB /* JobHistoryCell.swift */; };
+		C1186B2B1EAED89C00EBE68D /* CSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B2A1EAED89C00EBE68D /* CSButton.swift */; };
+		C1186B2D1EAED9E300EBE68D /* CSPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B2C1EAED9E300EBE68D /* CSPrimary.swift */; };
+		C1186B2F1EAEED6100EBE68D /* CSSecondary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B2E1EAEED6100EBE68D /* CSSecondary.swift */; };
+		C1186B321EAEF00600EBE68D /* CSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B311EAEF00600EBE68D /* CSTextField.swift */; };
+		C1186B351EAF0B8200EBE68D /* CSTapBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B341EAF0B8200EBE68D /* CSTapBar.swift */; };
 		C130E2851EA53C8700149392 /* CSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2841EA53C8700149392 /* CSFile.swift */; };
 		C13984131EA697030068C76D /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13984121EA697030068C76D /* LocationController.swift */; };
 		C1442B9C1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1442B9B1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift */; };
@@ -139,6 +144,11 @@
 		95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AplliedJobsHistoryVC.swift; sourceTree = "<group>"; };
 		95F964461E8AF973001969BB /* JobHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobHistoryCell.xib; sourceTree = "<group>"; };
 		95F964481E8AFA33001969BB /* JobHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHistoryCell.swift; sourceTree = "<group>"; };
+		C1186B2A1EAED89C00EBE68D /* CSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSButton.swift; sourceTree = "<group>"; };
+		C1186B2C1EAED9E300EBE68D /* CSPrimary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPrimary.swift; sourceTree = "<group>"; };
+		C1186B2E1EAEED6100EBE68D /* CSSecondary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSecondary.swift; sourceTree = "<group>"; };
+		C1186B311EAEF00600EBE68D /* CSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTextField.swift; sourceTree = "<group>"; };
+		C1186B341EAF0B8200EBE68D /* CSTapBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTapBar.swift; sourceTree = "<group>"; };
 		C130E2841EA53C8700149392 /* CSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSFile.swift; sourceTree = "<group>"; };
 		C13984121EA697030068C76D /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		C1442B9B1E9ECEAA00A9C99E /* ProvileViewController+Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProvileViewController+Delegates.swift"; sourceTree = "<group>"; };
@@ -222,6 +232,7 @@
 		95B1346A1E467B7200838B3C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C1186B281EAED6EB00EBE68D /* UI */,
 				954DC06F1E2D6743000F1C4B /* BasicVC.swift */,
 				95B134661E467B5500838B3C /* Facade.swift */,
 				95F9644A1E8AFE2C001969BB /* Job History Cell */,
@@ -329,6 +340,42 @@
 				95F964481E8AFA33001969BB /* JobHistoryCell.swift */,
 			);
 			name = "Job History Cell";
+			sourceTree = "<group>";
+		};
+		C1186B281EAED6EB00EBE68D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C1186B331EAF0B4500EBE68D /* Bars */,
+				C1186B301EAEEF9100EBE68D /* TextFields */,
+				C1186B291EAED6F600EBE68D /* Buttons */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		C1186B291EAED6F600EBE68D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C1186B2A1EAED89C00EBE68D /* CSButton.swift */,
+				C1186B2C1EAED9E300EBE68D /* CSPrimary.swift */,
+				C1186B2E1EAEED6100EBE68D /* CSSecondary.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		C1186B301EAEEF9100EBE68D /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				C1186B311EAEF00600EBE68D /* CSTextField.swift */,
+			);
+			name = TextFields;
+			sourceTree = "<group>";
+		};
+		C1186B331EAF0B4500EBE68D /* Bars */ = {
+			isa = PBXGroup;
+			children = (
+				C1186B341EAF0B8200EBE68D /* CSTapBar.swift */,
+			);
+			name = Bars;
 			sourceTree = "<group>";
 		};
 		E1108A961E93387000FD47C7 /* Post Flow */ = {
@@ -480,8 +527,10 @@
 			files = (
 				C130E2851EA53C8700149392 /* CSFile.swift in Sources */,
 				95B134691E467B5F00838B3C /* ApiController.swift in Sources */,
+				C1186B2F1EAEED6100EBE68D /* CSSecondary.swift in Sources */,
 				C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */,
 				95B134671E467B5500838B3C /* Facade.swift in Sources */,
+				C1186B351EAF0B8200EBE68D /* CSTapBar.swift in Sources */,
 				C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */,
 				95B134731E4682D500838B3C /* JobPoster.swift in Sources */,
 				95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */,
@@ -494,6 +543,8 @@
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
 				959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */,
 				E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */,
+				C1186B2D1EAED9E300EBE68D /* CSPrimary.swift in Sources */,
+				C1186B321EAEF00600EBE68D /* CSTextField.swift in Sources */,
 				C13984131EA697030068C76D /* LocationController.swift in Sources */,
 				954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */,
 				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
@@ -501,6 +552,7 @@
 				E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
 				9574455D1E95735D00AD35CC /* CSUser.swift in Sources */,
+				C1186B2B1EAED89C00EBE68D /* CSButton.swift in Sources */,
 				E1A04C741EABA766004F8114 /* SpinnerView.swift in Sources */,
 				95B134711E46826000838B3C /* Worker.swift in Sources */,
 			);

@@ -25,6 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Parse.initialize(with: configuration)
 
+        // All navigations styles
+        let navigationBarAppearace = UINavigationBar.appearance()
+
+        navigationBarAppearace.tintColor = .white
+        navigationBarAppearace.barTintColor = Utilities.CSColors.green.color
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationBarAppearace.barStyle = .black
+        navigationBarAppearace.isTranslucent = true
+
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+
+        // All Tab Bars styles
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
+
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Utilities.CSColors.darkBlue.color], for: .selected)
+
         return true
     }
 
