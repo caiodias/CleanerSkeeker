@@ -235,7 +235,50 @@ extension ParseController {
 
     }
 
-    func getAllJobOpportunitiesInRange(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+    func getAllJobsOpportunitiesBy(ownerID: CSUser, jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        let query = PFQuery(className: "JobOpportunity")
+
+        query.whereKey("status", equalTo: jobStatus.rawValue) // Active
+        query.whereKey("ownerId", equalTo: ownerID)
+
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
+            if let error = error {
+                print("Error on fetch \(jobStatus) Job Opportunities")
+                onFail(error)
+            } else {
+                // Do something with the found objects
+                if let objects = objects {
+                    print("Successfully retrieved \(objects.count) job opportunities.")
+
+                    if objects is [JobOpportunity] {
+                        onSuccess(objects as AnyObject)
+                    } else {
+                        print("objects are not the [JobOpportunity] type 😕")
+                        onFail(ParseDbErrors.DifferentObjectType)
+                    }
+                } else {
+                    print("Successfully but without objects")
+                    onFail(ParseDbErrors.NilReturnObjects)
+                }
+            }
+        }
+    }
+}
+
+// MARK: Apply Flow Methods
+extension ParseController {
+    func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        job.saveInBackground { (_, error: Error?) -> Void in
+           if let error = error {
+            print("Error on apply to Job Opportunity")
+            onFail(error)
+          } else {
+            onSuccess(job) // has user relation
+          }
+        }
+    }
+
+    func getAllJobOpportunitiesInRange(for user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
 
         // Fetch Cleaner details (searchRadius, currentLocation)
         self.getWorkerDetails(user: user, onSuccess: { workerResponse in
@@ -272,48 +315,5 @@ extension ParseController {
         }, onFail: { (error) in
             print("Fail when fetching Cleaner \(error)")
         })
-    }
-
-    func getAllJobsOpportunitiesBy(ownerID: CSUser, jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        let query = PFQuery(className: "JobOpportunity")
-
-        query.whereKey("status", equalTo: jobStatus.rawValue) // Active
-        query.whereKey("ownerId", equalTo: ownerID)
-
-        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
-            if let error = error {
-                print("Error on fetch \(jobStatus) Job Opportunities")
-                onFail(error)
-            } else {
-                // Do something with the found objects
-                if let objects = objects {
-                    print("Successfully retrieved \(objects.count) job opportunities.")
-
-                    if objects is [JobOpportunity] {
-                        onSuccess(objects as AnyObject)
-                    } else {
-                        print("objects are not the [JobOpportunity] type 😕")
-                        onFail(ParseDbErrors.DifferentObjectType)
-                    }
-                } else {
-                    print("Successfully but without objects")
-                    onFail(ParseDbErrors.NilReturnObjects)
-                }
-            }
-        }
-    }
-}
-
-// MARK: Apply Flow Methods
-extension ParseController {
-    func apply(toJob: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        toJob.saveInBackground { (_, error: Error?) -> Void in
-           if let error = error {
-            print("Error on apply to Job Opportunity")
-            onFail(error)
-          } else {
-            onSuccess(toJob) // has user relation
-          }
-        }
     }
 }

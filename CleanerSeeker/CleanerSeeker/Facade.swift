@@ -62,15 +62,21 @@ class Facade {
         self.apiController.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
-    public func getJobsInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        self.apiController.getAllJobOpportunitiesInRange(onSuccess: onSuccess, onFail: onFail)
-    }
-
     public func getAllJobsOpportunitiesBy(jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         self.apiController.getAllJobsOpportunitiesBy(jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
     }
 
-    // MARK: Location helper
+    // MARK: Apply Flow
+
+    public func getJobsInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.getAllJobOpportunitiesInRange(onSuccess: onSuccess, onFail: onFail)
+    }
+
+    public func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.apply(to: job, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    // MARK: Location Helper
 
     public func getCurrentLocation(address: String, zipCode: String, onSuccess: @escaping LocationSuccessResponse, onFail: @escaping LocationFailResponse ) {
         LocationController.getCordinatesByAddress(street: address, zipCode: zipCode, onSuccess: onSuccess, onFail: onFail)

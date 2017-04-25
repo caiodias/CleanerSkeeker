@@ -76,15 +76,6 @@ extension ApiController {
         self.parseDb.registerJobOpportunity(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
-    func getAllJobOpportunitiesInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        guard let currentUser = CSUser.current() else {
-            print("Not possible to get current user")
-            return
-        }
-
-        self.parseDb.getAllJobOpportunitiesInRange(user: currentUser, onSuccess: onSuccess, onFail: onFail)
-    }
-
     func getAllJobsOpportunitiesBy(jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         guard let user = CSUser.current() else {
             print("Not possible to get the current user")
@@ -103,8 +94,18 @@ extension ApiController {
         case None
     }
 
-    func apply(toJob: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        toJob.appliedId = CSUser.current() // attach worker
-        self.parseDb.apply(toJob: toJob, onSuccess: onSuccess, onFail: onFail)
+    func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        job.appliedId = CSUser.current() // attach worker
+        self.parseDb.apply(to: job, onSuccess: onSuccess, onFail: onFail)
     }
+
+    func getAllJobOpportunitiesInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        guard let currentUser = CSUser.current() else {
+            print("Not possible to get current user")
+            return
+        }
+
+        self.parseDb.getAllJobOpportunitiesInRange(for: currentUser, onSuccess: onSuccess, onFail: onFail)
+    }
+
 }
