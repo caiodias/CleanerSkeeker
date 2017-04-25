@@ -14,6 +14,24 @@ class Utilities {
     static let defaultHouse = UIImage(named: "default-home")
     static let defaultCondo = UIImage(named: "default-condo")
 
+    enum CSColors: UInt32 {
+        case green
+        case darkBlue
+        case gray
+
+        var color: UIColor {
+            switch self {
+            case .green:
+                return UIColor(red: 79/255, green: 192/255, blue: 141/255, alpha: 1.0)
+            case .darkBlue:
+                return UIColor(red: 51/255, green: 71/255, blue: 93/255, alpha: 1.0)
+            case .gray:
+                return UIColor(red: 127/255, green: 140/255, blue: 141/255, alpha: 1.0)
+            }
+        }
+
+    }
+
     private static let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
 
     class func classNameAsString(obj: Any) -> String {
