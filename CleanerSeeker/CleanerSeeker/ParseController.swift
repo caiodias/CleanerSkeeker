@@ -268,6 +268,16 @@ extension ParseController {
 // MARK: Apply Flow Methods
 extension ParseController {
     func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+
+        // Set the owner of job opportunity
+        guard let currentUser = CSUser.current() else {
+            onFail(ParseDbErrors.UserIsNotLoggedIn)
+            return
+        }
+
+        let relation = job.relation(forKey: "appliedId")
+        relation.add(currentUser)
+
         job.saveInBackground { (_, error: Error?) -> Void in
            if let error = error {
             print("Error on apply to Job Opportunity")

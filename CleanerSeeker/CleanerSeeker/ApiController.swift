@@ -30,7 +30,6 @@ extension ApiController {
     }
 
     func loginUser(login: String, password: String, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        // TODO: Implement the call using Parse framework
         self.parseDb.loginUser(login: login, password: password, onSuccess: onSuccess, onFail: onFail)
     }
 
@@ -95,7 +94,6 @@ extension ApiController {
     }
 
     func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        job.appliedId = CSUser.current() // attach worker
         self.parseDb.apply(to: job, onSuccess: onSuccess, onFail: onFail)
     }
 
