@@ -58,6 +58,7 @@ extension PostListVC: UITableViewDataSource {
 
         guard let jobCell = rawCell as? JobHistoryCell else {
             print("Not possible convert the cell to JobHistory Cell")
+            // swiftlint:disable force_cast
             return rawCell as! UITableViewCell
         }
 

@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         observeKeyboardNotifications()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,11 +33,10 @@ class LoginViewController: UIViewController {
 
         Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
 
-        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
+        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? UIView {
             self.view.addSubview(load)
             load.center = self.view.center
         }
-
     }
 
     // MARK: Redirect user to right tab controller
@@ -70,12 +68,10 @@ class LoginViewController: UIViewController {
         } else {
             displayTabController(tabController: ShowTabController.JobPoster)
         }
-
     }
 
     private func onLoginFail(error: Error) {
         Utilities.displayAlert(error)
-
     }
 
     // MARK: keyboard methods

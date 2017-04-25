@@ -9,11 +9,10 @@
 import UIKit
 import Koloda
 
-class FindJobOffersVC: BasicVC {
+class FindJobOffersVC: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
-    let defaultHouse = UIImage(named: "default-home")
-    let defaultCondo = UIImage(named: "default-condo")
     var jobsSource = [JobOpportunity]()
+    var jobSelected = JobOpportunity()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,7 @@ class FindJobOffersVC: BasicVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+        reset()
     }
 
     // MARK: IBActions
@@ -61,6 +60,17 @@ class FindJobOffersVC: BasicVC {
     func onFetchJobFail(error: Error) {
         print("Error on fetch jobs. " + error.localizedDescription)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "jobDetails") {
+            guard let detailsVC = segue.destination as? JobDetailsVC else {
+                print("Not possible to convert the segue")
+                return
+            }
+
+            detailsVC.jobToDisplay = self.jobSelected
+        }
+    }
 }
 
 extension FindJobOffersVC: KolodaViewDelegate {
@@ -68,8 +78,10 @@ extension FindJobOffersVC: KolodaViewDelegate {
         reset()
     }
 
-    func koloda(koloda: KolodaView, didSelectCardAt index: Int) {
-        // TODO: Call job detail
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        self.jobSelected = self.jobsSource[index]
+
+        self.performSegue(withIdentifier: "jobDetails", sender: self)
     }
 }
 
@@ -79,22 +91,22 @@ extension FindJobOffersVC: KolodaViewDataSource {
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        var image = self.defaultHouse
+        var image = Utilities.defaultHouse
 
         if !self.jobsSource.isEmpty {
             if self.jobsSource[index].spaceType == JobSpaceType.house.rawValue {
-                image = self.defaultHouse
+                image = Utilities.defaultHouse
             } else {
-                image = self.defaultCondo
+                image = Utilities.defaultCondo
             }
         }
 
         return UIImageView(image: image)
     }
 
-    func koloda(koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
-    }
+//    func koloda(koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+//        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
+//    }
 
     func reset() {
         Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
