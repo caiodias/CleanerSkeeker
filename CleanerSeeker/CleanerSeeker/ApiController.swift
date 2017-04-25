@@ -15,6 +15,15 @@ class ApiController {
     init() {
         self.parseDb = ParseController()
     }
+
+    func getCurrentUser() -> CSUser {
+        guard let currentUser = CSUser.current() else {
+            print("Not possible to get current user")
+            return CSUser()
+        }
+
+        return currentUser
+    }
 }
 
 // MARK: Login Flow Methods
@@ -77,12 +86,7 @@ extension ApiController {
     }
 
     func getAllJobsOpportunitiesBy(jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        guard let user = CSUser.current() else {
-            print("Not possible to get the current user")
-            onFail(PostFlowError.NoPossibleToGetCurrentUser)
-            return
-        }
-
+        let user = self.getCurrentUser()
         self.parseDb.getAllJobsOpportunitiesBy(ownerID: user, jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
     }
 }
@@ -95,17 +99,16 @@ extension ApiController {
     }
 
     func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        job.appliedId = CSUser.current() // attach worker
+        let user = self.getCurrentUser()
+        job.appliedId = user
+        let deal = Deal(cleaner: user, job: job)
+        //TODO: save the deal object on Parse
+
         self.parseDb.apply(to: job, onSuccess: onSuccess, onFail: onFail)
     }
 
     func getAllJobOpportunitiesInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-        guard let currentUser = CSUser.current() else {
-            print("Not possible to get current user")
-            return
-        }
-
-        self.parseDb.getAllJobOpportunitiesInRange(for: currentUser, onSuccess: onSuccess, onFail: onFail)
+        let user = self.getCurrentUser()
+        self.parseDb.getAllJobOpportunitiesInRange(for: user, onSuccess: onSuccess, onFail: onFail)
     }
-
 }
