@@ -1126,10 +1126,11 @@
             </objects>
             <point key="canvasLocation" x="2153" y="-592"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="Wsu-Ts-jW9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tg-g6-BnR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifying-glass" id="z6D-zl-WAC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hzc-tU-wSh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1148,6 +1149,7 @@
     <resources>
         <image name="hourglass" width="16" height="25"/>
         <image name="hourglass-selected" width="16" height="25"/>
+        <image name="magnifying-glass" width="25" height="25"/>
         <image name="profile-male" width="28" height="25"/>
         <image name="profile-male-selected" width="28" height="25"/>
     </resources>
