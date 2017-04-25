@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "profile-male.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "profile-male.png",
       "scale" : "2x"
     },
     {
@@ -18,5 +18,8 @@
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
   }
 }

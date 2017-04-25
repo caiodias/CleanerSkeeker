@@ -562,7 +562,7 @@
                             <constraint firstItem="Nnf-vS-oz5" firstAttribute="top" secondItem="1Oa-7o-ebd" secondAttribute="bottom" id="wyX-ng-99E"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="ld9-PV-mE8"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile-male" selectedImage="profile-male-selected" id="ld9-PV-mE8"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="800"/>
                     <connections>
@@ -600,7 +600,7 @@
             </objects>
             <point key="canvasLocation" x="-156" y="1592"/>
         </scene>
-        <!--Find Job OffersVC-->
+        <!--Search-->
         <scene sceneID="y0q-yF-35w">
             <objects>
                 <viewController id="49d-IQ-mc1" customClass="FindJobOffersVC" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
@@ -658,7 +658,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="QID-C3-Vol" secondAttribute="trailing" id="zud-lg-aYm"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="Kdn-BB-Yo5"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifying-glass" selectedImage="magnifying-glass-selected" id="Kdn-BB-Yo5"/>
                     <connections>
                         <outlet property="kolodaView" destination="QID-C3-Vol" id="iL9-kU-FoT"/>
                         <segue destination="W6z-us-v9D" kind="show" identifier="jobDetails" id="dl5-0Q-HUN"/>
@@ -868,7 +868,7 @@
             </objects>
             <point key="canvasLocation" x="1943" y="823"/>
         </scene>
-        <!--Apllied Jobs HistoryVC-->
+        <!--History-->
         <scene sceneID="T6k-xc-f0G">
             <objects>
                 <viewController id="5lw-tB-L66" customClass="AplliedJobsHistoryVC" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
@@ -893,7 +893,7 @@
                             <constraint firstItem="qET-DK-0h5" firstAttribute="top" secondItem="5Kw-7f-j13" secondAttribute="bottom" id="xmO-Gf-1n8"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="3PN-Nf-JUS"/>
+                    <tabBarItem key="tabBarItem" title="History" image="hourglass" selectedImage="hourglass-selected" id="3PN-Nf-JUS"/>
                     <connections>
                         <outlet property="tableView" destination="5Kw-7f-j13" id="elP-vb-0mw"/>
                     </connections>
@@ -920,7 +920,7 @@
             </objects>
             <point key="canvasLocation" x="1943" y="1592"/>
         </scene>
-        <!--Post ListVC-->
+        <!--History-->
         <scene sceneID="fLQ-TE-JZg">
             <objects>
                 <viewController id="J1a-4a-EOW" customClass="PostListVC" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
@@ -949,7 +949,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E5I-RJ-l77">
-                                <rect key="frame" x="16" y="72" width="288" height="496"/>
+                                <rect key="frame" x="16" y="72" width="288" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -965,7 +965,7 @@
                             <constraint firstItem="E5I-RJ-l77" firstAttribute="leading" secondItem="9Nu-2A-sf7" secondAttribute="leadingMargin" id="yxu-fA-rSI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="UgT-2f-SRW"/>
+                    <tabBarItem key="tabBarItem" title="History" image="hourglass" selectedImage="hourglass-selected" id="UgT-2f-SRW"/>
                     <connections>
                         <outlet property="tableView" destination="E5I-RJ-l77" id="iof-eD-bin"/>
                     </connections>
@@ -1115,6 +1115,14 @@
             <point key="canvasLocation" x="2153" y="-592"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hourglass" width="16" height="25"/>
+        <image name="hourglass-selected" width="16" height="25"/>
+        <image name="magnifying-glass" width="25" height="25"/>
+        <image name="magnifying-glass-selected" width="25" height="25"/>
+        <image name="profile-male" width="28" height="25"/>
+        <image name="profile-male-selected" width="28" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jqw-Wr-nDq"/>
         <segue reference="r4a-jc-dzk"/>
