@@ -64,10 +64,7 @@ class SignUpFirstStepViewController: BasicVC {
 
         Facade.shared.registerUser(user: user, onSuccess: self.onSuccess, onFail: onFail)
 
-        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
-            self.view.addSubview(load)
-            load.center = self.view.center
-        }
+       Utilities.showLoading()
 
     }
 
@@ -96,6 +93,7 @@ class SignUpFirstStepViewController: BasicVC {
     }
 
     func onFail(error: Error) {
+        Utilities.dismissLoading()
         Utilities.displayAlert(error)
     }
 }

@@ -8,7 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingScreenVC" customModule="CleanerSeeker" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="tCv-Ec-paW"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -23,7 +27,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UST-T8-7nR">
-                    <rect key="frame" x="137" y="323" width="101" height="24"/>
+                    <rect key="frame" x="137" y="321" width="101" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -31,10 +35,10 @@
             </subviews>
             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="UST-T8-7nR" secondAttribute="bottom" constant="320" id="0Ju-ju-rrM"/>
+                <constraint firstItem="UST-T8-7nR" firstAttribute="centerY" secondItem="nAy-0v-GYf" secondAttribute="centerY" id="43g-gy-XCe"/>
                 <constraint firstItem="nAy-0v-GYf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JYJ-xr-DnK"/>
                 <constraint firstItem="nAy-0v-GYf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="U3l-5o-sCK"/>
-                <constraint firstItem="UST-T8-7nR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sC6-Ft-ZxD"/>
+                <constraint firstItem="UST-T8-7nR" firstAttribute="centerX" secondItem="nAy-0v-GYf" secondAttribute="centerX" id="pMO-l0-0nX"/>
             </constraints>
             <point key="canvasLocation" x="-106.5" y="-220.5"/>
         </view>
