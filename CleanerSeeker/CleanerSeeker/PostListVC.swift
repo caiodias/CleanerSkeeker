@@ -11,11 +11,14 @@ import UIKit
 class PostListVC: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
     var jobsSource = [JobOpportunity]()
-    var allJobsSource = [JobOpportunity]()
+    var jobSelected: JobOpportunity!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
+
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+
         Facade.shared.getAllJobsOpportunitiesBy(jobStatus: JobStatus.active, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 
@@ -55,6 +58,17 @@ class PostListVC: UIViewController {
     func onFetchJobFail(error: Error) {
         Utilities.displayAlert(error)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showDetails") {
+            guard let detailsVC = segue.destination as? JobDetailsVC else {
+                print("Not possible to convert the segue")
+                return
+            }
+
+            detailsVC.jobToDisplay = self.jobSelected
+        }
+    }
 }
 
 extension PostListVC: UITableViewDataSource {
@@ -81,5 +95,12 @@ extension PostListVC: UITableViewDataSource {
         jobCell.fillElements(job: jobOpportuniry)
 
         return jobCell
+    }
+}
+
+extension PostListVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.jobSelected = self.jobsSource[indexPath.row]
+        self.performSegue(withIdentifier: "showDetails", sender: self)
     }
 }

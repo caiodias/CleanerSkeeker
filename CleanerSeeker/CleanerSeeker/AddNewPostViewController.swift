@@ -81,7 +81,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         refreshPrice()
     }
 
-    @IBAction func createNewPost(_ sender: UIButton) {
+    @IBAction func createNewPost(_ sender: Any) {
         if validateFields() {
             let job = JobOpportunity()
             job.address = addressTxtView.text!

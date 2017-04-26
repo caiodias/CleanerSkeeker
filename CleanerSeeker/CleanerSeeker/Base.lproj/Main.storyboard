@@ -158,7 +158,7 @@
             </objects>
             <point key="canvasLocation" x="2153" y="129"/>
         </scene>
-        <!--Add New Post View Controller-->
+        <!--Add Job-->
         <scene sceneID="5Ze-xo-r9H">
             <objects>
                 <viewController id="QaU-jc-DN1" customClass="AddNewPostViewController" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
@@ -321,47 +321,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuk-4I-gnT" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="125" y="529" width="70" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="bHP-o0-l0b"/>
-                                    <constraint firstAttribute="height" constant="30" id="fDj-fs-xUw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="createNewPost:" destination="QaU-jc-DN1" eventType="touchUpInside" id="z0V-xK-WKM"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apX-zd-0pv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="6ms-gg-2Bj"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Add Job" id="e0C-UK-3Sk">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aRf-3G-Bh8">
-                                            <connections>
-                                                <segue destination="J1a-4a-EOW" kind="show" identifier="backHistory" id="j2P-27-eQ5"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yuk-4I-gnT" firstAttribute="centerX" secondItem="c13-Kc-vnv" secondAttribute="centerX" id="3e6-YY-jjo"/>
-                            <constraint firstAttribute="trailing" secondItem="apX-zd-0pv" secondAttribute="trailing" id="6tl-25-w05"/>
-                            <constraint firstItem="apX-zd-0pv" firstAttribute="leading" secondItem="4Tj-3b-mva" secondAttribute="leading" id="ZA0-To-SAQ"/>
+                            <constraint firstItem="c13-Kc-vnv" firstAttribute="top" secondItem="ogn-NP-x19" secondAttribute="bottom" constant="8" id="Zs4-FP-nRY"/>
                             <constraint firstItem="c13-Kc-vnv" firstAttribute="centerX" secondItem="4Tj-3b-mva" secondAttribute="centerX" id="hxs-I0-mAP"/>
                             <constraint firstItem="c13-Kc-vnv" firstAttribute="leading" secondItem="4Tj-3b-mva" secondAttribute="leadingMargin" id="lSQ-eH-QEb"/>
-                            <constraint firstItem="apX-zd-0pv" firstAttribute="top" secondItem="4Tj-3b-mva" secondAttribute="top" id="oED-Ur-qxc"/>
-                            <constraint firstItem="yuk-4I-gnT" firstAttribute="top" secondItem="c13-Kc-vnv" secondAttribute="bottom" constant="20" id="w4a-Hw-cfs"/>
-                            <constraint firstItem="c13-Kc-vnv" firstAttribute="top" secondItem="apX-zd-0pv" secondAttribute="bottom" constant="8" id="wRy-tH-ERx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c13-Kc-vnv" secondAttribute="trailing" id="ySU-Jo-IWQ"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Job" id="4iP-9d-Tky">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ufp-7g-mX6">
+                            <connections>
+                                <action selector="createNewPost:" destination="QaU-jc-DN1" id="gtL-t3-6kq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressTxtView" destination="fNF-3t-sao" id="2li-Pp-FRq"/>
                         <outlet property="datePicker" destination="zwA-9Y-LYf" id="H2s-Kc-laT"/>
@@ -375,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExS-Ha-FeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3887" y="1592"/>
+            <point key="canvasLocation" x="4884.375" y="1591.9014084507041"/>
         </scene>
         <!--Profile-->
         <scene sceneID="UNw-x5-cQk">
@@ -670,7 +647,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oZz-y9-gLs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fkf-BP-zLD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JJ5-Ry-WDN" userLabel="Base Stack">
@@ -855,7 +832,9 @@
                             <constraint firstItem="JJ5-Ry-WDN" firstAttribute="centerX" secondItem="fkf-BP-zLD" secondAttribute="centerX" id="Qfs-wG-HpV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Job Details" id="Yui-Dq-myu"/>
+                    <navigationItem key="navigationItem" title="Job Details" id="Yui-Dq-myu">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="o0E-FP-9wp"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="Xrk-QN-r1G" id="dLC-qQ-99t"/>
                         <outlet property="avatar" destination="UYT-gJ-442" id="VCV-y0-tWa"/>
@@ -928,7 +907,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="J1a-4a-EOW" kind="relationship" relationship="viewControllers" id="Jqw-Wr-nDq"/>
+                        <segue destination="Cr9-Ag-8Ne" kind="relationship" relationship="viewControllers" id="Jqw-Wr-nDq"/>
                         <segue destination="zZW-Pu-TDm" kind="relationship" relationship="viewControllers" id="r4a-jc-dzk"/>
                     </connections>
                 </tabBarController>
@@ -936,7 +915,7 @@
             </objects>
             <point key="canvasLocation" x="1943" y="1592"/>
         </scene>
-        <!--History-->
+        <!--Jobs History-->
         <scene sceneID="fLQ-TE-JZg">
             <objects>
                 <viewController id="J1a-4a-EOW" customClass="PostListVC" customModule="CleanerSeeker" customModuleProvider="target" sceneMemberID="viewController">
@@ -956,16 +935,12 @@
                                 <items>
                                     <navigationItem title="Post Jobs History" id="Prd-f9-oCx">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="rnF-5w-LFH"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rxr-cH-bbK">
-                                            <connections>
-                                                <segue destination="QaU-jc-DN1" kind="show" identifier="" id="OGO-9R-f8L"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rxr-cH-bbK"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E5I-RJ-l77">
-                                <rect key="frame" x="16" y="105" width="288" height="463"/>
+                                <rect key="frame" x="16" y="105" width="288" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7JD-EO-Mev" customClass="CSSegmentControl" customModule="CleanerSeeker" customModuleProvider="target">
@@ -994,14 +969,22 @@
                             <constraint firstItem="E5I-RJ-l77" firstAttribute="leading" secondItem="9Nu-2A-sf7" secondAttribute="leadingMargin" id="yxu-fA-rSI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" image="hourglass" selectedImage="hourglass-selected" id="UgT-2f-SRW"/>
+                    <navigationItem key="navigationItem" title="Jobs History" id="xgA-rj-CI6">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="vfc-Kj-NnO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VGb-1r-S9C">
+                            <connections>
+                                <segue destination="QaU-jc-DN1" kind="show" id="Fw8-pb-R29"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="E5I-RJ-l77" id="iof-eD-bin"/>
+                        <segue destination="W6z-us-v9D" kind="show" identifier="showDetails" id="J9z-MR-oCW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGd-LW-7yW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="1592"/>
+            <point key="canvasLocation" x="3946.875" y="1591.9014084507041"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="XVS-8s-14n">
@@ -1162,6 +1145,25 @@
             </objects>
             <point key="canvasLocation" x="665.625" y="822.88732394366195"/>
         </scene>
+        <!--History-->
+        <scene sceneID="F54-uH-wKx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cr9-Ag-8Ne" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" image="hourglass" selectedImage="hourglass-selected" id="UgT-2f-SRW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gx7-RE-dkm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="J1a-4a-EOW" kind="relationship" relationship="rootViewController" id="0G1-Vn-lDC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llC-TQ-FBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2949.375" y="1591.9014084507041"/>
+        </scene>
     </scenes>
     <resources>
         <image name="hourglass" width="16" height="25"/>
@@ -1172,7 +1174,7 @@
         <image name="profile-male-selected" width="28" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="J9z-MR-oCW"/>
         <segue reference="RII-dt-dA0"/>
-        <segue reference="j2P-27-eQ5"/>
     </inferredMetricsTieBreakers>
 </document>
