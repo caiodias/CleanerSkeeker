@@ -104,16 +104,18 @@ extension FindJobOffersVC: KolodaViewDataSource {
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         var image = Utilities.defaultHouse
+        let jobDetailsView = JobSummaryVC(nibName: "JobSummaryView", bundle: nil)
+        jobDetailsView.job = jobsSource[index]
 
-        if !self.jobsSource.isEmpty {
-            if self.jobsSource[index].spaceType == JobSpaceType.house.rawValue {
-                image = Utilities.defaultHouse
-            } else {
-                image = Utilities.defaultCondo
-            }
-        }
+//        if !self.jobsSource.isEmpty {
+//            if self.jobsSource[index].spaceType == JobSpaceType.house.rawValue {
+//                image = Utilities.defaultHouse
+//            } else {
+//                image = Utilities.defaultCondo
+//            }
+//        }
 
-        return UIImageView(image: image)
+        return jobDetailsView.view
     }
 
     func reset() {
