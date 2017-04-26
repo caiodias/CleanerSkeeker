@@ -98,9 +98,16 @@ extension ApiController {
     }
 
     func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+
+        //Set current user as applier
         let user = self.getCurrentUser()
-        job.appliedId = user
-        let deal = Deal(cleaner: user, job: job)
+        let relation = job.relation(forKey: "appliedId")
+        relation.add(user)
+
+        //Update status to applied
+        job.status = JobStatus.applied.rawValue
+
+        //let deal = Deal(cleaner: user, job: job)
         //TODO: save the deal object on Parse
 
         self.parseDb.apply(to: job, onSuccess: onSuccess, onFail: onFail)
