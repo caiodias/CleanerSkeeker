@@ -26,16 +26,17 @@ class PostListVC: UIViewController {
     }
 
     @IBAction func filterJobsValueChanged(_ sender: CSSegmentControl) {
+        var status = JobStatus.none
         switch sender.selectedSegmentIndex {
         case 1:
-            filterJobs(status: JobStatus.applied)
+            status = JobStatus.applied
         case 2:
-            filterJobs(status: JobStatus.done)
+            status = JobStatus.done
         default:
-            filterJobs(status: JobStatus.active)
+            status = JobStatus.active
         }
 
-        self.tableView.reloadData()
+        Facade.shared.getAllJobsOpportunitiesBy(jobStatus: status, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 
     func onFetchJobSuccess(objs: Any) {
@@ -44,8 +45,7 @@ class PostListVC: UIViewController {
             return
         }
 
-        self.allJobsSource = jobs
-        filterJobs(status: JobStatus.active)
+        self.jobsSource = jobs
 
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -54,12 +54,6 @@ class PostListVC: UIViewController {
 
     func onFetchJobFail(error: Error) {
         Utilities.displayAlert(error)
-    }
-
-    func filterJobs(status: JobStatus) {
-        self.jobsSource = self.allJobsSource.filter {
-            $0.status == status.rawValue
-        }
     }
 }
 
