@@ -6,16 +6,21 @@
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
 
-import Foundation
+import Parse
 
-class Deal {
-    let selector: Selector
-    let jobPoster: JobPoster
-    let date: Date
+class Deal: PFObject, PFSubclassing {
+    @NSManaged var cleaner: CSUser
+    @NSManaged var job: JobOpportunity
+    @NSManaged var date: Date
 
-    init(selector: Selector, jobPoster: JobPoster) {
-        self.selector = selector
-        self.jobPoster = jobPoster
+    class func parseClassName() -> String {
+        return "Deal"
+    }
+
+    init(cleaner: CSUser, job: JobOpportunity) {
+        super.init()
+        self.cleaner = cleaner
+        self.job = job
         self.date = Date()
     }
 }

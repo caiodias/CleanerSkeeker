@@ -9,7 +9,7 @@
 import UIKit
 import Koloda
 
-class FindJobOffersVC: UIViewController {
+class FindJobOffersVC: BasicVC {
     @IBOutlet weak var kolodaView: KolodaView!
     var jobsSource = [JobOpportunity]()
     var jobSelected = JobOpportunity()
@@ -38,10 +38,6 @@ class FindJobOffersVC: UIViewController {
         self.kolodaView.swipe(SwipeResultDirection.right)
     }
 
-    @IBAction func undoButtonTapped() {
-        self.kolodaView.revertAction()
-    }
-
     // MARK: Callbacks
 
     func onFetchJobSuccess(jobs: Any) {
@@ -50,7 +46,6 @@ class FindJobOffersVC: UIViewController {
             return
         }
 
-        print("Jobs in range found")
         self.jobsSource = jobs
         DispatchQueue.main.async {
             self.kolodaView.reloadData()
@@ -83,6 +78,23 @@ extension FindJobOffersVC: KolodaViewDelegate {
 
         self.performSegue(withIdentifier: "jobDetails", sender: self)
     }
+
+    func koloda(_ koloda: Koloda.KolodaView, didSwipeCardAt index: Int, in direction: Koloda.SwipeResultDirection) {
+        print("Swipe Direction: \(direction)")
+        let job = self.jobsSource[index]
+
+        if direction == SwipeResultDirection.right {
+            Facade.shared.apply(to: job, onSuccess: onApplySuccess, onFail: onApplyFail)
+        }
+    }
+
+    func onApplySuccess(obj: Any) {
+        print("Job applied with success")
+    }
+
+    func onApplyFail(error: Error) {
+        print("Fail on apply to job: " + error.localizedDescription)
+    }
 }
 
 extension FindJobOffersVC: KolodaViewDataSource {
@@ -103,10 +115,6 @@ extension FindJobOffersVC: KolodaViewDataSource {
 
         return UIImageView(image: image)
     }
-
-//    func koloda(koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-//        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
-//    }
 
     func reset() {
         Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)

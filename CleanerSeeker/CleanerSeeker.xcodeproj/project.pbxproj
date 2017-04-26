@@ -13,6 +13,7 @@
 		954DC0731E2D6743000F1C4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0711E2D6743000F1C4B /* Main.storyboard */; };
 		954DC0751E2D6743000F1C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0741E2D6743000F1C4B /* Assets.xcassets */; };
 		954DC0781E2D6743000F1C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0761E2D6743000F1C4B /* LaunchScreen.storyboard */; };
+		954FE4551EAFED650056C8E4 /* JobSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954FE4541EAFED650056C8E4 /* JobSummaryView.xib */; };
 		9574455D1E95735D00AD35CC /* CSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574455C1E95735D00AD35CC /* CSUser.swift */; };
 		959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F6A331E9EAE51008E8526 /* PostListVC.swift */; };
 		95A7F4EA1EABBE79009F53C6 /* JobDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */; };
@@ -108,6 +109,7 @@
 		954DC0771E2D6743000F1C4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		954DC0791E2D6743000F1C4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		954DC07E1E2D6744000F1C4B /* CleanerSeekerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanerSeekerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		954FE4541EAFED650056C8E4 /* JobSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobSummaryView.xib; sourceTree = "<group>"; };
 		9574455C1E95735D00AD35CC /* CSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSUser.swift; sourceTree = "<group>"; };
 		959F6A331E9EAE51008E8526 /* PostListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListVC.swift; sourceTree = "<group>"; };
 		95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsVC.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				95F964441E8AF94C001969BB /* Find Job Offer */,
 				95F964451E8AF955001969BB /* Applied Job History */,
 				95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */,
+				954FE4541EAFED650056C8E4 /* JobSummaryView.xib */,
 			);
 			name = "Apply Flow";
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */,
+				954FE4551EAFED650056C8E4 /* JobSummaryView.xib in Resources */,
 				954DC0781E2D6743000F1C4B /* LaunchScreen.storyboard in Resources */,
 				E1A04C721EABA72F004F8114 /* LoadingScreen.xib in Resources */,
 				954DC0751E2D6743000F1C4B /* Assets.xcassets in Resources */,

@@ -20,7 +20,7 @@ class BasicVC: UIViewController {
 //
 //        }
 
-        self.title = Utilities.programName
+//        self.title = Utilities.programName
 
         observeKeyboardNotifications()
     }

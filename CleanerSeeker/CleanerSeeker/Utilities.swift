@@ -36,7 +36,7 @@ class Utilities {
 
     private static let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
 
-    class func classNameAsString(obj: Any) -> String {
+    static func classNameAsString(obj: Any) -> String {
         return String(describing: type(of: obj))
     }
 
@@ -44,12 +44,12 @@ class Utilities {
         self.displayAlert(title: "Error", message: error.localizedDescription, okAction: okAction)
     }
 
-    static func displayAlert(errorMessage: String) {
-        self.displayAlert(title: "Error", message: errorMessage, okAction: okAction)
+    static func displayAlert(error message: String) {
+        self.displayAlert(title: "Error", message: message, okAction: okAction)
     }
 
-    static func displayAlert(errorMessage: String, andDoAction: UIAlertAction) {
-        self.displayAlert(title: "Error", message: errorMessage, okAction: andDoAction)
+    static func displayAlert(error message: String, andDoAction: UIAlertAction) {
+        self.displayAlert(title: "Error", message: message, okAction: andDoAction)
     }
 
     static func displayAlert(title: String, message: String) {
