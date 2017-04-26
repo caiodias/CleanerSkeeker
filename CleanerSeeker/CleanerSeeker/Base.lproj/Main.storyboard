@@ -937,19 +937,29 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E5I-RJ-l77">
-                                <rect key="frame" x="16" y="80" width="288" height="488"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E5I-RJ-l77">
+                                <rect key="frame" x="16" y="105" width="288" height="463"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7JD-EO-Mev" customClass="CSSegmentControl" customModule="CleanerSeeker" customModuleProvider="target">
+                                <rect key="frame" x="69.5" y="69" width="182" height="29"/>
+                                <segments>
+                                    <segment title="Active"/>
+                                    <segment title="Applied"/>
+                                    <segment title="Done"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E5I-RJ-l77" firstAttribute="top" secondItem="xf1-m5-yBT" secondAttribute="bottom" constant="16" id="86m-L7-nPA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E5I-RJ-l77" secondAttribute="trailing" id="A8c-x3-8Rn"/>
                             <constraint firstItem="xf1-m5-yBT" firstAttribute="leading" secondItem="9Nu-2A-sf7" secondAttribute="leading" id="DpW-fp-wfc"/>
+                            <constraint firstItem="7JD-EO-Mev" firstAttribute="centerX" secondItem="9Nu-2A-sf7" secondAttribute="centerX" id="JAN-VP-8yN"/>
+                            <constraint firstItem="7JD-EO-Mev" firstAttribute="top" secondItem="xf1-m5-yBT" secondAttribute="bottom" constant="5" id="JBM-O5-cQB"/>
                             <constraint firstItem="xf1-m5-yBT" firstAttribute="top" secondItem="9Nu-2A-sf7" secondAttribute="top" id="Vxx-J8-0Jy"/>
                             <constraint firstAttribute="trailing" secondItem="xf1-m5-yBT" secondAttribute="trailing" id="sqs-Y3-lWw"/>
                             <constraint firstItem="E5I-RJ-l77" firstAttribute="centerX" secondItem="9Nu-2A-sf7" secondAttribute="centerX" id="ssT-hV-eli"/>
+                            <constraint firstItem="E5I-RJ-l77" firstAttribute="top" secondItem="7JD-EO-Mev" secondAttribute="bottom" constant="8" id="tyc-gv-fe7"/>
                             <constraint firstItem="bWX-JI-s49" firstAttribute="top" secondItem="E5I-RJ-l77" secondAttribute="bottom" id="yQ4-va-flW"/>
                             <constraint firstItem="E5I-RJ-l77" firstAttribute="leading" secondItem="9Nu-2A-sf7" secondAttribute="leadingMargin" id="yxu-fA-rSI"/>
                         </constraints>
