@@ -619,23 +619,29 @@
                                     <constraint firstAttribute="width" secondItem="QID-C3-Vol" secondAttribute="height" multiplier="1:1" id="iBE-yh-UrS"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eDP-84-Qc2" userLabel="Buttons Stack">
-                                <rect key="frame" x="110" y="387" width="100" height="25"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eDP-84-Qc2" userLabel="Buttons Stack">
+                                <rect key="frame" x="45" y="387" width="230" height="35"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIF-s2-WaR">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="25"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="45"/>
-                                        <state key="normal" title="x">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIF-s2-WaR" customClass="CSSecondary" customModule="CleanerSeeker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="TVz-bg-7kD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <state key="normal" title="Skip">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="leftButtonTapped" destination="49d-IQ-mc1" eventType="touchUpInside" id="oTq-yF-v0z"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eeo-QW-gtD">
-                                        <rect key="frame" x="60" y="0.0" width="40" height="25"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="45"/>
-                                        <state key="normal" title="✓">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eeo-QW-gtD" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
+                                        <rect key="frame" x="120" y="0.0" width="110" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="4Kd-Wr-S3n"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                        <state key="normal" title="I take it">
                                             <color key="titleColor" red="0.0" green="0.78095160590000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -644,8 +650,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="1gM-kQ-sZi"/>
-                                    <constraint firstAttribute="width" constant="100" id="Vxt-0n-4ZW"/>
+                                    <constraint firstAttribute="height" constant="35" id="1gM-kQ-sZi"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -961,7 +966,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E5I-RJ-l77">
-                                <rect key="frame" x="16" y="72" width="288" height="496"/>
+                                <rect key="frame" x="16" y="80" width="288" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -1130,7 +1135,7 @@
         <scene sceneID="Wsu-Ts-jW9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tg-g6-BnR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifying-glass" id="z6D-zl-WAC"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifying-glass" selectedImage="magnifying-glass" id="z6D-zl-WAC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hzc-tU-wSh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
