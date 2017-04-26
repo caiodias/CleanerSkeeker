@@ -81,9 +81,11 @@ class ProfileViewController: UIViewController {
 
     // MARK: - Callbacks
     func onSuccessLogout(_ user:Any) {
-        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login")
         Utilities.dismissLoading()
-        self.present(loginVC, animated: true, completion: nil)
+
+        let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login")
+        let navigationController = UINavigationController.init(rootViewController: loginVC)
+        self.present(navigationController, animated: true, completion: nil)
     }
 
     func onFailLogout(error: Error) {
