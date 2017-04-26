@@ -84,8 +84,8 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBAction func createNewPost(_ sender: Any) {
         if validateFields() {
             let job = JobOpportunity()
-            job.address = addressTxtView.text!
-            job.zipcode = zipcodeTxtView.text!
+            job.address = addressTxtView.text!.trim()
+            job.zipcode = zipcodeTxtView.text!.trim()
 
             let row = self.typeOfSpace.selectedRow(inComponent: 0)
             switch row {
@@ -134,7 +134,34 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     func validateFields() -> Bool {
-        // TODO: validate each input field
+        let alertTitle = "Did you forgot?"
+        guard self.addressTxtView.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "Address field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: self.addressTxtView.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "Address field must be filled.")
+            return false
+        }
+
+        guard self.zipcodeTxtView.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "Zipcode field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: self.zipcodeTxtView.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "Zipcode field must be filled.")
+            return false
+        }
+
+        let hours = NSCalendar.current.component(.hour, from: hoursToClean.date)
+        let minutes = NSCalendar.current.component(.minute, from: hoursToClean.date)
+
+        if hours == 0 && minutes == 0 {
+            Utilities.displayAlert(title: alertTitle, message: "You must specify how many time will be the work.")
+        }
+
         return true
     }
 

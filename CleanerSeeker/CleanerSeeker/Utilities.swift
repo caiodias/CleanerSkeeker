@@ -106,4 +106,19 @@ class Utilities {
             loadingScreen.view.removeFromSuperview()
         }
     }
+
+    static func validate(string value: String) -> Bool {
+        if !value.isEmpty { // if not empty
+            let trimmedString = value.trim()
+            return !trimmedString.isEmpty // if after trim is not empty is a valid string
+        }
+
+        return false
+    }
+}
+
+extension String {
+    func trim() -> String {
+        return self.trimmingCharacters(in: CharacterSet.whitespaces)
+    }
 }
