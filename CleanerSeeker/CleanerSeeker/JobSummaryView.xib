@@ -70,14 +70,23 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info Icon" translatesAutoresizingMaskIntoConstraints="NO" id="gwk-42-sgo">
+                                    <rect key="frame" x="277" y="8" width="15" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="15" id="Dra-tc-fyA"/>
+                                        <constraint firstAttribute="width" constant="15" id="V6e-Ol-MhE"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.19161881974127964" green="0.30946899976773112" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="gwk-42-sgo" firstAttribute="top" secondItem="v2u-Oa-h42" secondAttribute="top" constant="8" id="5jC-hm-2K6"/>
                                 <constraint firstItem="W07-JM-Gvz" firstAttribute="leading" secondItem="v2u-Oa-h42" secondAttribute="leading" constant="8" id="Bym-c7-8oP"/>
                                 <constraint firstItem="do9-hP-y5k" firstAttribute="centerX" secondItem="v2u-Oa-h42" secondAttribute="centerX" id="Hmz-Gl-fJe"/>
                                 <constraint firstItem="W07-JM-Gvz" firstAttribute="top" secondItem="v2u-Oa-h42" secondAttribute="top" constant="8" id="Ivv-lL-Ovp"/>
                                 <constraint firstAttribute="height" constant="180" id="KYP-lC-Pdd"/>
                                 <constraint firstItem="XvL-8Z-OMI" firstAttribute="centerX" secondItem="v2u-Oa-h42" secondAttribute="centerX" id="XE2-kt-2MP"/>
+                                <constraint firstAttribute="trailing" secondItem="gwk-42-sgo" secondAttribute="trailing" constant="8" id="q5z-hY-hnE"/>
                                 <constraint firstAttribute="bottom" secondItem="do9-hP-y5k" secondAttribute="bottom" constant="8" id="szM-jI-vnX"/>
                                 <constraint firstAttribute="trailing" secondItem="W07-JM-Gvz" secondAttribute="trailing" constant="8" id="tbG-zu-mnX"/>
                                 <constraint firstItem="do9-hP-y5k" firstAttribute="top" secondItem="XvL-8Z-OMI" secondAttribute="bottom" constant="20" id="xa5-Pi-9OC"/>
@@ -158,4 +167,7 @@
             <point key="canvasLocation" x="22" y="2"/>
         </view>
     </objects>
+    <resources>
+        <image name="Info Icon" width="15" height="15"/>
+    </resources>
 </document>
