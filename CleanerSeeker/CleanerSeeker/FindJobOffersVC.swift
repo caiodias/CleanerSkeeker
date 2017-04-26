@@ -11,6 +11,8 @@ import Koloda
 
 class FindJobOffersVC: BasicVC {
     @IBOutlet weak var kolodaView: KolodaView!
+    @IBOutlet weak var buttonsStack: UIStackView!
+    @IBOutlet weak var noJobsLabel: UILabel!
     var jobsSource = [JobOpportunity]()
     var jobSelected = JobOpportunity()
 
@@ -101,29 +103,24 @@ extension FindJobOffersVC: KolodaViewDelegate {
 
 extension FindJobOffersVC: KolodaViewDataSource {
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        if jobsSource.isEmpty {
+            self.buttonsStack.isHidden = true
+            self.noJobsLabel.isHidden = false
+        }
+
         return jobsSource.count
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        var image = Utilities.defaultHouse
         let jobDetailsView = JobSummaryVC(nibName: "JobSummaryView", bundle: nil)
         jobDetailsView.job = jobsSource[index]
-
-//        if !self.jobsSource.isEmpty {
-//            if self.jobsSource[index].spaceType == JobSpaceType.house.rawValue {
-//                image = Utilities.defaultHouse
-//            } else {
-//                image = Utilities.defaultCondo
-//            }
-//        }
 
         return jobDetailsView.view
     }
 
     func reset() {
-        Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
-
         Utilities.showLoading()
 
+        Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 }
