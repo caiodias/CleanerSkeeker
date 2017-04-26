@@ -18,12 +18,17 @@ class JobSummaryVC: BasicVC {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var leftSquareView: UIView!
     @IBOutlet weak var rightSquareView: UIView!
+    @IBOutlet weak var baseView: UIView!
     private let bedsFormat = "Bedrooms: %d"
     private let washsFormat = "Washrooms: %d"
     var job: JobOpportunity!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Round corners for main container
+        baseView.layer.cornerRadius = 4
+        baseView.layer.masksToBounds = true
+
         self.topView.backgroundColor = Utilities.CSColors.darkBlue.color
         self.leftSquareView.backgroundColor = Utilities.CSColors.darkBlue.color
         self.rightSquareView.backgroundColor = Utilities.CSColors.darkBlue.color

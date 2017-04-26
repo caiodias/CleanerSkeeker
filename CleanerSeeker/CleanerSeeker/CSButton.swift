@@ -14,5 +14,7 @@ class CSButton: UIButton {
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
         self.setTitleColor(Utilities.CSColors.green.color, for: .normal)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
+
     }
 }

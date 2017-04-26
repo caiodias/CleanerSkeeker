@@ -14,7 +14,6 @@ class CSPrimary: CSButton {
         super.awakeFromNib()
         self.backgroundColor = Utilities.CSColors.green.color
         self.setTitleColor(.white, for: .normal)
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
     }
     /*
     // Only override draw() if you perform custom drawing.

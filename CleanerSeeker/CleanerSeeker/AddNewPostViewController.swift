@@ -106,10 +106,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
             Facade.shared.registerJobOpportunity(job: job, onSuccess: onRegisterSuccess, onFail: onRegisterFail)
 
-            if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
-                self.view.addSubview(load)
-                load.center = self.view.center
-            }
+           Utilities.showLoading()
 
         } else {
             print("error")
@@ -147,6 +144,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     private func onAddNewPostFail(error: Error) {
+        Utilities.dismissLoading()
         Utilities.displayAlert(error)
     }
 
@@ -158,6 +156,7 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     func onRegisterFail(error: Error) {
         print(error.localizedDescription)
+        Utilities.dismissLoading()
         Utilities.displayAlert(error)
     }
 }

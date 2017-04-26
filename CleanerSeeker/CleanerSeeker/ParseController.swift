@@ -238,8 +238,14 @@ extension ParseController {
     func getAllJobsOpportunitiesBy(ownerID: CSUser, jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         let query = PFQuery(className: "JobOpportunity")
 
-        query.whereKey("status", equalTo: jobStatus.rawValue) // Active
-        query.whereKey("ownerId", equalTo: ownerID)
+        query.whereKey("status", equalTo: jobStatus.rawValue)
+
+        //Check the user type
+        if ownerID.userType == CSUserType.JobPoster.rawValue {
+            query.whereKey("ownerId", equalTo: ownerID)
+        } else {
+            query.whereKey("appliedId", equalTo: ownerID)
+        }
 
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
             if let error = error {
@@ -268,15 +274,6 @@ extension ParseController {
 // MARK: Apply Flow Methods
 extension ParseController {
     func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-
-        // Set the owner of job opportunity
-        guard let currentUser = CSUser.current() else {
-            onFail(ParseDbErrors.UserIsNotLoggedIn)
-            return
-        }
-
-        let relation = job.relation(forKey: "appliedId")
-        relation.add(currentUser)
 
         job.saveInBackground { (_, error: Error?) -> Void in
            if let error = error {
