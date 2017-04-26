@@ -50,9 +50,11 @@ class FindJobOffersVC: BasicVC {
         DispatchQueue.main.async {
             self.kolodaView.reloadData()
         }
+        Utilities.dismissLoading()
     }
 
     func onFetchJobFail(error: Error) {
+        Utilities.dismissLoading()
         print("Error on fetch jobs. " + error.localizedDescription)
     }
 
