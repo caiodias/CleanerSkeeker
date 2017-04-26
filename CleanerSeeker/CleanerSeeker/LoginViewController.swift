@@ -33,10 +33,7 @@ class LoginViewController: UIViewController {
 
         Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
 
-        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? UIView {
-            self.view.addSubview(load)
-            load.center = self.view.center
-        }
+        Utilities.showLoading()
     }
 
     // MARK: Redirect user to right tab controller
@@ -56,6 +53,7 @@ class LoginViewController: UIViewController {
     // MARK: login callbacks
     private func onLoginSuccess(object: Any) {
         print(object)
+        Utilities.dismissLoading()
 
         guard let user = object as? CSUser else {
             print("Not possible convert login object to user")
@@ -71,6 +69,7 @@ class LoginViewController: UIViewController {
     }
 
     private func onLoginFail(error: Error) {
+        Utilities.dismissLoading()
         Utilities.displayAlert(error)
     }
 

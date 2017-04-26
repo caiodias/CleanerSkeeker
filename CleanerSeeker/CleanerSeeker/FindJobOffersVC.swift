@@ -120,5 +120,8 @@ extension FindJobOffersVC: KolodaViewDataSource {
 
     func reset() {
         Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+
+        Utilities.showLoading()
+
     }
 }

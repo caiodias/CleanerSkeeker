@@ -50,22 +50,14 @@ class ProfileViewController: UIViewController {
         if let currentUser = CSUser.current() {
             Facade.shared.resetPassword(email: currentUser.email!, onSuccess: self.onSuccessReset, onFail: self.onFailReset)
 
-            if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
-                self.view.addSubview(load)
-                load.center = self.view.center
-            }
+            Utilities.showLoading()
 
         }
     }
 
     @IBAction func tapOnLogOut(_ sender: Any) {
         Facade.shared.logout(onSuccess: self.onSuccessLogout, onFail: self.onFailLogout)
-
-        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
-            self.view.addSubview(load)
-            load.center = self.view.center
-        }
-
+        Utilities.showLoading()
     }
 
     @IBAction func tapOnSave(_ sender: Any) {
@@ -81,6 +73,7 @@ class ProfileViewController: UIViewController {
             currentUser.postalCode = province.text!
 
             Facade.shared.updateUser(user: currentUser, onSuccess: self.onSuccessUpdate, onFail: self.onFailUpdate)
+            Utilities.showLoading()
 
         }
 
@@ -93,6 +86,7 @@ class ProfileViewController: UIViewController {
     }
 
     func onFailLogout(error: Error) {
+        Utilities.dismissLoading()
         Utilities.displayAlert(error)
     }
 
@@ -101,6 +95,7 @@ class ProfileViewController: UIViewController {
     }
 
     func onFailUpdate(error: Error) {
+        Utilities.dismissLoading()
         Utilities.displayAlert(error)
     }
 
@@ -109,6 +104,7 @@ class ProfileViewController: UIViewController {
     }
 
     func onFailReset(error: Error) {
+        Utilities.dismissLoading()
         Utilities.displayAlert(error)
     }
 

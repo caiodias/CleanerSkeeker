@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Foundation
 
 class Utilities {
     // swiftlint:disable force_cast
     static let programName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
     static let defaultHouse = UIImage(named: "default-home")
     static let defaultCondo = UIImage(named: "default-condo")
+    static private let loadingScreen = LoadingScreenVC(nibName: "LoadingScreen", bundle: nil)
 
     enum CSColors: UInt32 {
         case green
@@ -90,5 +92,18 @@ class Utilities {
 
         let minsFormatted = String(format: "%02d", mins)
         return "\(hours):\(minsFormatted)"
+    }
+
+    static func showLoading() {
+        if let currentWindow = UIApplication.shared.keyWindow {
+            loadingScreen.view.frame = currentWindow.frame
+            currentWindow.addSubview(loadingScreen.view)
+        }
+    }
+
+    static func dismissLoading() {
+        DispatchQueue.main.async {
+            loadingScreen.view.removeFromSuperview()
+        }
     }
 }

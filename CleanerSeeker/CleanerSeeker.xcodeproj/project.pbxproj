@@ -66,6 +66,7 @@
 		C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */; };
 		C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */; };
 		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
+		E1279C4A1EAFF5BC0010B674 /* LoadingScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1279C491EAFF5BC0010B674 /* LoadingScreenVC.swift */; };
 		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
 		E1A04C721EABA72F004F8114 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A04C711EABA72F004F8114 /* LoadingScreen.xib */; };
 		E1A04C741EABA766004F8114 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A04C731EABA766004F8114 /* SpinnerView.swift */; };
@@ -161,6 +162,7 @@
 		C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
 		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E1279C491EAFF5BC0010B674 /* LoadingScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenVC.swift; sourceTree = "<group>"; };
 		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
 		E1A04C711EABA72F004F8114 /* LoadingScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
 		E1A04C731EABA766004F8114 /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			children = (
 				E1A04C731EABA766004F8114 /* SpinnerView.swift */,
 				E1A04C711EABA72F004F8114 /* LoadingScreen.xib */,
+				E1279C491EAFF5BC0010B674 /* LoadingScreenVC.swift */,
 			);
 			name = "Loading Screen";
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				95D823571E9017310029B894 /* ParseController.swift in Sources */,
 				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
 				959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */,
+				E1279C4A1EAFF5BC0010B674 /* LoadingScreenVC.swift in Sources */,
 				E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */,
 				C1186B2D1EAED9E300EBE68D /* CSPrimary.swift in Sources */,
 				C1186B321EAEF00600EBE68D /* CSTextField.swift in Sources */,
