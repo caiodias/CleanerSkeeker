@@ -871,16 +871,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Kw-7f-j13">
-                                <rect key="frame" x="16" y="20" width="288" height="499"/>
+                                <rect key="frame" x="16" y="64" width="288" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jMc-ni-BMA" customClass="CSSegmentControl" customModule="CleanerSeeker" customModuleProvider="target">
+                                <rect key="frame" x="100" y="28" width="121" height="29"/>
+                                <segments>
+                                    <segment title="Applied"/>
+                                    <segment title="Done"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filterJobsValueChanged:" destination="5lw-tB-L66" eventType="valueChanged" id="B0E-4O-3xC"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="5Kw-7f-j13" secondAttribute="trailing" id="ESp-Rf-Uwg"/>
-                            <constraint firstItem="5Kw-7f-j13" firstAttribute="leading" secondItem="M1s-nS-18H" secondAttribute="leadingMargin" id="NTC-Xc-mhd"/>
-                            <constraint firstItem="5Kw-7f-j13" firstAttribute="top" secondItem="CYt-uo-GGB" secondAttribute="bottom" id="r3y-HR-aRj"/>
-                            <constraint firstItem="qET-DK-0h5" firstAttribute="top" secondItem="5Kw-7f-j13" secondAttribute="bottom" id="xmO-Gf-1n8"/>
+                            <constraint firstItem="5Kw-7f-j13" firstAttribute="leading" secondItem="M1s-nS-18H" secondAttribute="leadingMargin" id="K7G-7O-UHD"/>
+                            <constraint firstItem="5Kw-7f-j13" firstAttribute="top" secondItem="jMc-ni-BMA" secondAttribute="bottom" constant="8" id="Mgw-qa-VGZ"/>
+                            <constraint firstItem="jMc-ni-BMA" firstAttribute="top" secondItem="CYt-uo-GGB" secondAttribute="bottom" constant="8" id="Mio-bt-d01"/>
+                            <constraint firstItem="5Kw-7f-j13" firstAttribute="trailing" secondItem="M1s-nS-18H" secondAttribute="trailingMargin" id="a5h-AZ-ik3"/>
+                            <constraint firstItem="jMc-ni-BMA" firstAttribute="centerX" secondItem="M1s-nS-18H" secondAttribute="centerX" id="cny-Tm-aMU"/>
+                            <constraint firstItem="5Kw-7f-j13" firstAttribute="centerX" secondItem="M1s-nS-18H" secondAttribute="centerX" id="oVG-US-8BD"/>
+                            <constraint firstItem="qET-DK-0h5" firstAttribute="top" secondItem="5Kw-7f-j13" secondAttribute="bottom" id="zH9-Ew-7Hb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="hourglass" selectedImage="hourglass-selected" id="3PN-Nf-JUS"/>
@@ -890,7 +903,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T62-2h-XrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="1592"/>
+            <point key="canvasLocation" x="862.5" y="1591.9014084507041"/>
         </scene>
         <!--Job Poster Home-->
         <scene sceneID="uTI-Ly-Wsc">

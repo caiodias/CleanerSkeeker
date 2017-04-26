@@ -24,6 +24,20 @@ class AplliedJobsHistoryVC: UIViewController {
         Facade.shared.getAllJobsOpportunitiesBy(jobStatus: JobStatus.applied, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 
+    @IBAction func filterJobsValueChanged(_ sender: CSSegmentControl) {
+        var status = JobStatus.none
+        switch sender.selectedSegmentIndex {
+        case 0:
+            status = JobStatus.applied
+        case 1:
+            status = JobStatus.done
+        default:
+            status = JobStatus.applied
+        }
+
+        Facade.shared.getAllJobsOpportunitiesBy(jobStatus: status, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+    }
+
     func onFetchJobSuccess(objs: Any) {
         guard let jobs = objs as? [JobOpportunity] else {
             print("Not possible to convert the objs to Job Opoortunity List")
