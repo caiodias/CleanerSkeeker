@@ -17,6 +17,7 @@
 		9574455D1E95735D00AD35CC /* CSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574455C1E95735D00AD35CC /* CSUser.swift */; };
 		959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F6A331E9EAE51008E8526 /* PostListVC.swift */; };
 		95A7F4EA1EABBE79009F53C6 /* JobDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */; };
+		95AE47AF1EB03A5D001CFCD7 /* JobSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE47AE1EB03A5D001CFCD7 /* JobSummaryVC.swift */; };
 		95B134671E467B5500838B3C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134661E467B5500838B3C /* Facade.swift */; };
 		95B134691E467B5F00838B3C /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134681E467B5F00838B3C /* ApiController.swift */; };
 		95B1346C1E467EC400838B3C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1346B1E467EC400838B3C /* Utilities.swift */; };
@@ -112,6 +113,7 @@
 		9574455C1E95735D00AD35CC /* CSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSUser.swift; sourceTree = "<group>"; };
 		959F6A331E9EAE51008E8526 /* PostListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListVC.swift; sourceTree = "<group>"; };
 		95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsVC.swift; sourceTree = "<group>"; };
+		95AE47AE1EB03A5D001CFCD7 /* JobSummaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSummaryVC.swift; sourceTree = "<group>"; };
 		95B134661E467B5500838B3C /* Facade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
 		95B134681E467B5F00838B3C /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		95B1346B1E467EC400838B3C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -231,6 +233,15 @@
 			path = CleanerSeeker;
 			sourceTree = "<group>";
 		};
+		95AE47AD1EB03A40001CFCD7 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				954FE4541EAFED650056C8E4 /* JobSummaryView.xib */,
+				95AE47AE1EB03A5D001CFCD7 /* JobSummaryVC.swift */,
+			);
+			name = Summary;
+			sourceTree = "<group>";
+		};
 		95B1346A1E467B7200838B3C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +326,7 @@
 				95F964441E8AF94C001969BB /* Find Job Offer */,
 				95F964451E8AF955001969BB /* Applied Job History */,
 				95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */,
-				954FE4541EAFED650056C8E4 /* JobSummaryView.xib */,
+				95AE47AD1EB03A40001CFCD7 /* Summary */,
 			);
 			name = "Apply Flow";
 			sourceTree = "<group>";
@@ -557,6 +568,7 @@
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
 				9574455D1E95735D00AD35CC /* CSUser.swift in Sources */,
 				C1186B2B1EAED89C00EBE68D /* CSButton.swift in Sources */,
+				95AE47AF1EB03A5D001CFCD7 /* JobSummaryVC.swift in Sources */,
 				E1A04C741EABA766004F8114 /* SpinnerView.swift in Sources */,
 				95B134711E46826000838B3C /* Worker.swift in Sources */,
 			);
