@@ -948,6 +948,9 @@
                                     <segment title="Applied"/>
                                     <segment title="Done"/>
                                 </segments>
+                                <connections>
+                                    <action selector="filterJobsValueChanged:" destination="J1a-4a-EOW" eventType="valueChanged" id="Kee-Qf-7gw"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

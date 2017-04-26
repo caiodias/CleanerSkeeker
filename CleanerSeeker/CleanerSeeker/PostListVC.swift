@@ -11,6 +11,7 @@ import UIKit
 class PostListVC: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
     var jobsSource = [JobOpportunity]()
+    var allJobsSource = [JobOpportunity]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +25,28 @@ class PostListVC: UIViewController {
         Facade.shared.getAllJobsOpportunitiesBy(jobStatus: JobStatus.active, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 
+    @IBAction func filterJobsValueChanged(_ sender: CSSegmentControl) {
+        switch sender.selectedSegmentIndex {
+        case 1:
+            filterJobs(status: JobStatus.applied)
+        case 2:
+            filterJobs(status: JobStatus.done)
+        default:
+            filterJobs(status: JobStatus.active)
+        }
+
+        self.tableView.reloadData()
+    }
+
     func onFetchJobSuccess(objs: Any) {
         guard let jobs = objs as? [JobOpportunity] else {
             print("Not possible to convert the objs to Job Opoortunity List")
             return
         }
 
-        self.jobsSource = jobs
+        self.allJobsSource = jobs
+        filterJobs(status: JobStatus.active)
+
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -38,6 +54,12 @@ class PostListVC: UIViewController {
 
     func onFetchJobFail(error: Error) {
         Utilities.displayAlert(error)
+    }
+
+    func filterJobs(status: JobStatus) {
+        self.jobsSource = self.allJobsSource.filter {
+            $0.status == status.rawValue
+        }
     }
 }
 
