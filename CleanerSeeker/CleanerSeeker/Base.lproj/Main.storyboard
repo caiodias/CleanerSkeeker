@@ -389,31 +389,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-Im-NaN" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="214" y="713" width="90" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="SSL-tl-itq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="tapOnSave:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="jqD-Nn-8ba"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-YS-UWc" customClass="CSSecondary" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="713" width="70" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="7NB-Zg-zZf"/>
-                                </constraints>
-                                <state key="normal" title="Log out">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapOnLogOut:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="Lkn-uf-wN9"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nnf-vS-oz5">
-                                <rect key="frame" x="0.0" y="20" width="320" height="673"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="750"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ar4-1H-MYM">
                                         <rect key="frame" x="110" y="8" width="100" height="100"/>
@@ -423,107 +400,77 @@
                                             <constraint firstAttribute="width" constant="100" id="k21-3J-jmq"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mq0-r1-9zg" userLabel="Input Fields Stack">
-                                        <rect key="frame" x="0.0" y="133" width="320" height="443"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mq0-r1-9zg" userLabel="Input Fields Stack">
+                                        <rect key="frame" x="0.0" y="133" width="320" height="448"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General infotmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGT-Lg-cSK">
-                                                <rect key="frame" x="8" y="0.0" width="304" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="PmR-SX-L1u"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGT-Lg-cSK">
+                                                <rect key="frame" x="8" y="0.0" width="304" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUE-V0-KmG" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="31" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="38" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBQ-YG-IO8" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="71" width="304" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="ode-gY-ew0"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="76" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5n-mi-5In">
-                                                <rect key="frame" x="8" y="111" width="304" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="0gA-Y5-8UH"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="114" width="304" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pthone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8B-af-uaN" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="142" width="304" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="YnP-sr-p67"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="152" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-cY-DtZ" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="182" width="304" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="J0L-By-cub"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="190" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byv-tr-bSa" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="222" width="304" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="735-9M-pGB"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="228" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ebg-yZ-HAR" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="262" width="304" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="PXC-d1-nE2"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="266" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Province" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gTf-lG-zGC" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="302" width="304" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Ere-IA-yId"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="304" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credentials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr7-s7-Vh6">
-                                                <rect key="frame" x="8" y="342" width="304" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="GxJ-jM-tQZ"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="342" width="304" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bl4-9J-yBt" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="373" width="304" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="h1o-MF-Pyd"/>
-                                                </constraints>
+                                                <rect key="frame" x="8" y="380" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fy-3H-21r" customClass="CSSecondary" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="413" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="418" width="304" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="zo4-eZ-VDC"/>
                                                 </constraints>
@@ -534,31 +481,56 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="443" id="vON-cz-4cy"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="448" id="5ZP-LQ-umg"/>
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-YS-UWc" customClass="CSSecondary" customModule="CleanerSeeker" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="601" width="65" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="PUb-jQ-05n"/>
+                                            <constraint firstAttribute="height" constant="30" id="yeC-0n-vmO"/>
+                                        </constraints>
+                                        <state key="normal" title="Log out">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapOnLogOut:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="Lkn-uf-wN9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-Im-NaN" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
+                                        <rect key="frame" x="247" y="601" width="45" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="DAk-xp-IZW"/>
+                                            <constraint firstAttribute="width" constant="45" id="QWx-ND-m89"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="tapOnSave:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="jqD-Nn-8ba"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Ar4-1H-MYM" firstAttribute="centerX" secondItem="Nnf-vS-oz5" secondAttribute="centerX" id="6gD-zY-I7B"/>
+                                    <constraint firstItem="cSa-YS-UWc" firstAttribute="leading" secondItem="Nnf-vS-oz5" secondAttribute="leading" constant="20" id="FPt-Tq-L7c"/>
                                     <constraint firstAttribute="trailing" secondItem="Mq0-r1-9zg" secondAttribute="trailing" id="Gue-R8-abI"/>
                                     <constraint firstItem="Ar4-1H-MYM" firstAttribute="top" secondItem="Nnf-vS-oz5" secondAttribute="top" constant="8" id="IKx-KO-zuJ"/>
+                                    <constraint firstItem="tzE-Im-NaN" firstAttribute="centerY" secondItem="cSa-YS-UWc" secondAttribute="centerY" id="Lii-lk-qPi"/>
                                     <constraint firstItem="Mq0-r1-9zg" firstAttribute="width" secondItem="Nnf-vS-oz5" secondAttribute="width" id="TzU-8a-V7t"/>
                                     <constraint firstItem="Mq0-r1-9zg" firstAttribute="leading" secondItem="Nnf-vS-oz5" secondAttribute="leading" id="Y7E-hw-eo0"/>
-                                    <constraint firstAttribute="bottom" secondItem="Mq0-r1-9zg" secondAttribute="bottom" id="kBg-jw-Nvm"/>
+                                    <constraint firstItem="tzE-Im-NaN" firstAttribute="bottom" secondItem="Nnf-vS-oz5" secondAttribute="bottomMargin" constant="8" id="l6w-Ep-8zH"/>
+                                    <constraint firstItem="cSa-YS-UWc" firstAttribute="top" secondItem="Mq0-r1-9zg" secondAttribute="bottom" constant="20" id="nUf-tX-lpy"/>
                                     <constraint firstItem="Mq0-r1-9zg" firstAttribute="top" secondItem="Ar4-1H-MYM" secondAttribute="bottom" constant="25" id="nUg-IR-PXB"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="tzE-Im-NaN" secondAttribute="trailing" constant="20" id="y1X-pR-92a"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nnf-vS-oz5" firstAttribute="centerX" secondItem="0IC-rP-egG" secondAttribute="centerX" id="HPr-X6-RbV"/>
-                            <constraint firstItem="Az8-7r-maZ" firstAttribute="top" secondItem="cSa-YS-UWc" secondAttribute="bottom" constant="8" id="SXf-wo-Ckh"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="cSa-YS-UWc" secondAttribute="leading" id="b9R-gP-XJk"/>
-                            <constraint firstItem="Az8-7r-maZ" firstAttribute="top" secondItem="tzE-Im-NaN" secondAttribute="bottom" constant="8" id="ch8-ay-ebF"/>
                             <constraint firstItem="Nnf-vS-oz5" firstAttribute="width" secondItem="0IC-rP-egG" secondAttribute="width" id="i2W-Zz-9eO"/>
-                            <constraint firstItem="cSa-YS-UWc" firstAttribute="top" secondItem="Nnf-vS-oz5" secondAttribute="bottom" constant="20" id="k4u-ca-IMX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tzE-Im-NaN" secondAttribute="trailing" id="qPR-nH-y0x"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Nnf-vS-oz5" secondAttribute="bottom" constant="30" id="s8u-MK-OsP"/>
                             <constraint firstItem="Nnf-vS-oz5" firstAttribute="top" secondItem="1Oa-7o-ebd" secondAttribute="bottom" id="wyX-ng-99E"/>
                         </constraints>
                     </view>
@@ -673,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGP-Aq-FZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663.125" y="822.88732394366195"/>
+            <point key="canvasLocation" x="1943" y="823"/>
         </scene>
         <!--Job Details-->
         <scene sceneID="vXa-8H-95w">
