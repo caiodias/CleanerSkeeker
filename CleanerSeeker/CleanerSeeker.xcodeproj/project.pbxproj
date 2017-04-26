@@ -18,6 +18,7 @@
 		959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F6A331E9EAE51008E8526 /* PostListVC.swift */; };
 		95A7F4EA1EABBE79009F53C6 /* JobDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */; };
 		95AE47AF1EB03A5D001CFCD7 /* JobSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE47AE1EB03A5D001CFCD7 /* JobSummaryVC.swift */; };
+		95AE47B31EB052C6001CFCD7 /* CSSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE47B21EB052C6001CFCD7 /* CSSegmentControl.swift */; };
 		95B134671E467B5500838B3C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134661E467B5500838B3C /* Facade.swift */; };
 		95B134691E467B5F00838B3C /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134681E467B5F00838B3C /* ApiController.swift */; };
 		95B1346C1E467EC400838B3C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1346B1E467EC400838B3C /* Utilities.swift */; };
@@ -114,6 +115,7 @@
 		959F6A331E9EAE51008E8526 /* PostListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListVC.swift; sourceTree = "<group>"; };
 		95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsVC.swift; sourceTree = "<group>"; };
 		95AE47AE1EB03A5D001CFCD7 /* JobSummaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSummaryVC.swift; sourceTree = "<group>"; };
+		95AE47B21EB052C6001CFCD7 /* CSSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSegmentControl.swift; sourceTree = "<group>"; };
 		95B134661E467B5500838B3C /* Facade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
 		95B134681E467B5F00838B3C /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		95B1346B1E467EC400838B3C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 		C1186B281EAED6EB00EBE68D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				95AE47B21EB052C6001CFCD7 /* CSSegmentControl.swift */,
 				C1186B331EAF0B4500EBE68D /* Bars */,
 				C1186B301EAEEF9100EBE68D /* TextFields */,
 				C1186B291EAED6F600EBE68D /* Buttons */,
@@ -567,6 +570,7 @@
 				E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
 				9574455D1E95735D00AD35CC /* CSUser.swift in Sources */,
+				95AE47B31EB052C6001CFCD7 /* CSSegmentControl.swift in Sources */,
 				C1186B2B1EAED89C00EBE68D /* CSButton.swift in Sources */,
 				95AE47AF1EB03A5D001CFCD7 /* JobSummaryVC.swift in Sources */,
 				E1A04C741EABA766004F8114 /* SpinnerView.swift in Sources */,
