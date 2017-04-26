@@ -9,19 +9,10 @@
 import UIKit
 
 class CSButton: UIButton {
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 3
+        self.layer.cornerRadius = 5
+        self.layer.masksToBounds = true
         self.setTitleColor(Utilities.CSColors.green.color, for: .normal)
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
