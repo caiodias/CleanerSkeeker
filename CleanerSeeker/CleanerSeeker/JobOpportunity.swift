@@ -18,6 +18,7 @@ enum JobSpaceType: Int {
 enum JobStatus: Int {
     case none = 0
     case active
+    case applied
     case done
     case hold
 }
