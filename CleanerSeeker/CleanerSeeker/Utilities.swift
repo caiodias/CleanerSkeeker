@@ -20,6 +20,7 @@ class Utilities {
         case green
         case darkBlue
         case gray
+        case red
 
         var color: UIColor {
             switch self {
@@ -29,6 +30,8 @@ class Utilities {
                 return UIColor(red: 51/255, green: 71/255, blue: 93/255, alpha: 1.0)
             case .gray:
                 return UIColor(red: 127/255, green: 140/255, blue: 141/255, alpha: 1.0)
+            case .red:
+                return UIColor.red
             }
         }
 

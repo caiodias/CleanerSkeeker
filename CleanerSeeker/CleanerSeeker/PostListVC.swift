@@ -20,22 +20,22 @@ class PostListVC: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
 
-        filterList(according: self.segmentControl.selectedSegmentIndex)
+        filterList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        filterList(according: self.segmentControl.selectedSegmentIndex)
+        filterList()
     }
 
     @IBAction func filterJobsValueChanged(_ sender: CSSegmentControl) {
-        filterList(according: sender.selectedSegmentIndex)
+        filterList()
     }
 
-    private func filterList(according segmentIndex: Int) {
+    func filterList() {
         var status = JobStatus.none
-        switch segmentIndex {
+        switch self.segmentControl.selectedSegmentIndex {
         case 1:
             status = JobStatus.applied
         case 2:
@@ -107,5 +107,27 @@ extension PostListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.jobSelected = self.jobsSource[indexPath.row]
         self.performSegue(withIdentifier: "showDetails", sender: self)
+    }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let done = UITableViewRowAction(style: .normal, title: "Done") { _, _ in
+            let job = self.jobsSource[indexPath.row]
+            Facade.shared.markAsDone(the: job, onSuccess: self.onMarkAsDoneSuccess, onFail: self.onMarkAsDoneFail)
+        }
+        done.backgroundColor = Utilities.CSColors.red.color
+
+        return [done]
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return self.segmentControl.selectedSegmentIndex == 1
+    }
+
+    private func onMarkAsDoneSuccess(obj: Any) {
+        filterList()
+    }
+
+    private func onMarkAsDoneFail(error: Error) {
+        Utilities.displayAlert(error)
     }
 }

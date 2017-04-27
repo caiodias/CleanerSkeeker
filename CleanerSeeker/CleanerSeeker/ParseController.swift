@@ -273,14 +273,13 @@ extension ParseController {
 
 // MARK: Apply Flow Methods
 extension ParseController {
-    func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-
-        job.saveInBackground { (_, error: Error?) -> Void in
+    func update(job object: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        object.saveInBackground { (_, error: Error?) -> Void in
            if let error = error {
             print("Error on apply to Job Opportunity")
             onFail(error)
           } else {
-            onSuccess(job) // has user relation
+            onSuccess(object) // has user relation
           }
         }
     }

@@ -66,6 +66,10 @@ class Facade {
         self.apiController.getAllJobsOpportunitiesBy(jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
     }
 
+    public func markAsDone(the job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        self.apiController.markAsDone(the: job, onSuccess: onSuccess, onFail: onFail)
+    }
+
     // MARK: Apply Flow
 
     public func getJobsInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {

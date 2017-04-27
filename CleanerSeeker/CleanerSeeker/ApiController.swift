@@ -88,6 +88,11 @@ extension ApiController {
         let user = self.getCurrentUser()
         self.parseDb.getAllJobsOpportunitiesBy(ownerID: user, jobStatus: jobStatus, onSuccess: onSuccess, onFail: onFail)
     }
+
+    func markAsDone(the job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        job.status = JobStatus.done.rawValue
+        self.parseDb.update(job: job, onSuccess: onSuccess, onFail: onFail)
+    }
 }
 
 // MARK: Apply Flow Methods
@@ -110,7 +115,7 @@ extension ApiController {
         //let deal = Deal(cleaner: user, job: job)
         //TODO: save the deal object on Parse
 
-        self.parseDb.apply(to: job, onSuccess: onSuccess, onFail: onFail)
+        self.parseDb.update(job: job, onSuccess: onSuccess, onFail: onFail)
     }
 
     func getAllJobOpportunitiesInRange(onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
