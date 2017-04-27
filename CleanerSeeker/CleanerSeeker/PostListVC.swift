@@ -13,6 +13,7 @@ class PostListVC: UIViewController {
     @IBOutlet weak var segmentControl: CSSegmentControl!
     var jobsSource = [JobOpportunity]()
     var jobSelected: JobOpportunity!
+    let segueId = "posterShowJobDetails"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,7 @@ class PostListVC: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showDetails") {
+        if (segue.identifier == self.segueId) {
             guard let detailsVC = segue.destination as? JobDetailsVC else {
                 print("Not possible to convert the segue")
                 return
@@ -106,7 +107,7 @@ extension PostListVC: UITableViewDataSource {
 extension PostListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.jobSelected = self.jobsSource[indexPath.row]
-        self.performSegue(withIdentifier: "showDetails", sender: self)
+        self.performSegue(withIdentifier: self.segueId, sender: self)
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
