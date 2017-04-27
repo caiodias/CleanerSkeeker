@@ -32,10 +32,6 @@ class SignUpFirstStepViewController: BasicVC {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func goBackToLogin(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
     @IBAction func createProfile(_ sender: Any) {
         print("Try to create user")
 

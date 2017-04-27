@@ -1088,32 +1088,24 @@
                                     <constraint firstAttribute="trailing" secondItem="oQg-y2-rGI" secondAttribute="trailing" constant="8" id="zQq-0n-9h5"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-RZ-i3m" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="100" y="527" width="120" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="fpL-e7-hhg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Create Profile"/>
-                                <connections>
-                                    <action selector="createProfile:" destination="cQN-sR-uKJ" eventType="touchUpInside" id="IJJ-Zv-wea"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="s31-Xy-BtG" firstAttribute="centerY" secondItem="nD0-EB-TFV" secondAttribute="centerY" id="7QH-Mw-ddW"/>
                             <constraint firstItem="s31-Xy-BtG" firstAttribute="leading" secondItem="nD0-EB-TFV" secondAttribute="leading" id="BAe-z8-P4I"/>
                             <constraint firstItem="s31-Xy-BtG" firstAttribute="centerX" secondItem="nD0-EB-TFV" secondAttribute="centerX" id="Gop-MQ-V1d"/>
-                            <constraint firstItem="piw-Gm-Dnx" firstAttribute="top" secondItem="Ogg-RZ-i3m" secondAttribute="bottom" constant="8" id="LBz-LR-cCR"/>
                             <constraint firstAttribute="trailing" secondItem="s31-Xy-BtG" secondAttribute="trailing" id="O6y-tL-gCl"/>
                             <constraint firstItem="s31-Xy-BtG" firstAttribute="height" secondItem="nD0-EB-TFV" secondAttribute="height" id="eCb-PL-kfZ"/>
                             <constraint firstItem="oQg-y2-rGI" firstAttribute="centerX" secondItem="nD0-EB-TFV" secondAttribute="centerX" id="n2i-Sl-bzy"/>
-                            <constraint firstItem="Ogg-RZ-i3m" firstAttribute="centerX" secondItem="nD0-EB-TFV" secondAttribute="centerX" id="nBa-61-Plj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="M5y-4f-hOt">
                         <barButtonItem key="backBarButtonItem" title="Back" id="37w-SN-GTo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0LZ-JQ-G9v">
+                            <connections>
+                                <action selector="createProfile:" destination="cQN-sR-uKJ" id="rES-0n-RQT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressStreet" destination="T41-s7-5KL" id="wkN-gD-bOT"/>
