@@ -978,6 +978,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segmentControl" destination="7JD-EO-Mev" id="0Py-tO-zUa"/>
                         <outlet property="tableView" destination="E5I-RJ-l77" id="iof-eD-bin"/>
                         <segue destination="W6z-us-v9D" kind="show" identifier="showDetails" id="J9z-MR-oCW"/>
                     </connections>

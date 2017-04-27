@@ -10,6 +10,7 @@ import UIKit
 
 class PostListVC: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak var segmentControl: CSSegmentControl!
     var jobsSource = [JobOpportunity]()
     var jobSelected: JobOpportunity!
 
@@ -19,18 +20,22 @@ class PostListVC: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
 
-        Facade.shared.getAllJobsOpportunitiesBy(jobStatus: JobStatus.active, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+        filterList(according: self.segmentControl.selectedSegmentIndex)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        Facade.shared.getAllJobsOpportunitiesBy(jobStatus: JobStatus.active, onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+        filterList(according: self.segmentControl.selectedSegmentIndex)
     }
 
     @IBAction func filterJobsValueChanged(_ sender: CSSegmentControl) {
+        filterList(according: sender.selectedSegmentIndex)
+    }
+
+    private func filterList(according segmentIndex: Int) {
         var status = JobStatus.none
-        switch sender.selectedSegmentIndex {
+        switch segmentIndex {
         case 1:
             status = JobStatus.applied
         case 2:
