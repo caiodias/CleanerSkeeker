@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
     // MARK: login callbacks
     private func onLoginSuccess(object: Any) {
         print(object)
+        Utilities.dismissLoading()
 
         guard let user = object as? CSUser else {
             print("Not possible convert login object to user")
