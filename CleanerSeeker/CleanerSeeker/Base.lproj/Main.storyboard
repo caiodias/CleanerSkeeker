@@ -97,9 +97,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-Z1-e9d" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
-                                                <rect key="frame" x="130" y="256" width="60" height="35"/>
+                                                <rect key="frame" x="127.5" y="246" width="65" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="4UQ-B0-6RA"/>
+                                                    <constraint firstAttribute="width" constant="65" id="4UQ-B0-6RA"/>
                                                     <constraint firstAttribute="height" constant="35" id="Qdq-Bv-xsw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -116,7 +116,7 @@
                                             <constraint firstItem="cvg-N9-Ksy" firstAttribute="leading" secondItem="1hp-Le-Q72" secondAttribute="leading" constant="20" id="IRK-6K-l3Q"/>
                                             <constraint firstItem="KUM-Uy-roJ" firstAttribute="centerX" secondItem="1hp-Le-Q72" secondAttribute="centerX" id="Nic-XI-YuQ"/>
                                             <constraint firstItem="cvg-N9-Ksy" firstAttribute="centerX" secondItem="KUM-Uy-roJ" secondAttribute="centerX" id="NjN-M1-cy2"/>
-                                            <constraint firstItem="xQQ-Z1-e9d" firstAttribute="top" secondItem="cvg-N9-Ksy" secondAttribute="bottom" constant="20" id="OrU-JX-CYY"/>
+                                            <constraint firstItem="xQQ-Z1-e9d" firstAttribute="top" secondItem="cvg-N9-Ksy" secondAttribute="bottom" constant="10" id="OrU-JX-CYY"/>
                                             <constraint firstItem="cvg-N9-Ksy" firstAttribute="top" secondItem="KUM-Uy-roJ" secondAttribute="bottom" constant="8" id="WYA-m4-vbG"/>
                                             <constraint firstAttribute="trailing" secondItem="cvg-N9-Ksy" secondAttribute="trailing" constant="20" id="Wzt-nV-Zxu"/>
                                             <constraint firstItem="sWE-j1-afb" firstAttribute="height" secondItem="MTO-4A-cdq" secondAttribute="height" id="YSv-5v-gf7"/>
