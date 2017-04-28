@@ -167,11 +167,12 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     // MARK: async methods callback
 
-    func onRegisterSuccess(obj: Any) {
-        self.performSegue(withIdentifier: "backHistory", sender: self)
+    private func onRegisterSuccess(obj: Any) {
+        Utilities.dismissLoading()
+        _ = navigationController?.popViewController(animated: true)
     }
 
-    func onRegisterFail(error: Error) {
+    private func onRegisterFail(error: Error) {
         print(error.localizedDescription)
         Utilities.dismissLoading()
         Utilities.displayAlert(error)
