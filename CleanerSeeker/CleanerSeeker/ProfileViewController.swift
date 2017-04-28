@@ -94,6 +94,7 @@ class ProfileViewController: UIViewController {
     }
 
     func onSuccessUpdate(_ : Any) {
+        Utilities.dismissLoading()
         Utilities.displayAlert(title: "Success", message: "Your profile was successfully updated")
     }
 
@@ -103,6 +104,7 @@ class ProfileViewController: UIViewController {
     }
 
     func onSuccessReset(_ :Any) {
+        Utilities.dismissLoading()
         Utilities.displayAlert(title: "Password reset", message: "Check your email to proceed the progress.")
     }
 
