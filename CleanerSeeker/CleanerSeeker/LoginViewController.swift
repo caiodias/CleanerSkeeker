@@ -20,13 +20,11 @@ class LoginViewController: BasicVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         super.baseScrollView = self.scrollView
     }
 
     @IBAction func login(_ sender: UIButton) {
-        print("Try to login")
-
+        self.handleTap()
         Utilities.showLoading()
         Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
     }
