@@ -79,7 +79,7 @@ class Utilities {
         let hours = calendar.component(.hour, from: date)
         let mins = calendar.component(.minute, from: date)
 
-        return "\(month)/\(day)/\(year) \(hours):\(mins)"
+        return "\(String(format: "%02d", month))/\(String(format: "%02d", day))/\(year) \(String(format: "%02d", hours)):\(String(format: "%02d", mins))"
     }
 
     static func convertToHourAndMinutes(the totalMinutes: Int) -> String {
