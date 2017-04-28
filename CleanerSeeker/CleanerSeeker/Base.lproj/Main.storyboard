@@ -369,7 +369,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnf-vS-oz5">
                                 <rect key="frame" x="0.0" y="20" width="320" height="731"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ar4-1H-MYM">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-user-icon-profile" translatesAutoresizingMaskIntoConstraints="NO" id="Ar4-1H-MYM">
                                         <rect key="frame" x="110" y="8" width="100" height="100"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -378,7 +378,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mq0-r1-9zg" userLabel="Input Fields Stack">
-                                        <rect key="frame" x="0.0" y="133" width="320" height="448"/>
+                                        <rect key="frame" x="0.0" y="183" width="320" height="448"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGT-Lg-cSK">
                                                 <rect key="frame" x="8" y="0.0" width="303" height="30"/>
@@ -460,7 +460,7 @@
                                         <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="9"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-YS-UWc" customClass="CSSecondary" customModule="CleanerSeeker" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="601" width="70" height="30"/>
+                                        <rect key="frame" x="24" y="651" width="70" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="PUb-jQ-05n"/>
                                             <constraint firstAttribute="height" constant="30" id="yeC-0n-vmO"/>
@@ -473,7 +473,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-Im-NaN" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
-                                        <rect key="frame" x="246" y="601" width="50" height="30"/>
+                                        <rect key="frame" x="246" y="651" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DAk-xp-IZW"/>
                                             <constraint firstAttribute="width" constant="50" id="QWx-ND-m89"/>
@@ -484,19 +484,28 @@
                                             <action selector="tapOnSave:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="jqD-Nn-8ba"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2n-Rj-lXe" customClass="CSButton" customModule="CleanerSeeker" customModuleProvider="target">
+                                        <rect key="frame" x="86.5" y="125" width="147" height="30"/>
+                                        <state key="normal" title="Change Profile Image"/>
+                                        <connections>
+                                            <action selector="didTapOnImageChange:" destination="zZW-Pu-TDm" eventType="touchUpInside" id="QYj-7K-gvD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Mq0-r1-9zg" secondAttribute="trailing" id="56S-L8-JVW"/>
                                     <constraint firstItem="Mq0-r1-9zg" firstAttribute="leading" secondItem="Nnf-vS-oz5" secondAttribute="leading" id="5i7-pe-vkw"/>
+                                    <constraint firstItem="Mq0-r1-9zg" firstAttribute="top" secondItem="B2n-Rj-lXe" secondAttribute="bottom" constant="28" id="ESM-Qb-iEq"/>
                                     <constraint firstAttribute="trailing" secondItem="tzE-Im-NaN" secondAttribute="trailing" constant="24" id="JZO-2G-GdY"/>
                                     <constraint firstItem="cSa-YS-UWc" firstAttribute="leading" secondItem="Nnf-vS-oz5" secondAttribute="leading" constant="24" id="Kmb-h5-Nel"/>
-                                    <constraint firstItem="Mq0-r1-9zg" firstAttribute="top" secondItem="Ar4-1H-MYM" secondAttribute="bottom" constant="25" id="LOP-Lc-lTi"/>
                                     <constraint firstItem="tzE-Im-NaN" firstAttribute="centerY" secondItem="cSa-YS-UWc" secondAttribute="centerY" id="Lii-lk-qPi"/>
                                     <constraint firstItem="Mq0-r1-9zg" firstAttribute="width" secondItem="Nnf-vS-oz5" secondAttribute="width" id="RBg-IS-0VZ"/>
+                                    <constraint firstItem="B2n-Rj-lXe" firstAttribute="centerX" secondItem="Ar4-1H-MYM" secondAttribute="centerX" id="VHq-Nf-xDf"/>
                                     <constraint firstItem="Ar4-1H-MYM" firstAttribute="top" secondItem="Nnf-vS-oz5" secondAttribute="top" constant="8" id="Yzg-xE-IkI"/>
                                     <constraint firstItem="Mq0-r1-9zg" firstAttribute="centerX" secondItem="Nnf-vS-oz5" secondAttribute="centerX" id="iWQ-15-gWp"/>
                                     <constraint firstAttribute="bottom" secondItem="cSa-YS-UWc" secondAttribute="bottom" constant="10" id="je5-Ho-C3V"/>
                                     <constraint firstItem="cSa-YS-UWc" firstAttribute="top" secondItem="Mq0-r1-9zg" secondAttribute="bottom" constant="20" id="uQD-Me-cZM"/>
+                                    <constraint firstItem="B2n-Rj-lXe" firstAttribute="top" secondItem="Ar4-1H-MYM" secondAttribute="bottom" constant="17" id="wbs-oe-SGs"/>
                                     <constraint firstItem="Ar4-1H-MYM" firstAttribute="centerX" secondItem="Nnf-vS-oz5" secondAttribute="centerX" id="xcF-YV-h5P"/>
                                 </constraints>
                             </scrollView>
@@ -528,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMf-kZ-guf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="2515"/>
+            <point key="canvasLocation" x="862.5" y="2514.0845070422533"/>
         </scene>
         <!--Cleaner Home-->
         <scene sceneID="rMj-2Q-0Vs">
@@ -1185,6 +1194,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default-user-icon-profile" width="200" height="200"/>
         <image name="hourglass" width="16" height="25"/>
         <image name="hourglass-selected" width="16" height="25"/>
         <image name="magnifying-glass" width="25" height="25"/>

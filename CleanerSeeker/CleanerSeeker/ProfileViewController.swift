@@ -23,9 +23,8 @@ class ProfileViewController: UIViewController {
 
     lazy var spinner: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
-        //activity.isHidden = true
+        activity.isHidden = true
         activity.center = CGPoint(x: self.avatar.bounds.width/2, y: self.avatar.bounds.height/2)
-        activity.startAnimating()
         return activity
     }()
 
@@ -36,13 +35,18 @@ class ProfileViewController: UIViewController {
         //Populates fields with current user data.
         self.loadCurentUser()
         self.addAvatarTap()
-
+        avatar.layer.cornerRadius = avatar.frame.width/2
+        avatar.layer.masksToBounds = true
         avatar.addSubview(spinner)
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    @IBAction func didTapOnImageChange(_ sender: Any) {
+        imageTapped(sender as AnyObject)
     }
 
     // MARK: - Actions

@@ -35,12 +35,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         if let selectedImage = UIImagePNGRepresentation(image) {
 
             self.avatar.image = image
-            self.spinner.stopAnimating()
+            self.spinner.isHidden = false
+            self.spinner.startAnimating()
 
             Facade.shared.updateUserAvatar(image: selectedImage, onSuccess: { (success) in
                 print(success)
+                self.spinner.stopAnimating()
+
             }, onFail: { (error) in
                 print(error)
+                self.spinner.stopAnimating()
+                self.spinner.isHidden = true
             })
 
         }
