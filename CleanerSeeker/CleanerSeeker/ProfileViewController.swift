@@ -12,6 +12,8 @@ class ProfileViewController: BasicVC {
 
     // MARK: - Outlets
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var rangePicker: UIPickerView!
+    @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -21,6 +23,8 @@ class ProfileViewController: BasicVC {
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var province: UITextField!
     @IBOutlet weak var email: UITextField!
+    var possibleRange = [Int](arrayLiteral: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+    var rangeSelected = 10
 
     lazy var spinner: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
@@ -112,23 +116,28 @@ class ProfileViewController: BasicVC {
     // MARK: - Private functions
     fileprivate func loadCurentUser() {
         if let currentUser = CSUser.current() {
-            firstName.text = currentUser.firstName
-            lastName.text = currentUser.lastName
-            phone.text = currentUser.phoneNumber
-            addressStreet.text = currentUser.street
-            addressUnit.text = currentUser.unit
-            city.text = currentUser.city
-            province.text = currentUser.postalCode
-            email.text = currentUser.email
+            self.firstName.text = currentUser.firstName
+            self.lastName.text = currentUser.lastName
+            self.phone.text = currentUser.phoneNumber
+            self.addressStreet.text = currentUser.street
+            self.addressUnit.text = currentUser.unit
+            self.city.text = currentUser.city
+            self.province.text = currentUser.postalCode
+            self.email.text = currentUser.email
+            //TODO: change the hard code value below
+            self.rangePicker.selectRow(9, inComponent: 0, animated: true)
+
+            let hid = currentUser.csType == CSUserType.JobPoster
+            self.rangePicker.isHidden = hid
+            self.rangeLabel.isHidden = hid
 
             // Fetch user profile image from cache or download it using network
             Facade.shared.getUserProfileImage(image: currentUser.avatar, onSuccess: { (data) in
-
                 if let data = data as? Data {
                     self.avatar.image = UIImage(data: data)
                 }
-                self.spinner.stopAnimating()
 
+                self.spinner.stopAnimating()
             }, onFail: { (error) in
                 self.spinner.stopAnimating()
                 Utilities.displayAlert(error)

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Parse
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
     func imageTapped(_ img: AnyObject) {
         let alert = UIAlertController(title: "Upload Image", message: "Choose the source", preferredStyle: .actionSheet )
 
@@ -41,13 +40,11 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             Facade.shared.updateUserAvatar(image: selectedImage, onSuccess: { (success) in
                 print(success)
                 self.spinner.stopAnimating()
-
             }, onFail: { (error) in
                 print(error)
                 self.spinner.stopAnimating()
                 self.spinner.isHidden = true
             })
-
         }
     }
 
@@ -66,5 +63,24 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         pickerController.allowsEditing = true
 
         self.present(pickerController, animated: true, completion: nil)
+    }
+}
+
+extension ProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.possibleRange.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let range = self.possibleRange[row]
+        return String(format: "%dkm", range)
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.rangeSelected = self.possibleRange[row]
     }
 }

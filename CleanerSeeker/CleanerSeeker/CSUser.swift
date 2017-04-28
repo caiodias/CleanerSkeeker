@@ -9,6 +9,7 @@
 import Parse
 
 enum CSUserType: Int {
+    case none = -1
     case Worker = 0
     case JobPoster = 1
 }
@@ -25,4 +26,12 @@ class CSUser: PFUser {
     @NSManaged var postalCode: String
     @NSManaged var long: Double
     @NSManaged var lat: Double
+
+    var csType: CSUserType {
+        if let userTypeEnum = CSUserType.init(rawValue: self.userType) {
+            return userTypeEnum
+        }
+
+        return CSUserType.none
+    }
 }
