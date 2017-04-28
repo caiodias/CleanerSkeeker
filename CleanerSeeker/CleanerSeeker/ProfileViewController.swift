@@ -67,6 +67,8 @@ class ProfileViewController: BasicVC {
 
     @IBAction func tapOnSave(_ sender: Any) {
         if let currentUser = CSUser.current() {
+            if validateFields() {
+
             currentUser.firstName = firstName.text!
             currentUser.lastName = lastName.text!
             currentUser.phoneNumber = phone.text!
@@ -77,7 +79,95 @@ class ProfileViewController: BasicVC {
 
             Utilities.showLoading()
             Facade.shared.updateUser(user: currentUser, onSuccess: self.onSuccessUpdate, onFail: self.onFailUpdate)
+            }
         }
+    }
+
+    private func validateFields() -> Bool {
+        //TODO: check each field. Please look the AddNewPostViewController validaiton
+        let alertTitle = "Did you forgot?"
+
+        guard self.email.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "Email field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: self.email.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "Email field must be filled.")
+            return false
+        }
+
+        guard self.firstName.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "First Name field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: firstName.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "First Name field must be filled.")
+            return false
+        }
+
+        guard self.lastName.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "Last Name field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: lastName.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "Last Name field must be filled.")
+            return false
+        }
+
+        guard self.phone.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "Phone Number field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: phone.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "Phone Number field must be filled.")
+            return false
+        }
+
+        guard self.addressStreet.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "Street Address field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: addressStreet.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "Street Address field must be filled.")
+            return false
+        }
+
+        guard self.addressUnit.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "Unit Address field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: addressUnit.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "Unit Address field must be filled.")
+            return false
+        }
+
+        guard self.city.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "City field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: city.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "City field must be filled.")
+            return false
+        }
+
+        guard self.postalCode.text != nil else {
+            Utilities.displayAlert(title: alertTitle, message: "Postal Code field must be filled.")
+            return false
+        }
+
+        guard Utilities.validate(string: postalCode.text!) else {
+            Utilities.displayAlert(title: alertTitle, message: "Postal Code field must be filled.")
+            return false
+        }
+
+        return true
     }
 
     // MARK: - Callbacks
