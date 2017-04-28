@@ -9,7 +9,7 @@
 import UIKit
 import Koloda
 
-class FindJobOffersVC: BasicVC {
+class FindJobOffersVC: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var buttonsStack: UIStackView!
     @IBOutlet weak var noJobsLabel: UILabel!
@@ -19,8 +19,8 @@ class FindJobOffersVC: BasicVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        kolodaView.delegate = self
-        kolodaView.dataSource = self
+        self.kolodaView.delegate = self
+        self.kolodaView.dataSource = self
 
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
     }
@@ -73,7 +73,8 @@ class FindJobOffersVC: BasicVC {
 }
 
 extension FindJobOffersVC: KolodaViewDelegate {
-    func kolodaDidRunOutOfCards(koloda: KolodaView) {
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        koloda.resetCurrentCardIndex()
         reset()
     }
 
@@ -89,6 +90,8 @@ extension FindJobOffersVC: KolodaViewDelegate {
         if direction == SwipeResultDirection.right {
             Facade.shared.apply(to: job, onSuccess: onApplySuccess, onFail: onApplyFail)
         }
+
+        self.jobsSource.remove(at: index)
     }
 
     func onApplySuccess(obj: Any) {
@@ -119,7 +122,7 @@ extension FindJobOffersVC: KolodaViewDataSource {
         Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 
-    private func displayNoItems(label value: Bool) {
+    func displayNoItems(label value: Bool) {
         self.buttonsStack.isHidden = value
         self.noJobsLabel.isHidden = !value
     }

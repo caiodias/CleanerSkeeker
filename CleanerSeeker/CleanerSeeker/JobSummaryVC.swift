@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JobSummaryVC: BasicVC {
+class JobSummaryVC: UIViewController {
     @IBOutlet weak var addresslabel: UILabel!
     @IBOutlet weak var bedsLabel: UILabel!
     @IBOutlet weak var washsLabel: UILabel!
