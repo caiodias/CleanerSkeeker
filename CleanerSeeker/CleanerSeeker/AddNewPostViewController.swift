@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewPostViewController: BasicVC, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddNewPostViewController: BasicVC {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var typeOfSpace: UIPickerView!
     @IBOutlet weak var noOfBedroomPicker: UIPickerView!
@@ -40,48 +40,6 @@ class AddNewPostViewController: BasicVC, UIPickerViewDelegate, UIPickerViewDataS
         self.baseScrollView = self.scrollView
     }
 
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-
-        if pickerView == typeOfSpace {
-            return noOfTypes.count
-        } else if pickerView == noOfBedroomPicker {
-            return defaultBedAndWashrooms.count
-        } else if pickerView == noOfWashroomsPicker {
-            return defaultBedAndWashrooms.count
-        }
-
-        return 0
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == typeOfSpace {
-            return noOfTypes[row]
-        } else if pickerView == noOfBedroomPicker {
-            return String(defaultBedAndWashrooms[row])
-
-        } else if pickerView == noOfWashroomsPicker {
-            return String(defaultBedAndWashrooms[row])
-        }
-
-        return nil
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == typeOfSpace {
-            spaceSelected = row
-        } else if pickerView == noOfBedroomPicker {
-            numberOfBedsSelected = defaultBedAndWashrooms[row]
-        } else if pickerView == noOfWashroomsPicker {
-            numberOfWashroomsSelected = defaultBedAndWashrooms[row]
-        }
-
-        refreshPrice()
-    }
-
     @IBAction func createNewPost(_ sender: Any) {
         if validateFields() {
             let job = JobOpportunity()
@@ -104,7 +62,7 @@ class AddNewPostViewController: BasicVC, UIPickerViewDelegate, UIPickerViewDataS
             job.totalMinutesToWork = serviceTotalTime
 
             job.jobWorkDate = self.datePicker.date
-            
+
             Utilities.showLoading()
             Facade.shared.registerJobOpportunity(job: job, onSuccess: onRegisterSuccess, onFail: onRegisterFail)
         }
@@ -123,7 +81,7 @@ class AddNewPostViewController: BasicVC, UIPickerViewDelegate, UIPickerViewDataS
         if serviceTotalTime > 0 {
             if numberOfWashroomsSelected >= 0 && numberOfBedsSelected >= 0 {
                 let totalPrice = JobOpportunity.calculatePrice(numberOfBeds: numberOfBedsSelected, numberOfWashs: numberOfWashroomsSelected, totalMinutesOfWork: serviceTotalTime)
-                labelPriceValue = "$\(totalPrice)"
+                labelPriceValue = String(format: "$%.02f", totalPrice)
             }
         }
 
@@ -173,5 +131,49 @@ class AddNewPostViewController: BasicVC, UIPickerViewDelegate, UIPickerViewDataS
         print(error.localizedDescription)
         Utilities.dismissLoading()
         Utilities.displayAlert(error)
+    }
+}
+
+extension AddNewPostViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
+        if pickerView == typeOfSpace {
+            return noOfTypes.count
+        } else if pickerView == noOfBedroomPicker {
+            return defaultBedAndWashrooms.count
+        } else if pickerView == noOfWashroomsPicker {
+            return defaultBedAndWashrooms.count
+        }
+
+        return 0
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == typeOfSpace {
+            return noOfTypes[row]
+        } else if pickerView == noOfBedroomPicker {
+            return String(defaultBedAndWashrooms[row])
+
+        } else if pickerView == noOfWashroomsPicker {
+            return String(defaultBedAndWashrooms[row])
+        }
+
+        return nil
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == typeOfSpace {
+            spaceSelected = row
+        } else if pickerView == noOfBedroomPicker {
+            numberOfBedsSelected = defaultBedAndWashrooms[row]
+        } else if pickerView == noOfWashroomsPicker {
+            numberOfWashroomsSelected = defaultBedAndWashrooms[row]
+        }
+
+        refreshPrice()
     }
 }
