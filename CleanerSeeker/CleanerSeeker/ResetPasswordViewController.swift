@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ResetPasswordViewController: UIViewController {
-
+class ResetPasswordViewController: BasicVC {
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var resetBtn: UIButton!
 
@@ -21,6 +21,7 @@ class ResetPasswordViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         email.addTarget(self, action: #selector(emailFieldDidChanged), for: .editingChanged)
+        self.baseScrollView = self.scrollView
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +48,6 @@ class ResetPasswordViewController: UIViewController {
         } else {
             resetBtn.isEnabled = false
         }
-
     }
 
     private func showSuccessAlert(success:Any) {
@@ -62,10 +62,7 @@ class ResetPasswordViewController: UIViewController {
 
     private func showFailAlert(error: Error) {
         Utilities.dismissLoading()
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        Utilities.displayAlert(error)
     }
 
 }
