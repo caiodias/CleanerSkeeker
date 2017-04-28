@@ -106,7 +106,7 @@ class Utilities {
 
     static func dismissLoading() {
         DispatchQueue.main.async {
-        loadingScreen.view.removeFromSuperview()
+            loadingScreen.view.removeFromSuperview()
         }
     }
 
