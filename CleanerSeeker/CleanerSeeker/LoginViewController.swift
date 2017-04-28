@@ -24,16 +24,11 @@ class LoginViewController: BasicVC {
         super.baseScrollView = self.scrollView
     }
 
-//    private func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-
     @IBAction func login(_ sender: UIButton) {
         print("Try to login")
 
-        Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
         Utilities.showLoading()
+        Facade.shared.loginUser(login: userName.text!, password: password.text!, onSuccess: onLoginSuccess, onFail: onLoginFail)
     }
 
     // MARK: Redirect user to right tab controller
