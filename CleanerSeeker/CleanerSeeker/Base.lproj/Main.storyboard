@@ -156,47 +156,81 @@
                         <viewControllerLayoutGuide type="bottom" id="PIs-ZE-Q7w"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qrj-EX-8ai">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvc-DU-2tL" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="144" width="288" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuS-1a-3VZ" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="35" y="194" width="250" height="39"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAD-CW-Z7R">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAq-4Y-adJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvc-DU-2tL" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="237" width="280" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="RAn-aq-YDB" id="khT-hk-coh"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuS-1a-3VZ" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
+                                                <rect key="frame" x="35.5" y="287" width="250" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Pss-Oc-1sq"/>
+                                                    <constraint firstAttribute="width" constant="250" id="l36-DJ-C3Y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Request password reset"/>
+                                                <connections>
+                                                    <action selector="resetPassword:" destination="RAn-aq-YDB" eventType="touchUpInside" id="HdD-lb-sff"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="pvc-DU-2tL" firstAttribute="centerY" secondItem="FAq-4Y-adJ" secondAttribute="centerY" id="LMk-IV-SVr"/>
+                                            <constraint firstItem="QuS-1a-3VZ" firstAttribute="top" secondItem="pvc-DU-2tL" secondAttribute="bottom" constant="20" id="PBe-gj-n7l"/>
+                                            <constraint firstItem="QuS-1a-3VZ" firstAttribute="centerX" secondItem="pvc-DU-2tL" secondAttribute="centerX" id="PId-ps-G3y"/>
+                                            <constraint firstItem="pvc-DU-2tL" firstAttribute="leading" secondItem="FAq-4Y-adJ" secondAttribute="leading" constant="20" id="UQe-GH-WIt"/>
+                                            <constraint firstAttribute="trailing" secondItem="pvc-DU-2tL" secondAttribute="trailing" constant="20" id="ZJr-Ic-trG"/>
+                                            <constraint firstItem="pvc-DU-2tL" firstAttribute="centerX" secondItem="FAq-4Y-adJ" secondAttribute="centerX" id="np1-es-lgt"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="ct9-to-Qi5"/>
+                                    <constraint firstAttribute="trailing" secondItem="FAq-4Y-adJ" secondAttribute="trailing" id="HYc-FQ-h7y"/>
+                                    <constraint firstItem="FAq-4Y-adJ" firstAttribute="centerY" secondItem="qAD-CW-Z7R" secondAttribute="centerY" id="M2u-xh-tWG"/>
+                                    <constraint firstItem="FAq-4Y-adJ" firstAttribute="leading" secondItem="qAD-CW-Z7R" secondAttribute="leading" id="NTY-Xz-z0A"/>
+                                    <constraint firstItem="FAq-4Y-adJ" firstAttribute="centerX" secondItem="qAD-CW-Z7R" secondAttribute="centerX" id="S5a-i6-kzD"/>
+                                    <constraint firstItem="FAq-4Y-adJ" firstAttribute="top" secondItem="qAD-CW-Z7R" secondAttribute="top" id="pZa-ff-kSn"/>
+                                    <constraint firstAttribute="bottom" secondItem="FAq-4Y-adJ" secondAttribute="bottom" id="zp2-Fl-FKu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Request password reset"/>
-                                <connections>
-                                    <action selector="resetPassword:" destination="RAn-aq-YDB" eventType="touchUpInside" id="HdD-lb-sff"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QuS-1a-3VZ" firstAttribute="top" secondItem="pvc-DU-2tL" secondAttribute="bottom" constant="20" id="9FB-v8-1Eh"/>
-                            <constraint firstItem="pvc-DU-2tL" firstAttribute="leading" secondItem="qrj-EX-8ai" secondAttribute="leadingMargin" id="ZRv-4M-vLE"/>
-                            <constraint firstItem="pvc-DU-2tL" firstAttribute="top" secondItem="Pj3-6k-ksb" secondAttribute="bottom" constant="80" id="bKR-Hg-sGc"/>
-                            <constraint firstItem="pvc-DU-2tL" firstAttribute="trailing" secondItem="qrj-EX-8ai" secondAttribute="trailingMargin" id="toJ-iN-dhu"/>
-                            <constraint firstItem="QuS-1a-3VZ" firstAttribute="centerX" secondItem="qrj-EX-8ai" secondAttribute="centerX" id="vJO-bn-xkU"/>
+                            <constraint firstItem="qAD-CW-Z7R" firstAttribute="centerY" secondItem="qrj-EX-8ai" secondAttribute="centerY" id="018-yS-2cV"/>
+                            <constraint firstItem="qAD-CW-Z7R" firstAttribute="leading" secondItem="qrj-EX-8ai" secondAttribute="leadingMargin" constant="-16" id="Vf1-07-98x"/>
+                            <constraint firstItem="qAD-CW-Z7R" firstAttribute="centerX" secondItem="qrj-EX-8ai" secondAttribute="centerX" id="hfk-1a-DOr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qAD-CW-Z7R" secondAttribute="trailing" constant="-16" id="khJ-NB-1DC"/>
+                            <constraint firstItem="PIs-ZE-Q7w" firstAttribute="top" secondItem="qAD-CW-Z7R" secondAttribute="bottom" id="wNn-j3-u9k"/>
+                            <constraint firstItem="qAD-CW-Z7R" firstAttribute="top" secondItem="Pj3-6k-ksb" secondAttribute="bottom" id="xaG-Es-ch7"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Reset Password" id="1N5-fK-RJh">
                         <barButtonItem key="backBarButtonItem" title="Back" id="lOE-Bc-M0y"/>
                     </navigationItem>
                     <connections>
                         <outlet property="email" destination="pvc-DU-2tL" id="9Zr-uI-tLw"/>
                         <outlet property="resetBtn" destination="QuS-1a-3VZ" id="zeH-RX-9kO"/>
+                        <outlet property="scrollView" destination="qAD-CW-Z7R" id="I7h-y2-DYf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ryx-G9-HFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2153" y="129"/>
+            <point key="canvasLocation" x="2152.5" y="128.87323943661971"/>
         </scene>
         <!--Add Job-->
         <scene sceneID="5Ze-xo-r9H">
@@ -905,7 +939,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jMc-ni-BMA" customClass="CSSegmentControl" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="100" y="74" width="121" height="29"/>
+                                <rect key="frame" x="99.5" y="74" width="121" height="29"/>
                                 <segments>
                                     <segment title="Applied"/>
                                     <segment title="Done"/>
@@ -991,7 +1025,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7JD-EO-Mev" customClass="CSSegmentControl" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="69.5" y="69" width="182" height="29"/>
+                                <rect key="frame" x="69" y="69" width="182" height="29"/>
                                 <segments>
                                     <segment title="Active"/>
                                     <segment title="Applied"/>
