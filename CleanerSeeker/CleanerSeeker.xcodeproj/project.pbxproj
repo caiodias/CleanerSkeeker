@@ -327,28 +327,12 @@
 		95F9642E1E89B126001969BB /* Apply Flow */ = {
 			isa = PBXGroup;
 			children = (
-				95F964441E8AF94C001969BB /* Find Job Offer */,
-				95F964451E8AF955001969BB /* Applied Job History */,
+				95F9642C1E89B052001969BB /* FindJobOffersVC.swift */,
+				95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */,
 				95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */,
 				95AE47AD1EB03A40001CFCD7 /* Summary */,
 			);
 			name = "Apply Flow";
-			sourceTree = "<group>";
-		};
-		95F964441E8AF94C001969BB /* Find Job Offer */ = {
-			isa = PBXGroup;
-			children = (
-				95F9642C1E89B052001969BB /* FindJobOffersVC.swift */,
-			);
-			name = "Find Job Offer";
-			sourceTree = "<group>";
-		};
-		95F964451E8AF955001969BB /* Applied Job History */ = {
-			isa = PBXGroup;
-			children = (
-				95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */,
-			);
-			name = "Applied Job History";
 			sourceTree = "<group>";
 		};
 		95F9644A1E8AFE2C001969BB /* Job History Cell */ = {
