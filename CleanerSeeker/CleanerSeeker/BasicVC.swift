@@ -8,44 +8,57 @@
 
 import UIKit
 
-class BasicVC: UIViewController {
+class BasicVC: UIViewController, UITextFieldDelegate {
+    var baseScrollView: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if let load = Bundle.main.loadNibNamed("LoadingScreen", owner: self, options: nil)?.first as? SpinnerView {
-//
-//            self.view.addSubview(load)
-//            load.center = self.view.center
-//
-//        }
-
-//        self.title = Utilities.programName
-
         observeKeyboardNotifications()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(tap)
     }
 
     private func observeKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    func handleTap(sender: UITapGestureRecognizer? = nil) {
+        self.view.endEditing(true)
     }
 
     // MARK: - Keybord observers
 
-    func keyboardShow() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: -200, width: self.view.frame.width, height: self.view.frame.height)
-        }, completion: nil)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
-    func keyboardHide() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        }, completion: nil)
+    func keyboardWillShow(notification: NSNotification) {
+        guard self.baseScrollView != nil else {
+            print("BasicVC scrollview not setted")
+            return
+        }
+
+        guard let userInfo = notification.userInfo else {
+            print("Not possible get userInfo")
+            return
+        }
+
+        guard let keyboardFrameValue = userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
+            print("Not possible to convert to NSValue")
+            return
+        }
+
+        let keyboardFrame = self.view.convert(keyboardFrameValue.cgRectValue, from: nil)
+        var contentInset: UIEdgeInsets = self.baseScrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        self.baseScrollView.contentInset = contentInset
+    }
+
+    func keyboardWillHide(notification: NSNotification) {
+        self.baseScrollView.contentInset = UIEdgeInsets.zero
     }
 }

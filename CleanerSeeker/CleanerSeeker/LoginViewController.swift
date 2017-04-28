@@ -8,25 +8,26 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BasicVC {
     private enum ShowTabController: String {
         case Worker = "workerTabController"
         case JobPoster = "jobPosterTabController"
     }
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        observeKeyboardNotifications()
+        super.baseScrollView = self.scrollView
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+//    private func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
 
     @IBAction func login(_ sender: UIButton) {
         print("Try to login")
@@ -70,18 +71,5 @@ class LoginViewController: UIViewController {
     private func onLoginFail(error: Error) {
         Utilities.dismissLoading()
         Utilities.displayAlert(error)
-    }
-
-    // MARK: keyboard methods
-    fileprivate func observeKeyboardNotifications() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDismiss), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
-
-    func keyboardShow() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: -200, width: self.view.frame.width, height: self.view.frame.height)
-        }, completion: nil)
     }
 }

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="juE-Bi-44C">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="juE-Bi-44C">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,77 +35,117 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-N9-Ksy" userLabel="Inputs Stack">
-                                <rect key="frame" x="16" y="84" width="288" height="70"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3l-sh-CId">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-Zz-5s8" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-6d-XDf" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="40" width="288" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KUM-Uy-roJ">
+                                        <rect key="frame" x="85" y="16" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="FIo-mW-3ty"/>
+                                            <constraint firstAttribute="height" constant="150" id="yQg-x5-CCI"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-Z1-e9d" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="264" width="120" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4Da-CR-jgg"/>
+                                            <constraint firstAttribute="width" constant="120" id="GcN-0q-xWL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Har-JC-xw6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-j1-afb" customClass="CSButton" customModule="CleanerSeeker" customModuleProvider="target">
+                                        <rect key="frame" x="208" y="461" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="tOI-ca-VLy"/>
+                                        </constraints>
+                                        <state key="normal" title="Need a help?"/>
+                                        <connections>
+                                            <segue destination="RAn-aq-YDB" kind="show" id="2ju-DG-onP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-4A-cdq" customClass="CSButton" customModule="CleanerSeeker" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="461" width="160" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="QH8-b8-fft"/>
+                                            <constraint firstAttribute="height" constant="35" id="R2h-QJ-vya"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Create New Account"/>
+                                        <connections>
+                                            <segue destination="cQN-sR-uKJ" kind="show" id="4CB-LJ-CmE"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-N9-Ksy" userLabel="Inputs Stack">
+                                        <rect key="frame" x="33" y="174" width="254" height="70"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-Zz-5s8" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="254" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oac-3i-Zyr"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-6d-XDf" customClass="CSTextField" customModule="CleanerSeeker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="254" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="B5x-3E-RI1"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-Z1-e9d" customClass="CSPrimary" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="104" y="204" width="112" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="112" id="1eQ-Zs-9Qc"/>
+                                    <constraint firstItem="xQQ-Z1-e9d" firstAttribute="centerX" secondItem="cvg-N9-Ksy" secondAttribute="centerX" id="0xT-4U-YV5"/>
+                                    <constraint firstAttribute="bottom" secondItem="MTO-4A-cdq" secondAttribute="bottom" constant="20" id="6fF-Sw-JsS"/>
+                                    <constraint firstAttribute="trailing" secondItem="sWE-j1-afb" secondAttribute="trailing" constant="12" id="6zx-Ky-6x4"/>
+                                    <constraint firstItem="MTO-4A-cdq" firstAttribute="top" secondItem="d3l-sh-CId" secondAttribute="top" constant="461" id="8EM-qF-NNX"/>
+                                    <constraint firstItem="KUM-Uy-roJ" firstAttribute="centerX" secondItem="d3l-sh-CId" secondAttribute="centerX" id="9mm-O5-7fm"/>
+                                    <constraint firstItem="sWE-j1-afb" firstAttribute="centerY" secondItem="MTO-4A-cdq" secondAttribute="centerY" id="Daj-zi-FGG"/>
+                                    <constraint firstItem="xQQ-Z1-e9d" firstAttribute="top" secondItem="cvg-N9-Ksy" secondAttribute="bottom" constant="20" id="OBn-tW-bas"/>
+                                    <constraint firstItem="cvg-N9-Ksy" firstAttribute="centerX" secondItem="d3l-sh-CId" secondAttribute="centerX" id="QMZ-IJ-p7J"/>
+                                    <constraint firstItem="cvg-N9-Ksy" firstAttribute="leading" secondItem="d3l-sh-CId" secondAttribute="leadingMargin" constant="25" id="Xc2-gR-T0C"/>
+                                    <constraint firstItem="KUM-Uy-roJ" firstAttribute="top" secondItem="d3l-sh-CId" secondAttribute="topMargin" constant="8" id="bRm-NK-cel"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="cvg-N9-Ksy" secondAttribute="trailing" constant="25" id="fbM-Ct-WeE"/>
+                                    <constraint firstItem="sWE-j1-afb" firstAttribute="height" secondItem="MTO-4A-cdq" secondAttribute="height" id="hct-Oa-vhZ"/>
+                                    <constraint firstItem="MTO-4A-cdq" firstAttribute="leading" secondItem="d3l-sh-CId" secondAttribute="leading" constant="12" id="wWq-Lq-RfJ"/>
+                                    <constraint firstItem="cvg-N9-Ksy" firstAttribute="top" secondItem="KUM-Uy-roJ" secondAttribute="bottom" constant="8" id="zCy-JV-yYh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Har-JC-xw6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-4A-cdq" customClass="CSButton" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="513" width="141" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Create New Account"/>
-                                <connections>
-                                    <segue destination="cQN-sR-uKJ" kind="show" id="4CB-LJ-CmE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-j1-afb" customClass="CSButton" customModule="CleanerSeeker" customModuleProvider="target">
-                                <rect key="frame" x="214" y="513" width="90" height="30"/>
-                                <state key="normal" title="Need a help?"/>
-                                <connections>
-                                    <segue destination="RAn-aq-YDB" kind="show" id="2ju-DG-onP"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xQQ-Z1-e9d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Yy-26-T8F"/>
-                            <constraint firstItem="MTO-4A-cdq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FjJ-bt-ySO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MTO-4A-cdq" secondAttribute="bottom" constant="25" id="G1p-T8-KUW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cvg-N9-Ksy" secondAttribute="trailing" id="Pls-DU-k8K"/>
-                            <constraint firstItem="sWE-j1-afb" firstAttribute="centerY" secondItem="MTO-4A-cdq" secondAttribute="centerY" id="S99-fu-1N5"/>
-                            <constraint firstItem="cvg-N9-Ksy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pLq-IG-Tn5"/>
-                            <constraint firstItem="cvg-N9-Ksy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="qsW-Mi-Z7U"/>
-                            <constraint firstItem="sWE-j1-afb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="v21-Np-ZOD"/>
-                            <constraint firstItem="xQQ-Z1-e9d" firstAttribute="top" secondItem="cvg-N9-Ksy" secondAttribute="bottom" constant="50" id="z4Y-n1-b1r"/>
+                            <constraint firstAttribute="trailing" secondItem="d3l-sh-CId" secondAttribute="trailing" id="Gl1-hG-Hxo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d3l-sh-CId" secondAttribute="bottom" id="Q92-rC-J6g"/>
+                            <constraint firstItem="d3l-sh-CId" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QbE-hd-0R7"/>
+                            <constraint firstItem="d3l-sh-CId" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W8T-eJ-ot5"/>
+                            <constraint firstItem="d3l-sh-CId" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nnq-ts-6UD"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Cleaner Seeker" id="UIm-P1-eqO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="byv-Zr-sc1"/>
                     </navigationItem>
                     <connections>
                         <outlet property="password" destination="zUi-6d-XDf" id="DyY-Ub-CqH"/>
+                        <outlet property="scrollView" destination="d3l-sh-CId" id="CEc-XT-hLh"/>
                         <outlet property="userName" destination="a5I-Zz-5s8" id="5rf-Kg-iUc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="129"/>
+            <point key="canvasLocation" x="862.5" y="128.87323943661971"/>
         </scene>
         <!--Reset Password-->
         <scene sceneID="v12-Tt-w97">
@@ -1185,6 +1225,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppLogo" width="744" height="810"/>
         <image name="hourglass" width="16" height="25"/>
         <image name="hourglass-selected" width="16" height="25"/>
         <image name="magnifying-glass" width="25" height="25"/>
