@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+class AddNewPostViewController: BasicVC, UIPickerViewDelegate, UIPickerViewDataSource {
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var typeOfSpace: UIPickerView!
     @IBOutlet weak var noOfBedroomPicker: UIPickerView!
     @IBOutlet weak var noOfWashroomsPicker: UIPickerView!
@@ -37,7 +37,8 @@ class AddNewPostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.noOfWashroomsPicker.delegate = self
         self.noOfWashroomsPicker.dataSource = self
 
-            }
+        self.baseScrollView = self.scrollView
+    }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

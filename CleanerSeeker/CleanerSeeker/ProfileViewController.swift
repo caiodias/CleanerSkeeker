@@ -39,7 +39,7 @@ class ProfileViewController: BasicVC {
         avatar.layer.cornerRadius = avatar.frame.width/2
         avatar.layer.masksToBounds = true
         avatar.addSubview(spinner)
-        
+
         self.baseScrollView = self.scrollView
     }
 
