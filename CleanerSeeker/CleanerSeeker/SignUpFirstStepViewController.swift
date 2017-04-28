@@ -115,22 +115,22 @@ class SignUpFirstStepViewController: BasicVC {
         }
 
         guard self.addressStreet.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Address Street field must be filled.")
+            Utilities.displayAlert(title: alertTitle, message: "Address 1 field must be filled.")
             return false
         }
 
         guard Utilities.validate(string: addressStreet.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Address Street field must be filled.")
+            Utilities.displayAlert(title: alertTitle, message: "Address 1 field must be filled.")
             return false
         }
 
         guard self.addressUnit.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Address Unit field must be filled.")
+            Utilities.displayAlert(title: alertTitle, message: "Address 2 field must be filled.")
             return false
         }
 
         guard Utilities.validate(string: addressUnit.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Address Unit field must be filled.")
+            Utilities.displayAlert(title: alertTitle, message: "Address 2 field must be filled.")
             return false
         }
 
