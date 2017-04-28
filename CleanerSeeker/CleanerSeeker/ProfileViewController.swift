@@ -21,8 +21,9 @@ class ProfileViewController: BasicVC {
     @IBOutlet weak var addressStreet: UITextField!
     @IBOutlet weak var addressUnit: UITextField!
     @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var province: UITextField!
     @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var postalCode: UITextField!
+
     var possibleRange = [Int](arrayLiteral: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
     var rangeSelected = 10
 
@@ -72,7 +73,7 @@ class ProfileViewController: BasicVC {
             currentUser.street = addressStreet.text!
             currentUser.unit = addressUnit.text!
             currentUser.city = city.text!
-            currentUser.postalCode = province.text!
+            currentUser.postalCode = postalCode.text!
 
             Utilities.showLoading()
             Facade.shared.updateUser(user: currentUser, onSuccess: self.onSuccessUpdate, onFail: self.onFailUpdate)
@@ -122,7 +123,7 @@ class ProfileViewController: BasicVC {
             self.addressStreet.text = currentUser.street
             self.addressUnit.text = currentUser.unit
             self.city.text = currentUser.city
-            self.province.text = currentUser.postalCode
+            self.postalCode.text = currentUser.postalCode
             self.email.text = currentUser.email
             //TODO: change the hard code value below
             self.rangePicker.selectRow(9, inComponent: 0, animated: true)
