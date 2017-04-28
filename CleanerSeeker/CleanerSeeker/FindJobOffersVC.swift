@@ -103,10 +103,7 @@ extension FindJobOffersVC: KolodaViewDelegate {
 
 extension FindJobOffersVC: KolodaViewDataSource {
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        if jobsSource.isEmpty {
-            self.buttonsStack.isHidden = true
-            self.noJobsLabel.isHidden = false
-        }
+        displayNoItems(label: jobsSource.isEmpty)
 
         return jobsSource.count
     }
@@ -122,5 +119,10 @@ extension FindJobOffersVC: KolodaViewDataSource {
         Utilities.showLoading()
 
         Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
+    }
+
+    private func displayNoItems(label value: Bool) {
+        self.buttonsStack.isHidden = value
+        self.noJobsLabel.isHidden = !value
     }
 }
