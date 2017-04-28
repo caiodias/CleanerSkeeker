@@ -7,12 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		952F87CE1E86CD0900117E13 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; };
 		954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06D1E2D6743000F1C4B /* AppDelegate.swift */; };
-		954DC0701E2D6743000F1C4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06F1E2D6743000F1C4B /* ViewController.swift */; };
+		954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06F1E2D6743000F1C4B /* BasicVC.swift */; };
 		954DC0731E2D6743000F1C4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0711E2D6743000F1C4B /* Main.storyboard */; };
 		954DC0751E2D6743000F1C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0741E2D6743000F1C4B /* Assets.xcassets */; };
 		954DC0781E2D6743000F1C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0761E2D6743000F1C4B /* LaunchScreen.storyboard */; };
-		954DC0831E2D6744000F1C4B /* CleanerSeekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC0821E2D6744000F1C4B /* CleanerSeekerTests.swift */; };
+		954FE4551EAFED650056C8E4 /* JobSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 954FE4541EAFED650056C8E4 /* JobSummaryView.xib */; };
+		9574455D1E95735D00AD35CC /* CSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574455C1E95735D00AD35CC /* CSUser.swift */; };
+		959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F6A331E9EAE51008E8526 /* PostListVC.swift */; };
+		95A7F4EA1EABBE79009F53C6 /* JobDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */; };
+		95AE47AF1EB03A5D001CFCD7 /* JobSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE47AE1EB03A5D001CFCD7 /* JobSummaryVC.swift */; };
+		95AE47B31EB052C6001CFCD7 /* CSSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE47B21EB052C6001CFCD7 /* CSSegmentControl.swift */; };
+		95B134671E467B5500838B3C /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134661E467B5500838B3C /* Facade.swift */; };
+		95B134691E467B5F00838B3C /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134681E467B5F00838B3C /* ApiController.swift */; };
+		95B1346C1E467EC400838B3C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1346B1E467EC400838B3C /* Utilities.swift */; };
+		95B134711E46826000838B3C /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134701E46826000838B3C /* Worker.swift */; };
+		95B134731E4682D500838B3C /* JobPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134721E4682D500838B3C /* JobPoster.swift */; };
+		95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134741E46830E00838B3C /* JobOpportunity.swift */; };
+		95B134771E4683DF00838B3C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134761E4683DF00838B3C /* Deal.swift */; };
+		95D823571E9017310029B894 /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D823561E9017310029B894 /* ParseController.swift */; };
+		95EDA3C81EABD64B008DC7C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
+		95EDA3C91EABDD26008DC7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0711E2D6743000F1C4B /* Main.storyboard */; };
+		95EDA3CA1EABDD4C008DC7C4 /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134661E467B5500838B3C /* Facade.swift */; };
+		95EDA3CB1EABDD55008DC7C4 /* JobOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134741E46830E00838B3C /* JobOpportunity.swift */; };
+		95EDA3CE1EABDD5D008DC7C4 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134701E46826000838B3C /* Worker.swift */; };
+		95EDA3F01EABDE9C008DC7C4 /* CSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2841EA53C8700149392 /* CSFile.swift */; };
+		95EDA3F11EABDED7008DC7C4 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134681E467B5F00838B3C /* ApiController.swift */; };
+		95EDA3F21EABDED9008DC7C4 /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D823561E9017310029B894 /* ParseController.swift */; };
+		95EDA3F31EABDEDB008DC7C4 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13984121EA697030068C76D /* LocationController.swift */; };
+		95EDA3F41EABDEE7008DC7C4 /* BasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06F1E2D6743000F1C4B /* BasicVC.swift */; };
+		95EDA3F51EABDF06008DC7C4 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A04C731EABA766004F8114 /* SpinnerView.swift */; };
+		95EDA3F61EABDF09008DC7C4 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A04C711EABA72F004F8114 /* LoadingScreen.xib */; };
+		95EDA3F71EABDF3D008DC7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954DC06D1E2D6743000F1C4B /* AppDelegate.swift */; };
+		95EDA3F81EABDF41008DC7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954DC0741E2D6743000F1C4B /* Assets.xcassets */; };
+		95EDA3F91EABDF47008DC7C4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1346B1E467EC400838B3C /* Utilities.swift */; };
+		95EDA3FA1EABE236008DC7C4 /* CSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574455C1E95735D00AD35CC /* CSUser.swift */; };
+		95EDA3FB1EABE239008DC7C4 /* JobPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B134721E4682D500838B3C /* JobPoster.swift */; };
+		95F964281E89AFC2001969BB /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; };
+		95F964291E89AFC2001969BB /* Koloda.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964261E89AFC2001969BB /* Koloda.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95F9642A1E89AFC2001969BB /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; };
+		95F9642B1E89AFC2001969BB /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F964271E89AFC2001969BB /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9642C1E89B052001969BB /* FindJobOffersVC.swift */; };
+		95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */; };
+		95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F964461E8AF973001969BB /* JobHistoryCell.xib */; };
+		95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F964481E8AFA33001969BB /* JobHistoryCell.swift */; };
+		C1186B2B1EAED89C00EBE68D /* CSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B2A1EAED89C00EBE68D /* CSButton.swift */; };
+		C1186B2D1EAED9E300EBE68D /* CSPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B2C1EAED9E300EBE68D /* CSPrimary.swift */; };
+		C1186B2F1EAEED6100EBE68D /* CSSecondary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B2E1EAEED6100EBE68D /* CSSecondary.swift */; };
+		C1186B321EAEF00600EBE68D /* CSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B311EAEF00600EBE68D /* CSTextField.swift */; };
+		C1186B351EAF0B8200EBE68D /* CSTapBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1186B341EAF0B8200EBE68D /* CSTapBar.swift */; };
+		C130E2851EA53C8700149392 /* CSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2841EA53C8700149392 /* CSFile.swift */; };
+		C13984131EA697030068C76D /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13984121EA697030068C76D /* LocationController.swift */; };
+		C1442B9C1E9ECEAA00A9C99E /* ProfileVC+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1442B9B1E9ECEAA00A9C99E /* ProfileVC+Delegates.swift */; };
+		C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; };
+		C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CF1E86CD2C00117E13 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952F87CD1E86CD0900117E13 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */; };
+		C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */; };
+		E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11D6C631E86BBD3002A232F /* ProfileViewController.swift */; };
+		E1279C4A1EAFF5BC0010B674 /* LoadingScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1279C491EAFF5BC0010B674 /* LoadingScreenVC.swift */; };
+		E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */; };
+		E1A04C721EABA72F004F8114 /* LoadingScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A04C711EABA72F004F8114 /* LoadingScreen.xib */; };
+		E1A04C741EABA766004F8114 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A04C731EABA766004F8114 /* SpinnerView.swift */; };
+		E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6F3671E838196008D608B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,17 +83,90 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C14620C91E89A65D00DA26A3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				95F9642B1E89AFC2001969BB /* pop.framework in Embed Frameworks */,
+				95F964291E89AFC2001969BB /* Koloda.framework in Embed Frameworks */,
+				C14620C81E89A65D00DA26A3 /* Parse.framework in Embed Frameworks */,
+				C14620C61E89A65D00DA26A3 /* Bolts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		952F87CD1E86CD0900117E13 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		952F87CF1E86CD2C00117E13 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		954DC06A1E2D6743000F1C4B /* CleanerSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanerSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954DC06D1E2D6743000F1C4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		954DC06F1E2D6743000F1C4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		954DC06F1E2D6743000F1C4B /* BasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVC.swift; sourceTree = "<group>"; };
 		954DC0721E2D6743000F1C4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		954DC0741E2D6743000F1C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954DC0771E2D6743000F1C4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		954DC0791E2D6743000F1C4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		954DC07E1E2D6744000F1C4B /* CleanerSeekerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanerSeekerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		954DC0821E2D6744000F1C4B /* CleanerSeekerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerSeekerTests.swift; sourceTree = "<group>"; };
-		954DC0841E2D6744000F1C4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954FE4541EAFED650056C8E4 /* JobSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobSummaryView.xib; sourceTree = "<group>"; };
+		9574455C1E95735D00AD35CC /* CSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSUser.swift; sourceTree = "<group>"; };
+		959F6A331E9EAE51008E8526 /* PostListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListVC.swift; sourceTree = "<group>"; };
+		95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsVC.swift; sourceTree = "<group>"; };
+		95AE47AE1EB03A5D001CFCD7 /* JobSummaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSummaryVC.swift; sourceTree = "<group>"; };
+		95AE47B21EB052C6001CFCD7 /* CSSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSegmentControl.swift; sourceTree = "<group>"; };
+		95B134661E467B5500838B3C /* Facade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
+		95B134681E467B5F00838B3C /* ApiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
+		95B1346B1E467EC400838B3C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		95B134701E46826000838B3C /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		95B134721E4682D500838B3C /* JobPoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPoster.swift; sourceTree = "<group>"; };
+		95B134741E46830E00838B3C /* JobOpportunity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobOpportunity.swift; sourceTree = "<group>"; };
+		95B134761E4683DF00838B3C /* Deal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		95D823561E9017310029B894 /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
+		95EDA3D41EABDE3C008DC7C4 /* 0082D5FC-6BF0-3688-B63A-ABE8F52AB356.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "0082D5FC-6BF0-3688-B63A-ABE8F52AB356.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3D51EABDE3C008DC7C4 /* 10843D34-1CEA-3EAC-B898-EBB71D92163E.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "10843D34-1CEA-3EAC-B898-EBB71D92163E.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3D61EABDE3C008DC7C4 /* 3D5DA818-612F-3E5E-BF41-4C5DFBEF1FB5.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "3D5DA818-612F-3E5E-BF41-4C5DFBEF1FB5.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3D71EABDE3C008DC7C4 /* 3FDC1B5A-B68C-31AC-A270-7D3B2C0D4B53.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "3FDC1B5A-B68C-31AC-A270-7D3B2C0D4B53.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3D81EABDE3C008DC7C4 /* 43A318D0-886E-3234-8738-BA185D2D678B.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "43A318D0-886E-3234-8738-BA185D2D678B.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3D91EABDE3C008DC7C4 /* 55D9CF8D-A7E5-3D9A-8ADE-DEE70595C4D4.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "55D9CF8D-A7E5-3D9A-8ADE-DEE70595C4D4.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3DA1EABDE3C008DC7C4 /* 57380698-9F33-3E24-A204-96C2E09192B1.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "57380698-9F33-3E24-A204-96C2E09192B1.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3DB1EABDE3C008DC7C4 /* 71C9E660-1E7C-32AD-B3BA-D457F959B35B.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "71C9E660-1E7C-32AD-B3BA-D457F959B35B.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3DC1EABDE3C008DC7C4 /* BF7C82BD-6829-3625-B386-C77C35D26786.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BF7C82BD-6829-3625-B386-C77C35D26786.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3DD1EABDE3C008DC7C4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		95EDA3DE1EABDE3C008DC7C4 /* Bolts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Bolts.framework.dSYM; sourceTree = "<group>"; };
+		95EDA3DF1EABDE3C008DC7C4 /* CB883A5B-9CF9-3C1D-8750-6E65099FFECF.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "CB883A5B-9CF9-3C1D-8750-6E65099FFECF.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3E01EABDE3C008DC7C4 /* CFCFEAB1-1A43-3DDD-B700-6A441F6C40D2.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "CFCFEAB1-1A43-3DDD-B700-6A441F6C40D2.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3E11EABDE3C008DC7C4 /* DC195DCC-2151-3818-8600-893492BFD207.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DC195DCC-2151-3818-8600-893492BFD207.bcsymbolmap"; sourceTree = "<group>"; };
+		95EDA3E21EABDE3C008DC7C4 /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Koloda.framework; sourceTree = "<group>"; };
+		95EDA3E31EABDE3C008DC7C4 /* Koloda.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Koloda.framework.dSYM; sourceTree = "<group>"; };
+		95EDA3E41EABDE3C008DC7C4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		95EDA3E51EABDE3C008DC7C4 /* Parse.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Parse.framework.dSYM; sourceTree = "<group>"; };
+		95EDA3E61EABDE3C008DC7C4 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
+		95EDA3E71EABDE3C008DC7C4 /* pop.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = pop.framework.dSYM; sourceTree = "<group>"; };
+		95F964261E89AFC2001969BB /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
+		95F964271E89AFC2001969BB /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
+		95F9642C1E89B052001969BB /* FindJobOffersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindJobOffersVC.swift; sourceTree = "<group>"; };
+		95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AplliedJobsHistoryVC.swift; sourceTree = "<group>"; };
+		95F964461E8AF973001969BB /* JobHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobHistoryCell.xib; sourceTree = "<group>"; };
+		95F964481E8AFA33001969BB /* JobHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHistoryCell.swift; sourceTree = "<group>"; };
+		C1186B2A1EAED89C00EBE68D /* CSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSButton.swift; sourceTree = "<group>"; };
+		C1186B2C1EAED9E300EBE68D /* CSPrimary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSPrimary.swift; sourceTree = "<group>"; };
+		C1186B2E1EAEED6100EBE68D /* CSSecondary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSecondary.swift; sourceTree = "<group>"; };
+		C1186B311EAEF00600EBE68D /* CSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTextField.swift; sourceTree = "<group>"; };
+		C1186B341EAF0B8200EBE68D /* CSTapBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSTapBar.swift; sourceTree = "<group>"; };
+		C130E2841EA53C8700149392 /* CSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSFile.swift; sourceTree = "<group>"; };
+		C13984121EA697030068C76D /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		C1442B9B1E9ECEAA00A9C99E /* ProfileVC+Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProfileVC+Delegates.swift"; sourceTree = "<group>"; };
+		C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstStepViewController.swift; sourceTree = "<group>"; };
+		E11D6C631E86BBD3002A232F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E1279C491EAFF5BC0010B674 /* LoadingScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenVC.swift; sourceTree = "<group>"; };
+		E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewPostViewController.swift; sourceTree = "<group>"; };
+		E1A04C711EABA72F004F8114 /* LoadingScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingScreen.xib; sourceTree = "<group>"; };
+		E1A04C731EABA766004F8114 /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		E1B6F3671E838196008D608B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +174,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F9642A1E89AFC2001969BB /* pop.framework in Frameworks */,
+				95F964281E89AFC2001969BB /* Koloda.framework in Frameworks */,
+				C14620C51E89A65D00DA26A3 /* Bolts.framework in Frameworks */,
+				952F87CE1E86CD0900117E13 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +191,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		952F87CC1E86CD0900117E13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95EDA3D31EABDE3C008DC7C4 /* iOS */,
+				95F964261E89AFC2001969BB /* Koloda.framework */,
+				95F964271E89AFC2001969BB /* pop.framework */,
+				952F87CF1E86CD2C00117E13 /* Bolts.framework */,
+				952F87CD1E86CD0900117E13 /* Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		954DC0611E2D6743000F1C4B = {
 			isa = PBXGroup;
 			children = (
 				954DC06C1E2D6743000F1C4B /* CleanerSeeker */,
-				954DC0811E2D6744000F1C4B /* CleanerSeekerTests */,
 				954DC06B1E2D6743000F1C4B /* Products */,
+				952F87CC1E86CD0900117E13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,22 +225,179 @@
 			isa = PBXGroup;
 			children = (
 				954DC06D1E2D6743000F1C4B /* AppDelegate.swift */,
-				954DC06F1E2D6743000F1C4B /* ViewController.swift */,
-				954DC0711E2D6743000F1C4B /* Main.storyboard */,
 				954DC0741E2D6743000F1C4B /* Assets.xcassets */,
-				954DC0761E2D6743000F1C4B /* LaunchScreen.storyboard */,
 				954DC0791E2D6743000F1C4B /* Info.plist */,
+				954DC0761E2D6743000F1C4B /* LaunchScreen.storyboard */,
+				954DC0711E2D6743000F1C4B /* Main.storyboard */,
+				95B1346B1E467EC400838B3C /* Utilities.swift */,
+				95B134781E46847A00838B3C /* Controllers */,
+				95B1346F1E46823A00838B3C /* Models */,
+				95B1346A1E467B7200838B3C /* Screens */,
 			);
 			path = CleanerSeeker;
 			sourceTree = "<group>";
 		};
-		954DC0811E2D6744000F1C4B /* CleanerSeekerTests */ = {
+		95AE47AD1EB03A40001CFCD7 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				954DC0821E2D6744000F1C4B /* CleanerSeekerTests.swift */,
-				954DC0841E2D6744000F1C4B /* Info.plist */,
+				954FE4541EAFED650056C8E4 /* JobSummaryView.xib */,
+				95AE47AE1EB03A5D001CFCD7 /* JobSummaryVC.swift */,
 			);
-			path = CleanerSeekerTests;
+			name = Summary;
+			sourceTree = "<group>";
+		};
+		95B1346A1E467B7200838B3C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C1186B281EAED6EB00EBE68D /* UI */,
+				954DC06F1E2D6743000F1C4B /* BasicVC.swift */,
+				95B134661E467B5500838B3C /* Facade.swift */,
+				95F9644A1E8AFE2C001969BB /* Job History Cell */,
+				95F9642E1E89B126001969BB /* Apply Flow */,
+				95F964221E89AACC001969BB /* Login Flow */,
+				E1108A961E93387000FD47C7 /* Post Flow */,
+				E1A04C751EABBB09004F8114 /* Loading Screen */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		95B1346F1E46823A00838B3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95B134761E4683DF00838B3C /* Deal.swift */,
+				95B134741E46830E00838B3C /* JobOpportunity.swift */,
+				95B134721E4682D500838B3C /* JobPoster.swift */,
+				9574455C1E95735D00AD35CC /* CSUser.swift */,
+				95B134701E46826000838B3C /* Worker.swift */,
+				C130E2841EA53C8700149392 /* CSFile.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		95B134781E46847A00838B3C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95B134681E467B5F00838B3C /* ApiController.swift */,
+				95D823561E9017310029B894 /* ParseController.swift */,
+				C13984121EA697030068C76D /* LocationController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		95EDA3D31EABDE3C008DC7C4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				95EDA3D41EABDE3C008DC7C4 /* 0082D5FC-6BF0-3688-B63A-ABE8F52AB356.bcsymbolmap */,
+				95EDA3D51EABDE3C008DC7C4 /* 10843D34-1CEA-3EAC-B898-EBB71D92163E.bcsymbolmap */,
+				95EDA3D61EABDE3C008DC7C4 /* 3D5DA818-612F-3E5E-BF41-4C5DFBEF1FB5.bcsymbolmap */,
+				95EDA3D71EABDE3C008DC7C4 /* 3FDC1B5A-B68C-31AC-A270-7D3B2C0D4B53.bcsymbolmap */,
+				95EDA3D81EABDE3C008DC7C4 /* 43A318D0-886E-3234-8738-BA185D2D678B.bcsymbolmap */,
+				95EDA3D91EABDE3C008DC7C4 /* 55D9CF8D-A7E5-3D9A-8ADE-DEE70595C4D4.bcsymbolmap */,
+				95EDA3DA1EABDE3C008DC7C4 /* 57380698-9F33-3E24-A204-96C2E09192B1.bcsymbolmap */,
+				95EDA3DB1EABDE3C008DC7C4 /* 71C9E660-1E7C-32AD-B3BA-D457F959B35B.bcsymbolmap */,
+				95EDA3DC1EABDE3C008DC7C4 /* BF7C82BD-6829-3625-B386-C77C35D26786.bcsymbolmap */,
+				95EDA3DD1EABDE3C008DC7C4 /* Bolts.framework */,
+				95EDA3DE1EABDE3C008DC7C4 /* Bolts.framework.dSYM */,
+				95EDA3DF1EABDE3C008DC7C4 /* CB883A5B-9CF9-3C1D-8750-6E65099FFECF.bcsymbolmap */,
+				95EDA3E01EABDE3C008DC7C4 /* CFCFEAB1-1A43-3DDD-B700-6A441F6C40D2.bcsymbolmap */,
+				95EDA3E11EABDE3C008DC7C4 /* DC195DCC-2151-3818-8600-893492BFD207.bcsymbolmap */,
+				95EDA3E21EABDE3C008DC7C4 /* Koloda.framework */,
+				95EDA3E31EABDE3C008DC7C4 /* Koloda.framework.dSYM */,
+				95EDA3E41EABDE3C008DC7C4 /* Parse.framework */,
+				95EDA3E51EABDE3C008DC7C4 /* Parse.framework.dSYM */,
+				95EDA3E61EABDE3C008DC7C4 /* pop.framework */,
+				95EDA3E71EABDE3C008DC7C4 /* pop.framework.dSYM */,
+			);
+			name = iOS;
+			path = Carthage/Build/iOS;
+			sourceTree = "<group>";
+		};
+		95F964221E89AACC001969BB /* Login Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E11D6C631E86BBD3002A232F /* ProfileViewController.swift */,
+				E1B6F3671E838196008D608B /* LoginViewController.swift */,
+				C18C2B671E8C57130085D838 /* SignUpFirstStepViewController.swift */,
+				C146FCE81E932EB10070B659 /* ResetPasswordViewController.swift */,
+				C1442B9B1E9ECEAA00A9C99E /* ProfileVC+Delegates.swift */,
+			);
+			name = "Login Flow";
+			sourceTree = "<group>";
+		};
+		95F9642E1E89B126001969BB /* Apply Flow */ = {
+			isa = PBXGroup;
+			children = (
+				95F9642C1E89B052001969BB /* FindJobOffersVC.swift */,
+				95F964421E8AF724001969BB /* AplliedJobsHistoryVC.swift */,
+				95A7F4E91EABBE79009F53C6 /* JobDetailsVC.swift */,
+				95AE47AD1EB03A40001CFCD7 /* Summary */,
+			);
+			name = "Apply Flow";
+			sourceTree = "<group>";
+		};
+		95F9644A1E8AFE2C001969BB /* Job History Cell */ = {
+			isa = PBXGroup;
+			children = (
+				95F964461E8AF973001969BB /* JobHistoryCell.xib */,
+				95F964481E8AFA33001969BB /* JobHistoryCell.swift */,
+			);
+			name = "Job History Cell";
+			sourceTree = "<group>";
+		};
+		C1186B281EAED6EB00EBE68D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				95AE47B21EB052C6001CFCD7 /* CSSegmentControl.swift */,
+				C1186B331EAF0B4500EBE68D /* Bars */,
+				C1186B301EAEEF9100EBE68D /* TextFields */,
+				C1186B291EAED6F600EBE68D /* Buttons */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		C1186B291EAED6F600EBE68D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C1186B2A1EAED89C00EBE68D /* CSButton.swift */,
+				C1186B2C1EAED9E300EBE68D /* CSPrimary.swift */,
+				C1186B2E1EAEED6100EBE68D /* CSSecondary.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		C1186B301EAEEF9100EBE68D /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				C1186B311EAEF00600EBE68D /* CSTextField.swift */,
+			);
+			name = TextFields;
+			sourceTree = "<group>";
+		};
+		C1186B331EAF0B4500EBE68D /* Bars */ = {
+			isa = PBXGroup;
+			children = (
+				C1186B341EAF0B8200EBE68D /* CSTapBar.swift */,
+			);
+			name = Bars;
+			sourceTree = "<group>";
+		};
+		E1108A961E93387000FD47C7 /* Post Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E182CF481E89B6B2003A7687 /* AddNewPostViewController.swift */,
+				959F6A331E9EAE51008E8526 /* PostListVC.swift */,
+			);
+			name = "Post Flow";
+			sourceTree = "<group>";
+		};
+		E1A04C751EABBB09004F8114 /* Loading Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E1A04C731EABA766004F8114 /* SpinnerView.swift */,
+				E1A04C711EABA72F004F8114 /* LoadingScreen.xib */,
+				E1279C491EAFF5BC0010B674 /* LoadingScreenVC.swift */,
+			);
+			name = "Loading Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +410,8 @@
 				954DC0661E2D6743000F1C4B /* Sources */,
 				954DC0671E2D6743000F1C4B /* Frameworks */,
 				954DC0681E2D6743000F1C4B /* Resources */,
+				95F10D8F1E831A41007C7A62 /* Run Script */,
+				C14620C91E89A65D00DA26A3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,7 +487,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F964471E8AF973001969BB /* JobHistoryCell.xib in Resources */,
+				954FE4551EAFED650056C8E4 /* JobSummaryView.xib in Resources */,
 				954DC0781E2D6743000F1C4B /* LaunchScreen.storyboard in Resources */,
+				E1A04C721EABA72F004F8114 /* LoadingScreen.xib in Resources */,
 				954DC0751E2D6743000F1C4B /* Assets.xcassets in Resources */,
 				954DC0731E2D6743000F1C4B /* Main.storyboard in Resources */,
 			);
@@ -191,18 +500,69 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95EDA3F81EABDF41008DC7C4 /* Assets.xcassets in Resources */,
+				95EDA3F61EABDF09008DC7C4 /* LoadingScreen.xib in Resources */,
+				95EDA3C91EABDD26008DC7C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95F10D8F1E831A41007C7A62 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		954DC0661E2D6743000F1C4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954DC0701E2D6743000F1C4B /* ViewController.swift in Sources */,
+				C130E2851EA53C8700149392 /* CSFile.swift in Sources */,
+				95B134691E467B5F00838B3C /* ApiController.swift in Sources */,
+				C1186B2F1EAEED6100EBE68D /* CSSecondary.swift in Sources */,
+				C18C2B681E8C57130085D838 /* SignUpFirstStepViewController.swift in Sources */,
+				95B134671E467B5500838B3C /* Facade.swift in Sources */,
+				C1186B351EAF0B8200EBE68D /* CSTapBar.swift in Sources */,
+				C146FCE91E932EB10070B659 /* ResetPasswordViewController.swift in Sources */,
+				95B134731E4682D500838B3C /* JobPoster.swift in Sources */,
+				95F964431E8AF724001969BB /* AplliedJobsHistoryVC.swift in Sources */,
+				95A7F4EA1EABBE79009F53C6 /* JobDetailsVC.swift in Sources */,
+				95F964491E8AFA33001969BB /* JobHistoryCell.swift in Sources */,
+				95F9642D1E89B052001969BB /* FindJobOffersVC.swift in Sources */,
+				C1442B9C1E9ECEAA00A9C99E /* ProfileVC+Delegates.swift in Sources */,
+				E1B6F3681E838197008D608B /* LoginViewController.swift in Sources */,
+				95D823571E9017310029B894 /* ParseController.swift in Sources */,
+				95B134751E46830E00838B3C /* JobOpportunity.swift in Sources */,
+				959F6A341E9EAE51008E8526 /* PostListVC.swift in Sources */,
+				E1279C4A1EAFF5BC0010B674 /* LoadingScreenVC.swift in Sources */,
+				E182CF491E89B6B2003A7687 /* AddNewPostViewController.swift in Sources */,
+				C1186B2D1EAED9E300EBE68D /* CSPrimary.swift in Sources */,
+				C1186B321EAEF00600EBE68D /* CSTextField.swift in Sources */,
+				C13984131EA697030068C76D /* LocationController.swift in Sources */,
+				954DC0701E2D6743000F1C4B /* BasicVC.swift in Sources */,
+				95B1346C1E467EC400838B3C /* Utilities.swift in Sources */,
+				95B134771E4683DF00838B3C /* Deal.swift in Sources */,
+				E11D6C641E86BBD3002A232F /* ProfileViewController.swift in Sources */,
 				954DC06E1E2D6743000F1C4B /* AppDelegate.swift in Sources */,
+				9574455D1E95735D00AD35CC /* CSUser.swift in Sources */,
+				95AE47B31EB052C6001CFCD7 /* CSSegmentControl.swift in Sources */,
+				C1186B2B1EAED89C00EBE68D /* CSButton.swift in Sources */,
+				95AE47AF1EB03A5D001CFCD7 /* JobSummaryVC.swift in Sources */,
+				E1A04C741EABA766004F8114 /* SpinnerView.swift in Sources */,
+				95B134711E46826000838B3C /* Worker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +570,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954DC0831E2D6744000F1C4B /* CleanerSeekerTests.swift in Sources */,
+				95EDA3C81EABD64B008DC7C4 /* LoginViewController.swift in Sources */,
+				95EDA3CE1EABDD5D008DC7C4 /* Worker.swift in Sources */,
+				95EDA3FB1EABE239008DC7C4 /* JobPoster.swift in Sources */,
+				95EDA3F11EABDED7008DC7C4 /* ApiController.swift in Sources */,
+				95EDA3F71EABDF3D008DC7C4 /* AppDelegate.swift in Sources */,
+				95EDA3F31EABDEDB008DC7C4 /* LocationController.swift in Sources */,
+				95EDA3F91EABDF47008DC7C4 /* Utilities.swift in Sources */,
+				95EDA3F01EABDE9C008DC7C4 /* CSFile.swift in Sources */,
+				95EDA3F51EABDF06008DC7C4 /* SpinnerView.swift in Sources */,
+				95EDA3FA1EABE236008DC7C4 /* CSUser.swift in Sources */,
+				95EDA3CB1EABDD55008DC7C4 /* JobOpportunity.swift in Sources */,
+				95EDA3F21EABDED9008DC7C4 /* ParseController.swift in Sources */,
+				95EDA3CA1EABDD4C008DC7C4 /* Facade.swift in Sources */,
+				95EDA3F41EABDEE7008DC7C4 /* BasicVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,8 +713,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C8F6JTSD25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CleanerSeeker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiodias.CleanerSeeker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,8 +731,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C8F6JTSD25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CleanerSeeker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiodias.CleanerSeeker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -369,6 +750,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = C8F6JTSD25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CleanerSeekerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiodias.CleanerSeekerTests;
@@ -384,6 +769,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = C8F6JTSD25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CleanerSeekerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caiodias.CleanerSeekerTests;
@@ -412,6 +801,7 @@
 				954DC0891E2D6744000F1C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		954DC08A1E2D6744000F1C4B /* Build configuration list for PBXNativeTarget "CleanerSeekerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +810,7 @@
 				954DC08C1E2D6744000F1C4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

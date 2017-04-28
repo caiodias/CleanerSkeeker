@@ -7,15 +7,40 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        Parse.enableLocalDatastore()
+
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "Cleaner"
+            $0.clientKey = "cleaner"
+            $0.server = "https://cleaner-seaker.herokuapp.com/parse"
+        }
+
+        Parse.initialize(with: configuration)
+
+        // All navigations styles
+        let navigationBarAppearace = UINavigationBar.appearance()
+
+        navigationBarAppearace.tintColor = .white
+        navigationBarAppearace.barTintColor = Utilities.CSColors.green.color
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationBarAppearace.barStyle = .black
+        navigationBarAppearace.isTranslucent = true
+
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+
+        // All Tab Bars styles
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
+
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: Utilities.CSColors.darkBlue.color], for: .selected)
+
         return true
     }
 
@@ -41,6 +66,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-
