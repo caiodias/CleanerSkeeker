@@ -104,13 +104,9 @@ class AddNewPostViewController: BasicVC, UIPickerViewDelegate, UIPickerViewDataS
             job.totalMinutesToWork = serviceTotalTime
 
             job.jobWorkDate = self.datePicker.date
-
+            
+            Utilities.showLoading()
             Facade.shared.registerJobOpportunity(job: job, onSuccess: onRegisterSuccess, onFail: onRegisterFail)
-
-           Utilities.showLoading()
-
-        } else {
-            print("error")
         }
     }
 

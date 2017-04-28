@@ -43,6 +43,7 @@ class FindJobOffersVC: BasicVC {
     // MARK: Callbacks
 
     func onFetchJobSuccess(jobs: Any) {
+        Utilities.dismissLoading()
         guard let jobs = jobs as? [JobOpportunity] else {
             print("Not possible to convert the jobs to JobOpportunity array")
             return
@@ -52,7 +53,6 @@ class FindJobOffersVC: BasicVC {
         DispatchQueue.main.async {
             self.kolodaView.reloadData()
         }
-        Utilities.dismissLoading()
     }
 
     func onFetchJobFail(error: Error) {
@@ -79,7 +79,6 @@ extension FindJobOffersVC: KolodaViewDelegate {
 
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         self.jobSelected = self.jobsSource[index]
-
         self.performSegue(withIdentifier: "jobDetails", sender: self)
     }
 
@@ -93,18 +92,18 @@ extension FindJobOffersVC: KolodaViewDelegate {
     }
 
     func onApplySuccess(obj: Any) {
-        print("Job applied with success")
+        Utilities.displayAlert(title: "Applied", message: "Applied successfuly")
     }
 
     func onApplyFail(error: Error) {
         print("Fail on apply to job: " + error.localizedDescription)
+        Utilities.displayAlert(error)
     }
 }
 
 extension FindJobOffersVC: KolodaViewDataSource {
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         displayNoItems(label: jobsSource.isEmpty)
-
         return jobsSource.count
     }
 
@@ -117,7 +116,6 @@ extension FindJobOffersVC: KolodaViewDataSource {
 
     func reset() {
         Utilities.showLoading()
-
         Facade.shared.getJobsInRange(onSuccess: onFetchJobSuccess, onFail: onFetchJobFail)
     }
 
