@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: BasicVC {
 
     // MARK: - Outlets
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -38,11 +39,8 @@ class ProfileViewController: UIViewController {
         avatar.layer.cornerRadius = avatar.frame.width/2
         avatar.layer.masksToBounds = true
         avatar.addSubview(spinner)
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
+        self.baseScrollView = self.scrollView
     }
 
     @IBAction func didTapOnImageChange(_ sender: Any) {
@@ -52,22 +50,18 @@ class ProfileViewController: UIViewController {
     // MARK: - Actions
     @IBAction func tapOnPasswordReset(_ sender: Any) {
         if let currentUser = CSUser.current() {
-            Facade.shared.resetPassword(email: currentUser.email!, onSuccess: self.onSuccessReset, onFail: self.onFailReset)
-
             Utilities.showLoading()
-
+            Facade.shared.resetPassword(email: currentUser.email!, onSuccess: self.onSuccessReset, onFail: self.onFailReset)
         }
     }
 
     @IBAction func tapOnLogOut(_ sender: Any) {
-        Facade.shared.logout(onSuccess: self.onSuccessLogout, onFail: self.onFailLogout)
         Utilities.showLoading()
+        Facade.shared.logout(onSuccess: self.onSuccessLogout, onFail: self.onFailLogout)
     }
 
     @IBAction func tapOnSave(_ sender: Any) {
-        // @TODO Call facade update user here
         if let currentUser = CSUser.current() {
-
             currentUser.firstName = firstName.text!
             currentUser.lastName = lastName.text!
             currentUser.phoneNumber = phone.text!
@@ -76,11 +70,9 @@ class ProfileViewController: UIViewController {
             currentUser.city = city.text!
             currentUser.postalCode = province.text!
 
-            Facade.shared.updateUser(user: currentUser, onSuccess: self.onSuccessUpdate, onFail: self.onFailUpdate)
             Utilities.showLoading()
-
+            Facade.shared.updateUser(user: currentUser, onSuccess: self.onSuccessUpdate, onFail: self.onFailUpdate)
         }
-
     }
 
     // MARK: - Callbacks
