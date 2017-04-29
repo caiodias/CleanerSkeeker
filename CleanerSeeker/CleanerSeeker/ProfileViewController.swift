@@ -24,8 +24,9 @@ class ProfileViewController: BasicVC {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var postalCode: UITextField!
 
-    var possibleRange = [Int](arrayLiteral: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
     var rangeSelected = 10
+    var possibleRange = [Int](arrayLiteral: 1, 5, 10, 15, 20, 25)
+    var worker = Worker()
 
     lazy var spinner: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
@@ -69,16 +70,26 @@ class ProfileViewController: BasicVC {
         if let currentUser = CSUser.current() {
             if validateFields() {
 
-            currentUser.firstName = firstName.text!
-            currentUser.lastName = lastName.text!
-            currentUser.phoneNumber = phone.text!
-            currentUser.street = addressStreet.text!
-            currentUser.unit = addressUnit.text!
-            currentUser.city = city.text!
-            currentUser.postalCode = postalCode.text!
+                currentUser.firstName = firstName.text!
+                currentUser.lastName = lastName.text!
+                currentUser.phoneNumber = phone.text!
+                currentUser.street = addressStreet.text!
+                currentUser.unit = addressUnit.text!
+                currentUser.city = city.text!
+                currentUser.postalCode = postalCode.text!
 
-            Utilities.showLoading()
-            Facade.shared.updateUser(user: currentUser, onSuccess: self.onSuccessUpdate, onFail: self.onFailUpdate)
+                Utilities.showLoading()
+                Facade.shared.updateUser(user: currentUser, onSuccess: self.onSuccessUpdate, onFail: self.onFailUpdate)
+
+                //update details
+                if self.worker.objectId != nil {
+                    worker.searchRadius = self.rangeSelected
+                    Facade.shared.saveUserDetails(userDetails: worker, onSuccess: { (data) in
+                        print(data)
+                    }, onFail: { (error) in
+                        print(error)
+                    })
+                }
             }
         }
     }
@@ -215,8 +226,16 @@ class ProfileViewController: BasicVC {
             self.city.text = currentUser.city
             self.postalCode.text = currentUser.postalCode
             self.email.text = currentUser.email
-            //TODO: change the hard code value below
-            self.rangePicker.selectRow(9, inComponent: 0, animated: true)
+
+            //Get range
+            Facade.shared.getCurrentUserDetails(onSuccess: { (data) in
+                if let worker = data as? Worker {
+                    self.worker = worker
+                    self.rangePicker.selectRow(self.possibleRange.index(of: worker.searchRadius)!, inComponent: 0, animated: true)
+                }
+            }, onFail: { (error) in
+                Utilities.displayAlert(error)
+            })
 
             let hid = currentUser.csType == CSUserType.JobPoster
             self.rangePicker.isHidden = hid

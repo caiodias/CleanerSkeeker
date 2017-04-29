@@ -63,8 +63,26 @@ extension ApiController {
         self.parseDb.getUserProfileImage(image: image, onSuccess: onSuccess, onFail: onFail)
     }
 
+    func getCurrentUserDetails(onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        let user = getCurrentUser()
+
+        if user.userType == CSUserType.Worker.rawValue {
+            self.parseDb.getWorkerDetails(user: user, onSuccess: onSuccess, onFail: onFail)
+        } else if user.userType == CSUserType.JobPoster.rawValue {
+            self.parseDb.getJobPosterDetails(user: user, onSuccess: onSuccess, onFail: onFail)
+        }
+    }
+
     func updateCurrentUserLocation() {
         self.parseDb.updateCurrentUserLocation()
+    }
+
+    func saveUserDetails(userDetails: Worker, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario ) {
+        self.parseDb.saveCSObject(object: userDetails, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func saveUserDetails(userDetails: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario ) {
+        self.parseDb.saveCSObject(object: userDetails, onSuccess: onSuccess, onFail: onFail)
     }
 
 }

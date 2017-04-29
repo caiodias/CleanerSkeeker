@@ -25,6 +25,18 @@ class ParseController {
         self.users = []
         self.jobs = []
     }
+
+    func saveCSObject(object: PFObject, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        //Save object
+        object.saveEventually { (_, error) in
+            if let error = error {
+                onFail(error)
+            } else {
+                onSuccess(object as AnyObject)
+            }
+        }
+
+    }
 }
 
 // MARK: Login Flow Methods
@@ -40,24 +52,31 @@ extension ParseController {
                 onFail(error)
             } else {
                 // Set Relation to Pseudo user object
-                var customUser: PFObject
                 if user.userType == CSUserType.Worker.rawValue {
-                    customUser = Worker()
-                } else {
-                    customUser = JobPoster()
-                }
+                    let customUser = Worker()
 
-                let relation = customUser.relation(forKey: "userRelationId")
-                relation.add(user)
+                    let relation = customUser.relation(forKey: "userRelationId")
+                    relation.add(user)
 
-                //Save pseudo user object
-                customUser.saveEventually { (_, error) in
-                    if let error = error {
-                        onFail(error)
-                    } else {
+                    customUser.searchRadius = 10 //set default radius range
+
+                    self.saveCSObject(object: customUser, onSuccess: { (_) in
                         onSuccess(user as AnyObject)
-                    }
+                    }, onFail: { (error) in
+                        onFail(error)
+                    })
+
+                } else {
+                    let customUser = JobPoster()
+                    let relation = customUser.relation(forKey: "userRelationId")
+                    relation.add(user)
+                    self.saveCSObject(object: customUser, onSuccess: { (_) in
+                        onSuccess(user as AnyObject)
+                    }, onFail: { (error) in
+                        onFail(error)
+                    })
                 }
+
             }
         }
     }
@@ -293,7 +312,7 @@ extension ParseController {
                 let query = PFQuery(className: "JobOpportunity")
 
                 query.whereKey("status", equalTo:JobStatus.active.rawValue) // Active
-                query.whereKey("location", nearGeoPoint: worker.location, withinKilometers: worker.searchRadius) // Filter by destination
+                query.whereKey("location", nearGeoPoint: worker.location, withinKilometers: Double(worker.searchRadius)) // Filter by destination
 
                 query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
                     if let error = error {
