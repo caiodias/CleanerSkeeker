@@ -5,7 +5,9 @@
 //  Created by Caio Dias on 2017-02-04.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
+
 import Foundation
+
 typealias ApiSuccessScenario = (Any) -> Void
 typealias ApiFailScenario = (Error) -> Void
 
@@ -121,7 +123,6 @@ extension ApiController {
     }
 
     func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-
         //Set current user as applier
         let user = self.getCurrentUser()
         let relation = job.relation(forKey: "appliedId")

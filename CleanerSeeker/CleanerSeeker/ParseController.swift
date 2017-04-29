@@ -7,6 +7,7 @@
 //
 
 import Parse
+import EventKit //TODO: put this on ApiController
 
 class ParseController {
     enum ParseDbErrors: Error {
@@ -35,14 +36,12 @@ class ParseController {
                 onSuccess(object as AnyObject)
             }
         }
-
     }
 }
 
 // MARK: Login Flow Methods
 
 extension ParseController {
-
     func addUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new User")
 
@@ -76,7 +75,6 @@ extension ParseController {
                         onFail(error)
                     })
                 }
-
             }
         }
     }
@@ -183,7 +181,6 @@ extension ParseController {
                     }
                 }
             })
-
         }
     }
 
@@ -247,11 +244,9 @@ extension ParseController {
                     onSuccess(job) // now job has to have id
                 }
             }
-
         }) { error in
             onFail(error)
         }
-
     }
 
     func getAllJobsOpportunitiesBy(ownerID: CSUser, jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
@@ -291,6 +286,7 @@ extension ParseController {
 }
 
 // MARK: Apply Flow Methods
+
 extension ParseController {
     func update(job object: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         object.saveInBackground { (_, error: Error?) -> Void in
@@ -298,6 +294,11 @@ extension ParseController {
             print("Error on apply to Job Opportunity")
             onFail(error)
           } else {
+            if object.status == JobStatus.applied.rawValue {
+                if let spaceType = JobSpaceType(rawValue: object.spaceType) {
+                    self.createEvent(on: object.jobWorkDate, during: object.totalMinutesToWork, ofType: spaceType as JobSpaceType, on: object.address, with: object.zipcode )
+                }
+            }
             onSuccess(object) // has user relation
           }
         }
@@ -336,10 +337,46 @@ extension ParseController {
                     }
                 }
             }
-
         }, onFail: { (error) in
             print("Fail when fetching Cleaner \(error)")
         })
     }
 
+    //TODO: put this on ApiController
+    func createEvent(on date: Date, during duration: Int, ofType spaceType: JobSpaceType, on address: String, with zipcode: String) {
+        let eventStore: EKEventStore = EKEventStore()
+
+        //Access permission
+        eventStore.requestAccess(to: EKEntityType.event) { (granted, error) in
+            if (granted) &&  (error == nil) {
+                print("permission is granted")
+                var title = "Clean a Condo"
+                if spaceType == JobSpaceType.building {
+                    title = "Clean a House"
+                }
+
+                let calendar = Calendar.current
+                let event: EKEvent = EKEvent(eventStore: eventStore)
+                event.title = title
+                event.startDate = date
+                event.endDate = calendar.date(byAdding: .minute, value: duration, to: date)!
+                event.location = "\(address), \(zipcode)"
+                event.notes = "Remember to be cordial 😉"
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                event.addAlarm(EKAlarm(relativeOffset: 3600)) // Set alarm to 1 hour early
+
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let specError as NSError {
+                    print("A specific error occurred: \(specError)")
+                } catch {
+                    print("An error occurred")
+                }
+                print("Event saved")
+
+            } else {
+                print("need permission to create a event")
+            }
+        }
+    }
 }
