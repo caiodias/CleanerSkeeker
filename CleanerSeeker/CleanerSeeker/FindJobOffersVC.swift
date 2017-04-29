@@ -90,8 +90,6 @@ extension FindJobOffersVC: KolodaViewDelegate {
         if direction == SwipeResultDirection.right {
             Facade.shared.apply(to: job, onSuccess: onApplySuccess, onFail: onApplyFail)
         }
-
-        self.jobsSource.remove(at: index)
     }
 
     func onApplySuccess(obj: Any) {
