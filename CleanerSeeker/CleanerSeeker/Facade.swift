@@ -56,6 +56,18 @@ class Facade {
         self.apiController.updateCurrentUserLocation()
     }
 
+    func getCurrentUserDetails(onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        self.apiController.getCurrentUserDetails(onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func saveUserDetails(userDetails: Worker, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario ) {
+        self.apiController.saveUserDetails(userDetails: userDetails, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func saveUserDetails(userDetails: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario ) {
+        self.apiController.saveUserDetails(userDetails: userDetails, onSuccess: onSuccess, onFail: onFail)
+    }
+
     // MARK: Post Flow
 
     public func registerJobOpportunity(job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {

@@ -5,7 +5,9 @@
 //  Created by Caio Dias on 2017-02-04.
 //  Copyright © 2017 Caio Dias. All rights reserved.
 //
+
 import Foundation
+
 typealias ApiSuccessScenario = (Any) -> Void
 typealias ApiFailScenario = (Error) -> Void
 
@@ -63,8 +65,26 @@ extension ApiController {
         self.parseDb.getUserProfileImage(image: image, onSuccess: onSuccess, onFail: onFail)
     }
 
+    func getCurrentUserDetails(onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario) {
+        let user = getCurrentUser()
+
+        if user.userType == CSUserType.Worker.rawValue {
+            self.parseDb.getWorkerDetails(user: user, onSuccess: onSuccess, onFail: onFail)
+        } else if user.userType == CSUserType.JobPoster.rawValue {
+            self.parseDb.getJobPosterDetails(user: user, onSuccess: onSuccess, onFail: onFail)
+        }
+    }
+
     func updateCurrentUserLocation() {
         self.parseDb.updateCurrentUserLocation()
+    }
+
+    func saveUserDetails(userDetails: Worker, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario ) {
+        self.parseDb.saveCSObject(object: userDetails, onSuccess: onSuccess, onFail: onFail)
+    }
+
+    func saveUserDetails(userDetails: JobPoster, onSuccess: @escaping ApiSuccessScenario, onFail:    @escaping ApiFailScenario ) {
+        self.parseDb.saveCSObject(object: userDetails, onSuccess: onSuccess, onFail: onFail)
     }
 
 }
@@ -103,7 +123,6 @@ extension ApiController {
     }
 
     func apply(to job: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
-
         //Set current user as applier
         let user = self.getCurrentUser()
         let relation = job.relation(forKey: "appliedId")

@@ -23,6 +23,17 @@ class LoginViewController: BasicVC {
         super.baseScrollView = self.scrollView
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        if let currentUser = CSUser.current() {
+
+            //User is logged in so redirect him based on type and update location
+            self.redirectLoggedInUser(currentUser)
+
+        }
+    }
+
     @IBAction func login(_ sender: UIButton) {
         self.handleTap()
         Utilities.showLoading()
@@ -53,6 +64,10 @@ class LoginViewController: BasicVC {
             return
         }
 
+        self.redirectLoggedInUser(user)
+    }
+
+    private func redirectLoggedInUser(_ user: CSUser) {
         if user.userType == CSUserType.Worker.rawValue {
             Facade.shared.updateCurrentUserLoccation()
             displayTabController(tabController: ShowTabController.Worker)

@@ -7,6 +7,7 @@
 //
 
 import Parse
+import EventKit //TODO: put this on ApiController
 
 class ParseController {
     enum ParseDbErrors: Error {
@@ -25,12 +26,22 @@ class ParseController {
         self.users = []
         self.jobs = []
     }
+
+    func saveCSObject(object: PFObject, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
+        //Save object
+        object.saveEventually { (_, error) in
+            if let error = error {
+                onFail(error)
+            } else {
+                onSuccess(object as AnyObject)
+            }
+        }
+    }
 }
 
 // MARK: Login Flow Methods
 
 extension ParseController {
-
     func addUser(user: CSUser, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         print("Adding a new User")
 
@@ -40,23 +51,29 @@ extension ParseController {
                 onFail(error)
             } else {
                 // Set Relation to Pseudo user object
-                var customUser: PFObject
                 if user.userType == CSUserType.Worker.rawValue {
-                    customUser = Worker()
-                } else {
-                    customUser = JobPoster()
-                }
+                    let customUser = Worker()
 
-                let relation = customUser.relation(forKey: "userRelationId")
-                relation.add(user)
+                    let relation = customUser.relation(forKey: "userRelationId")
+                    relation.add(user)
 
-                //Save pseudo user object
-                customUser.saveEventually { (_, error) in
-                    if let error = error {
-                        onFail(error)
-                    } else {
+                    customUser.searchRadius = 10 //set default radius range
+
+                    self.saveCSObject(object: customUser, onSuccess: { (_) in
                         onSuccess(user as AnyObject)
-                    }
+                    }, onFail: { (error) in
+                        onFail(error)
+                    })
+
+                } else {
+                    let customUser = JobPoster()
+                    let relation = customUser.relation(forKey: "userRelationId")
+                    relation.add(user)
+                    self.saveCSObject(object: customUser, onSuccess: { (_) in
+                        onSuccess(user as AnyObject)
+                    }, onFail: { (error) in
+                        onFail(error)
+                    })
                 }
             }
         }
@@ -164,7 +181,6 @@ extension ParseController {
                     }
                 }
             })
-
         }
     }
 
@@ -228,11 +244,9 @@ extension ParseController {
                     onSuccess(job) // now job has to have id
                 }
             }
-
         }) { error in
             onFail(error)
         }
-
     }
 
     func getAllJobsOpportunitiesBy(ownerID: CSUser, jobStatus: JobStatus, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
@@ -272,6 +286,7 @@ extension ParseController {
 }
 
 // MARK: Apply Flow Methods
+
 extension ParseController {
     func update(job object: JobOpportunity, onSuccess: @escaping ApiSuccessScenario, onFail: @escaping ApiFailScenario) {
         object.saveInBackground { (_, error: Error?) -> Void in
@@ -279,6 +294,11 @@ extension ParseController {
             print("Error on apply to Job Opportunity")
             onFail(error)
           } else {
+            if object.status == JobStatus.applied.rawValue {
+                if let spaceType = JobSpaceType(rawValue: object.spaceType) {
+                    self.createEvent(on: object.jobWorkDate, during: object.totalMinutesToWork, ofType: spaceType as JobSpaceType, on: object.address, with: object.zipcode )
+                }
+            }
             onSuccess(object) // has user relation
           }
         }
@@ -293,7 +313,7 @@ extension ParseController {
                 let query = PFQuery(className: "JobOpportunity")
 
                 query.whereKey("status", equalTo:JobStatus.active.rawValue) // Active
-                query.whereKey("location", nearGeoPoint: worker.location, withinKilometers: worker.searchRadius) // Filter by destination
+                query.whereKey("location", nearGeoPoint: worker.location, withinKilometers: Double(worker.searchRadius)) // Filter by destination
 
                 query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
                     if let error = error {
@@ -317,10 +337,46 @@ extension ParseController {
                     }
                 }
             }
-
         }, onFail: { (error) in
             print("Fail when fetching Cleaner \(error)")
         })
     }
 
+    //TODO: put this on ApiController
+    func createEvent(on date: Date, during duration: Int, ofType spaceType: JobSpaceType, on address: String, with zipcode: String) {
+        let eventStore: EKEventStore = EKEventStore()
+
+        //Access permission
+        eventStore.requestAccess(to: EKEntityType.event) { (granted, error) in
+            if (granted) &&  (error == nil) {
+                print("permission is granted")
+                var title = "Clean a Condo"
+                if spaceType == JobSpaceType.building {
+                    title = "Clean a House"
+                }
+
+                let calendar = Calendar.current
+                let event: EKEvent = EKEvent(eventStore: eventStore)
+                event.title = title
+                event.startDate = date
+                event.endDate = calendar.date(byAdding: .minute, value: duration, to: date)!
+                event.location = "\(address), \(zipcode)"
+                event.notes = "Remember to be cordial 😉"
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                event.addAlarm(EKAlarm(relativeOffset: 3600)) // Set alarm to 1 hour early
+
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let specError as NSError {
+                    print("A specific error occurred: \(specError)")
+                } catch {
+                    print("An error occurred")
+                }
+                print("Event saved")
+
+            } else {
+                print("need permission to create a event")
+            }
+        }
+    }
 }
