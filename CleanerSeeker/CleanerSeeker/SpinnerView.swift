@@ -98,11 +98,15 @@ class SpinnerView: UIView {
     }
 
     func animateStrokeHueWithDuration(duration: CFTimeInterval) {
-        let count = 36
+        let count = 10
         let animation = CAKeyframeAnimation(keyPath: "strokeColor")
         animation.keyTimes = (0 ... count).map { NSNumber(value: CFTimeInterval($0) / CFTimeInterval(count)) }
         animation.values = (0 ... count).map {
-            UIColor(hue: CGFloat($0) / CGFloat(count), saturation: 1, brightness: 1, alpha: 1).cgColor
+            if $0 % 2  == 0 {
+                return Utilities.CSColors.green.color.cgColor
+            }
+
+            return Utilities.CSColors.darkBlue.color.cgColor
         }
         animation.duration = duration
         animation.calculationMode = kCAAnimationLinear
