@@ -118,6 +118,18 @@ class Utilities {
 
         return false
     }
+
+    static func validate(textField: UITextField) -> Bool {
+        guard textField.text != nil else {
+            return false
+        }
+
+        guard validate(string: textField.text!) else {
+            return false
+        }
+
+        return true
+    }
 }
 
 extension String {
