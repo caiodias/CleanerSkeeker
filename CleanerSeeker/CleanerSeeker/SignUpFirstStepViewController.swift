@@ -61,96 +61,48 @@ class SignUpFirstStepViewController: BasicVC {
     }
 
     private func validateFields() -> Bool {
-        //TODO: check each field. Please look the AddNewPostViewController validaiton
-        let alertTitle = "Did you forgot?"
-
-        guard self.email.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Email field must be filled.")
+        guard check(field: self.email, error: "Email field must be filled.") else {
             return false
         }
 
-        guard Utilities.validate(string: self.email.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Email field must be filled.")
+        guard check(field: self.password, error: "Password field must be filled.") else {
             return false
         }
 
-        guard self.password.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Password field must be filled.")
+        guard check(field: self.fName, error: "First Name field must be filled.") else {
             return false
         }
 
-        guard Utilities.validate(string: self.password.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Password field must be filled.")
+        guard check(field: self.lName, error: "Last Name field must be filled.") else {
             return false
         }
 
-        guard self.fName.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "First Name field must be filled.")
+        guard check(field: self.phone, error: "Phone Number field must be filled.") else {
             return false
         }
 
-        guard Utilities.validate(string: fName.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "First Name field must be filled.")
+        guard check(field: self.addressStreet, error: "Street Address field must be filled.") else {
             return false
         }
 
-        guard self.lName.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Last Name field must be filled.")
+        guard check(field: self.addressUnit, error: "Unit Address field must be filled.") else {
             return false
         }
 
-        guard Utilities.validate(string: lName.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Last Name field must be filled.")
+        guard check(field: self.city, error: "City field must be filled.") else {
             return false
         }
 
-        guard self.phone.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Phone Number field must be filled.")
+        guard check(field: self.postalCode, error: "Postal Code field must be filled.") else {
             return false
         }
 
-        guard Utilities.validate(string: phone.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Phone Number field must be filled.")
-            return false
-        }
+        return true
+    }
 
-        guard self.addressStreet.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Address 1 field must be filled.")
-            return false
-        }
-
-        guard Utilities.validate(string: addressStreet.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Address 1 field must be filled.")
-            return false
-        }
-
-        guard self.addressUnit.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Address 2 field must be filled.")
-            return false
-        }
-
-        guard Utilities.validate(string: addressUnit.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Address 2 field must be filled.")
-            return false
-        }
-
-        guard self.city.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "City field must be filled.")
-            return false
-        }
-
-        guard Utilities.validate(string: city.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "City field must be filled.")
-            return false
-        }
-
-        guard self.postalCode.text != nil else {
-            Utilities.displayAlert(title: alertTitle, message: "Postal Code field must be filled.")
-            return false
-        }
-
-        guard Utilities.validate(string: postalCode.text!) else {
-            Utilities.displayAlert(title: alertTitle, message: "Postal Code field must be filled.")
+    private func check(field textField: UITextField, error msg: String) -> Bool {
+        guard Utilities.validate(textField: textField) else {
+            Utilities.displayAlert(title: "Did you forgot?", message: msg)
             return false
         }
 

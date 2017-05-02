@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Cleaner Seeker needs your permission to save the jobs opportunities on your calendar.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -21,11 +19,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Use media library to set your profile picture</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Cleaner Seeker needs your permission to save the jobs opportunities on your calendar.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Use your camera to make your original avatar</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
